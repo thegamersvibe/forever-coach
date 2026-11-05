@@ -2,7 +2,7 @@
 ## Title: Forever Coach
 ## Notes: Leveling auditor for WoW Forever: gear, talents, training, class quests and play habits. /coach
 ## Author: TheGamersVibe
-## Version: 1.0.3
+## Version: 1.0.4
 ## SavedVariables: ForeverCoachDB
 ## OptionalDeps: GearQuestForever, Journey, ForeverDungeonJournal
 ## IconTexture: Interface\AddOns\ForeverCoach\ForeverCoach
