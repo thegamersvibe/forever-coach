@@ -1,5 +1,35 @@
 {
-  "FixedFileInfo": {"FileVersion": {"Major": 1, "Minor": 0, "Patch": 1, "Build": 0}, "ProductVersion": {"Major": 1, "Minor": 0, "Patch": 1, "Build": 0}, "FileFlagsMask": "3f", "FileOS": "040004", "FileType": "01"},
-  "StringFileInfo": {"CompanyName": "TheGamersVibe", "FileDescription": "Forever Coach - leveling report for WoW Forever", "FileVersion": "1.0.1", "InternalName": "ForeverCoach", "LegalCopyright": "MIT License, TheGamersVibe", "OriginalFilename": "ForeverCoach.exe", "ProductName": "Forever Coach", "ProductVersion": "1.0.1"},
-  "VarFileInfo": {"Translation": {"LangID": "0409", "CharsetID": "04B0"}}
+  "FixedFileInfo": {
+    "FileVersion": {
+      "Major": 1,
+      "Minor": 0,
+      "Patch": 1,
+      "Build": 0
+    },
+    "ProductVersion": {
+      "Major": 1,
+      "Minor": 0,
+      "Patch": 1,
+      "Build": 0
+    },
+    "FileFlagsMask": "3f",
+    "FileOS": "040004",
+    "FileType": "01"
+  },
+  "StringFileInfo": {
+    "CompanyName": "TheGamersVibe",
+    "FileDescription": "Forever Coach - leveling report for WoW Forever",
+    "FileVersion": "1.0.1",
+    "InternalName": "ForeverCoach",
+    "LegalCopyright": "MIT License, TheGamersVibe",
+    "OriginalFilename": "ForeverCoach.exe",
+    "ProductName": "Forever Coach",
+    "ProductVersion": "1.0.1"
+  },
+  "VarFileInfo": {
+    "Translation": {
+      "LangID": "0409",
+      "CharsetID": "04B0"
+    }
+  }
 }
