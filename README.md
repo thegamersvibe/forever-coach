@@ -29,7 +29,7 @@ Run `ForeverCoach.exe` (no install). It opens a report in your browser that refr
 ## Commands
 - `/coach`: open or close the window
 - `/coach top`: top 3 fixes in chat
-- `/coach spec <id|auto>`: which spec to score gear for (GearQuest ids: `protection`, `arms`, `fury`, `bear`, `holy`…)
+- `/coach spec <id|auto>`, `/coach macros` (creates stance macros for warriors): which spec to score gear for (GearQuest ids: `protection`, `arms`, `fury`, `bear`, `holy`…)
 
 ## Safety
 No memory reading, no input automation, no network access from the addon. Only data the game gives every addon, and files the game itself writes.

@@ -102,8 +102,17 @@ SlashCmdList.FOREVERCOACH = function(msg)
             if i > 3 then break end
             FC:Print(f.area .. ": " .. f.text .. (f.where and (" [" .. f.where .. "]") or "") .. (f.fix and (" -> " .. f.fix) or ""))
         end
+    elseif cmd == "macros" then
+        local _, cls = UnitClass("player")
+        local made, skipped, full, err = FC.Macros:Install(cls)
+        if err then FC:Print(err) return end
+        if #made > 0 then FC:Print("created: " .. table.concat(made, ", ")) end
+        if #skipped > 0 then FC:Print("already there (left unchanged): " .. table.concat(skipped, ", ")) end
+        if #full > 0 then FC:Print("no free character macro slot for: " .. table.concat(full, ", ")) end
+        FC:Print("Open /macro, Character Specific tab, and drag them to a bar that doesn't swap with stance.")
+        if ShowMacroFrame then pcall(ShowMacroFrame) end
     elseif cmd == "help" then
-        FC:Print("/coach (window), /coach top (top 3 in chat), /coach spec <id|auto>")
+        FC:Print("/coach (window), /coach top (top 3 in chat), /coach spec <id|auto>, /coach macros")
     else
         UI:Toggle()
     end

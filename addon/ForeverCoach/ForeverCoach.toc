@@ -15,4 +15,5 @@ Gear.lua
 Talents.lua
 Dungeons.lua
 Audit.lua
+Macros.lua
 UI.lua

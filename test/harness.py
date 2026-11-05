@@ -16,7 +16,7 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ADDON = os.path.join(ROOT, 'addon', 'ForeverCoach')
 GQDIR = sys.argv[1] if len(sys.argv) > 1 else None
 FDJDIR = sys.argv[2] if len(sys.argv) > 2 else None
-FILES = ['Rules', 'Core', 'Route', 'Session', 'Gear', 'Talents', 'Dungeons', 'Audit', 'UI']
+FILES = ['Rules', 'Core', 'Route', 'Session', 'Gear', 'Talents', 'Dungeons', 'Audit', 'Macros', 'UI']
 
 MOCK = r'''
 local now = 1000
@@ -392,6 +392,32 @@ for key, b in sorted(RULES['talentBuilds'].items()):
         if not ok or other:
             sweep_fail.append((key, lvl, c.lastError and c.lastError.err, other[:2]))
 check(not sweep_fail, f'{len(RULES["talentBuilds"])} specs x 3 levels: plan built, no errors, no other-class tips {sweep_fail[:4]}')
+
+# 10. /coach macros: creates warrior macros, never overwrites, respects limits, blocked in combat
+print('== /coach macros')
+L, G, FC, c = client(gq=False)
+L.execute('''
+  MACROS = { {name="FC Taunt", body="mine"} }
+  function GetMacroIndexByName(n) for i, m in ipairs(MACROS) do if m.name == n then return i end end return 0 end
+  function GetNumMacros() return 0, #MACROS end
+  function CreateMacro(n, icon, body, perChar)
+    assert(#n <= 16, "name too long: " .. n); assert(#body <= 255, "body too long: " .. n); assert(perChar == true)
+    MACROS[#MACROS + 1] = {name=n, body=body}; return #MACROS
+  end
+  INCOMBAT = false
+  function InCombatLockdown() return INCOMBAT end
+''')
+SlashCmd = G.SlashCmdList.FOREVERCOACH
+SlashCmd('macros')
+ms = G.MACROS
+names = [ms[i].name for i in range(1, len(ms) + 1)]
+check(len(names) == 9 and names.count('FC Taunt') == 1, f'8 new warrior macros created, existing one kept ({names})')
+check(ms[1].body == 'mine', 'existing macro not overwritten')
+SlashCmd('macros')
+check(len(G.MACROS) == 9, 'running twice creates no duplicates')
+L.execute('INCOMBAT = true; MACROS = {}'); SlashCmd('macros')
+check(len(G.MACROS) == 0 and any('combat' in str(m) for m in G.CHAT.values()), 'blocked in combat with a message')
+check(c.lastError is None, 'no internal error')
 
 print('ALL OK' if not fails else f'{len(fails)} FAILED')
 sys.exit(1 if fails else 0)
