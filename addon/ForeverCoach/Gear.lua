@@ -9,6 +9,9 @@ G.SLOTS = { -- inventory slot id -> GearQuest slot name
     [6] = "Waist", [7] = "Legs", [8] = "Feet", [11] = "Finger", [12] = "Finger", [13] = "Trinket", [14] = "Trinket",
     [16] = "MainHand", [17] = "SecondaryHand", [18] = "Ranged",
 }
+G.LABELS = { [1] = "Head", [2] = "Neck", [3] = "Shoulder", [15] = "Back", [5] = "Chest", [9] = "Wrist", [10] = "Hands",
+    [6] = "Waist", [7] = "Legs", [8] = "Feet", [11] = "Ring 1", [12] = "Ring 2", [13] = "Trinket 1", [14] = "Trinket 2",
+    [16] = "Main Hand", [17] = "Off Hand", [18] = "Ranged" }
 -- GearQuest tab order per class (used only when GearQuest can't tell us the spec)
 local TAB_SPEC = {
     WARRIOR = { "arms", "fury", "protection" }, PALADIN = { "holy", "protection", "retribution" },
@@ -122,7 +125,7 @@ function G:Audit(snap)
     for inv, slot in pairs(self.SLOTS) do
         local eq = snap.equipped[inv]
         local best = bestFor[slot]
-        local entry = { slot = slot, inv = inv, best = best }
+        local entry = { slot = slot, label = G.LABELS[inv], inv = inv, best = best }
         if eq then
             entry.id = eq.id
             entry.score = scoreOf[eq.id]

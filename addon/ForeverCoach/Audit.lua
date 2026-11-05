@@ -58,10 +58,10 @@ function A:Run(c)
                 local gap = e.gapPct or 0
                 if not e.id and snap.level >= 5 then
                     seen[e.slot .. b.id] = true
-                    add(F, 65, "Gear", "Empty " .. e.slot .. " slot", (b.name or ("item " .. b.id)) .. " — " .. FC.Gear.Short(b.how or b.source))
+                    add(F, 65, "Gear", "Empty " .. (e.label or e.slot) .. " slot", (b.name or ("item " .. b.id)) .. " — " .. FC.Gear.Short(b.how or b.source))
                 elseif gap >= (T.gearUpgradePct or 12) then
                     seen[e.slot .. b.id] = true
-                    add(F, math.min(85, 30 + gap / 2), "Gear", e.slot .. " is " .. gap .. "% behind the best for your level",
+                    add(F, math.min(85, 30 + gap / 2), "Gear", (e.label or e.slot) .. " is " .. gap .. "% behind the best for your level",
                         (b.name or ("item " .. b.id)) .. " — " .. FC.Gear.Short(b.how or b.source))
                 end
             end

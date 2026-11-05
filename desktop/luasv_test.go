@@ -1,6 +1,7 @@
 package main
 
 import (
+	"html/template"
 	"os"
 	"strings"
 	"testing"
@@ -82,4 +83,25 @@ func TestRulesToLuaRoundTrip(t *testing.T) {
 	if !semverLess("1.0.0", "v1.0.1") || semverLess("1.10.0", "1.9.9") || semverLess("1.0.0", "1.0.0") {
 		t.Fatal("semver")
 	}
+}
+
+func TestRender(t *testing.T) {
+	p := os.Getenv("SV_FILE")
+	if p == "" {
+		t.Skip()
+	}
+	b, _ := os.ReadFile(p)
+	v, err := ParseSavedVariables(string(b))
+	if err != nil {
+		t.Fatal(err)
+	}
+	tpl := template.Must(template.New("report.html").Funcs(funcs).ParseFS(assets, "report.html"))
+	var sb strings.Builder
+	if err := tpl.Execute(&sb, View{Chars: buildChars(M(v["ForeverCoachDB"])), AppVersion: Version, RulesVersion: "1.0.0"}); err != nil {
+		t.Fatal(err)
+	}
+	if strings.Contains(sb.String(), "ZgotmplZ") {
+		t.Fatal("unsafe css placeholder in output")
+	}
+	os.WriteFile(os.Getenv("HTML_OUT"), []byte(sb.String()), 0o644)
 }

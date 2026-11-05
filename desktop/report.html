@@ -2,45 +2,249 @@
 <html lang="en"><head><meta charset="utf-8"><title>Forever Coach</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-:root{--bg:#0e1116;--card:#161b22;--fg:#e6edf3;--mut:#8b949e;--line:#30363d;--Build:#ffd54f;--Gear:#81c784;--Play:#4fc3f7;--Next:#b0bec5}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 "Segoe UI",system-ui,sans-serif}
-main{max-width:860px;margin:0 auto;padding:24px}
-h1{font-size:22px;margin:0 0 4px}.mut{color:var(--mut);font-size:13px}
-.note{background:#1f2a37;border:1px solid #2f81f7;border-radius:8px;padding:10px 14px;margin:14px 0}
-.err{background:#3a1d1d;border-color:#f85149}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:18px 0}
-.head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.bar{height:6px;background:#30363d;border-radius:3px;margin:8px 0 2px;overflow:hidden;position:relative}
-.bar i{display:block;height:100%;background:#a371f7}.bar b{position:absolute;top:0;height:100%;background:#2f81f744}
-ol{padding-left:0;list-style:none;margin:14px 0 0}
-li{padding:10px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:60px 1fr;gap:10px}
-.tag{font-size:12px;font-weight:600;padding:2px 0}
-.fix{color:var(--mut);font-size:13px;margin-top:2px}
-.ok{color:var(--Gear)}
-details{margin-top:10px}summary{cursor:pointer;color:var(--mut)}
+:root{
+  --bg:#07090d;--bg2:#0d1118;--card:#121823cc;--card2:#171f2c;--line:#263042;--line2:#3a4458;
+  --fg:#e9edf3;--mut:#a3adbd;--dim:#7d879a;--gold:#e8c46a;--gold2:#a8842f;
+  --Build:#f2c94c;--Gear:#6fcf97;--Play:#56ccf2;--Next:#a5b4c8;--bad:#ff6b6b;--warn:#ffb454;--ok:#6fcf97;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;color:var(--fg);font:14.5px/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;min-height:100vh;
+  background:radial-gradient(1200px 600px at 15% -10%,#1b2540 0%,transparent 60%),radial-gradient(900px 500px at 100% 0%,#2a1d12 0%,transparent 55%),var(--bg)}
+main{max-width:1180px;margin:0 auto;padding:28px 28px 60px}
+a{color:var(--gold)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.crest{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-weight:800;color:#1a1306;
+  background:linear-gradient(145deg,#ffe19a,var(--gold) 45%,var(--gold2));box-shadow:0 0 0 1px #ffffff22 inset,0 6px 20px #e8c46a33}
+.brand h1{margin:0;font-size:19px;letter-spacing:.4px}
+.brand small{display:block;color:var(--mut);font-size:12px}
+.live{display:flex;align-items:center;gap:8px;color:var(--mut);font-size:12px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #6fcf9788}70%{box-shadow:0 0 0 8px #6fcf9700}100%{box-shadow:0 0 0 0 #6fcf9700}}
+.note{border-radius:12px;padding:12px 16px;margin:0 0 18px;border:1px solid #2f81f766;background:#11223d99}
+.note.err{border-color:#ff6b6b66;background:#3a161699}
+.card{background:var(--card);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;padding:20px;position:relative}
+.card h3{margin:0 0 14px;font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:#c8d0dc;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.grid{display:grid;gap:18px}
+.hero{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:24px 26px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--cc) -40%,transparent 45%);opacity:.18;pointer-events:none;border-radius:16px}
+.ring{--p:0;width:112px;height:112px;border-radius:50%;display:grid;place-items:center;position:relative;
+  background:conic-gradient(#9d6bff calc(var(--p)*1%),#ffffff10 0)}
+.ring:after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);box-shadow:inset 0 0 20px #000a}
+.ring b{position:relative;z-index:1;font-size:38px;line-height:1;font-weight:800;text-align:center}
+.ring b small{display:block;font-size:10px;letter-spacing:1.5px;color:var(--mut);font-weight:600;margin-top:4px}
+.who .name{font-size:30px;text-shadow:0 2px 18px #0008;font-weight:800;letter-spacing:.3px;color:var(--cc)}
+.who .realm{color:var(--mut);font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{border:1px solid var(--line2);background:#ffffff08;border-radius:999px;padding:3px 11px;font-size:12.5px;color:#cfd6e2}
+.chip b{color:var(--fg)}
+.xp{margin-top:14px;max-width:560px}
+.bar{height:10px;border-radius:6px;background:#ffffff0d;position:relative;overflow:hidden;border:1px solid #ffffff10}
+.bar i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,#7b4dff,#b388ff);border-radius:6px}
+.bar u{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,#3d7bff66 0 6px,#3d7bff33 6px 12px)}
+.xpmeta{display:flex;justify-content:space-between;color:var(--mut);font-size:12px;margin-top:5px}
+.side{text-align:right;color:var(--mut);font-size:12.5px;line-height:1.9}
+.side b{color:var(--fg);font-size:15px}
+.gold{color:var(--gold)!important}
+.tiles{grid-template-columns:repeat(6,1fr);margin:18px 0}
+.tile{padding:14px 16px}
+.tile .k{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut)}
+.tile .v{font-size:24px;font-weight:800;margin-top:2px}
+.tile .s{font-size:12px;color:var(--dim)}
+.cols{grid-template-columns:1.35fr 1fr}
+.fix{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:start;padding:14px 0;border-top:1px solid var(--line)}
+.fix:first-of-type{border-top:0;padding-top:4px}
+.ico{color:var(--a);width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:18px;background:color-mix(in srgb,var(--a) 16%,transparent);border:1px solid color-mix(in srgb,var(--a) 45%,transparent)}
+.fix .t{font-weight:600}
+.fix .h{color:var(--mut);font-size:13px;margin-top:3px}
+.imp{display:flex;gap:3px;margin-top:7px}
+.imp i{width:14px;height:4px;border-radius:2px;background:#ffffff14}
+.imp i.on{background:var(--a)}
+.tag{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--a);padding-top:2px}
+.top3 .fix .t{font-size:15.5px}
+.filters{display:flex;gap:6px}
+.filters button{background:#ffffff08;border:1px solid var(--line2);color:var(--mut);border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer}
+.filters button.on{color:#111;background:var(--gold);border-color:var(--gold)}
+.more{max-height:440px;overflow:auto;padding-right:6px;-webkit-mask-image:linear-gradient(#000 88%,transparent);mask-image:linear-gradient(#000 88%,transparent);padding-bottom:36px}
+.more::-webkit-scrollbar{width:6px}.more::-webkit-scrollbar-thumb{background:#3a4458;border-radius:3px}
+.empty{color:var(--ok);padding:6px 0}
+.hint{color:var(--mut);font-size:13px}
+.doll{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.slot{display:grid;grid-template-columns:4px 1fr;gap:10px;background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:8px 10px 8px 0;min-height:56px;position:relative;cursor:default}
+.slot:hover{border-color:var(--q)}
+.slot .edge{border-radius:10px 0 0 10px;background:var(--q)}
+.slot .sn{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.slot .it{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:36px}
+.slot .it.none{color:#c9878b;font-weight:500;font-style:italic}
+.slot.w{grid-column:span 1}
+.wrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.wrow .slot .it{padding-right:30px}
+.slot .gap{position:absolute;right:9px;top:8px;font-size:11px;font-weight:700;color:var(--q)}
+.slot:after{content:"›";position:absolute;right:9px;bottom:6px;color:var(--dim);font-size:14px}
+.slot .tip{display:none;position:absolute;z-index:5;left:0;right:0;top:calc(100% + 6px);background:#0b0f16;border:1px solid var(--gold2);border-radius:10px;padding:10px 12px;font-size:12.5px;color:#d7dde7;box-shadow:0 12px 30px #000c}
+.slot:hover .tip{display:block}
+.tip b{color:var(--gold)}
+.legend{display:flex;gap:12px;font-size:11.5px;color:var(--mut);margin-top:10px;flex-wrap:wrap}
+.legend span:before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;background:var(--q)}
+.gscore{font-size:12px;color:var(--mut);text-transform:none;letter-spacing:0}
+.gscore b{font-size:16px;color:var(--fg)}
+.split{display:flex;height:14px;border-radius:7px;overflow:hidden;background:#ffffff0d;margin:6px 0 8px}
+.split span{display:block;height:100%}
+.keys{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--mut)}
+.keys i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.proc .row{display:grid;grid-template-columns:120px 1fr 84px;gap:10px;align-items:center;margin:7px 0;font-size:13px}
+.proc .row .bar{height:8px}
+.proc .row .bar i{background:var(--pc)}
+.talent .row{display:grid;grid-template-columns:110px 1fr 30px;gap:10px;align-items:center;margin:8px 0;font-size:13px}
+.talent .bar i{background:linear-gradient(90deg,var(--gold2),var(--gold))}
+.deaths{list-style:none;margin:0;padding:0}
+.deaths li{padding:7px 0;border-top:1px dashed var(--line);font-size:13px;color:#cfd6e2}
+.deaths li:first-child{border-top:0}
+.deaths li:before{content:"☠";color:var(--bad);margin-right:8px}
+.foot{color:var(--dim);font-size:12px;text-align:center;margin-top:30px}
+.charsw{display:flex;gap:8px;margin:-6px 0 16px;flex-wrap:wrap}
+.charsw a{text-decoration:none;font-size:12.5px;padding:4px 12px;border-radius:999px;border:1px solid var(--line2);color:var(--mut)}
+.charsw a:hover{color:var(--fg)}
+@media (max-width:1000px){.cols,.hero{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(3,1fr)}.side{text-align:left}}
 </style></head><body><main>
-<h1>Forever Coach</h1>
-<div class="mut">Updates when the game saves (/reload, logout). App {{.AppVersion}} · rules {{if .RulesVersion}}{{.RulesVersion}}{{else}}not installed{{end}}</div>
+
+<div class="top">
+  <div class="brand"><div class="crest">FC</div><div><h1>Forever Coach</h1><small>WoW Forever leveling report</small></div></div>
+  <div class="live"><span class="dot"></span>Live · refreshes when the game saves (/reload, logout) · app {{.AppVersion}} · rules {{if .RulesVersion}}{{.RulesVersion}}{{else}}none{{end}}</div>
+</div>
 {{if .UpdateNote}}<div class="note">{{.UpdateNote}}</div>{{end}}
 {{if .Error}}<div class="note err">{{.Error}}</div>{{end}}
+{{if gt (len .Chars) 1}}<div class="charsw">{{range .Chars}}<a href="#{{.Key}}">{{.Name}} · {{.Level}}</a>{{end}}</div>{{end}}
+
 {{range .Chars}}
-<section class="card">
- <div class="head">
-  <div><b>{{.Name}}</b> <span class="mut">{{.Realm}}</span><br>
-   <span class="mut">Level {{.Level}} {{.Race}} {{.Class | lower}} · {{.Faction}} · gear spec {{.Spec}}{{if .SpecSource}} ({{.SpecSource}}){{end}}</span></div>
-  <div class="mut" style="text-align:right">saved {{ago .Updated}}{{if .XPPerHour}}<br>{{.XPPerHour}} XP/hour{{end}}</div>
+<section id="{{.Key}}" style="--cc:{{css .ClassColor}};margin-bottom:46px">
+
+ <div class="card hero">
+  <div class="ring" style="--p:{{.XPPct}}"><b>{{.Level}}<small>LEVEL · {{.XPPct}}%</small></b></div>
+  <div class="who">
+   <div class="name">{{.Name}}</div>
+   <div class="realm">{{.Realm}}</div>
+   <div class="chips">
+    <span class="chip">{{.Race}} <b>{{title .Class}}</b></span>
+    <span class="chip">{{.Faction}}</span>
+    <span class="chip" title="Spec source: {{.SpecSource}}">Spec <b>{{title .Spec}}</b></span>
+   </div>
+   <div class="xp">
+    <div class="bar"><u style="left:{{.XPPct}}%;width:{{.RestedPct}}%"></u><i style="width:{{.XPPct}}%"></i></div>
+    <div class="xpmeta"><span>{{.XPPct}}% · {{commas .Stats.XPToLevel}} XP to level {{inc .Level}}</span><span>{{if .RestedPct}}Rested +{{.RestedPct}}%{{else}}No rested XP{{end}}</span></div>
+   </div>
+  </div>
+  <div class="side">
+   <div>Saved <b>{{ago .Updated}}</b></div>
+   <div>Gold <b class="gold">{{.Money}}</b></div>
+   <div>Sessions <b>{{.Sessions}}</b></div>
+  </div>
  </div>
- <div class="bar"><b style="left:{{.XPPct}}%;width:{{.RestedPct}}%"></b><i style="width:{{.XPPct}}%"></i></div>
- <div class="mut">{{.XPPct}}% to next level{{if .RestedPct}} · rested {{.RestedPct}}%{{end}}</div>
- {{if .Findings}}<ol>{{range $i, $f := .Findings}}{{if lt $i 15}}
-  <li><span class="tag" style="color:var(--{{$f.Area}})">{{$f.Area}}</span>
-   <div>{{$f.Text}}{{if $f.Fix}}<div class="fix">{{$f.Fix}}</div>{{end}}</div></li>{{end}}{{end}}</ol>
- {{else}}<p class="ok">Nothing to fix right now.</p>{{end}}
- {{if .Deaths}}<details><summary>Recent deaths ({{len .Deaths}})</summary><ul>{{range .Deaths}}<li style="display:block">{{.}}</li>{{end}}</ul></details>{{end}}
- <div class="mut" style="margin-top:8px">{{.Sessions}} session(s) recorded</div>
+
+ <div class="grid tiles">
+  <div class="card tile"><div class="k">XP / hour</div><div class="v">{{if .XPPerHour}}{{commas .XPPerHour}}{{else}}—{{end}}</div><div class="s">{{if .XPPerHour}}recent sessions{{else}}needs 10+ min of play{{end}}</div></div>
+  <div class="card tile"><div class="k">Next level</div><div class="v">{{if .Stats.MinToLevel}}{{dur .Stats.MinToLevel}}{{else}}—{{end}}</div><div class="s">{{if .Stats.MinToLevel}}at current pace{{else}}needs XP/hour{{end}}</div></div>
+  <div class="card tile"><div class="k">Gear</div><div class="v" style="color:{{css (scoreColor .GearScorePct)}}">{{if .Slots}}{{.GearScorePct}}%{{else}}—{{end}}</div><div class="s">of best for your level</div></div>
+  <div class="card tile"><div class="k">Deaths / hour</div><div class="v">{{if .Stats.HasData}}{{.Stats.DeathsPerHour}}{{else}}—{{end}}</div><div class="s">{{.Stats.Deaths}} recent</div></div>
+  <div class="card tile"><div class="k">Downtime</div><div class="v">{{if .Stats.HasData}}{{.Stats.DowntimePct}}%{{else}}—{{end}}</div><div class="s">eating / recovering</div></div>
+  <div class="card tile"><div class="k">To fix</div><div class="v">{{len .Findings}}</div><div class="s">{{index .Counts "Build"}}B · {{index .Counts "Gear"}}G · {{index .Counts "Play"}}P{{with index .Counts "Next"}} · {{.}} tip{{end}}</div></div>
+ </div>
+
+ <div class="grid cols">
+  <div class="grid" style="align-content:start">
+   <div class="card top3">
+    <h3>Do these next</h3>
+    {{range $i, $f := .Findings}}{{if lt $i 3}}
+    <div class="fix" style="--a:var(--{{$f.Area}})">
+     <div class="ico">{{icon $f.Area}}</div>
+     <div><div class="t">{{$f.Text}}</div>{{if $f.Fix}}<div class="h">{{$f.Fix}}</div>{{end}}
+      <div class="imp" title="impact">{{range bars $f.Impact}}<i class="{{if .}}on{{end}}"></i>{{end}}</div></div>
+     <div class="tag">{{$f.Area}}</div>
+    </div>{{end}}{{else}}<div class="empty">✓ Nothing to fix right now. Play a bit, then /reload.</div>{{end}}
+   </div>
+
+   {{if gt (len .Findings) 3}}
+   <div class="card">
+    <h3>Everything else · {{sub (len .Findings) 3}} more <span class="filters">
+     <button class="on" data-f="all">All</button><button data-f="Build">Build</button><button data-f="Gear">Gear</button><button data-f="Play">Play</button></span></h3>
+    <div class="more">
+    {{range $i, $f := .Findings}}{{if ge $i 3}}
+     <div class="fix" data-area="{{$f.Area}}" style="--a:var(--{{$f.Area}})">
+      <div class="ico">{{icon $f.Area}}</div>
+      <div><div class="t">{{$f.Text}}</div>{{if $f.Fix}}<div class="h">{{$f.Fix}}</div>{{end}}</div>
+      <div class="tag">{{$f.Area}}</div>
+     </div>{{end}}{{end}}
+    </div>
+   </div>{{end}}
+
+   <div class="card">
+    <h3>How your time went {{if .Stats.HasData}}<span class="gscore"><b>{{dur .Stats.PlayMin}}</b> played</span>{{end}}</h3>
+    {{if .Stats.HasData}}
+    <div class="split">
+     <span style="width:{{.Stats.CombatPct}}%;background:#56ccf2" title="Combat"></span>
+     <span style="width:{{.Stats.DowntimePct}}%;background:#ffb454" title="Recovering"></span>
+     <span style="width:{{.Stats.DeadPct}}%;background:#ff6b6b" title="Dead"></span>
+     <span style="width:{{rest .Stats}}%;background:#7c6cc4" title="Travel / questing"></span>
+    </div>
+    <div class="keys"><span><i style="background:#56ccf2"></i>Combat {{.Stats.CombatPct}}%</span><span><i style="background:#ffb454"></i>Recovering {{.Stats.DowntimePct}}%</span><span><i style="background:#ff6b6b"></i>Dead {{.Stats.DeadPct}}%</span><span><i style="background:#7c6cc4"></i>Travel / questing {{rest .Stats}}%</span></div>
+    {{if .Procs}}<div class="proc"><h3 style="margin:18px 0 4px">Proc usage</h3>
+     {{range .Procs}}<div class="row" style="--pc:{{css (procColor .UsedPct)}}"><span>{{.Name}}</span><div class="bar"><i style="width:{{.UsedPct}}%"></i></div><span style="text-align:right;color:var(--mut)">{{.Used}}/{{.Windows}} · {{.UsedPct}}%</span></div>{{end}}
+    </div>{{end}}
+    {{else}}<div class="hint">Play 10+ minutes, then /reload, to see combat, downtime and proc stats.</div>{{end}}
+   </div>
+  </div>
+
+  <div class="grid" style="align-content:start">
+   <div class="card">
+    <h3>Gear vs best for level {{.Level}} {{if .Slots}}<span class="gscore"><b>{{.GearScorePct}}%</b></span>{{end}}</h3>
+    {{if .GearNote}}<div class="note" style="margin:0 0 10px">{{.GearNote}}</div>{{end}}
+    <div class="doll">
+     {{range .Slots}}{{if not .Weapon}}
+     <div class="slot" style="--q:{{css (gapColor .GapPct .Equipped)}}">
+      <div class="edge"></div>
+      <div style="min-width:0">
+       <div class="sn">{{.Name}}</div>
+       <div class="it{{if not .Equipped}} none{{end}}">{{if .Equipped}}{{.Item}}{{else}}Empty{{end}}</div>
+       {{if and .BestName .Equipped (gt .GapPct 0)}}<div class="gap">-{{.GapPct}}%</div>{{end}}
+      </div>
+      {{if .BestName}}<div class="tip">{{if eq .GapPct 0}}✓ Best piece available at your level.{{else}}Upgrade: <b>{{.BestName}}</b><br>{{short .BestHow}}{{end}}</div>{{end}}
+     </div>{{end}}{{end}}
+    </div>
+    <div class="wrow">{{range .Slots}}{{if .Weapon}}
+     <div class="slot" style="--q:{{css (gapColor .GapPct .Equipped)}}">
+      <div class="edge"></div>
+      <div style="min-width:0">
+       <div class="sn">{{.Name}}</div>
+       <div class="it{{if not .Equipped}} none{{end}}">{{if .Equipped}}{{.Item}}{{else}}Empty{{end}}</div>
+       {{if and .BestName .Equipped (gt .GapPct 0)}}<div class="gap">-{{.GapPct}}%</div>{{end}}
+      </div>
+      {{if .BestName}}<div class="tip">{{if eq .GapPct 0}}✓ Best piece available at your level.{{else}}Upgrade: <b>{{.BestName}}</b><br>{{short .BestHow}}{{end}}</div>{{end}}
+     </div>{{end}}{{end}}</div>
+    <div class="legend"><span style="--q:var(--ok)">Best / near best</span><span style="--q:var(--warn)">Behind</span><span style="--q:var(--bad)">Far behind / empty</span><span style="--q:#4a5468">No data</span></div>
+    <div class="hint" style="margin-top:8px">Hover a slot to see the upgrade and where to get it.</div>
+   </div>
+
+   {{if .Talents}}<div class="card talent">
+    <h3>Talents <span class="gscore">bars = share of points available at {{.Level}}</span></h3>
+    {{range .Talents}}<div class="row"><span>{{.Name}}</span><div class="bar"><i style="width:{{.Pct}}%"></i></div><b style="text-align:right">{{.Spent}}</b></div>{{end}}
+   </div>{{end}}
+
+   <div class="card">
+    <h3>Recent deaths</h3>
+    {{if .Deaths}}<ul class="deaths">{{range .Deaths}}<li>{{.}}</li>{{end}}</ul>{{else}}<div class="empty">✓ No recent deaths.</div>{{end}}
+   </div>
+  </div>
+ </div>
 </section>
 {{end}}
+
+<div class="foot">Forever Coach is open source · <a href="https://github.com/thegamersvibe/forever-coach" target="_blank">TheGamersVibe/forever-coach</a> · reads only ForeverCoach's own save file</div>
 </main>
 <script>
+document.querySelectorAll('.filters').forEach(fl=>{
+  fl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+    fl.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+    fl.closest('.card').querySelectorAll('.more .fix').forEach(r=>{r.style.display=(b.dataset.f==='all'||r.dataset.area===b.dataset.f)?'':'none'})})});
 let s=null;setInterval(async()=>{try{const t=await (await fetch('/stamp')).text();if(s&&t!==s)location.reload();s=t}catch(e){}},2000)
 </script></body></html>

@@ -18,12 +18,11 @@ import (
 	"path/filepath"
 	"runtime"
 	"sort"
-	"strings"
 	"sync"
 	"time"
 )
 
-const Version = "1.0.0"
+const Version = "1.0.1"
 const Repo = "thegamersvibe/forever-coach"
 const RulesSchema = 1
 
@@ -46,6 +45,40 @@ type CharView struct {
 	Findings                                                 []Finding
 	Sessions                                                 int
 	Deaths                                                   []string
+	Money                                                    string
+	ClassColor                                               string
+	Slots                                                    []SlotView
+	Talents                                                  []TalentView
+	Procs                                                    []ProcView
+	Stats                                                    StatView
+	Counts                                                   map[string]int
+	GearScorePct                                             int
+	GearNote                                                 string
+}
+
+type SlotView struct {
+	Name, Item, BestName, BestHow, BestSource string
+	Equipped, Weapon                          bool
+	GapPct                                    int
+}
+
+type TalentView struct {
+	Name  string
+	Spent int
+	Pct   int
+}
+
+type ProcView struct {
+	Name          string
+	Used, Windows int
+	UsedPct       int
+}
+
+type StatView struct {
+	PlayMin, CombatPct, DowntimePct, DeadPct, Deaths, Kills int
+	DeathsPerHour                                           string
+	XPToLevel, MinToLevel                                   int
+	HasData                                                 bool
 }
 
 type View struct {
@@ -79,26 +112,31 @@ func main() {
 	app.svPath = findSavedVariables(game)
 	app.reload()
 
-	if !*noUpdate {
+	checkUpdates := func() {
 		note := app.updateRules()
 		app.mu.Lock()
 		app.view.UpdateNote = note
+		app.view.Loaded = time.Now() // page auto-refreshes to show the note
 		app.mu.Unlock()
 	}
 	if *once {
+		if !*noUpdate {
+			checkUpdates()
+		}
 		printConsole(app.snapshot())
 		return
 	}
 	go app.watch()
+	if !*noUpdate {
+		go checkUpdates() // never delay the page on a slow network
+	}
 
 	ln, err := net.Listen("tcp", fmt.Sprintf("127.0.0.1:%d", *port))
 	if err != nil {
 		log.Fatalf("port %d busy (already running?): %v", *port, err)
 	}
 	url := fmt.Sprintf("http://127.0.0.1:%d/", *port)
-	tpl := template.Must(template.New("report.html").Funcs(template.FuncMap{
-		"lower": strings.ToLower, "ago": ago,
-	}).ParseFS(assets, "report.html"))
+	tpl := template.Must(template.New("report.html").Funcs(funcs).ParseFS(assets, "report.html"))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
 		if err := tpl.Execute(w, app.snapshot()); err != nil {
@@ -199,6 +237,7 @@ func buildChars(db map[string]any) []CharView {
 				cv.Deaths = append(cv.Deaths, line)
 			}
 		}
+		enrich(&cv, c, s, g, sess)
 		out = append(out, cv)
 	}
 	sort.Slice(out, func(i, j int) bool { return out[i].Updated.After(out[j].Updated) })
