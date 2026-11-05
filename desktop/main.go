@@ -26,7 +26,7 @@ const Version = "1.0.1"
 const Repo = "thegamersvibe/forever-coach"
 const RulesSchema = 1
 
-//go:embed report.html
+//go:embed report.html logo.png
 var assets embed.FS
 
 type Finding struct {
@@ -142,6 +142,12 @@ func main() {
 		if err := tpl.Execute(w, app.snapshot()); err != nil {
 			http.Error(w, err.Error(), 500)
 		}
+	})
+	http.HandleFunc("/logo.png", func(w http.ResponseWriter, r *http.Request) {
+		b, _ := assets.ReadFile("logo.png")
+		w.Header().Set("Content-Type", "image/png")
+		w.Header().Set("Cache-Control", "max-age=86400")
+		w.Write(b)
 	})
 	http.HandleFunc("/stamp", func(w http.ResponseWriter, r *http.Request) {
 		v := app.snapshot()

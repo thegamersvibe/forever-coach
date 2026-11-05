@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>Forever Coach</title>
+<link rel="icon" type="image/png" href="/logo.png">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 :root{
@@ -110,7 +111,7 @@ a{color:var(--gold)}
 </style></head><body><main>
 
 <div class="top">
-  <div class="brand"><div class="crest">FC</div><div><h1>Forever Coach</h1><small>WoW Forever leveling report</small></div></div>
+  <div class="brand"><img class="crest" src="/logo.png" alt=""><div><h1>Forever Coach</h1><small>WoW Forever leveling report</small></div></div>
   <div class="live"><span class="dot"></span>Live · refreshes when the game saves (/reload, logout) · app {{.AppVersion}} · rules {{if .RulesVersion}}{{.RulesVersion}}{{else}}none{{end}}</div>
 </div>
 {{if .UpdateNote}}<div class="note">{{.UpdateNote}}</div>{{end}}

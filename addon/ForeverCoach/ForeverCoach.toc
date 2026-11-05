@@ -5,7 +5,7 @@
 ## Version: 1.0.1
 ## SavedVariables: ForeverCoachDB
 ## OptionalDeps: GearQuestForever, Journey, ForeverDungeonJournal
-## IconTexture: Interface\Icons\INV_Misc_Book_11
+## IconTexture: Interface\AddOns\ForeverCoach\ForeverCoach
 
 Rules.lua
 Core.lua

@@ -19,6 +19,7 @@ Run `ForeverCoach.exe` (no install). It opens a report in your browser that refr
 - Reads **only** `WTF\Account\*\SavedVariables\ForeverCoach.lua`.
 - Keeps `ForeverCoach\Rules.lua` up to date from this repo (same rules schema only). After an update, `/reload` in game.
 - When a new addon or app version is out, it shows a link. It never installs code on its own.
+- **Norton / other antivirus:** Norton's auto-sandbox (CyberCapture) silently blocks new unsigned downloads, so the app looks like it does nothing. Add the folder holding `ForeverCoach.exe` to Norton → Settings → Antivirus → Scans and Risks → *Items to Exclude from Auto-Protect, SONAR and Download Intelligence*.
 - Windows SmartScreen may warn because the exe isn't code-signed. Choose "More info → Run anyway", or build it yourself (`desktop/`, Go 1.22+).
 - If the game is under Program Files and the rules update fails with "access denied", run it once as administrator, or ignore it (the addon still works with its bundled rules).
 - Options: `-game "D:\...\_forever_"`, `-port 47321`, `-once` (print to console), `-no-update`.
