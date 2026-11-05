@@ -422,6 +422,21 @@ check(len(G.MACROS) == 10, 'running twice creates no duplicates')
 L.execute('INCOMBAT = true; MACROS = {}'); SlashCmd('macros')
 check(len(G.MACROS) == 0 and any('combat' in str(m) for m in G.CHAT.values()), 'blocked in combat with a message')
 check(c.lastError is None, 'no internal error')
+sets = L.eval('ForeverCoach.Macros.SETS')
+bad, total = [], 0
+for cls in ['WARRIOR', 'PALADIN', 'HUNTER', 'ROGUE', 'PRIEST', 'SHAMAN', 'MAGE', 'WARLOCK', 'DRUID']:
+    st = sets[cls]
+    if not st: bad.append((cls, 'missing')); continue
+    seen = set()
+    for i in range(1, len(st) + 1):
+        n, lv, b = st[i][1], st[i][2], st[i][3]; total += 1
+        if len(n) > 16 or len(b) > 255 or n in seen or 'mod:shift]' in b.split(';')[0] and 'mod:ctrl' not in b: bad.append((cls, n))
+        seen.add(n)
+    if len(seen) > 30: bad.append((cls, 'over 30 macros'))
+check(not bad and total >= 80, f'{total} macros for all 9 classes: names <=16, bodies <=255, unique ({bad})')
+for cls in ['DRUID', 'MAGE']:
+    L.execute(f'INCOMBAT = false; MACROS = {{}}; STATE.class = "{cls}"'); SlashCmd('macros')
+    check(len(G.MACROS) == len(sets[cls]), f'{cls}: /coach macros creates its set')
 
 print('ALL OK' if not fails else f'{len(fails)} FAILED')
 sys.exit(1 if fails else 0)

@@ -183,6 +183,18 @@ func main() {
 		w.Write(b)
 	})
 	lastPing.Store(time.Now().UnixNano())
+	http.HandleFunc("/refresh", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Error(w, "POST only", http.StatusMethodNotAllowed)
+			return
+		}
+		lastPing.Store(time.Now().UnixNano())
+		if p := findSavedVariables(game); p != "" {
+			app.svPath = p
+		}
+		app.reload()
+		fmt.Fprint(w, app.snapshot().Loaded.UnixNano())
+	})
 	http.HandleFunc("/stamp", func(w http.ResponseWriter, r *http.Request) {
 		lastPing.Store(time.Now().UnixNano())
 		v := app.snapshot()
