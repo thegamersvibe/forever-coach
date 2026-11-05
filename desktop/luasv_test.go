@@ -160,3 +160,29 @@ func TestRender(t *testing.T) {
 		os.WriteFile(out, []byte(sb.String()), 0o644)
 	}
 }
+
+func TestNormalizeGame(t *testing.T) {
+	root := t.TempDir()
+	wow := filepath.Join(root, "World of Warcraft")
+	fv := filepath.Join(wow, "_forever_")
+	os.MkdirAll(filepath.Join(fv, "Interface", "AddOns"), 0o755)
+	os.MkdirAll(filepath.Join(wow, "_retail_", "WTF"), 0o755)
+	os.WriteFile(filepath.Join(fv, "WowForever.exe"), nil, 0o644)
+	for _, in := range []string{fv, `"` + fv + `"`, wow, filepath.Join(fv, "Interface", "AddOns"), filepath.Join(fv, "WowForever.exe"), " " + fv + string(filepath.Separator) + " "} {
+		if got := NormalizeGame(in); got != fv {
+			t.Fatalf("%q -> %q, want %q", in, got, fv)
+		}
+	}
+	if NormalizeGame(filepath.Join(root, "nothing")) != "" || NormalizeGame("") != "" {
+		t.Fatal("bad paths must be rejected")
+	}
+}
+
+func TestSetGameEndpointState(t *testing.T) {
+	a := &App{}
+	a.setGame("")
+	a.reload()
+	if !a.snapshot().NoGame || !strings.Contains(a.snapshot().Error, "Couldn't find") {
+		t.Fatalf("no game: %+v", a.snapshot().Error)
+	}
+}

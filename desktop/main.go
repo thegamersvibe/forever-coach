@@ -23,7 +23,7 @@ import (
 	"time"
 )
 
-const Version = "1.3.0"
+const Version = "1.3.1"
 const Repo = "thegamersvibe/forever-coach"
 const RulesSchema = 1
 
@@ -98,6 +98,8 @@ type View struct {
 	Chars                       []CharView
 	SVPath, Error, RulesVersion string
 	Warning                     string
+	Game                        string
+	NoGame                      bool
 	UpdateNote, AppVersion      string
 	Loaded                      time.Time
 }
@@ -112,20 +114,26 @@ type App struct {
 }
 
 func main() {
-	gameFlag := flag.String("game", "", `game folder, default C:\Program Files (x86)\World of Warcraft\_forever_`)
+	gameFlag := flag.String("game", "", `game folder (the _forever_ folder); default: auto-detect on all drives`)
 	port := flag.Int("port", 47321, "local port")
 	noOpen := flag.Bool("no-open", false, "don't open the browser")
 	noUpdate := flag.Bool("no-update", false, "skip the rules update check")
 	once := flag.Bool("once", false, "print the report to the console and exit")
 	flag.Parse()
 
-	game := *gameFlag
+	game := ""
+	if *gameFlag != "" {
+		game = NormalizeGame(*gameFlag)
+		if game == "" {
+			fmt.Println("Not a WoW Forever folder:", *gameFlag)
+		}
+	}
 	if game == "" {
 		game = findGame()
 	}
-	app := &App{game: game, addonDir: filepath.Join(game, "Interface", "AddOns", "ForeverCoach")}
+	app := &App{}
+	app.setGame(game)
 	app.view.AppVersion = Version
-	app.svPath = findSavedVariables(game)
 	app.reload()
 
 	checkUpdates := func() {
@@ -183,13 +191,35 @@ func main() {
 		w.Write(b)
 	})
 	lastPing.Store(time.Now().UnixNano())
+	http.HandleFunc("/setgame", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Error(w, "POST only", http.StatusMethodNotAllowed)
+			return
+		}
+		g := NormalizeGame(r.FormValue("game"))
+		if g == "" {
+			http.Redirect(w, r, "/?bad=1", http.StatusSeeOther)
+			return
+		}
+		saveGame(g)
+		app.setGame(g)
+		app.mu.Lock()
+		app.view = View{AppVersion: Version}
+		app.mu.Unlock()
+		app.reload()
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	})
 	http.HandleFunc("/refresh", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {
 			http.Error(w, "POST only", http.StatusMethodNotAllowed)
 			return
 		}
 		lastPing.Store(time.Now().UnixNano())
-		if p := findSavedVariables(game); p != "" {
+		if app.game == "" {
+			if g := findGame(); g != "" {
+				app.setGame(g)
+			}
+		} else if p := findSavedVariables(app.game); p != "" {
 			app.svPath = p
 		}
 		app.reload()
@@ -201,7 +231,7 @@ func main() {
 		fmt.Fprint(w, v.Loaded.UnixNano())
 	})
 	fmt.Println("Forever Coach", Version, "-", url)
-	fmt.Println("Game:", game)
+	fmt.Println("Game:", app.game, "(change it from the report page, or run with -game \"D:\\...\\_forever_\")")
 	fmt.Println("Reading:", app.svPath)
 	if !*noOpen {
 		openBrowser(url)
@@ -215,9 +245,24 @@ func (a *App) snapshot() View {
 	return a.view
 }
 
+func (a *App) setGame(game string) {
+	a.mu.Lock()
+	a.game = game
+	a.addonDir = filepath.Join(game, "Interface", "AddOns", "ForeverCoach")
+	a.svPath = ""
+	if game != "" {
+		a.svPath = findSavedVariables(game)
+	}
+	a.modTime = time.Time{}
+	a.mu.Unlock()
+}
+
 func (a *App) watch() {
 	for {
 		time.Sleep(2 * time.Second)
+		if a.game == "" {
+			continue
+		}
 		if a.svPath == "" {
 			a.svPath = findSavedVariables(a.game)
 		}
@@ -237,10 +282,12 @@ func (a *App) reload() {
 	a.mu.Lock()
 	prev := a.view
 	a.mu.Unlock()
-	v := View{SVPath: a.svPath, AppVersion: Version, Loaded: time.Now(), UpdateNote: prev.UpdateNote}
+	v := View{SVPath: a.svPath, AppVersion: Version, Loaded: time.Now(), UpdateNote: prev.UpdateNote, Game: a.game, NoGame: a.game == ""}
 	v.RulesVersion = installedRulesVersion(a.addonDir)
-	if a.svPath == "" {
-		v.Error = "No ForeverCoach data yet. Install the addon, log in, then /reload."
+	if a.game == "" {
+		v.Error = "Couldn't find WoW Forever on this PC. Paste your game folder below."
+	} else if a.svPath == "" {
+		v.Error = "No ForeverCoach data yet in " + a.game + ". Install the addon, log in, then /reload."
 	} else if st, err := os.Stat(a.svPath); err != nil {
 		v.Error = "Can't read " + a.svPath + ": " + err.Error()
 	} else {
@@ -313,29 +360,6 @@ func buildChars(db map[string]any) []CharView {
 	}
 	sort.Slice(out, func(i, j int) bool { return out[i].Updated.After(out[j].Updated) })
 	return out
-}
-
-func findGame() string {
-	for _, p := range []string{
-		`C:\Program Files (x86)\World of Warcraft\_forever_`,
-		`C:\Program Files\World of Warcraft\_forever_`,
-		`D:\World of Warcraft\_forever_`,
-		`D:\Program Files (x86)\World of Warcraft\_forever_`,
-	} {
-		if st, err := os.Stat(p); err == nil && st.IsDir() {
-			return p
-		}
-	}
-	if exe, err := os.Executable(); err == nil { // helper placed inside the game folder
-		dir := filepath.Dir(exe)
-		for i := 0; i < 4; i++ {
-			if _, err := os.Stat(filepath.Join(dir, "WTF")); err == nil {
-				return dir
-			}
-			dir = filepath.Dir(dir)
-		}
-	}
-	return `C:\Program Files (x86)\World of Warcraft\_forever_`
 }
 
 // Newest ForeverCoach.lua under WTF\Account\*\SavedVariables (multiple accounts possible).

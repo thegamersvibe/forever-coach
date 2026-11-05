@@ -137,11 +137,15 @@ a{color:var(--gold)}
 
 <div class="top">
   <div class="brand"><img class="crest" src="/logo.png" alt=""><div><h1>Forever Coach</h1><small>WoW Forever leveling report</small></div></div>
-  <div class="live" id="live"><span class="dot"></span><span id="livetxt">Connected</span>&nbsp;· updates when the game saves (/reload, logout) <button id="refresh" class="rbtn" title="Re-read the save file now">↻ Refresh</button> · app {{.AppVersion}} · rules {{if .RulesVersion}}{{.RulesVersion}}{{else}}none{{end}}</div>
+  <div class="live" id="live"><span class="dot"></span><span id="livetxt">Connected</span>&nbsp;· updates when the game saves (/reload, logout) <button id="refresh" class="rbtn" title="Re-read the save file now">↻ Refresh</button> <button class="rbtn" type="button" onclick="const f=document.getElementById('gameform');if(f)f.hidden=!f.hidden" title="{{.Game}}">Game folder</button> · app {{.AppVersion}} · rules {{if .RulesVersion}}{{.RulesVersion}}{{else}}none{{end}}</div>
 </div>
 {{if .UpdateNote}}<div class="note">{{.UpdateNote}}</div>{{end}}
 {{if .Warning}}<div class="note warnbar">{{.Warning}}</div>{{end}}
 {{if .Error}}<div class="note err">{{.Error}}</div>{{end}}
+<form class="note gamebox" method="post" action="/setgame"{{if not .NoGame}} hidden id="gameform"{{end}}>
+ <b>Game folder</b> <span class="gscore">Paste the path to your <code>_forever_</code> folder (or the World of Warcraft folder), e.g. <code>D:\World of Warcraft\_forever_</code>. Tip: in Battle.net, gear icon → Show in Explorer, then copy the address bar.</span>
+ <div style="display:flex;gap:8px;margin-top:8px"><input name="game" value="{{.Game}}" placeholder="D:\World of Warcraft\_forever_" style="flex:1;font:inherit;padding:6px 10px;border-radius:8px;border:1px solid var(--line2);background:#0006;color:var(--fg)"><button class="rbtn" type="submit">Use this folder</button></div>
+</form>
 {{if gt (len .Chars) 1}}<div class="charsw">{{range .Chars}}<a href="#{{.Key}}">{{.Name}} · {{.Level}}</a>{{end}}</div>{{end}}
 
 {{range .Chars}}
@@ -285,6 +289,7 @@ document.querySelectorAll('.filters').forEach(fl=>{
     fl.closest('.card').querySelectorAll('.more .fix').forEach(r=>{r.style.display=(b.dataset.f==='all'||r.dataset.area===b.dataset.f)?'':'none'})})});
 document.querySelectorAll('.slot').forEach(s=>s.addEventListener('click',()=>s.classList.toggle('open')));
 document.getElementById('refresh').addEventListener('click',async e=>{const b=e.currentTarget;b.disabled=true;b.textContent='Refreshing…';try{await fetch('/refresh',{method:'POST'});location.reload()}catch(_){b.textContent='App closed';b.disabled=false}});
+if(location.search.includes('bad=1')){const f=document.querySelector('.gamebox');if(f){f.hidden=false;f.insertAdjacentHTML('afterbegin','<div style="color:var(--bad);margin-bottom:6px">That folder doesn\'t look like WoW Forever. Check the path.</div>')}}
 let s=null,fails=0;setInterval(async()=>{try{const t=await (await fetch('/stamp')).text();fails=0;document.getElementById('live').style.opacity=1;document.getElementById('livetxt').textContent='Connected';if(s&&t!==s)location.reload();s=t}catch(e){if(++fails>1){document.getElementById('live').style.opacity=.6;document.getElementById('livetxt').textContent='App closed: run Forever Coach again'}}},2000)
 </script></body></html>
 {{define "slot"}}<div class="slot" tabindex="0" style="--q:{{css (gapColor .GapPct .Equipped .Status)}}">
