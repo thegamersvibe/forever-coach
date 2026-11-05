@@ -51,6 +51,9 @@ function UI:Update()
         out[#out + 1] = line(f)
     end
     if #out == 0 then out[1] = "Nothing to fix right now. Play a bit, then /reload or /coach." end
+    if c.lastError and c.lastError.version == FC.VERSION then
+        out[#out + 1] = "|cffff6b6bInternal error (please report):|r " .. c.lastError.where .. ": " .. c.lastError.err
+    end
     if c.xpPerHour then out[#out + 1] = "\n|cff888888Recent pace: " .. c.xpPerHour .. " XP/hour|r" end
     self.frame.text:SetText(table.concat(out, "\n\n"))
     self.frame.body:SetHeight(self.frame.text:GetStringHeight() + 10)

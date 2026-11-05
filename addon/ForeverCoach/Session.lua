@@ -1,110 +1,136 @@
--- Forever Coach: per-session play stats from events the client gives every addon.
+-- Forever Coach: per-session play stats from data WoW Forever gives every addon.
+-- Forever hides exact health/power from addons ("secret values") and has no addon combat log, so:
+--   * every number from a unit API goes through num(), which drops secret values
+--   * downtime = standing still out of combat (short stops only; long ones count as AFK/vendor)
+--   * proc use = the spell becoming usable (C_Spell.IsSpellUsable) vs. you casting it (UNIT_SPELLCAST_SUCCEEDED)
 -- Nothing here reads memory or automates input.
 local _, FC = ...
-local safe = FC.safe
 local S = {}
 FC.Session = S
 
 local MAX_SESSIONS = 30
+local IDLE_AFK = 120        -- seconds standing still before it counts as AFK/vendor, not downtime
+local PROC_POLL = 0.2
 local cur, tick
-local procWindows = {} -- spellId -> {open=expiry or nil, total=n, used=n}
+local procs = {}            -- name -> { spell = name, window, open = expiry|nil, total, used }
+local idle = 0
+
+-- Secret-safe number: nil if the client hides the value from addons.
+local function num(v)
+    if v == nil then return nil end
+    if issecretvalue and issecretvalue(v) then return nil end
+    if type(v) ~= "number" then return nil end
+    return v
+end
+local function flag(v)
+    if issecretvalue and issecretvalue(v) then return nil end
+    return v
+end
+FC.num = num
 
 local function now() return GetTime() end
+
+local function noteError(where, err)
+    local c = FC:Char()
+    c.lastError = { where = where, err = tostring(err), time = time(), version = FC.VERSION }
+end
 
 local function newSession()
     return {
         start = time(), level = UnitLevel("player"), xp = 0, seconds = 0, combat = 0, recovery = 0, dead = 0,
-        deaths = {}, kills = 0, capped = 0, powerSeconds = 0, procs = {},
+        deaths = {}, kills = 0, capped = 0, powerSeconds = 0, procs = {}, afk = 0,
     }
+end
+
+local function spellName(id) return FC:SpellName(id) end
+
+local function usable(name)
+    if C_Spell and C_Spell.IsSpellUsable then
+        local ok, u, lowPower = pcall(C_Spell.IsSpellUsable, name)
+        if ok then return flag(u) == true or flag(lowPower) == true end
+    elseif IsUsableSpell then
+        local ok, u, lowPower = pcall(IsUsableSpell, name)
+        if ok then return u == true or lowPower == true end
+    end
+    return false
 end
 
 function S:Start()
     cur = newSession()
-    S.lastXP, S.lastXPMax = UnitXP("player"), UnitXPMax("player")
-    procWindows = {}
+    S.lastXP, S.lastXPMax = num(UnitXP("player")), num(UnitXPMax("player"))
+    procs, idle = {}, 0
+    local _, cls = UnitClass("player")
     for _, p in ipairs(FC:Rules().procSpells or {}) do
-        local _, cls = UnitClass("player")
         if p.class == cls and FC:KnowsSpell(p.spellId) then
-            procWindows[p.spellId] = { name = p.name, trigger = p.trigger, window = p.window or 5, total = 0, used = 0 }
+            local name = spellName(p.spellId) or p.name
+            procs[name] = { spell = name, label = p.name, window = p.window or 5, total = 0, used = 0, was = false }
         end
     end
     if not tick then
         tick = CreateFrame("Frame")
-        local acc = 0
+        local acc, pacc = 0, 0
         tick:SetScript("OnUpdate", function(_, el)
-            acc = acc + el
-            if acc < 1 then return end
-            local dt = acc; acc = 0
-            S:Tick(dt)
+            acc, pacc = acc + el, pacc + el
+            if pacc >= PROC_POLL then
+                local ok, err = pcall(S.PollProcs, S); pacc = 0
+                if not ok then noteError("PollProcs", err) end
+            end
+            if acc >= 1 then
+                local ok, err = pcall(S.Tick, S, acc); acc = 0
+                if not ok then noteError("Tick", err) end
+            end
         end)
     end
+end
+
+-- A proc "chance" starts when the spell turns usable in combat; it's "used" if you cast it before the window ends.
+function S:PollProcs()
+    if not cur then return end
+    local inCombat = flag(UnitAffectingCombat("player")) == true
+    local t = now()
+    for _, w in pairs(procs) do
+        local u = usable(w.spell)
+        if u and not w.was and (inCombat or w.window > 10) then
+            w.total = w.total + 1; w.open = t + w.window
+        end
+        -- casting makes the spell unusable a moment before the cast event lands, so a window only expires by time
+        if w.open and t > w.open + 0.5 then w.open = nil end
+        w.was = u
+    end
+end
+
+function S:Cast(spellID)
+    if not cur or not spellID then return end
+    local name = spellName(spellID)
+    local w = name and procs[name]
+    if w and w.open then w.used = w.used + 1; w.open = nil end
 end
 
 function S:Tick(dt)
     if not cur then return end
     cur.seconds = cur.seconds + dt
-    if UnitIsDeadOrGhost("player") then cur.dead = cur.dead + dt return end
-    if UnitOnTaxi and UnitOnTaxi("player") then return end
-    if UnitAffectingCombat("player") then
-        cur.combat = cur.combat + dt
-        local ptype = UnitPowerType("player")
-        local max = UnitPowerMax("player", ptype) or 0
-        if ptype == 1 and max > 0 then -- rage
-            cur.powerSeconds = cur.powerSeconds + dt
-            if (UnitPower("player", ptype) or 0) >= max * 0.9 then cur.capped = cur.capped + dt end
+    if flag(UnitIsDeadOrGhost("player")) then cur.dead = cur.dead + dt; idle = 0; return end
+    if UnitOnTaxi and flag(UnitOnTaxi("player")) then idle = 0; return end
+    if flag(UnitAffectingCombat("player")) then
+        cur.combat = cur.combat + dt; idle = 0
+        local ptype = num(UnitPowerType("player"))
+        if ptype == 1 then -- rage, only when the client lets addons read it
+            local p, mx = num(UnitPower("player", 1)), num(UnitPowerMax("player", 1))
+            if p and mx and mx > 0 then
+                cur.powerSeconds = cur.powerSeconds + dt
+                if p >= mx * 0.9 then cur.capped = cur.capped + dt end
+            end
         end
     else
-        local hp, hpMax = UnitHealth("player"), UnitHealthMax("player")
-        local mp, mpMax = UnitPower("player", 0), UnitPowerMax("player", 0)
-        local low = (hpMax > 0 and hp / hpMax < 0.7) or (mpMax and mpMax > 0 and UnitPowerType("player") == 0 and mp / mpMax < 0.4)
-        if low then cur.recovery = cur.recovery + dt end -- eating/drinking/bandaging/sitting low
-    end
-    -- close expired proc windows
-    local t = now()
-    for _, w in pairs(procWindows) do
-        if w.open and t > w.open then w.open = nil end
-    end
-end
-
-local function openWindows(trigger)
-    local t = now()
-    for _, w in pairs(procWindows) do
-        if w.trigger == trigger and not w.open then
-            w.open = t + w.window; w.total = w.total + 1
-        elseif w.trigger == trigger then
-            w.open = t + w.window
-        end
-    end
-end
-
-local lastHit = {}
-local DEFEND = { DODGE = true, PARRY = true, BLOCK = true }
-
-function S:CLEU()
-    if not cur then return end
-    local info = { CombatLogGetCurrentEventInfo() }
-    local sub, srcGUID, srcName, dstGUID = info[2], info[4], info[5], info[8]
-    local me = UnitGUID("player")
-    if dstGUID == me then
-        if sub == "SWING_DAMAGE" then
-            lastHit = { name = srcName, spell = "melee", amount = info[12], t = now() }
-            if (info[16] or 0) > 0 then openWindows("defend") end -- blocked amount
-        elseif sub == "SPELL_DAMAGE" or sub == "RANGE_DAMAGE" or sub == "SPELL_PERIODIC_DAMAGE" then
-            lastHit = { name = srcName, spell = info[13], amount = info[15], t = now() }
-        elseif sub == "SWING_MISSED" and DEFEND[info[12]] then
-            openWindows("defend"); if info[12] == "PARRY" then openWindows("parry") end
-        elseif (sub == "SPELL_MISSED" or sub == "RANGE_MISSED") and DEFEND[info[15]] then
-            openWindows("defend")
-        end
-    elseif srcGUID == me then
-        if (sub == "SWING_MISSED" and info[12] == "DODGE") or (sub == "SPELL_MISSED" and info[15] == "DODGE") then
-            openWindows("targetDodge")
-        elseif sub == "PARTY_KILL" then
-            cur.kills = cur.kills + 1; openWindows("kill")
-        elseif sub == "SPELL_CAST_SUCCESS" then
-            local name = info[13]
-            for _, w in pairs(procWindows) do
-                if w.open and w.name == name then w.used = w.used + 1; w.open = nil end
+        local moving = IsPlayerMoving and flag(IsPlayerMoving())
+        if moving then
+            idle = 0
+        else
+            idle = idle + dt
+            if idle <= IDLE_AFK then cur.recovery = cur.recovery + dt else cur.afk = cur.afk + dt end
+            if idle > IDLE_AFK and idle - dt <= IDLE_AFK then
+                -- just crossed into AFK: the last IDLE_AFK seconds weren't downtime either
+                cur.recovery = math.max(0, cur.recovery - IDLE_AFK); cur.afk = cur.afk + IDLE_AFK
             end
         end
     end
@@ -112,24 +138,24 @@ end
 
 function S:Death()
     if not cur then return end
-    local d = { level = UnitLevel("player"), zone = GetRealZoneText and GetRealZoneText() or "?", time = time() }
-    if lastHit.t and now() - lastHit.t < 10 then d.by = lastHit.name; d.spell = lastHit.spell end
-    table.insert(cur.deaths, d)
+    table.insert(cur.deaths, { level = UnitLevel("player"), zone = GetRealZoneText and GetRealZoneText() or "?", time = time() })
 end
 
 function S:XP()
     if not cur then return end
-    local xp, xpMax = UnitXP("player"), UnitXPMax("player")
-    if S.lastXP then
+    local xp, xpMax = num(UnitXP("player")), num(UnitXPMax("player"))
+    if not (xp and xpMax) then return end
+    if S.lastXP and S.lastXPMax then
         if xp >= S.lastXP then cur.xp = cur.xp + (xp - S.lastXP)
         else cur.xp = cur.xp + (S.lastXPMax - S.lastXP) + xp end -- level up
+        if flag(UnitAffectingCombat("player")) and xp ~= S.lastXP then cur.kills = cur.kills + 1 end
     end
     S.lastXP, S.lastXPMax = xp, xpMax
 end
 
 local function syncProcs()
     if not cur then return end
-    for _, w in pairs(procWindows) do cur.procs[w.name] = { windows = w.total, used = w.used } end
+    for _, w in pairs(procs) do cur.procs[w.label] = { windows = w.total, used = w.used } end
 end
 
 function S:Finish()
@@ -147,9 +173,12 @@ function S:Current() syncProcs(); return cur end
 local ev = CreateFrame("Frame")
 ev:RegisterEvent("PLAYER_DEAD")
 ev:RegisterEvent("PLAYER_XP_UPDATE")
-if CombatLogGetCurrentEventInfo then ev:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED") end
-ev:SetScript("OnEvent", function(_, e)
-    if e == "COMBAT_LOG_EVENT_UNFILTERED" then pcall(S.CLEU, S)
-    elseif e == "PLAYER_DEAD" then S:Death()
-    elseif e == "PLAYER_XP_UPDATE" then S:XP() end
+ev:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+ev:SetScript("OnEvent", function(_, e, unit, _, spellID)
+    local ok, err = true, nil
+    if e == "UNIT_SPELLCAST_SUCCEEDED" then
+        if unit == "player" then ok, err = pcall(S.Cast, S, spellID) end
+    elseif e == "PLAYER_DEAD" then ok, err = pcall(S.Death, S)
+    elseif e == "PLAYER_XP_UPDATE" then ok, err = pcall(S.XP, S) end
+    if not ok then noteError(e, err) end
 end)

@@ -12,6 +12,13 @@ local function safe(f, ...)
 end
 FC.safe = safe
 
+-- Forever hides some values from addons ("secret values"); never do math on one.
+local function num(v)
+    if v == nil or (issecretvalue and issecretvalue(v)) or type(v) ~= "number" then return nil end
+    return v
+end
+FC.num = num
+
 function FC:Rules()
     local r = _G.ForeverCoach_Rules
     if type(r) ~= "table" or r.schema ~= 1 then return { thresholds = {}, raceOnlyQuests = {}, spellMilestones = {}, procSpells = {} } end
@@ -60,17 +67,17 @@ FC.itemIdFromLink = itemIdFromLink
 
 function FC:Talents()
     local t = { tabs = {}, unspent = nil }
-    if UnitCharacterPoints then t.unspent = safe(UnitCharacterPoints, "player") end
+    if UnitCharacterPoints then t.unspent = num(safe(UnitCharacterPoints, "player")) end
     local n = (GetNumTalentTabs and safe(GetNumTalentTabs)) or 0
     for tab = 1, n do
         local a, b, c, d = safe(GetTalentTabInfo, tab)
         local spent
-        for _, v in ipairs({ c, d, b }) do if type(v) == "number" then spent = v break end end
+        for _, v in ipairs({ c, d, b }) do if num(v) then spent = v break end end
         if spent == nil and GetNumTalents and GetTalentInfo then
             spent = 0
             for i = 1, (safe(GetNumTalents, tab) or 0) do
                 local _, _, _, _, rank = safe(GetTalentInfo, tab, i)
-                if type(rank) == "number" then spent = spent + rank end
+                if num(rank) then spent = spent + rank end
             end
         end
         t.tabs[tab] = { name = type(a) == "string" and a or ("Tree " .. tab), spent = spent or 0 }
@@ -83,7 +90,7 @@ function FC:Skills()
     local n = (GetNumSkillLines and safe(GetNumSkillLines)) or 0
     for i = 1, n do
         local name, header, _, rank, _, _, maxRank = safe(GetSkillLineInfo, i)
-        if name and not header and type(rank) == "number" then out[name] = { rank = rank, max = maxRank } end
+        if name and not header and num(rank) then out[name] = { rank = rank, max = maxRank } end
     end
     return out
 end
@@ -126,8 +133,9 @@ function FC:Snapshot()
     local s = {
         time = time(), name = UnitName("player"), realm = GetRealmName and GetRealmName(),
         class = classFile, race = raceFile, faction = faction, level = UnitLevel("player"),
-        xp = UnitXP("player"), xpMax = UnitXPMax("player"), rested = GetXPExhaustion and GetXPExhaustion() or 0,
-        money = GetMoney and GetMoney() or 0,
+        xp = num(UnitXP("player")) or 0, xpMax = num(UnitXPMax("player")) or 0,
+        rested = (GetXPExhaustion and num(GetXPExhaustion())) or 0,
+        money = (GetMoney and num(GetMoney())) or 0,
         talents = self:Talents(), skills = self:Skills(), equipped = self:Equipped(), bags = self:BagItems(),
         journey = self:Journey(), spells = {},
     }
@@ -137,7 +145,7 @@ function FC:Snapshot()
     return s
 end
 
-function FC:Refresh(reason)
+function FC:RefreshUnsafe(reason)
     local c = self:Char()
     c.snapshot = self:Snapshot()
     if FC.Gear then c.gear = FC.Gear:Audit(c.snapshot) end
@@ -145,6 +153,14 @@ function FC:Refresh(reason)
     c.updated = time()
     c.reason = reason
     if FC.UI and FC.UI.Update then FC.UI:Update() end
+end
+
+function FC:Refresh(reason)
+    local ok, err = pcall(self.RefreshUnsafe, self, reason)
+    if not ok then
+        local c = self:Char()
+        c.lastError = { where = "Refresh:" .. tostring(reason), err = tostring(err), time = time(), version = FC.VERSION }
+    end
 end
 
 local f = CreateFrame("Frame")

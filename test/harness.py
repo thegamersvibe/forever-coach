@@ -45,15 +45,21 @@ function IsSpellKnown(id) return STATE.known[id] == true end
 function UnitAffectingCombat() return STATE.combat end
 function UnitIsDeadOrGhost() return STATE.dead end
 function UnitOnTaxi() return false end
-function UnitHealth() return STATE.hp end
+SECRET = setmetatable({}, { __arith = function() error("attempt to perform arithmetic on a secret number value") end,
+  __lt = function() error("attempt to compare a secret number value") end, __le = function() error("attempt to compare a secret number value") end })
+local SECRET_MT = getmetatable(SECRET)
+SECRET_MT.__add = SECRET_MT.__arith; SECRET_MT.__sub = SECRET_MT.__arith; SECRET_MT.__div = SECRET_MT.__arith; SECRET_MT.__mul = SECRET_MT.__arith
+function issecretvalue(v) return v == SECRET end
+function UnitHealth() return SECRET end
+function IsPlayerMoving() return STATE.moving == true end
+USABLE = {}
+C_Spell = { IsSpellUsable = function(n) return USABLE[n] == true, false end, GetSpellInfo = function(id) return { name = ({[6572]="Revenge",[7384]="Overpower",[402927]="Victory Rush",[71]="Defensive Stance"})[id] } end }
 function UnitHealthMax() return STATE.hpMax end
 function UnitPowerType() return 1 end
 function UnitPower(_, t) if t == 0 then return 0 end return STATE.rage end
 function UnitPowerMax(_, t) if t == 0 then return 0 end return 100 end
 function UnitGUID() return "Player-1" end
 function GetRealZoneText() return "Redridge Mountains" end
-CLEU = {}
-function CombatLogGetCurrentEventInfo() return (unpack or table.unpack)(CLEU) end
 function GetNumTrainerServices() return 0 end
 C_Timer = { After = function(_, f) f() end }
 DEFAULT_CHAT_FRAME = { AddMessage = function(_, m) print("CHAT", m) end }
@@ -153,34 +159,38 @@ if GQDIR:
     check(c.gear.spec == 'arms' and c.gear.specSource == 'manual', 'manual spec override')
     c.specOverride = None
 
-# Session: a death, wasted Revenge procs, recovery downtime
+# Session (Forever rules): no combat log, health is secret, procs = usable -> cast
 S = G.ForeverCoach.Session
 G.STATE.known[6572] = True
 S.Start(S)
-cur = S.Current(S)
-check(any(True for _ in []) or True, 'session started')
 G.STATE.combat = True
 for i in range(10):
-    G.CLEU = L.table(0, 'SWING_MISSED', False, 'Creature-1', 'Gnoll', 0, 0, 'Player-1', 'Willtank', 0, 0, 'PARRY')
-    G.FIRE('COMBAT_LOG_EVENT_UNFILTERED')
+    G.USABLE['Revenge'] = True; S.PollProcs(S)
     if i < 3:
-        G.CLEU = L.table(0, 'SPELL_CAST_SUCCESS', False, 'Player-1', 'Willtank', 0, 0, 'Creature-1', 'Gnoll', 0, 0, 6572, 'Revenge')
-        G.FIRE('COMBAT_LOG_EVENT_UNFILTERED')
-    G.ADVANCE(6); S.Tick(S, 6)
-G.CLEU = L.table(0, 'SWING_DAMAGE', False, 'Creature-2', 'Redridge Brute', 0, 0, 'Player-1', 'Willtank', 0, 0, 120)
-G.FIRE('COMBAT_LOG_EVENT_UNFILTERED')
+        G.USABLE['Revenge'] = False; S.PollProcs(S)          # unusable a moment before the cast event
+        G.FIRE('UNIT_SPELLCAST_SUCCEEDED', 'player', 'cast-guid', 6572)
+    G.ADVANCE(6); S.PollProcs(S); S.Tick(S, 6)
+    G.USABLE['Revenge'] = False; S.PollProcs(S)
 G.FIRE('PLAYER_DEAD')
-G.STATE.combat = False; G.STATE.hp = 30
+G.STATE.combat = False; G.STATE.moving = False
+for _ in range(60): S.Tick(S, 1)           # 60 s standing still = recovery
+G.STATE.moving = True
+for _ in range(100): S.Tick(S, 1)
+G.STATE.moving = False
+for _ in range(300): S.Tick(S, 1)          # 5 min still = AFK, not downtime
+G.STATE.moving = True
 for _ in range(400): S.Tick(S, 1)
-G.STATE.hp = 100
-for _ in range(500): S.Tick(S, 1)
+cur = S.Current(S)
+print('  recovery', cur.recovery, 'afk', cur.afk)
+check(abs(cur.recovery - 60) < 2, f'downtime counts short stops only ({cur.recovery})')
+check(cur.afk >= 299, f'long stop counted as AFK ({cur.afk})')
+check(not (G.ForeverCoach.Char(G.ForeverCoach).lastError), 'no internal error with secret health')
 G.ForeverCoach.Refresh(G.ForeverCoach, 'test')
 F = c.findings; texts = [F[i].text for i in range(1, len(F) + 1)]
 print('\n'.join(f'  [{F[i].area}] {F[i].text}  ->  {F[i].fix}' for i in range(1, len(F) + 1) if F[i].area == 'Play'))
-check(any(t.startswith('Revenge: used 3 of 10') for t in texts), 'Revenge waste 3/10')
+check(any(t.startswith('Revenge: used 3 of 10') for t in texts), 'Revenge waste 3/10 via usability')
 check(any('deaths/hour' in t for t in texts), 'death rate flagged')
-check(any('recovering' in t for t in texts), 'downtime flagged')
-check(any('Redridge Brute' in (F[i].fix or '') for i in range(1, len(F) + 1)), 'death cause named')
+check(c.lastError is None, f'no refresh error ({c.lastError and c.lastError.err})')
 G.FIRE('PLAYER_LOGOUT')
 check(len(c.sessions) == 1, 'session saved on logout')
 
