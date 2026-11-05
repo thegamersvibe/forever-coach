@@ -15,7 +15,7 @@ json.dump(d,open(p,'w'),indent=2)
 PY
 (cd desktop && "$(go env GOPATH)/bin/goversioninfo" -64 -o resource_windows_amd64.syso versioninfo.json)
 python3 scripts/build_rules_lua.py
-(cd desktop && go test ./... && GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -trimpath -o ../dist/ForeverCoach.exe .)
+(cd desktop && go test ./... && GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -trimpath -ldflags "-H windowsgui" -o ../dist/ForeverCoach.exe .)
 rm -rf dist/pkg && mkdir -p dist/pkg && cp -r addon/ForeverCoach dist/pkg/ && cp dist/ForeverCoach.exe README.md dist/pkg/
 (cd dist/pkg && python3 -c "import shutil; shutil.make_archive('../ForeverCoach-$V', 'zip', '.')")
 (cd dist && sha256sum "ForeverCoach-$V.zip" ForeverCoach.exe > SHA256SUMS.txt)

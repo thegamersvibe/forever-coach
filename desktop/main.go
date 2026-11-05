@@ -19,6 +19,7 @@ import (
 	"runtime"
 	"sort"
 	"sync"
+	"sync/atomic"
 	"time"
 )
 
@@ -88,6 +89,8 @@ type View struct {
 	Loaded                      time.Time
 }
 
+var lastPing atomic.Int64
+
 type App struct {
 	game, svPath, addonDir string
 	mu                     sync.Mutex
@@ -131,11 +134,28 @@ func main() {
 		go checkUpdates() // never delay the page on a slow network
 	}
 
+	url := fmt.Sprintf("http://127.0.0.1:%d/", *port)
 	ln, err := net.Listen("tcp", fmt.Sprintf("127.0.0.1:%d", *port))
 	if err != nil {
-		log.Fatalf("port %d busy (already running?): %v", *port, err)
+		// Already running: just show the existing report.
+		if !*noOpen {
+			openBrowser(url)
+		}
+		return
 	}
-	url := fmt.Sprintf("http://127.0.0.1:%d/", *port)
+	// No console window: the app quits on its own once the report tab has been closed for a while.
+	// (Chrome slows timers in background tabs to ~1/min, so the timeout must be well above that.)
+	if !*noOpen {
+		go func() {
+			time.Sleep(3 * time.Minute)
+			for {
+				time.Sleep(15 * time.Second)
+				if time.Since(time.Unix(0, lastPing.Load())) > 3*time.Minute {
+					os.Exit(0)
+				}
+			}
+		}()
+	}
 	tpl := template.Must(template.New("report.html").Funcs(funcs).ParseFS(assets, "report.html"))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
@@ -149,7 +169,9 @@ func main() {
 		w.Header().Set("Cache-Control", "max-age=86400")
 		w.Write(b)
 	})
+	lastPing.Store(time.Now().UnixNano())
 	http.HandleFunc("/stamp", func(w http.ResponseWriter, r *http.Request) {
+		lastPing.Store(time.Now().UnixNano())
 		v := app.snapshot()
 		fmt.Fprint(w, v.Loaded.UnixNano())
 	})
