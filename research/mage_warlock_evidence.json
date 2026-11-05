@@ -1,0 +1,410 @@
+{
+  "talentOrderMethod": {
+    "sourceType": "explicit level ranges in Icy Veins guide text",
+    "browserResult": "Cloudflare blocked Icy Veins guide DOM; Wowhead returned 403. No slider traversal or JavaScript data recovered.",
+    "missingValue": "*",
+    "legacyExtraPointsIncluded": false
+  },
+  "spellFacts": {
+    "10": {
+      "name": "Blizzard",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/10"
+    },
+    "118": {
+      "name": "Polymorph",
+      "level": 8,
+      "url": "https://db.icy-veins.com/wow-forever/spells/118"
+    },
+    "120": {
+      "name": "Cone of Cold",
+      "level": 26,
+      "url": "https://db.icy-veins.com/wow-forever/spells/120"
+    },
+    "122": {
+      "name": "Frost Nova",
+      "level": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/122"
+    },
+    "126": {
+      "name": "Eye of Kilrogg",
+      "level": 22,
+      "url": "https://db.icy-veins.com/wow-forever/spells/126"
+    },
+    "130": {
+      "name": "Slow Fall",
+      "level": 12,
+      "url": "https://db.icy-veins.com/wow-forever/spells/130"
+    },
+    "172": {
+      "name": "Corruption",
+      "level": 4,
+      "url": "https://db.icy-veins.com/wow-forever/spells/172"
+    },
+    "475": {
+      "name": "Remove Lesser Curse",
+      "level": 18,
+      "url": "https://db.icy-veins.com/wow-forever/spells/475"
+    },
+    "587": {
+      "name": "Conjure Food",
+      "level": 6,
+      "url": "https://db.icy-veins.com/wow-forever/spells/587"
+    },
+    "687": {
+      "name": "Demon Skin",
+      "level": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/687"
+    },
+    "688": {
+      "name": "Summon Imp",
+      "level": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/688"
+    },
+    "689": {
+      "name": "Drain Life",
+      "level": 14,
+      "url": "https://db.icy-veins.com/wow-forever/spells/689"
+    },
+    "691": {
+      "name": "Summon Felhunter",
+      "level": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/691"
+    },
+    "693": {
+      "name": "Create Soulstone",
+      "level": 18,
+      "url": "https://db.icy-veins.com/wow-forever/spells/693"
+    },
+    "697": {
+      "name": "Summon Voidwalker",
+      "level": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/697"
+    },
+    "698": {
+      "name": "Ritual of Summoning",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/698"
+    },
+    "706": {
+      "name": "Demon Armor",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/706"
+    },
+    "710": {
+      "name": "Banish",
+      "level": 28,
+      "url": "https://db.icy-veins.com/wow-forever/spells/710"
+    },
+    "712": {
+      "name": "Summon Succubus",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/712"
+    },
+    "713": {
+      "name": "Summon Incubus",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/713"
+    },
+    "755": {
+      "name": "Health Funnel",
+      "level": 12,
+      "url": "https://db.icy-veins.com/wow-forever/spells/755"
+    },
+    "759": {
+      "name": "Conjure Mana Agate",
+      "level": 28,
+      "url": "https://db.icy-veins.com/wow-forever/spells/759"
+    },
+    "980": {
+      "name": "Bane of Agony",
+      "level": 8,
+      "url": "https://db.icy-veins.com/wow-forever/spells/980"
+    },
+    "1098": {
+      "name": "Subjugate Demon",
+      "level": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1098"
+    },
+    "1120": {
+      "name": "Drain Soul",
+      "level": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1120"
+    },
+    "1449": {
+      "name": "Arcane Explosion",
+      "level": 14,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1449"
+    },
+    "1454": {
+      "name": "Life Tap",
+      "level": 6,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1454"
+    },
+    "1459": {
+      "name": "Arcane Intellect",
+      "level": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1459"
+    },
+    "1463": {
+      "name": "Mana Shield",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1463"
+    },
+    "1714": {
+      "name": "Curse of Tongues",
+      "level": 26,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1714"
+    },
+    "1949": {
+      "name": "Hellfire",
+      "level": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1949"
+    },
+    "1953": {
+      "name": "Blink",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1953"
+    },
+    "2139": {
+      "name": "Counterspell",
+      "level": 24,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2139"
+    },
+    "2362": {
+      "name": "Create Spellstone",
+      "level": 36,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2362"
+    },
+    "3561": {
+      "name": "Teleport: Stormwind",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3561"
+    },
+    "3562": {
+      "name": "Teleport: Ironforge",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3562"
+    },
+    "3563": {
+      "name": "Teleport: Undercity",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3563"
+    },
+    "3565": {
+      "name": "Teleport: Darnassus",
+      "level": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3565"
+    },
+    "3566": {
+      "name": "Teleport: Thunder Bluff",
+      "level": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3566"
+    },
+    "3567": {
+      "name": "Teleport: Orgrimmar",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3567"
+    },
+    "5484": {
+      "name": "Howl of Terror",
+      "level": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5484"
+    },
+    "5500": {
+      "name": "Sense Demons",
+      "level": 24,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5500"
+    },
+    "5504": {
+      "name": "Conjure Water",
+      "level": 4,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5504"
+    },
+    "5676": {
+      "name": "Searing Pain",
+      "level": 18,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5676"
+    },
+    "5697": {
+      "name": "Unending Breath",
+      "level": 16,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5697"
+    },
+    "5740": {
+      "name": "Rain of Fire",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5740"
+    },
+    "5782": {
+      "name": "Fear",
+      "level": 8,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5782"
+    },
+    "5784": {
+      "name": "Summon Felsteed",
+      "level": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5784"
+    },
+    "6117": {
+      "name": "Mage Armor",
+      "level": 34,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6117"
+    },
+    "6201": {
+      "name": "Create Healthstone",
+      "level": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6201"
+    },
+    "6229": {
+      "name": "Shadow Ward",
+      "level": 32,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6229"
+    },
+    "6366": {
+      "name": "Create Firestone",
+      "level": 28,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6366"
+    },
+    "6789": {
+      "name": "Death Coil",
+      "level": 42,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6789"
+    },
+    "10059": {
+      "name": "Portal: Stormwind",
+      "level": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/10059"
+    },
+    "11416": {
+      "name": "Portal: Ironforge",
+      "level": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11416"
+    },
+    "11417": {
+      "name": "Portal: Orgrimmar",
+      "level": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11417"
+    },
+    "11418": {
+      "name": "Portal: Undercity",
+      "level": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11418"
+    },
+    "11419": {
+      "name": "Portal: Darnassus",
+      "level": 50,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11419"
+    },
+    "11420": {
+      "name": "Portal: Thunder Bluff",
+      "level": 50,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11420"
+    },
+    "12051": {
+      "name": "Evocation",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/12051"
+    },
+    "18094": {
+      "name": "Nightfall",
+      "level": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/18094"
+    },
+    "17941": {
+      "name": "Shadow Trance",
+      "level": null,
+      "durationSeconds": 10,
+      "classification": "proc aura, not a learned consumer spell",
+      "url": "https://db.icy-veins.com/wow-forever/spells/17941"
+    },
+    "28272": {
+      "name": "Polymorph",
+      "variant": "Pig",
+      "level": 60,
+      "url": "https://db.icy-veins.com/wow-forever/spells/28272"
+    },
+    "28285": {
+      "name": "Polymorph: Pig",
+      "level": null,
+      "classification": "teaching spell, not the learned player spell",
+      "teaches": 28272,
+      "url": "https://db.icy-veins.com/wow-forever/spells/28285"
+    },
+    "400588": {
+      "name": "Missile Barrage",
+      "level": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/400588"
+    },
+    "400589": {
+      "name": "Missile Barrage",
+      "level": null,
+      "durationSeconds": 15,
+      "classification": "proc aura, not a learned consumer spell",
+      "url": "https://db.icy-veins.com/wow-forever/spells/400589"
+    },
+    "400624": {
+      "name": "Heating Up",
+      "level": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/400624"
+    },
+    "400640": {
+      "name": "Ice Lance",
+      "level": 28,
+      "url": "https://db.icy-veins.com/wow-forever/spells/400640"
+    },
+    "401502": {
+      "name": "Frostfire Bolt",
+      "level": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/401502"
+    },
+    "440892": {
+      "name": "Curse of the Elements",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/440892"
+    },
+    "1240047": {
+      "name": "Ice Lance",
+      "level": 56,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1240047"
+    },
+    "1296017": {
+      "name": "Comprehend Scroll",
+      "level": 6,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1296017"
+    },
+    "1302284": {
+      "name": "Imbue Iceknife",
+      "level": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1302284"
+    },
+    "1312002": {
+      "name": "Ice Lance",
+      "level": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1312002"
+    },
+    "1318827": {
+      "name": "Mana Gems",
+      "level": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1318827"
+    },
+    "1326053": {
+      "name": "Frost Blast",
+      "level": 24,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1326053"
+    }
+  },
+  "questSources": [
+    "https://www.icy-veins.com/wow-forever/mage-class-quests",
+    "https://www.icy-veins.com/wow-forever/warlock-class-quests",
+    "https://www.wowhead.com/forever/quest=4490/summon-felsteed"
+  ],
+  "battlemageSources": [
+    "https://www.icy-veins.com/wow-forever/mage-class-overview",
+    "https://www.icy-veins.com/wow-forever/news/mages-might-unlock-a-new-playstyle-in-wow-forever/",
+    "https://www.method.gg/wow-forever/mage-comprehension-and-study-guide-in-wow-forever-how-scrolls-work-and-all-scroll-effects",
+    "https://db.icy-veins.com/wow-forever/items/277488",
+    "https://db.icy-veins.com/wow-forever/items/276631"
+  ],
+  "raceTokenSource": "Read-only existing rules/rules.json: Scourge and Skyborne tokens; no live client token verification."
+}

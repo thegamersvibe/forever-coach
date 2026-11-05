@@ -1,0 +1,1063 @@
+{
+  "target": "WoW Forever, client 1.60.1",
+  "talentMethod": "Static level-10 state, explicit Icy Veins level bullets, and explicitly named tank-guide allocation segments only. No tree/prerequisite inference fills unknown points.",
+  "blockedMethod": "Real browser new_tab/goto_url/js attempts remained at Cloudflare security verification. Direct HTTP was also 403; Wayback had no snapshot. No slider data was recovered.",
+  "guideSources": [
+    {
+      "class": "PRIEST",
+      "hub": "https://www.icy-veins.com/wow-forever/priest-class-overview",
+      "classQuests": "https://www.icy-veins.com/wow-forever/priest-class-quests"
+    },
+    {
+      "class": "SHAMAN",
+      "hub": "https://www.icy-veins.com/wow-forever/shaman-class-overview",
+      "classQuests": "https://www.icy-veins.com/wow-forever/shaman-class-quests"
+    }
+  ],
+  "talentSources": {
+    "PRIEST:shadow": {
+      "source": "Icy Veins — Anshlun and Rainy",
+      "url": "https://www.icy-veins.com/wow-forever/shadow-priest-leveling",
+      "tree": "Shadow Magic",
+      "attributedLevels": [
+        10
+      ],
+      "unknownLevels": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    "PRIEST:discipline": {
+      "source": "Icy Veins — Rainy",
+      "url": "https://www.icy-veins.com/wow-forever/discipline-priest-leveling",
+      "tree": "Discipline",
+      "attributedLevels": [],
+      "unknownLevels": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    "PRIEST:holy": {
+      "source": "Icy Veins — Rainy",
+      "url": "https://www.icy-veins.com/wow-forever/holy-priest-leveling",
+      "tree": "Holy",
+      "attributedLevels": [],
+      "unknownLevels": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    "SHAMAN:elemental": {
+      "source": "Icy Veins — Seksixeny and Wordup",
+      "url": "https://www.icy-veins.com/wow-forever/elemental-shaman-leveling",
+      "tree": "Elemental Combat",
+      "attributedLevels": [
+        15,
+        25,
+        30,
+        31,
+        40,
+        41,
+        52
+      ],
+      "unknownLevels": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        26,
+        27,
+        28,
+        29,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    "SHAMAN:enhancement": {
+      "source": "Icy Veins — Seksixeny and Wordup",
+      "url": "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling",
+      "tree": "Enhancement",
+      "attributedLevels": [
+        20,
+        30,
+        38,
+        42
+      ],
+      "unknownLevels": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        39,
+        40,
+        41,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    "SHAMAN:enhancement_tank": {
+      "source": "The Dungeon Coach — WoW Forever Shaman Tank Beginners Guide (partial transcript)",
+      "url": "https://www.youtube.com/watch?v=vG9CuJFtdb0",
+      "tree": "Enhancement",
+      "attributedLevels": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "unknownLevels": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    "SHAMAN:restoration": {
+      "source": "Icy Veins — Seksixeny and Wordup",
+      "url": "https://www.icy-veins.com/wow-forever/restoration-shaman-leveling",
+      "tree": "Restoration",
+      "attributedLevels": [
+        15,
+        20,
+        25,
+        30,
+        31,
+        40,
+        41
+      ],
+      "unknownLevels": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        26,
+        27,
+        28,
+        29,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    }
+  },
+  "spells": {
+    "17": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/17",
+      "name": "Power Word: Shield",
+      "requiredLevel": 6
+    },
+    "324": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/324",
+      "name": "Lightning Shield",
+      "requiredLevel": 8
+    },
+    "421": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/421",
+      "name": "Chain Lightning",
+      "requiredLevel": 32
+    },
+    "527": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/527",
+      "name": "Dispel Magic",
+      "requiredLevel": 18
+    },
+    "528": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/528",
+      "name": "Cure Disease",
+      "requiredLevel": 14
+    },
+    "588": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/588",
+      "name": "Inner Fire",
+      "requiredLevel": 12
+    },
+    "596": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/596",
+      "name": "Prayer of Healing",
+      "requiredLevel": 30
+    },
+    "976": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/976",
+      "name": "Shadow Protection",
+      "requiredLevel": 30
+    },
+    "1064": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/1064",
+      "name": "Chain Heal",
+      "requiredLevel": 40
+    },
+    "2006": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/2006",
+      "name": "Resurrection",
+      "requiredLevel": 10
+    },
+    "2060": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/2060",
+      "name": "Greater Heal",
+      "requiredLevel": 40
+    },
+    "2061": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/2061",
+      "name": "Flash Heal",
+      "requiredLevel": 20
+    },
+    "2484": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/2484",
+      "name": "Earthbind Totem",
+      "requiredLevel": 6
+    },
+    "2645": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/2645",
+      "name": "Ghost Wolf",
+      "requiredLevel": 20
+    },
+    "2651": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/2651",
+      "name": "Elune's Grace",
+      "requiredLevel": 20,
+      "requiredRace": "Night Elf",
+      "rewardQuestIds": [
+        5672,
+        5673,
+        5674,
+        5675
+      ]
+    },
+    "2652": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/2652",
+      "name": "Touch of Weakness",
+      "requiredLevel": 10,
+      "requiredRace": "Undead",
+      "rewardQuestIds": [
+        5658,
+        5660,
+        5661,
+        5662,
+        5663
+      ]
+    },
+    "2944": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/2944",
+      "name": "Devouring Plague",
+      "requiredLevel": 20
+    },
+    "3599": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/3599",
+      "name": "Searing Totem",
+      "requiredLevel": 10,
+      "rewardQuestIds": [
+        1527,
+        94468,
+        97257
+      ]
+    },
+    "5394": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/5394",
+      "name": "Healing Stream Totem",
+      "requiredLevel": 20,
+      "rewardQuestIds": [
+        96,
+        94505
+      ]
+    },
+    "6346": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/6346",
+      "name": "Fear Ward",
+      "requiredLevel": 20
+    },
+    "8042": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/8042",
+      "name": "Earth Shock",
+      "requiredLevel": 4
+    },
+    "8071": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/8071",
+      "name": "Stoneskin Totem",
+      "requiredLevel": 4,
+      "rewardQuestIds": [
+        1518,
+        1521,
+        92468,
+        94375
+      ]
+    },
+    "8092": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/8092",
+      "name": "Mind Blast",
+      "requiredLevel": 10
+    },
+    "8122": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/8122",
+      "name": "Psychic Scream",
+      "requiredLevel": 14
+    },
+    "8143": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/8143",
+      "name": "Tremor Totem",
+      "requiredLevel": 18
+    },
+    "8177": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/8177",
+      "name": "Grounding Totem",
+      "requiredLevel": 30
+    },
+    "8232": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/8232",
+      "name": "Windfury Weapon",
+      "requiredLevel": 30
+    },
+    "8512": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/8512",
+      "name": "Windfury Totem",
+      "requiredLevel": 32
+    },
+    "9035": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/9035",
+      "name": "Hex of Weakness",
+      "requiredLevel": 10,
+      "requiredRace": "Troll",
+      "rewardQuestIds": [
+        5652,
+        5654,
+        5655,
+        5656,
+        5657
+      ]
+    },
+    "10797": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/10797",
+      "name": "Starshards",
+      "requiredLevel": 10,
+      "requiredRace": "Night Elf",
+      "rewardQuestIds": [
+        5628,
+        5629,
+        5630,
+        5631,
+        5632,
+        5633,
+        5627
+      ]
+    },
+    "13896": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/13896",
+      "name": "Feedback",
+      "requiredLevel": 20,
+      "requiredRace": "Human",
+      "rewardQuestIds": [
+        5676,
+        5677,
+        5678
+      ]
+    },
+    "13908": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/13908",
+      "name": "Desperate Prayer",
+      "requiredLevel": 10,
+      "requiredRace": "Dwarf",
+      "rewardQuestIds": [
+        5634,
+        5635,
+        5636,
+        5637,
+        5638,
+        5639,
+        5640
+      ]
+    },
+    "14752": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/14752",
+      "name": "Divine Spirit",
+      "requiredLevel": 30
+    },
+    "14914": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/14914",
+      "name": "Holy Fire",
+      "requiredLevel": 20
+    },
+    "15473": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/15473",
+      "name": "Shadowform"
+    },
+    "18137": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/18137",
+      "name": "Shadowguard",
+      "requiredLevel": 20,
+      "requiredRace": "Troll",
+      "rewardQuestIds": [
+        5642,
+        5643,
+        5680
+      ]
+    },
+    "36936": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/36936",
+      "name": "Totemic Recall",
+      "requiredLevel": 20
+    },
+    "66842": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/66842",
+      "name": "Call of the Elements",
+      "requiredLevel": 20
+    },
+    "408341": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/408341",
+      "name": "Fire Nova",
+      "requiredLevel": 12
+    },
+    "437009": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/437009",
+      "name": "Totemic Call",
+      "requiredLevel": 22
+    },
+    "1277324": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/1277324",
+      "name": "Dark Sacrifice",
+      "requiredLevel": 20,
+      "requiredRace": "Undead",
+      "rewardQuestIds": [
+        5644,
+        5646,
+        5679
+      ]
+    },
+    "1277331": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/1277331",
+      "name": "Chastise",
+      "requiredLevel": 20,
+      "requiredRace": "Dwarf",
+      "rewardQuestIds": [
+        5641,
+        5645,
+        5647
+      ]
+    },
+    "1277370": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/1277370",
+      "name": "Divine Grace",
+      "requiredLevel": 10,
+      "requiredRace": "Human",
+      "rewardQuestIds": [
+        94773,
+        94774,
+        94775,
+        94776,
+        94777,
+        94778,
+        94779
+      ]
+    },
+    "1277455": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/1277455",
+      "name": "Confounding Flash",
+      "requiredLevel": 10,
+      "requiredRace": "Gnome",
+      "rewardQuestIds": [
+        94817,
+        94821,
+        94822,
+        94823,
+        94824,
+        94825,
+        94826
+      ]
+    },
+    "1277462": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/1277462",
+      "name": "Contingency Plan",
+      "requiredLevel": 20,
+      "requiredRace": "Gnome",
+      "rewardQuestIds": [
+        94818,
+        94819,
+        94820
+      ]
+    },
+    "1309595": {
+      "url": "https://db.icy-veins.com/wow-forever/spells/1309595",
+      "name": "Shadow Word: Death",
+      "requiredLevel": 32
+    }
+  },
+  "questSources": [
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/94375",
+      "name": "Call of Earth"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/92468",
+      "name": "Call of Earth"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/94468",
+      "name": "Call of Fire"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/97257",
+      "name": "Call of Fire"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/94505",
+      "name": "Call of Water"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/96",
+      "name": "Call of Water"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/1531",
+      "name": "Call of Air"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/5634",
+      "name": "Desperate Prayer"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/96243",
+      "name": "Call of Earth"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/94449",
+      "name": "Call of Fire"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/94495",
+      "name": "Call of Water"
+    },
+    {
+      "url": "https://db.icy-veins.com/wow-forever/quests/94789",
+      "name": "Call of Air"
+    }
+  ],
+  "catalogEnumeration": {
+    "Priest Holy": 153,
+    "Priest Shadow": 102,
+    "Priest Arcane": 7,
+    "Shaman Nature": 147,
+    "status": "All paginated IDs deduplicated and checked against declared counts."
+  },
+  "alternativeTalentBuilds": {
+    "SHAMAN:enhancement": {
+      "source": "Mobalytics — Nicktew, Recommended variant, explicit Point Order",
+      "url": "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+      "tree": "Enhancement",
+      "order": [
+        [
+          10,
+          "Thundering Strikes"
+        ],
+        [
+          11,
+          "Thundering Strikes"
+        ],
+        [
+          12,
+          "Thundering Strikes"
+        ],
+        [
+          13,
+          "Thundering Strikes"
+        ],
+        [
+          14,
+          "Thundering Strikes"
+        ],
+        [
+          15,
+          "Mental Dexterity"
+        ],
+        [
+          16,
+          "Mental Dexterity"
+        ],
+        [
+          17,
+          "Mental Dexterity"
+        ],
+        [
+          18,
+          "Improved Ghost Wolf"
+        ],
+        [
+          19,
+          "Improved Ghost Wolf"
+        ],
+        [
+          20,
+          "Shamanistic Focus"
+        ],
+        [
+          21,
+          "Elemental Weapons"
+        ],
+        [
+          22,
+          "Elemental Weapons"
+        ],
+        [
+          23,
+          "Elemental Weapons"
+        ],
+        [
+          24,
+          "Anticipation"
+        ],
+        [
+          25,
+          "Stormstrike"
+        ],
+        [
+          26,
+          "Flurry"
+        ],
+        [
+          27,
+          "Flurry"
+        ],
+        [
+          28,
+          "Flurry"
+        ],
+        [
+          29,
+          "Flurry"
+        ],
+        [
+          30,
+          "Improved Stormstrike"
+        ],
+        [
+          31,
+          "Improved Stormstrike"
+        ],
+        [
+          32,
+          "Spirit Weapons"
+        ],
+        [
+          33,
+          "Tidal Focus"
+        ],
+        [
+          34,
+          "Tidal Focus"
+        ],
+        [
+          35,
+          "Tidal Focus"
+        ],
+        [
+          36,
+          "Tidal Focus"
+        ],
+        [
+          37,
+          "Tidal Focus"
+        ],
+        [
+          38,
+          "Mindfulness"
+        ],
+        [
+          39,
+          "Mindfulness"
+        ],
+        [
+          40,
+          "Mindfulness"
+        ],
+        [
+          41,
+          "Totemic Focus"
+        ],
+        [
+          42,
+          "Totemic Focus"
+        ],
+        [
+          43,
+          "Water Shield"
+        ],
+        [
+          44,
+          "Flurry"
+        ],
+        [
+          45,
+          "Mental Quickness"
+        ],
+        [
+          46,
+          "Mental Quickness"
+        ],
+        [
+          47,
+          "Maelstrom Weapon"
+        ],
+        [
+          48,
+          "Maelstrom Weapon"
+        ],
+        [
+          49,
+          "Maelstrom Weapon"
+        ],
+        [
+          50,
+          "Maelstrom Weapon"
+        ],
+        [
+          51,
+          "Maelstrom Weapon"
+        ],
+        [
+          52,
+          "Rage of the Farseer"
+        ],
+        [
+          53,
+          "Concussion"
+        ],
+        [
+          54,
+          "Concussion"
+        ],
+        [
+          55,
+          "Concussion"
+        ],
+        [
+          56,
+          "Concussion"
+        ],
+        [
+          57,
+          "Concussion"
+        ],
+        [
+          58,
+          "Elemental Devastation"
+        ],
+        [
+          59,
+          "Elemental Devastation"
+        ],
+        [
+          60,
+          "Elemental Devastation"
+        ]
+      ]
+    }
+  },
+  "additionalSources": [
+    "https://news.blizzard.com/en-us/article/24302071/wow-forever-meet-the-new-skyborne",
+    "https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew",
+    "https://db.icy-veins.com/wow-forever/spells/408498",
+    "https://db.icy-veins.com/wow-forever/spells/1223031",
+    "https://db.icy-veins.com/wow-forever/spells/14909"
+  ],
+  "validation": {
+    "builds": 7,
+    "talentEntries": 357,
+    "attributedTalentPoints": 33,
+    "unknownTalentPoints": 324,
+    "spellMilestones": 52,
+    "uniqueMilestoneSpellIds": 45,
+    "raceOnlyQuests": 17,
+    "procSpells": 0
+  }
+}

@@ -93,27 +93,198 @@ ForeverCoach_Rules = {
       ["class"] = "HUNTER",
       ["name"] = "Mongoose Bite",
       ["spellId"] = 1495,
-      ["window"] = 5,
+      ["window"] = 10,
+    },
+    {
+      ["class"] = "HUNTER",
+      ["name"] = "Mongoose Bite (Rank 2)",
+      ["spellId"] = 14269,
+      ["window"] = 10,
+    },
+    {
+      ["class"] = "HUNTER",
+      ["name"] = "Mongoose Bite (Rank 3)",
+      ["spellId"] = 14270,
+      ["window"] = 10,
+    },
+    {
+      ["class"] = "HUNTER",
+      ["name"] = "Mongoose Bite (Rank 4)",
+      ["spellId"] = 14271,
+      ["window"] = 10,
     },
   },
   ["raceOnlyQuests"] = {
+    ["A Lesson in Divinity"] = {
+      "Scourge",
+    },
+    ["A Trusty Steed"] = {
+      "Scourge",
+    },
     ["Agamand Heirlooms"] = {
+      "Scourge",
+    },
+    ["Arcane Feedback"] = {
+      "Human",
+    },
+    ["Astral Knot Garment"] = {
+      "Human",
+      "Gnome",
+      "Skyborne",
+    },
+    ["Blessings of the Great Windborne Cat Spirit"] = {
+      "Skyborne",
+    },
+    ["Boughs in the Wind"] = {
+      "Skyborne",
+    },
+    ["Chastise"] = {
+      "Dwarf",
+    },
+    ["Confounding Flash"] = {
+      "Gnome",
+    },
+    ["Contingency Plan"] = {
+      "Gnome",
+    },
+    ["Dark Sacrifice"] = {
       "Scourge",
     },
     ["Dead-tooth Jack"] = {
       "Human",
     },
+    ["Desperate Prayer"] = {
+      "Dwarf",
+    },
+    ["Destiny Calls"] = {
+      "NightElf",
+    },
+    ["Divine Grace"] = {
+      "Human",
+    },
+    ["Elune's Grace"] = {
+      "NightElf",
+    },
     ["Forged Steel"] = {
       "Orc",
-      "Troll",
       "Tauren",
+      "Troll",
+    },
+    ["Garments of Darkness"] = {
+      "Scourge",
+    },
+    ["Garments of Spirituality"] = {
+      "Troll",
+    },
+    ["Garments of the Light"] = {
+      "Human",
+      "Dwarf",
+      "Gnome",
+    },
+    ["Garments of the Moon"] = {
+      "NightElf",
     },
     ["Grey Iron Weapons"] = {
       "Dwarf",
       "Gnome",
     },
+    ["Heirloom Weapon"] = {
+      "Scourge",
+    },
+    ["Hex of Weakness"] = {
+      "Troll",
+    },
+    ["Ju-Ju Heaps"] = {
+      "Orc",
+      "Troll",
+    },
+    ["Judgment and Redemption"] = {
+      "Human",
+      "Dwarf",
+    },
+    ["Justice and Retribution"] = {
+      "Scourge",
+    },
+    ["Mage-tastic Gizmonitor"] = {
+      "Gnome",
+    },
+    ["Manaweave Robe"] = {
+      "Human",
+      "Gnome",
+      "Skyborne",
+    },
+    ["Mirror Lake"] = {
+      "Human",
+    },
+    ["Nether-lace Garment"] = {
+      "Orc",
+      "Troll",
+      "Scourge",
+    },
+    ["Old Fire-Eye"] = {
+      "Scourge",
+    },
+    ["Onin's Report"] = {
+      "Dwarf",
+      "Gnome",
+    },
+    ["Return to Delgren"] = {
+      "Human",
+      "Dwarf",
+    },
+    ["Returning Home"] = {
+      "NightElf",
+    },
+    ["Shadowguard"] = {
+      "Troll",
+    },
+    ["Snatch and Grab"] = {
+      "Human",
+    },
+    ["Spellfire Robes"] = {
+      "Orc",
+      "Troll",
+      "Scourge",
+    },
+    ["Stars of Elune"] = {
+      "NightElf",
+    },
+    ["Strength and Mercy"] = {
+      "Skyborne",
+    },
+    ["The Balnir Farmstead"] = {
+      "Scourge",
+    },
+    ["The Deathstalkers"] = {
+      "Scourge",
+    },
+    ["The Great Windborne Cat Spirit"] = {
+      "Skyborne",
+    },
+    ["The Moonsilver Blade"] = {
+      "Scourge",
+    },
+    ["The Shattered Hand"] = {
+      "Orc",
+      "Troll",
+    },
     ["The Skybreaker Bulwark"] = {
       "Skyborne",
+    },
+    ["The Test of Righteousness"] = {
+      "Human",
+      "Dwarf",
+    },
+    ["The Tome of Divinity"] = {
+      "Human",
+      "Dwarf",
+    },
+    ["The Tome of Nobility"] = {
+      "Human",
+      "Dwarf",
+    },
+    ["Touch of Weakness"] = {
+      "Scourge",
     },
     ["Weapons of Elunite"] = {
       "NightElf",
@@ -1285,13 +1456,2882 @@ ForeverCoach_Rules = {
   ["schema"] = 1,
   ["spellMilestones"] = {
     {
-      ["class"] = "WARRIOR",
+      ["class"] = "DRUID",
       ["confidence"] = "H",
-      ["how"] = "Level 10 warrior class quest from your race's warrior trainer (Dwarf/Gnome: Muren Stormpike, Ironforge)",
+      ["how"] = "Begin Heeding the Call, then Mathrengyl Bearwalker in Darnassus. Finish Body and Heart: summon Lunaclaw east of Auberdine (42,45), then return.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Bear Form",
+      ["races"] = {
+        "NightElf",
+      },
+      ["spellIds"] = {
+        5487,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "H",
+      ["how"] = "Begin Heeding the Call, then Turak Runetotem in Thunder Bluff. Finish Body and Heart: summon Lunaclaw west of Camp Taurajo (42,60), then return.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Bear Form",
+      ["races"] = {
+        "Tauren",
+      },
+      ["spellIds"] = {
+        5487,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "H",
+      ["how"] = "Urs'endris in eastern Zephras Isle offers Strength and Mercy. Enter the cave at 53,64 from the north, defeat Ur'endra and return.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Bear Form",
+      ["races"] = {
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        5487,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; a baseline escape/root ability in Forever, not a talent.",
+      ["importance"] = 65,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Nature's Grasp",
+      ["spellIds"] = {
+        16689,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Accept Moonglade from your capital druid trainer: Mathrengyl Bearwalker in Darnassus or Turak Runetotem in Thunder Bluff. The quest teaches the teleport.",
+      ["importance"] = 70,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Teleport: Moonglade",
+      ["spellIds"] = {
+        18960,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; learn the first rank of the out-of-combat resurrection. Later ranks are at 24, 36, 48 and 60.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Revive",
+      ["spellIds"] = {
+        437138,
+        1237948,
+        1237949,
+        1237950,
+        1237951,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "H",
+      ["how"] = "Start Lessons Anew with the capital druid trainer, visit Dendrite Starblaze in Moonglade, and finish Power over Poison in Darnassus or Thunder Bluff.",
+      ["importance"] = 65,
+      ["kind"] = "quest",
+      ["level"] = 14,
+      ["name"] = "Cure Poison",
+      ["spellIds"] = {
+        8946,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "H",
+      ["how"] = "Start A Lesson to Learn with the Darnassus/Thunder Bluff druid trainer; follow Dendrite Starblaze, Trial of the Lake and Trial of the Sea Lion in Moonglade.",
+      ["importance"] = 50,
+      ["kind"] = "quest",
+      ["level"] = 16,
+      ["name"] = "Aquatic Form",
+      ["spellIds"] = {
+        1066,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "H",
+      ["how"] = "Follow The Great Cat Spirit through Dendrite Starblaze in Moonglade; recover Stormrage Barrow Den relics and finish the chain, including the faction trainer return.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Cat Form",
+      ["spellIds"] = {
+        768,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "H",
+      ["how"] = "Druid trainer; baseline passive for all specializations. Clearcasting makes an eligible damage/healing spell or offensive ability free; Wrath does not consume it.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Omen of Clarity",
+      ["spellIds"] = {
+        16864,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "H",
+      ["how"] = "Learn the first rank with the Cat Form quest reward. Prowl upgrades are separate ranks at 40 and 60; no level-60 rank is required at level 20.",
+      ["importance"] = 75,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Prowl",
+      ["spellIds"] = {
+        5215,
+        6783,
+        9913,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; first rank of the in-combat resurrection.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Rebirth",
+      ["spellIds"] = {
+        20484,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer after unlocking Cat Form; use from behind the target.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Shred",
+      ["specs"] = {
+        "feral",
+      },
+      ["spellIds"] = {
+        5221,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; the launch changes added a new rank 1 at level 24.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 24,
+      ["name"] = "Ferocious Bite",
+      ["specs"] = {
+        "feral",
+      },
+      ["spellIds"] = {
+        1328618,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; removes a curse from an ally.",
+      ["importance"] = 60,
+      ["kind"] = "trainer",
+      ["level"] = 24,
+      ["name"] = "Remove Curse",
+      ["spellIds"] = {
+        2782,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; repeat poison removal over a short duration.",
+      ["importance"] = 65,
+      ["kind"] = "trainer",
+      ["level"] = 26,
+      ["name"] = "Abolish Poison",
+      ["spellIds"] = {
+        2893,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; channeled party healing for emergencies.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Tranquility",
+      ["specs"] = {
+        "restoration",
+      },
+      ["spellIds"] = {
+        740,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "H",
+      ["how"] = "Any druid trainer; no class quest is required.",
+      ["importance"] = 95,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Travel Form",
+      ["spellIds"] = {
+        783,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; learn the passive that discounts the next Energy ability after reaching maximum Energy outside combat.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 32,
+      ["name"] = "Poised",
+      ["specs"] = {
+        "feral",
+      },
+      ["spellIds"] = {
+        1328829,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; a Bear/Dire Bear emergency self-heal that spends Rage.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 36,
+      ["name"] = "Frenzied Regeneration",
+      ["specs"] = {
+        "bear",
+        "feral",
+      },
+      ["spellIds"] = {
+        22842,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; upgrade Bear Form for tanking.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Dire Bear Form",
+      ["specs"] = {
+        "bear",
+        "feral",
+      },
+      ["spellIds"] = {
+        9634,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; first rank of the channeled area-damage spell.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Hurricane",
+      ["specs"] = {
+        "balance",
+        "restoration",
+      },
+      ["spellIds"] = {
+        16914,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; powerful mana-regeneration cooldown for yourself or an ally.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Innervate",
+      ["spellIds"] = {
+        29166,
+      },
+    },
+    {
+      ["class"] = "DRUID",
+      ["confidence"] = "M",
+      ["how"] = "Druid trainer; defensive cooldown, usable while shapeshifted in Forever.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 44,
+      ["name"] = "Barkskin",
+      ["spellIds"] = {
+        22812,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Serpent Sting at a Hunter trainer.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 4,
+      ["name"] = "Serpent Sting",
+      ["spellIds"] = {
+        1978,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Concussive Shot; use it to create distance or begin a tame.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 8,
+      ["name"] = "Concussive Shot",
+      ["spellIds"] = {
+        5116,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Finish Training the Beast; use Beast Training to teach your pet learned skills.",
       ["importance"] = 90,
       ["kind"] = "quest",
       ["level"] = 10,
+      ["name"] = "Beast Training",
+      ["spellIds"] = {
+        5149,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Complete the racial Taming the Beast chain.",
+      ["importance"] = 90,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Call Pet",
+      ["spellIds"] = {
+        883,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Complete the racial Taming the Beast chain.",
+      ["importance"] = 70,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Dismiss Pet",
+      ["spellIds"] = {
+        2641,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Finish Training the Beast after the taming trials; visit its named pet trainer.",
+      ["importance"] = 95,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Feed Pet",
+      ["spellIds"] = {
+        6991,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Finish Training the Beast after the taming trials; visit its named pet trainer.",
+      ["importance"] = 95,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Revive Pet",
+      ["spellIds"] = {
+        982,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Complete the three Taming the Beast trials from Grif Wildheart in Kharanos.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Tame Beast",
+      ["races"] = {
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        1515,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Complete the three Taming the Beast trials from Josephine Carson in Elwynn Forest.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Tame Beast",
+      ["races"] = {
+        "Human",
+      },
+      ["spellIds"] = {
+        1515,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Complete the three Taming the Beast trials from Dazalar in Dolanaar.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Tame Beast",
+      ["races"] = {
+        "NightElf",
+      },
+      ["spellIds"] = {
+        1515,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Complete the three Taming the Beast trials from Thotar in Razor Hill.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Tame Beast",
+      ["races"] = {
+        "Orc",
+        "Troll",
+      },
+      ["spellIds"] = {
+        1515,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "M",
+      ["how"] = "Complete the three Taming the Beast trials from Quel'ana Quickgale in Valanaar.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Tame Beast",
+      ["races"] = {
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        1515,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Complete the three Taming the Beast trials from Yaw Sharpmane in Bloodhoof Village.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Tame Beast",
+      ["races"] = {
+        "Tauren",
+      },
+      ["spellIds"] = {
+        1515,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Mend Pet at a Hunter trainer.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Mend Pet",
+      ["spellIds"] = {
+        136,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Wing Clip for a melee slow and escape.",
+      ["importance"] = 65,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Wing Clip",
+      ["spellIds"] = {
+        2974,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Scare Beast at a Hunter trainer.",
+      ["importance"] = 55,
+      ["kind"] = "trainer",
+      ["level"] = 14,
+      ["name"] = "Scare Beast",
+      ["spellIds"] = {
+        1513,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Mongoose Bite; use when its reactive condition is active.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 16,
+      ["name"] = "Mongoose Bite",
+      ["spellIds"] = {
+        1495,
+        14269,
+        14270,
+        14271,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Multi-Shot; it shares a cooldown with Aimed Shot in Forever.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 18,
+      ["name"] = "Multi-Shot",
+      ["spellIds"] = {
+        2643,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train baseline Aimed Shot; all three Hunter specs can learn it.",
+      ["importance"] = 95,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Aimed Shot",
+      ["spellIds"] = {
+        19434,
+        20900,
+        20901,
+        20902,
+        20903,
+        20904,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Aspect of the Cheetah for travel between fights.",
+      ["importance"] = 95,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Aspect of the Cheetah",
+      ["spellIds"] = {
+        5118,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Rapid Fire at a Hunter trainer.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 26,
+      ["name"] = "Rapid Fire",
+      ["spellIds"] = {
+        3045,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Feign Death for threat resets and escaping combat.",
+      ["importance"] = 98,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Feign Death",
+      ["spellIds"] = {
+        5384,
+      },
+    },
+    {
+      ["class"] = "HUNTER",
+      ["confidence"] = "H",
+      ["how"] = "Train Aspect of the Pack for group travel; avoid using it while taking hits.",
+      ["importance"] = 60,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Aspect of the Pack",
+      ["spellIds"] = {
+        13159,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; conjure drinks before leaving town.",
+      ["importance"] = 88,
+      ["kind"] = "trainer",
+      ["level"] = 4,
+      ["name"] = "Conjure Water",
+      ["spellIds"] = {
+        5504,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; decipher eligible untranslated scrolls to raise Comprehension.",
+      ["importance"] = 82,
+      ["kind"] = "trainer",
+      ["level"] = 6,
+      ["name"] = "Comprehend Scroll",
+      ["spellIds"] = {
+        1296017,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; conjure food for recovery between pulls.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 6,
+      ["name"] = "Conjure Food",
+      ["spellIds"] = {
+        587,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; control an extra Humanoid or Beast.",
+      ["importance"] = 93,
+      ["kind"] = "trainer",
+      ["level"] = 8,
+      ["name"] = "Polymorph",
+      ["spellIds"] = {
+        118,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; root nearby enemies to create distance.",
+      ["importance"] = 94,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Frost Nova",
+      ["spellIds"] = {
+        122,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; carry Light Feathers.",
+      ["importance"] = 60,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Slow Fall",
+      ["spellIds"] = {
+        130,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; use carefully when several enemies are nearby.",
+      ["importance"] = 78,
+      ["kind"] = "trainer",
+      ["level"] = 14,
+      ["name"] = "Arcane Explosion",
+      ["spellIds"] = {
+        1449,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "M",
+      ["how"] = "Check a Mage trainer for rank 1; dispel curses on yourself or allies.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 18,
+      ["name"] = "Remove Lesser Curse",
+      ["spellIds"] = {
+        475,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; escape roots or create distance.",
+      ["importance"] = 96,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Blink",
+      ["spellIds"] = {
+        1953,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; channel from a safe position.",
+      ["importance"] = 78,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Blizzard",
+      ["spellIds"] = {
+        10,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; channel in a safe place to recover Mana.",
+      ["importance"] = 94,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Evocation",
+      ["spellIds"] = {
+        12051,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; reserve it for danger because absorbed damage costs Mana.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Mana Shield",
+      ["spellIds"] = {
+        1463,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Ironforge; carry a Rune of Teleportation.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Teleport: Ironforge",
+      ["races"] = {
+        "Human",
+        "Gnome",
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        3562,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Orgrimmar; carry a Rune of Teleportation.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Teleport: Orgrimmar",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Scourge",
+      },
+      ["spellIds"] = {
+        3567,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Stormwind; carry a Rune of Teleportation.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Teleport: Stormwind",
+      ["races"] = {
+        "Human",
+        "Gnome",
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        3561,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Undercity; carry a Rune of Teleportation.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Teleport: Undercity",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Scourge",
+      },
+      ["spellIds"] = {
+        3563,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; interrupt important enemy spells.",
+      ["importance"] = 94,
+      ["kind"] = "trainer",
+      ["level"] = 24,
+      ["name"] = "Counterspell",
+      ["spellIds"] = {
+        2139,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; short cast with a movement slow.",
+      ["importance"] = 78,
+      ["kind"] = "trainer",
+      ["level"] = 24,
+      ["name"] = "Frost Blast",
+      ["spellIds"] = {
+        1326053,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; damage and slow nearby enemies.",
+      ["importance"] = 84,
+      ["kind"] = "trainer",
+      ["level"] = 26,
+      ["name"] = "Cone of Cold",
+      ["spellIds"] = {
+        120,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; prepare a Mana gem before fighting.",
+      ["importance"] = 84,
+      ["kind"] = "trainer",
+      ["level"] = 28,
+      ["name"] = "Conjure Mana Agate",
+      ["spellIds"] = {
+        759,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Darnassus; carry a Rune of Teleportation.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Teleport: Darnassus",
+      ["races"] = {
+        "Human",
+        "Gnome",
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        3565,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Thunder Bluff; carry a Rune of Teleportation.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Teleport: Thunder Bluff",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Scourge",
+      },
+      ["spellIds"] = {
+        3566,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; use for better Mana sustain.",
+      ["importance"] = 82,
+      ["kind"] = "trainer",
+      ["level"] = 34,
+      ["name"] = "Mage Armor",
+      ["spellIds"] = {
+        6117,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Mage trainer; combines Fire and Frost damage support.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Frostfire Bolt",
+      ["spellIds"] = {
+        401502,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Ironforge; carry a Rune of Portals.",
+      ["importance"] = 68,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Portal: Ironforge",
+      ["races"] = {
+        "Human",
+        "Gnome",
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        11416,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Orgrimmar; carry a Rune of Portals.",
+      ["importance"] = 68,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Portal: Orgrimmar",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Scourge",
+      },
+      ["spellIds"] = {
+        11417,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Stormwind; carry a Rune of Portals.",
+      ["importance"] = 68,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Portal: Stormwind",
+      ["races"] = {
+        "Human",
+        "Gnome",
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        10059,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Undercity; carry a Rune of Portals.",
+      ["importance"] = 68,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Portal: Undercity",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Scourge",
+      },
+      ["spellIds"] = {
+        11418,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Darnassus; carry a Rune of Portals.",
+      ["importance"] = 68,
+      ["kind"] = "trainer",
+      ["level"] = 50,
+      ["name"] = "Portal: Darnassus",
+      ["races"] = {
+        "Human",
+        "Gnome",
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        11419,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Visit the portal trainer in Thunder Bluff; carry a Rune of Portals.",
+      ["importance"] = 68,
+      ["kind"] = "trainer",
+      ["level"] = 50,
+      ["name"] = "Portal: Thunder Bluff",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Scourge",
+      },
+      ["spellIds"] = {
+        11420,
+      },
+    },
+    {
+      ["class"] = "MAGE",
+      ["confidence"] = "H",
+      ["how"] = "Archmage Xylem in Azshara: complete Warlord Krellian, then Fragmented Magic; cosmetic Polymorph variant.",
+      ["importance"] = 15,
+      ["kind"] = "quest",
+      ["level"] = 60,
+      ["name"] = "Polymorph: Pig",
+      ["spellIds"] = {
+        28272,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Judgement from a Paladin trainer.",
+      ["importance"] = 95,
+      ["kind"] = "trainer",
+      ["level"] = 4,
+      ["name"] = "Judgement",
+      ["spellIds"] = {
+        20271,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Divine Protection from a Paladin trainer.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 6,
+      ["name"] = "Divine Protection",
+      ["spellIds"] = {
+        498,
+        5573,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Holy Strike from a Paladin trainer.",
+      ["importance"] = 98,
+      ["kind"] = "trainer",
+      ["level"] = 6,
+      ["name"] = "Holy Strike",
+      ["spellIds"] = {
+        679,
+        678,
+        1866,
+        680,
+        2495,
+        5569,
+        10332,
+        10333,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Hammer of Justice from a Paladin trainer.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 8,
+      ["name"] = "Hammer of Justice",
+      ["spellIds"] = {
+        853,
+        5588,
+        5589,
+        10308,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Purify from a Paladin trainer.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 8,
+      ["name"] = "Purify",
+      ["spellIds"] = {
+        1152,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Blessing of Protection from a Paladin trainer.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Blessing of Protection",
+      ["spellIds"] = {
+        1022,
+        5599,
+        10278,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Lay on Hands from a Paladin trainer.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Lay on Hands",
+      ["spellIds"] = {
+        633,
+        2800,
+        10310,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Righteous Fury from a Paladin trainer.",
+      ["importance"] = 98,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Righteous Fury",
+      ["specs"] = {
+        "protection",
+      },
+      ["spellIds"] = {
+        25780,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Seal of Fury from a Paladin trainer.",
+      ["importance"] = 98,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Seal of Fury",
+      ["specs"] = {
+        "protection",
+      },
+      ["spellIds"] = {
+        1311649,
+        1311656,
+        20163,
+        20419,
+        20421,
+        20422,
+        20423,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Complete The Tome of Divinity with Tiza Battleforge in Ironforge.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 12,
+      ["name"] = "Redemption",
+      ["races"] = {
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        7328,
+        10322,
+        10324,
+        20772,
+        20773,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Complete The Tome of Divinity with Duthorian Rall in Stormwind.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 12,
+      ["name"] = "Redemption",
+      ["races"] = {
+        "Human",
+      },
+      ["spellIds"] = {
+        7328,
+        10322,
+        10324,
+        20772,
+        20773,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Complete A Lesson in Divinity with Danitha Morr at Bandarion Keep; Tanis Alderwood and Deathguard Billmuth are part of the chain.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 12,
+      ["name"] = "Redemption",
+      ["races"] = {
+        "Scourge",
+      },
+      ["spellIds"] = {
+        7328,
+        10322,
+        10324,
+        20772,
+        20773,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Blessing of Wisdom from a Paladin trainer.",
+      ["importance"] = 88,
+      ["kind"] = "trainer",
+      ["level"] = 14,
+      ["name"] = "Blessing of Wisdom",
+      ["spellIds"] = {
+        19742,
+        19850,
+        19852,
+        19853,
+        19854,
+        25290,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Retribution Aura from a Paladin trainer.",
+      ["importance"] = 88,
+      ["kind"] = "trainer",
+      ["level"] = 16,
+      ["name"] = "Retribution Aura",
+      ["spellIds"] = {
+        7294,
+        10298,
+        10299,
+        10300,
+        10301,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Blessing of Freedom from a Paladin trainer.",
+      ["importance"] = 82,
+      ["kind"] = "trainer",
+      ["level"] = 18,
+      ["name"] = "Blessing of Freedom",
+      ["spellIds"] = {
+        1044,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Blessing of Kings from a Paladin trainer.",
+      ["importance"] = 95,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Blessing of Kings",
+      ["spellIds"] = {
+        20217,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Consecration from a Paladin trainer.",
+      ["importance"] = 97,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Consecration",
+      ["spellIds"] = {
+        26573,
+        20116,
+        20922,
+        20923,
+        20924,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Exorcism from a Paladin trainer.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Exorcism",
+      ["spellIds"] = {
+        879,
+        5614,
+        5615,
+        10312,
+        10313,
+        10314,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Flash of Light from a Paladin trainer.",
+      ["importance"] = 96,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Flash of Light",
+      ["spellIds"] = {
+        19750,
+        19939,
+        19940,
+        19941,
+        19942,
+        19943,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Concentration Aura from a Paladin trainer.",
+      ["importance"] = 83,
+      ["kind"] = "trainer",
+      ["level"] = 22,
+      ["name"] = "Concentration Aura",
+      ["specs"] = {
+        "holy",
+      },
+      ["spellIds"] = {
+        19746,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Seal of Light from a Paladin trainer.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Seal of Light",
+      ["spellIds"] = {
+        20165,
+        20347,
+        20348,
+        20349,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Divine Shield from a Paladin trainer.",
+      ["importance"] = 94,
+      ["kind"] = "trainer",
+      ["level"] = 34,
+      ["name"] = "Divine Shield",
+      ["spellIds"] = {
+        642,
+        1020,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Seal of Wisdom from a Paladin trainer.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 38,
+      ["name"] = "Seal of Wisdom",
+      ["spellIds"] = {
+        20166,
+        20356,
+        20357,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "M",
+      ["how"] = "Speak to Duthorian Rall in Stormwind for The Tome of Nobility.",
+      ["importance"] = 92,
+      ["kind"] = "quest",
+      ["level"] = 40,
+      ["name"] = "Summon Warhorse",
+      ["races"] = {
+        "Human",
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        13819,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "M",
+      ["how"] = "Complete A Trusty Steed; launch quest route/giver remains unverified.",
+      ["importance"] = 92,
+      ["kind"] = "quest",
+      ["level"] = 40,
+      ["name"] = "Summon Warhorse",
+      ["races"] = {
+        "Scourge",
+      },
+      ["spellIds"] = {
+        1279399,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Cleanse from a Paladin trainer.",
+      ["importance"] = 94,
+      ["kind"] = "trainer",
+      ["level"] = 42,
+      ["name"] = "Cleanse",
+      ["spellIds"] = {
+        4987,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "H",
+      ["how"] = "Learn Hammer of Wrath from a Paladin trainer.",
+      ["importance"] = 83,
+      ["kind"] = "trainer",
+      ["level"] = 44,
+      ["name"] = "Hammer of Wrath",
+      ["spellIds"] = {
+        24275,
+        24274,
+        24239,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "M",
+      ["how"] = "Complete Judgment and Redemption; launch quest route/giver remains unverified.",
+      ["importance"] = 70,
+      ["kind"] = "quest",
+      ["level"] = 60,
+      ["name"] = "Summon Charger",
+      ["races"] = {
+        "Human",
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        23214,
+      },
+    },
+    {
+      ["class"] = "PALADIN",
+      ["confidence"] = "M",
+      ["how"] = "Complete Justice and Retribution; launch quest route/giver remains unverified.",
+      ["importance"] = 70,
+      ["kind"] = "quest",
+      ["level"] = 60,
+      ["name"] = "Summon Forsaken Charger",
+      ["races"] = {
+        "Scourge",
+      },
+      ["spellIds"] = {
+        1296534,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 6,
+      ["name"] = "Power Word: Shield",
+      ["spellIds"] = {
+        17,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Confounding Flash: High Priestess Mims, Mystic Ward, Ironforge.",
+      ["importance"] = 80,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Confounding Flash",
+      ["races"] = {
+        "Gnome",
+      },
+      ["spellIds"] = {
+        1277455,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Desperate Prayer: High Priest Rohan, Mystic Ward, Ironforge.",
+      ["importance"] = 80,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Desperate Prayer",
+      ["races"] = {
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        13908,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Divine Grace: High Priestess Laurena, Cathedral Square, Stormwind.",
+      ["importance"] = 75,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Divine Grace",
+      ["races"] = {
+        "Human",
+      },
+      ["spellIds"] = {
+        1277370,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Hex of Weakness: Ur'kyo, Valley of Spirits, Orgrimmar.",
+      ["importance"] = 65,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Hex of Weakness",
+      ["races"] = {
+        "Troll",
+      },
+      ["spellIds"] = {
+        9035,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Mind Blast",
+      ["spellIds"] = {
+        8092,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Resurrection",
+      ["spellIds"] = {
+        2006,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Stars of Elune: Priestess Alathea, Temple of the Moon, Darnassus.",
+      ["importance"] = 65,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Starshards",
+      ["races"] = {
+        "NightElf",
+      },
+      ["spellIds"] = {
+        10797,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Touch of Weakness: Aelthalyste, War Quarter, Undercity.",
+      ["importance"] = 65,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Touch of Weakness",
+      ["races"] = {
+        "Scourge",
+      },
+      ["spellIds"] = {
+        2652,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Inner Fire",
+      ["spellIds"] = {
+        588,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 60,
+      ["kind"] = "trainer",
+      ["level"] = 14,
+      ["name"] = "Cure Disease",
+      ["spellIds"] = {
+        528,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 14,
+      ["name"] = "Psychic Scream",
+      ["spellIds"] = {
+        8122,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 18,
+      ["name"] = "Dispel Magic",
+      ["spellIds"] = {
+        527,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Chastise: High Priest Rohan, Mystic Ward, Ironforge.",
+      ["importance"] = 75,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Chastise",
+      ["races"] = {
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        1277331,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Contingency Plan: High Priestess Mims, Mystic Ward, Ironforge.",
+      ["importance"] = 75,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Contingency Plan",
+      ["races"] = {
+        "Gnome",
+      },
+      ["spellIds"] = {
+        1277462,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Dark Sacrifice: Aelthalyste, War Quarter, Undercity.",
+      ["importance"] = 80,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Dark Sacrifice",
+      ["races"] = {
+        "Scourge",
+      },
+      ["spellIds"] = {
+        1277324,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Devouring Plague",
+      ["spellIds"] = {
+        2944,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Elune's Grace: Priestess Alathea, Temple of the Moon, Darnassus.",
+      ["importance"] = 60,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Elune's Grace",
+      ["races"] = {
+        "NightElf",
+      },
+      ["spellIds"] = {
+        2651,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Fear Ward",
+      ["spellIds"] = {
+        6346,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Arcane Feedback: High Priestess Laurena, Cathedral Square, Stormwind.",
+      ["importance"] = 60,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Feedback",
+      ["races"] = {
+        "Human",
+      },
+      ["spellIds"] = {
+        13896,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Flash Heal",
+      ["spellIds"] = {
+        2061,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Holy Fire",
+      ["spellIds"] = {
+        14914,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Shadowguard: Ur'kyo, Valley of Spirits, Orgrimmar.",
+      ["importance"] = 70,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Shadowguard",
+      ["races"] = {
+        "Troll",
+      },
+      ["spellIds"] = {
+        18137,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Divine Spirit",
+      ["spellIds"] = {
+        14752,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Prayer of Healing",
+      ["spellIds"] = {
+        596,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 60,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Shadow Protection",
+      ["spellIds"] = {
+        976,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 32,
+      ["name"] = "Shadow Word: Death",
+      ["spellIds"] = {
+        1309595,
+      },
+    },
+    {
+      ["class"] = "PRIEST",
+      ["confidence"] = "H",
+      ["how"] = "Priest trainer; learn the first rank at this level.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Greater Heal",
+      ["spellIds"] = {
+        2060,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Pick Pocket before attempting Rogue class quests.",
+      ["importance"] = 65,
+      ["kind"] = "trainer",
+      ["level"] = 4,
+      ["name"] = "Pick Pocket",
+      ["spellIds"] = {
+        921,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Evasion at a Rogue trainer.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 8,
+      ["name"] = "Evasion",
+      ["spellIds"] = {
+        5277,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "M",
+      ["how"] = "Train Dual Wield and equip an off-hand weapon.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Dual Wield",
+      ["spellIds"] = {
+        674,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Slice and Dice at a Rogue trainer.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Slice and Dice",
+      ["spellIds"] = {
+        5171,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Sprint for travel and escape.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Sprint",
+      ["spellIds"] = {
+        2983,
+        8696,
+        11305,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Kick and interrupt dangerous casts.",
+      ["importance"] = 98,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Kick",
+      ["spellIds"] = {
+        1766,
+        1767,
+        1768,
+        1769,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "M",
+      ["how"] = "Learn Pick Lock from a Rogue trainer; carry Thieves' Tools and practice to skill 75 before poisons.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 16,
+      ["name"] = "Pick Lock",
+      ["spellIds"] = {
+        1804,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Ambush; it requires a dagger and Stealth.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 18,
+      ["name"] = "Ambush",
+      ["spellIds"] = {
+        8676,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Complete the poison chain: Mathias Shaw in Stormwind (Alliance) or Shenthul in Orgrimmar (Horde); Lockpicking 75 required.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Poisons",
+      ["spellIds"] = {
+        2842,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Vanish and stock its reagent from a Rogue supplies vendor.",
+      ["importance"] = 98,
+      ["kind"] = "trainer",
+      ["level"] = 22,
+      ["name"] = "Vanish",
+      ["spellIds"] = {
+        1856,
+        1857,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Shank; use an off-hand weapon to generate Energy.",
+      ["importance"] = 98,
+      ["kind"] = "trainer",
+      ["level"] = 24,
+      ["name"] = "Shank",
+      ["spellIds"] = {
+        1329283,
+        1329549,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Cheap Shot at a Rogue trainer.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 26,
+      ["name"] = "Cheap Shot",
+      ["spellIds"] = {
+        1833,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Kidney Shot for a finishing-move stun.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Kidney Shot",
+      ["spellIds"] = {
+        408,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Blind at a Rogue trainer.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 34,
+      ["name"] = "Blind",
+      ["spellIds"] = {
+        2094,
+      },
+    },
+    {
+      ["class"] = "ROGUE",
+      ["confidence"] = "H",
+      ["how"] = "Train Shank Rank 2; its Energy generation improves to 25.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 44,
+      ["name"] = "Shank (Rank 2)",
+      ["spellIds"] = {
+        1329549,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "M",
+      ["how"] = "Start Call of Earth with Windshaper Boro, Thendal Grove, Zephras Isle; Stoneskin spell metadata lists level 4.",
+      ["importance"] = 90,
+      ["kind"] = "quest",
+      ["level"] = 3,
+      ["name"] = "Call of Earth / Stoneskin Totem",
+      ["races"] = {
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        8071,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Call of Earth: Teo Hammerstorm in Anvilmar, Dun Morogh; complete the Earth Sapta chain.",
+      ["importance"] = 90,
+      ["kind"] = "quest",
+      ["level"] = 4,
+      ["name"] = "Call of Earth / Stoneskin Totem",
+      ["races"] = {
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        8071,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Call of Earth: Canaga Earthcaller in the Valley of Trials, Durotar.",
+      ["importance"] = 90,
+      ["kind"] = "quest",
+      ["level"] = 4,
+      ["name"] = "Call of Earth / Stoneskin Totem",
+      ["races"] = {
+        "Orc",
+        "Troll",
+      },
+      ["spellIds"] = {
+        8071,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Call of Earth: Seer Ravenfeather in Camp Narache, Mulgore.",
+      ["importance"] = 90,
+      ["kind"] = "quest",
+      ["level"] = 4,
+      ["name"] = "Call of Earth / Stoneskin Totem",
+      ["races"] = {
+        "Tauren",
+      },
+      ["spellIds"] = {
+        8071,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; learn the first rank at this level.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 4,
+      ["name"] = "Earth Shock",
+      ["spellIds"] = {
+        8042,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer after obtaining the Earth Totem from Call of Earth.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 6,
+      ["name"] = "Earthbind Totem",
+      ["spellIds"] = {
+        2484,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; learn the first rank at this level.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 8,
+      ["name"] = "Lightning Shield",
+      ["spellIds"] = {
+        324,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Call of Fire: Shaman trainer to Bruegs Kindleborn in eastern Dun Morogh, then Braldir Ashmantle in Loch Modan.",
+      ["importance"] = 90,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Call of Fire / Searing Totem",
+      ["races"] = {
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        3599,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Call of Fire: Shaman trainer to Kranal Fiss in The Barrens, then Telf Joolan in southern Durotar.",
+      ["importance"] = 90,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Call of Fire / Searing Totem",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Tauren",
+      },
+      ["spellIds"] = {
+        3599,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Call of Fire: Aarnor Galestrike, Shen'dar Village; Olariaan Swiftburn; finish with Sessaria Skystride in Valanaar.",
+      ["importance"] = 90,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Call of Fire / Searing Totem",
+      ["races"] = {
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        3599,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; requires an active fire totem to use. Complete Call of Fire first.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Fire Nova",
+      ["spellIds"] = {
+        408341,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer after obtaining the Earth Totem from Call of Earth.",
+      ["importance"] = 75,
+      ["kind"] = "trainer",
+      ["level"] = 18,
+      ["name"] = "Tremor Totem",
+      ["spellIds"] = {
+        8143,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Call of Water: follow the Loch Modan chain to Hervdana Saegrund in Wetlands; finish its water-gathering and elemental trials.",
+      ["importance"] = 75,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Call of Water / Healing Stream Totem",
+      ["races"] = {
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        5394,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Call of Water: follow the Ratchet chain to Brine in southern Barrens; finish its water-gathering and elemental trials.",
+      ["importance"] = 75,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Call of Water / Healing Stream Totem",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Tauren",
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        5394,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; learn the first rank at this level.",
+      ["importance"] = 60,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Call of the Elements",
+      ["spellIds"] = {
+        66842,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; learn the first rank at this level.",
+      ["importance"] = 95,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Ghost Wolf",
+      ["spellIds"] = {
+        2645,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; learn the first rank at this level.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Totemic Recall",
+      ["spellIds"] = {
+        36936,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; learn the first rank at this level.",
+      ["importance"] = 60,
+      ["kind"] = "trainer",
+      ["level"] = 22,
+      ["name"] = "Totemic Call",
+      ["spellIds"] = {
+        437009,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "M",
+      ["how"] = "Call of Air: Shaman trainer to Veyric Thundervein, Arathi Highlands. Rewards Air Totem item; train Grounding Totem separately.",
+      ["importance"] = 85,
+      ["kind"] = "quest",
+      ["level"] = 30,
+      ["name"] = "Call of Air / Air Totem access",
+      ["races"] = {
+        "Dwarf",
+      },
+      ["spellIds"] = {
+        8177,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "M",
+      ["how"] = "Call of Air: Shaman trainer to Prate Cloudseer, Thousand Needles. Rewards Air Totem item; train Grounding Totem separately.",
+      ["importance"] = 85,
+      ["kind"] = "quest",
+      ["level"] = 30,
+      ["name"] = "Call of Air / Air Totem access",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Tauren",
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        8177,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; learn the first rank at this level.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Windfury Weapon",
+      ["spellIds"] = {
+        8232,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; learn the first rank at this level.",
+      ["importance"] = 80,
+      ["kind"] = "trainer",
+      ["level"] = 32,
+      ["name"] = "Chain Lightning",
+      ["spellIds"] = {
+        421,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer after obtaining the Air Totem from Call of Air.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 32,
+      ["name"] = "Windfury Totem",
+      ["spellIds"] = {
+        8512,
+      },
+    },
+    {
+      ["class"] = "SHAMAN",
+      ["confidence"] = "H",
+      ["how"] = "Shaman trainer; learn the first rank at this level.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Chain Heal",
+      ["spellIds"] = {
+        1064,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Alamar Grimm in Anvilmar: complete Beginnings with 3 Feather Charms.",
+      ["importance"] = 98,
+      ["kind"] = "quest",
+      ["level"] = 1,
+      ["name"] = "Summon Imp",
+      ["races"] = {
+        "Gnome",
+      },
+      ["spellIds"] = {
+        688,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Drusilla La Salle in Northshire: complete The Stolen Tome.",
+      ["importance"] = 98,
+      ["kind"] = "quest",
+      ["level"] = 1,
+      ["name"] = "Summon Imp",
+      ["races"] = {
+        "Human",
+      },
+      ["spellIds"] = {
+        688,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Ruzan in the Valley of Trials: complete Vile Familiars with 6 Vile Familiar Heads.",
+      ["importance"] = 98,
+      ["kind"] = "quest",
+      ["level"] = 1,
+      ["name"] = "Summon Imp",
+      ["races"] = {
+        "Orc",
+        "Troll",
+      },
+      ["spellIds"] = {
+        688,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Venya Marthand in Deathknell: complete Piercing the Veil with 3 Rattlecage Skulls.",
+      ["importance"] = 98,
+      ["kind"] = "quest",
+      ["level"] = 1,
+      ["name"] = "Summon Imp",
+      ["races"] = {
+        "Scourge",
+      },
+      ["spellIds"] = {
+        688,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; keep its damage-over-time active on durable enemies.",
+      ["importance"] = 94,
+      ["kind"] = "trainer",
+      ["level"] = 4,
+      ["name"] = "Corruption",
+      ["spellIds"] = {
+        172,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; exchange spare Health for Mana.",
+      ["importance"] = 96,
+      ["kind"] = "trainer",
+      ["level"] = 6,
+      ["name"] = "Life Tap",
+      ["spellIds"] = {
+        1454,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; a damaging Bane can coexist with a utility Curse.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 8,
+      ["name"] = "Bane of Agony",
+      ["spellIds"] = {
+        980,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; avoid sending feared enemies into other packs.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 8,
+      ["name"] = "Fear",
+      ["spellIds"] = {
+        5782,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; keep a Healthstone ready for emergency healing.",
+      ["importance"] = 90,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Create Healthstone",
+      ["spellIds"] = {
+        6201,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; use on nontrivial enemies to collect Soul Shards.",
+      ["importance"] = 95,
+      ["kind"] = "trainer",
+      ["level"] = 10,
+      ["name"] = "Drain Soul",
+      ["spellIds"] = {
+        1120,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Gakin the Darkbinder beneath the Slaughtered Lamb, Stormwind; recover Surena's Choker and finish The Binding. Gnomes can start with Lago Blackwrench in Ironforge.",
+      ["importance"] = 99,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Summon Voidwalker",
+      ["races"] = {
+        "Human",
+        "Gnome",
+      },
+      ["spellIds"] = {
+        697,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Gan'rul Bloodeye, Cleft of Shadow, Orgrimmar; recover the Tablet of Verga from Skull Rock and finish The Binding.",
+      ["importance"] = 99,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Summon Voidwalker",
+      ["races"] = {
+        "Orc",
+        "Troll",
+      },
+      ["spellIds"] = {
+        697,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Carendin Halgar, Temple of the Damned, Undercity; recover Egalin's Grimoire and finish The Binding.",
+      ["importance"] = 99,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Summon Voidwalker",
+      ["races"] = {
+        "Scourge",
+      },
+      ["spellIds"] = {
+        697,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; channel to keep your Demon alive.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Health Funnel",
+      ["spellIds"] = {
+        755,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; recover Health while your DoTs and Demon attack.",
+      ["importance"] = 91,
+      ["kind"] = "trainer",
+      ["level"] = 14,
+      ["name"] = "Drain Life",
+      ["spellIds"] = {
+        689,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer before underwater questing.",
+      ["importance"] = 58,
+      ["kind"] = "trainer",
+      ["level"] = 16,
+      ["name"] = "Unending Breath",
+      ["spellIds"] = {
+        5697,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; protect yourself or the group healer before combat.",
+      ["importance"] = 91,
+      ["kind"] = "trainer",
+      ["level"] = 18,
+      ["name"] = "Create Soulstone",
+      ["spellIds"] = {
+        693,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; it supports Demonic Brand once talented.",
+      ["importance"] = 78,
+      ["kind"] = "trainer",
+      ["level"] = 18,
+      ["name"] = "Searing Pain",
+      ["spellIds"] = {
+        5676,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn the Forever version from a Warlock trainer; improves Magic damage taken.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Curse of the Elements",
+      ["spellIds"] = {
+        440892,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; replace Demon Skin and refresh after death.",
+      ["importance"] = 83,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Demon Armor",
+      ["spellIds"] = {
+        706,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; ranged area damage while the tank holds enemies.",
+      ["importance"] = 68,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Rain of Fire",
+      ["spellIds"] = {
+        5740,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; bring a Soul Shard and two assisting group members.",
+      ["importance"] = 87,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Ritual of Summoning",
+      ["spellIds"] = {
+        698,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Gakin in Stormwind: follow the Heartswood or What Is Love? chain through Takar the Seer; finish its summoning ritual.",
+      ["importance"] = 92,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Summon Succubus or Summon Incubus",
+      ["races"] = {
+        "Human",
+        "Gnome",
+      },
+      ["spellIds"] = {
+        712,
+        713,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Gan'rul and Cazul in Orgrimmar: choose the Dogran pendant route or Love Hurts / Wish You Were Here; finish The Binding.",
+      ["importance"] = 92,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Summon Succubus or Summon Incubus",
+      ["races"] = {
+        "Orc",
+        "Troll",
+      },
+      ["spellIds"] = {
+        712,
+        713,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Carendin and Godrick Farsan in Undercity: choose Hearts of the Pure or Hearts of the Lovers; finish The Binding.",
+      ["importance"] = 92,
+      ["kind"] = "quest",
+      ["level"] = 20,
+      ["name"] = "Summon Succubus or Summon Incubus",
+      ["races"] = {
+        "Scourge",
+      },
+      ["spellIds"] = {
+        712,
+        713,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; slow dangerous enemy casting.",
+      ["importance"] = 65,
+      ["kind"] = "trainer",
+      ["level"] = 26,
+      ["name"] = "Curse of Tongues",
+      ["spellIds"] = {
+        1714,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; isolate an extra Demon or Elemental.",
+      ["importance"] = 79,
+      ["kind"] = "trainer",
+      ["level"] = 28,
+      ["name"] = "Banish",
+      ["spellIds"] = {
+        710,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; create the weapon imbue.",
+      ["importance"] = 72,
+      ["kind"] = "trainer",
+      ["level"] = 28,
+      ["name"] = "Create Firestone",
+      ["spellIds"] = {
+        6366,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; use close-range area damage only with safe healing support.",
+      ["importance"] = 63,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Hellfire",
+      ["spellIds"] = {
+        1949,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; temporarily control an eligible Demon.",
+      ["importance"] = 65,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Subjugate Demon",
+      ["spellIds"] = {
+        1098,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Take Seeking Strahad from your capital Warlock trainer; meet Strahad Farsan in Ratchet and complete the Tome of the Cabal summoning chain.",
+      ["importance"] = 92,
+      ["kind"] = "quest",
+      ["level"] = 30,
+      ["name"] = "Summon Felhunter",
+      ["spellIds"] = {
+        691,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; absorb incoming Shadow damage.",
+      ["importance"] = 64,
+      ["kind"] = "trainer",
+      ["level"] = 32,
+      ["name"] = "Shadow Ward",
+      ["spellIds"] = {
+        6229,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; useful weapon imbue for Shadow-focused builds.",
+      ["importance"] = 77,
+      ["kind"] = "trainer",
+      ["level"] = 36,
+      ["name"] = "Create Spellstone",
+      ["spellIds"] = {
+        2362,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; escape multiple nearby enemies without pulling extra packs.",
+      ["importance"] = 82,
+      ["kind"] = "trainer",
+      ["level"] = 40,
+      ["name"] = "Howl of Terror",
+      ["spellIds"] = {
+        5484,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "M",
+      ["how"] = "Speak to Strahad Farsan near Ratchet for Summon Felsteed (quest 4490).",
+      ["importance"] = 98,
+      ["kind"] = "quest",
+      ["level"] = 40,
+      ["name"] = "Summon Felsteed",
+      ["spellIds"] = {
+        5784,
+      },
+    },
+    {
+      ["class"] = "WARLOCK",
+      ["confidence"] = "H",
+      ["how"] = "Learn from a Warlock trainer; emergency heal and short Horror control.",
+      ["importance"] = 91,
+      ["kind"] = "trainer",
+      ["level"] = 42,
+      ["name"] = "Death Coil",
+      ["spellIds"] = {
+        6789,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Muren Stormpike in Ironforge; defeat Vejrek and return his head.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
       ["name"] = "Defensive Stance",
+      ["races"] = {
+        "Dwarf",
+        "Gnome",
+      },
       ["spellIds"] = {
         71,
       },
@@ -1299,8 +4339,139 @@ ForeverCoach_Rules = {
     {
       ["class"] = "WARRIOR",
       ["confidence"] = "H",
-      ["how"] = "Warrior trainer",
-      ["importance"] = 85,
+      ["how"] = "Harry Burlguard in Stormwind Old Town; finish Bartleby's Mug.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Defensive Stance",
+      ["races"] = {
+        "Human",
+      },
+      ["spellIds"] = {
+        71,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Elanaria in Darnassus; defeat Vorlus Vilehoof and return his horn.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Defensive Stance",
+      ["races"] = {
+        "NightElf",
+      },
+      ["spellIds"] = {
+        71,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Uzzek at Far Watch Post; complete Path of Defense with Durotar scales.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Defensive Stance",
+      ["races"] = {
+        "Orc",
+        "Troll",
+        "Tauren",
+      },
+      ["spellIds"] = {
+        71,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Deathguard Dillinger in Brill; defeat Ulag the Cleaver.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Defensive Stance",
+      ["races"] = {
+        "Scourge",
+      },
+      ["spellIds"] = {
+        71,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Seena Skybreaker on Zephras Isle; recover the Skybreaker Bulwark from Zaal Stormshield.",
+      ["importance"] = 100,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Defensive Stance",
+      ["races"] = {
+        "Skyborne",
+      },
+      ["spellIds"] = {
+        71,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Complete your racial Defensive Stance quest; Sunder Armor is a separate reward.",
+      ["importance"] = 90,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Sunder Armor",
+      ["spellIds"] = {
+        7386,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Complete your racial Defensive Stance quest; Taunt is a separate reward.",
+      ["importance"] = 95,
+      ["kind"] = "quest",
+      ["level"] = 10,
+      ["name"] = "Taunt",
+      ["specs"] = {
+        "protection",
+      },
+      ["spellIds"] = {
+        355,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Learn Overpower from a Warrior trainer.",
+      ["importance"] = 88,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Overpower",
+      ["spellIds"] = {
+        7384,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Learn Shield Bash from a Warrior trainer.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 12,
+      ["name"] = "Shield Bash",
+      ["specs"] = {
+        "protection",
+      },
+      ["spellIds"] = {
+        72,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Learn Revenge from a Warrior trainer.",
+      ["importance"] = 98,
       ["kind"] = "trainer",
       ["level"] = 14,
       ["name"] = "Revenge",
@@ -1314,8 +4485,20 @@ ForeverCoach_Rules = {
     {
       ["class"] = "WARRIOR",
       ["confidence"] = "H",
-      ["how"] = "Warrior trainer",
-      ["importance"] = 80,
+      ["how"] = "Learn Tactical Mastery from a Warrior trainer.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 14,
+      ["name"] = "Tactical Mastery",
+      ["spellIds"] = {
+        1310185,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Learn Shield Block from a Warrior trainer.",
+      ["importance"] = 98,
       ["kind"] = "trainer",
       ["level"] = 16,
       ["name"] = "Shield Block",
@@ -1329,8 +4512,24 @@ ForeverCoach_Rules = {
     {
       ["class"] = "WARRIOR",
       ["confidence"] = "H",
-      ["how"] = "Warrior trainer",
-      ["importance"] = 75,
+      ["how"] = "Learn Slam from a Warrior trainer.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 20,
+      ["name"] = "Slam",
+      ["specs"] = {
+        "arms",
+        "fury",
+      },
+      ["spellIds"] = {
+        1240193,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Learn Victory Rush from a Warrior trainer.",
+      ["importance"] = 96,
       ["kind"] = "trainer",
       ["level"] = 20,
       ["name"] = "Victory Rush",
@@ -1341,8 +4540,35 @@ ForeverCoach_Rules = {
     {
       ["class"] = "WARRIOR",
       ["confidence"] = "H",
-      ["how"] = "The Islander (any warrior trainer), then Fray Island in The Barrens",
-      ["importance"] = 60,
+      ["how"] = "Learn Shield Wall from a Warrior trainer.",
+      ["importance"] = 86,
+      ["kind"] = "trainer",
+      ["level"] = 28,
+      ["name"] = "Shield Wall",
+      ["specs"] = {
+        "protection",
+      },
+      ["spellIds"] = {
+        871,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Learn Berserker Rage from a Warrior trainer.",
+      ["importance"] = 85,
+      ["kind"] = "trainer",
+      ["level"] = 30,
+      ["name"] = "Berserker Rage",
+      ["spellIds"] = {
+        18499,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Take The Islander to Klannoc Macleod on Fray Island; complete The Affray.",
+      ["importance"] = 95,
       ["kind"] = "quest",
       ["level"] = 30,
       ["name"] = "Berserker Stance",
@@ -1351,133 +4577,5781 @@ ForeverCoach_Rules = {
       },
     },
     {
-      ["class"] = "DRUID",
+      ["class"] = "WARRIOR",
       ["confidence"] = "H",
-      ["how"] = "Level 10 druid class quest",
-      ["importance"] = 85,
-      ["kind"] = "quest",
-      ["level"] = 10,
-      ["name"] = "Bear Form",
-      ["spellIds"] = {
-        5487,
-      },
-    },
-    {
-      ["class"] = "DRUID",
-      ["confidence"] = "H",
-      ["how"] = "Level 16 druid class quest",
-      ["importance"] = 40,
-      ["kind"] = "quest",
-      ["level"] = 16,
-      ["name"] = "Aquatic Form",
-      ["spellIds"] = {
-        1066,
-      },
-    },
-    {
-      ["class"] = "HUNTER",
-      ["confidence"] = "H",
-      ["how"] = "Level 10 hunter class quest",
-      ["importance"] = 90,
-      ["kind"] = "quest",
-      ["level"] = 10,
-      ["name"] = "Tame Beast",
-      ["spellIds"] = {
-        1515,
-      },
-    },
-    {
-      ["class"] = "WARLOCK",
-      ["confidence"] = "H",
-      ["how"] = "Level 10 warlock class quest",
-      ["importance"] = 85,
-      ["kind"] = "quest",
-      ["level"] = 10,
-      ["name"] = "Summon Voidwalker",
-      ["spellIds"] = {
-        697,
-      },
-    },
-    {
-      ["class"] = "WARLOCK",
-      ["confidence"] = "H",
-      ["how"] = "Level 20 warlock class quest (either demon counts)",
-      ["importance"] = 60,
-      ["kind"] = "quest",
-      ["level"] = 20,
-      ["name"] = "Summon Succubus or Incubus",
-      ["spellIds"] = {
-        712,
-        713,
-      },
-    },
-    {
-      ["class"] = "WARLOCK",
-      ["confidence"] = "H",
-      ["how"] = "Level 30 warlock class quest",
-      ["importance"] = 60,
-      ["kind"] = "quest",
-      ["level"] = 30,
-      ["name"] = "Summon Felhunter",
-      ["spellIds"] = {
-        691,
-      },
-    },
-    {
-      ["class"] = "SHAMAN",
-      ["confidence"] = "M",
-      ["how"] = "Fire totem class quest",
-      ["importance"] = 75,
-      ["kind"] = "quest",
-      ["level"] = 10,
-      ["name"] = "Searing Totem",
-      ["spellIds"] = {
-        3599,
-      },
-    },
-    {
-      ["class"] = "PALADIN",
-      ["confidence"] = "M",
-      ["how"] = "Level 12 paladin class quest (Undead: A Lesson in Divinity)",
-      ["importance"] = 45,
-      ["kind"] = "quest",
-      ["level"] = 12,
-      ["name"] = "Redemption",
-      ["spellIds"] = {
-        7328,
-      },
-    },
-    {
-      ["class"] = "ROGUE",
-      ["confidence"] = "M",
-      ["how"] = "Level 20 rogue poison quest",
-      ["importance"] = 75,
-      ["kind"] = "quest",
-      ["level"] = 20,
-      ["name"] = "Poisons",
-      ["spellIds"] = {
-        2842,
-      },
-    },
-    {
-      ["class"] = "PRIEST",
-      ["confidence"] = "M",
-      ["how"] = "Priest trainer (Dwarf racial priest spell)",
-      ["importance"] = 50,
+      ["how"] = "Learn Whirlwind from a Warrior trainer.",
+      ["importance"] = 92,
       ["kind"] = "trainer",
-      ["level"] = 10,
-      ["name"] = "Desperate Prayer",
-      ["races"] = {
-        "Dwarf",
+      ["level"] = 36,
+      ["name"] = "Whirlwind",
+      ["specs"] = {
+        "arms",
+        "fury",
       },
       ["spellIds"] = {
-        13908,
+        1680,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Learn Pummel from a Warrior trainer.",
+      ["importance"] = 92,
+      ["kind"] = "trainer",
+      ["level"] = 38,
+      ["name"] = "Pummel",
+      ["specs"] = {
+        "arms",
+        "fury",
+      },
+      ["spellIds"] = {
+        6552,
+      },
+    },
+    {
+      ["class"] = "WARRIOR",
+      ["confidence"] = "H",
+      ["how"] = "Learn Recklessness from a Warrior trainer.",
+      ["importance"] = 70,
+      ["kind"] = "trainer",
+      ["level"] = 50,
+      ["name"] = "Recklessness",
+      ["specs"] = {
+        "arms",
+        "fury",
+      },
+      ["spellIds"] = {
+        1719,
       },
     },
   },
   ["talentBuilds"] = {
+    ["DRUID:balance"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Improved Wrath",
+        },
+        {
+          11,
+          "Improved Wrath",
+        },
+        {
+          12,
+          "Improved Wrath",
+        },
+        {
+          13,
+          "Improved Wrath",
+        },
+        {
+          14,
+          "Improved Wrath",
+        },
+        {
+          15,
+          "Nature's Focus",
+        },
+        {
+          16,
+          "Nature's Focus",
+        },
+        {
+          17,
+          "Nature's Focus",
+        },
+        {
+          18,
+          "Nature's Focus",
+        },
+        {
+          19,
+          "Nature's Focus",
+        },
+        {
+          20,
+          "Reflection",
+        },
+        {
+          21,
+          "Reflection",
+        },
+        {
+          22,
+          "Reflection",
+        },
+        {
+          23,
+          "Nature's Reach",
+        },
+        {
+          24,
+          "Nature's Reach",
+        },
+        {
+          25,
+          "Nature's Majesty",
+        },
+        {
+          26,
+          "Nature's Majesty",
+        },
+        {
+          27,
+          "Moonglow",
+        },
+        {
+          28,
+          "Nature's Splendor",
+        },
+        {
+          29,
+          "Moonglow",
+        },
+        {
+          30,
+          "Moonglow",
+        },
+        {
+          31,
+          "Improved Moonfire",
+        },
+        {
+          32,
+          "Improved Moonfire",
+        },
+        {
+          33,
+          "Insect Swarm",
+        },
+        {
+          34,
+          "Genesis",
+        },
+        {
+          35,
+          "Genesis",
+        },
+        {
+          36,
+          "Genesis",
+        },
+        {
+          37,
+          "Genesis",
+        },
+        {
+          38,
+          "Nature's Grace",
+        },
+        {
+          39,
+          "Genesis",
+        },
+        {
+          40,
+          "Naturalist",
+        },
+        {
+          41,
+          "Naturalist",
+        },
+        {
+          42,
+          "Naturalist",
+        },
+        {
+          43,
+          "Naturalist",
+        },
+        {
+          44,
+          "Naturalist",
+        },
+        {
+          45,
+          "Eclipse",
+        },
+        {
+          46,
+          "Eclipse",
+        },
+        {
+          47,
+          "Eclipse",
+        },
+        {
+          48,
+          "Moonfury",
+        },
+        {
+          49,
+          "Moonfury",
+        },
+        {
+          50,
+          "Moonfury",
+        },
+        {
+          51,
+          "Moonfury",
+        },
+        {
+          52,
+          "Moonfury",
+        },
+        {
+          53,
+          "Moonkin Form",
+        },
+        {
+          54,
+          "Improved Starfire",
+        },
+        {
+          55,
+          "Improved Starfire",
+        },
+        {
+          56,
+          "Improved Starfire",
+        },
+        {
+          57,
+          "Improved Starfire",
+        },
+        {
+          58,
+          "Improved Starfire",
+        },
+        {
+          59,
+          "Vengeance",
+        },
+        {
+          60,
+          "Vengeance",
+        },
+      },
+      ["source"] = "Icy Veins: Balance Druid leveling",
+      ["tree"] = "Balance",
+      ["url"] = "https://www.icy-veins.com/wow-forever/balance-druid-leveling",
+    },
+    ["DRUID:bear"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Ferocity",
+        },
+        {
+          11,
+          "Ferocity",
+        },
+        {
+          12,
+          "Ferocity",
+        },
+        {
+          13,
+          "Ferocity",
+        },
+        {
+          14,
+          "Ferocity",
+        },
+        {
+          15,
+          "Feral Instinct",
+        },
+        {
+          16,
+          "Feral Instinct",
+        },
+        {
+          17,
+          "Feral Instinct",
+        },
+        {
+          18,
+          "Feral Swiftness",
+        },
+        {
+          19,
+          "Feral Swiftness",
+        },
+        {
+          20,
+          "Feral Charge",
+        },
+        {
+          21,
+          "Savage Fury",
+        },
+        {
+          22,
+          "Savage Fury",
+        },
+        {
+          23,
+          "Sharpened Claws",
+        },
+        {
+          24,
+          "Sharpened Claws",
+        },
+        {
+          25,
+          "Lacerate",
+        },
+        {
+          26,
+          "Blood Frenzy",
+        },
+        {
+          27,
+          "Blood Frenzy",
+        },
+        {
+          28,
+          "Predatory Discipline",
+        },
+        {
+          29,
+          "Predatory Strikes",
+        },
+        {
+          30,
+          "Leader of the Pack",
+        },
+        {
+          31,
+          "Natural Instinct",
+        },
+        {
+          32,
+          "Natural Instinct",
+        },
+        {
+          33,
+          "Predatory Strikes",
+        },
+        {
+          34,
+          "Predatory Strikes",
+        },
+        {
+          35,
+          "Rend and Tear",
+        },
+        {
+          36,
+          "Rend and Tear",
+        },
+        {
+          37,
+          "Rend and Tear",
+        },
+        {
+          38,
+          "Rend and Tear",
+        },
+        {
+          39,
+          "Rend and Tear",
+        },
+        {
+          40,
+          "Primal Bite",
+        },
+        {
+          41,
+          "Shifting Power",
+        },
+        {
+          42,
+          "Heart of the Wild",
+        },
+        {
+          43,
+          "Heart of the Wild",
+        },
+        {
+          44,
+          "Heart of the Wild",
+        },
+        {
+          45,
+          "Heart of the Wild",
+        },
+        {
+          46,
+          "Heart of the Wild",
+        },
+        {
+          47,
+          "Naturalist",
+        },
+        {
+          48,
+          "Naturalist",
+        },
+        {
+          49,
+          "Naturalist",
+        },
+        {
+          50,
+          "Naturalist",
+        },
+        {
+          51,
+          "Naturalist",
+        },
+        {
+          52,
+          "Genesis",
+        },
+        {
+          53,
+          "Genesis",
+        },
+        {
+          54,
+          "Genesis",
+        },
+        {
+          55,
+          "Genesis",
+        },
+        {
+          56,
+          "Genesis",
+        },
+        {
+          57,
+          "Nature's Reach",
+        },
+        {
+          58,
+          "Nature's Reach",
+        },
+        {
+          59,
+          "Nature's Majesty",
+        },
+        {
+          60,
+          "Nature's Majesty",
+        },
+      },
+      ["source"] = "Icy Veins: Feral Druid leveling (cat/bear build)",
+      ["tree"] = "Feral Combat",
+      ["url"] = "https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+    },
+    ["DRUID:feral"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Ferocity",
+        },
+        {
+          11,
+          "Ferocity",
+        },
+        {
+          12,
+          "Ferocity",
+        },
+        {
+          13,
+          "Ferocity",
+        },
+        {
+          14,
+          "Ferocity",
+        },
+        {
+          15,
+          "Feral Instinct",
+        },
+        {
+          16,
+          "Feral Instinct",
+        },
+        {
+          17,
+          "Feral Instinct",
+        },
+        {
+          18,
+          "Feral Swiftness",
+        },
+        {
+          19,
+          "Feral Swiftness",
+        },
+        {
+          20,
+          "Feral Charge",
+        },
+        {
+          21,
+          "Savage Fury",
+        },
+        {
+          22,
+          "Savage Fury",
+        },
+        {
+          23,
+          "Sharpened Claws",
+        },
+        {
+          24,
+          "Sharpened Claws",
+        },
+        {
+          25,
+          "Lacerate",
+        },
+        {
+          26,
+          "Blood Frenzy",
+        },
+        {
+          27,
+          "Blood Frenzy",
+        },
+        {
+          28,
+          "Predatory Discipline",
+        },
+        {
+          29,
+          "Predatory Strikes",
+        },
+        {
+          30,
+          "Leader of the Pack",
+        },
+        {
+          31,
+          "Natural Instinct",
+        },
+        {
+          32,
+          "Natural Instinct",
+        },
+        {
+          33,
+          "Predatory Strikes",
+        },
+        {
+          34,
+          "Predatory Strikes",
+        },
+        {
+          35,
+          "Rend and Tear",
+        },
+        {
+          36,
+          "Rend and Tear",
+        },
+        {
+          37,
+          "Rend and Tear",
+        },
+        {
+          38,
+          "Rend and Tear",
+        },
+        {
+          39,
+          "Rend and Tear",
+        },
+        {
+          40,
+          "Primal Bite",
+        },
+        {
+          41,
+          "Shifting Power",
+        },
+        {
+          42,
+          "Heart of the Wild",
+        },
+        {
+          43,
+          "Heart of the Wild",
+        },
+        {
+          44,
+          "Heart of the Wild",
+        },
+        {
+          45,
+          "Heart of the Wild",
+        },
+        {
+          46,
+          "Heart of the Wild",
+        },
+        {
+          47,
+          "Naturalist",
+        },
+        {
+          48,
+          "Naturalist",
+        },
+        {
+          49,
+          "Naturalist",
+        },
+        {
+          50,
+          "Naturalist",
+        },
+        {
+          51,
+          "Naturalist",
+        },
+        {
+          52,
+          "Genesis",
+        },
+        {
+          53,
+          "Genesis",
+        },
+        {
+          54,
+          "Genesis",
+        },
+        {
+          55,
+          "Genesis",
+        },
+        {
+          56,
+          "Genesis",
+        },
+        {
+          57,
+          "Nature's Reach",
+        },
+        {
+          58,
+          "Nature's Reach",
+        },
+        {
+          59,
+          "Nature's Majesty",
+        },
+        {
+          60,
+          "Nature's Majesty",
+        },
+      },
+      ["source"] = "Icy Veins: Feral Druid leveling",
+      ["tree"] = "Feral Combat",
+      ["url"] = "https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+    },
+    ["DRUID:restoration"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Improved Wrath",
+        },
+        {
+          11,
+          "Improved Wrath",
+        },
+        {
+          12,
+          "Improved Wrath",
+        },
+        {
+          13,
+          "Improved Wrath",
+        },
+        {
+          14,
+          "Improved Wrath",
+        },
+        {
+          15,
+          "Nature's Focus",
+        },
+        {
+          16,
+          "Nature's Focus",
+        },
+        {
+          17,
+          "Nature's Focus",
+        },
+        {
+          18,
+          "Nature's Focus",
+        },
+        {
+          19,
+          "Nature's Focus",
+        },
+        {
+          20,
+          "Reflection",
+        },
+        {
+          21,
+          "Reflection",
+        },
+        {
+          22,
+          "Reflection",
+        },
+        {
+          23,
+          "Nature's Reach",
+        },
+        {
+          24,
+          "Nature's Reach",
+        },
+        {
+          25,
+          "Nature's Majesty",
+        },
+        {
+          26,
+          "Nature's Majesty",
+        },
+        {
+          27,
+          "Moonglow",
+        },
+        {
+          28,
+          "Nature's Splendor",
+        },
+        {
+          29,
+          "Moonglow",
+        },
+        {
+          30,
+          "Moonglow",
+        },
+        {
+          31,
+          "Genesis",
+        },
+        {
+          32,
+          "Genesis",
+        },
+        {
+          33,
+          "Insect Swarm",
+        },
+        {
+          34,
+          "Naturalist",
+        },
+        {
+          35,
+          "Naturalist",
+        },
+        {
+          36,
+          "Bloom",
+        },
+        {
+          37,
+          "Naturalist",
+        },
+        {
+          38,
+          "Naturalist",
+        },
+        {
+          39,
+          "Naturalist",
+        },
+        {
+          40,
+          "Gift of Nature",
+        },
+        {
+          41,
+          "Swiftmend",
+        },
+        {
+          42,
+          "Gift of Nature",
+        },
+        {
+          43,
+          "Gift of Nature",
+        },
+        {
+          44,
+          "Gift of Nature",
+        },
+        {
+          45,
+          "Gift of Nature",
+        },
+        {
+          46,
+          "Nature's Swiftness",
+        },
+        {
+          47,
+          "Living Spirit",
+        },
+        {
+          48,
+          "Living Spirit",
+        },
+        {
+          49,
+          "Living Spirit",
+        },
+        {
+          50,
+          "Improved Rejuvenation",
+        },
+        {
+          51,
+          "Improved Rejuvenation",
+        },
+        {
+          52,
+          "Improved Rejuvenation",
+        },
+        {
+          53,
+          "Improved Regrowth",
+        },
+        {
+          54,
+          "Improved Regrowth",
+        },
+        {
+          55,
+          "Improved Regrowth",
+        },
+        {
+          56,
+          "Improved Regrowth",
+        },
+        {
+          57,
+          "Improved Regrowth",
+        },
+        {
+          58,
+          "Wild Growth",
+        },
+        {
+          59,
+          "Genesis",
+        },
+        {
+          60,
+          "Genesis",
+        },
+      },
+      ["source"] = "Icy Veins: Restoration Druid leveling",
+      ["tree"] = "Restoration",
+      ["url"] = "https://www.icy-veins.com/wow-forever/restoration-druid-leveling",
+    },
+    ["HUNTER:beast_mastery"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Deadly Aspects",
+        },
+        {
+          11,
+          "Deadly Aspects",
+        },
+        {
+          12,
+          "Deadly Aspects",
+        },
+        {
+          13,
+          "Deadly Aspects",
+        },
+        {
+          14,
+          "Deadly Aspects",
+        },
+        {
+          15,
+          "Focused Fire",
+        },
+        {
+          16,
+          "Focused Fire",
+        },
+        {
+          17,
+          "Improved Revive Pet",
+        },
+        {
+          18,
+          "Improved Revive Pet",
+        },
+        {
+          19,
+          "Endurance Training",
+        },
+        {
+          20,
+          "Pathfinding",
+        },
+        {
+          21,
+          "Pathfinding",
+        },
+        {
+          22,
+          "Bestial Swiftness",
+        },
+        {
+          23,
+          "Unleashed Fury",
+        },
+        {
+          24,
+          "Unleashed Fury",
+        },
+        {
+          25,
+          "Summon Hawk",
+        },
+        {
+          26,
+          "Unleashed Fury",
+        },
+        {
+          27,
+          "Unleashed Fury",
+        },
+        {
+          28,
+          "Unleashed Fury",
+        },
+        {
+          29,
+          "Ferocity",
+        },
+        {
+          30,
+          "Bestial Discipline",
+        },
+        {
+          31,
+          "Bestial Discipline",
+        },
+        {
+          32,
+          "Ferocity",
+        },
+        {
+          33,
+          "Ferocity",
+        },
+        {
+          34,
+          "Ferocity",
+        },
+        {
+          35,
+          "Ferocity",
+        },
+        {
+          36,
+          "Intimidation",
+        },
+        {
+          37,
+          "Frenzy",
+        },
+        {
+          38,
+          "Frenzy",
+        },
+        {
+          39,
+          "Frenzy",
+        },
+        {
+          40,
+          "Bestial Wrath",
+        },
+        {
+          41,
+          "Frenzy",
+        },
+        {
+          42,
+          "Lethal Attacks",
+        },
+        {
+          43,
+          "Lethal Attacks",
+        },
+        {
+          44,
+          "Lethal Attacks",
+        },
+        {
+          45,
+          "Lethal Attacks",
+        },
+        {
+          46,
+          "Lethal Attacks",
+        },
+        {
+          47,
+          "Careful Aim",
+        },
+        {
+          48,
+          "Careful Aim",
+        },
+        {
+          49,
+          "Careful Aim",
+        },
+        {
+          50,
+          "Careful Aim",
+        },
+        {
+          51,
+          "Careful Aim",
+        },
+        {
+          52,
+          "Rapid Killing",
+        },
+        {
+          53,
+          "Rapid Killing",
+        },
+        {
+          54,
+          "Improved Tracking",
+        },
+        {
+          55,
+          "Improved Tracking",
+        },
+        {
+          56,
+          "Improved Tracking",
+        },
+        {
+          57,
+          "Improved Tracking",
+        },
+        {
+          58,
+          "Improved Tracking",
+        },
+        {
+          59,
+          "Improved Stings",
+        },
+        {
+          60,
+          "Improved Stings",
+        },
+      },
+      ["source"] = "Icy Veins: Beast Mastery Hunter leveling",
+      ["tree"] = "Beast Mastery",
+      ["url"] = "https://www.icy-veins.com/wow-forever/beast-mastery-hunter-leveling",
+    },
+    ["HUNTER:marksmanship"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Lethal Attacks",
+        },
+        {
+          11,
+          "Lethal Attacks",
+        },
+        {
+          12,
+          "Lethal Attacks",
+        },
+        {
+          13,
+          "Lethal Attacks",
+        },
+        {
+          14,
+          "Lethal Attacks",
+        },
+        {
+          15,
+          "Careful Aim",
+        },
+        {
+          16,
+          "Careful Aim",
+        },
+        {
+          17,
+          "Careful Aim",
+        },
+        {
+          18,
+          "Careful Aim",
+        },
+        {
+          19,
+          "Careful Aim",
+        },
+        {
+          20,
+          "Rapid Killing",
+        },
+        {
+          21,
+          "Rapid Killing",
+        },
+        {
+          22,
+          "Improved Stings",
+        },
+        {
+          23,
+          "Improved Stings",
+        },
+        {
+          24,
+          "Improved Stings",
+        },
+        {
+          25,
+          "Trueshot Aura",
+        },
+        {
+          26,
+          "Mortal Shots",
+        },
+        {
+          27,
+          "Mortal Shots",
+        },
+        {
+          28,
+          "Mortal Shots",
+        },
+        {
+          29,
+          "Mortal Shots",
+        },
+        {
+          30,
+          "Rapid Recuperation",
+        },
+        {
+          31,
+          "Rapid Recuperation",
+        },
+        {
+          32,
+          "Mortal Shots",
+        },
+        {
+          33,
+          "Barrage",
+        },
+        {
+          34,
+          "Barrage",
+        },
+        {
+          35,
+          "Ranged Weapon Specialization",
+        },
+        {
+          36,
+          "Ranged Weapon Specialization",
+        },
+        {
+          37,
+          "Ranged Weapon Specialization",
+        },
+        {
+          38,
+          "Ranged Weapon Specialization",
+        },
+        {
+          39,
+          "Ranged Weapon Specialization",
+        },
+        {
+          40,
+          "Sniper Shot",
+        },
+        {
+          41,
+          "Deadly Aspects",
+        },
+        {
+          42,
+          "Deadly Aspects",
+        },
+        {
+          43,
+          "Deadly Aspects",
+        },
+        {
+          44,
+          "Deadly Aspects",
+        },
+        {
+          45,
+          "Deadly Aspects",
+        },
+        {
+          46,
+          "Focused Fire",
+        },
+        {
+          47,
+          "Focused Fire",
+        },
+        {
+          48,
+          "Improved Revive Pet",
+        },
+        {
+          49,
+          "Improved Revive Pet",
+        },
+        {
+          50,
+          "Endurance Training",
+        },
+        {
+          51,
+          "Pathfinding",
+        },
+        {
+          52,
+          "Pathfinding",
+        },
+        {
+          53,
+          "Bestial Swiftness",
+        },
+        {
+          54,
+          "Barrage",
+        },
+        {
+          55,
+          "Unleashed Fury",
+        },
+        {
+          56,
+          "Unleashed Fury",
+        },
+        {
+          57,
+          "Summon Hawk",
+        },
+        {
+          58,
+          "Unleashed Fury",
+        },
+        {
+          59,
+          "Unleashed Fury",
+        },
+        {
+          60,
+          "Unleashed Fury",
+        },
+      },
+      ["source"] = "Icy Veins: Marksmanship Hunter leveling",
+      ["tree"] = "Marksmanship",
+      ["url"] = "https://www.icy-veins.com/wow-forever/marksmanship-hunter-leveling",
+    },
+    ["HUNTER:survival"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Lethal Attacks",
+        },
+        {
+          11,
+          "Lethal Attacks",
+        },
+        {
+          12,
+          "Lethal Attacks",
+        },
+        {
+          13,
+          "Lethal Attacks",
+        },
+        {
+          14,
+          "Lethal Attacks",
+        },
+        {
+          15,
+          "Improved Tracking",
+        },
+        {
+          16,
+          "Improved Tracking",
+        },
+        {
+          17,
+          "Improved Tracking",
+        },
+        {
+          18,
+          "Improved Tracking",
+        },
+        {
+          19,
+          "Improved Tracking",
+        },
+        {
+          20,
+          "Savage Strikes",
+        },
+        {
+          21,
+          "Savage Strikes",
+        },
+        {
+          22,
+          "Survivalist",
+        },
+        {
+          23,
+          "Survivalist",
+        },
+        {
+          24,
+          "Survivalist",
+        },
+        {
+          25,
+          "Surefooted",
+        },
+        {
+          26,
+          "Surefooted",
+        },
+        {
+          27,
+          "Surefooted",
+        },
+        {
+          28,
+          "Clever Traps",
+        },
+        {
+          29,
+          "Clever Traps",
+        },
+        {
+          30,
+          "Predator's Edge",
+        },
+        {
+          31,
+          "Predator's Edge",
+        },
+        {
+          32,
+          "Predator's Edge",
+        },
+        {
+          33,
+          "Predator's Edge",
+        },
+        {
+          34,
+          "Predator's Edge",
+        },
+        {
+          35,
+          "Strider Kick",
+        },
+        {
+          36,
+          "Expose Prey",
+        },
+        {
+          37,
+          "Expose Prey",
+        },
+        {
+          38,
+          "Survivalist's Discipline",
+        },
+        {
+          39,
+          "Survivalist's Discipline",
+        },
+        {
+          40,
+          "Lightning Reflexes",
+        },
+        {
+          41,
+          "Lightning Reflexes",
+        },
+        {
+          42,
+          "Lightning Reflexes",
+        },
+        {
+          43,
+          "Lightning Reflexes",
+        },
+        {
+          44,
+          "Lightning Reflexes",
+        },
+        {
+          45,
+          "Lacerating Strikes",
+        },
+        {
+          46,
+          "Resourcefulness",
+        },
+        {
+          47,
+          "Survival Tactics",
+        },
+        {
+          48,
+          "Survival Tactics",
+        },
+        {
+          49,
+          "Careful Aim",
+        },
+        {
+          50,
+          "Careful Aim",
+        },
+        {
+          51,
+          "Careful Aim",
+        },
+        {
+          52,
+          "Careful Aim",
+        },
+        {
+          53,
+          "Careful Aim",
+        },
+        {
+          54,
+          "Lone Wolf",
+        },
+        {
+          55,
+          "Improved Stings",
+        },
+        {
+          56,
+          "Improved Stings",
+        },
+        {
+          57,
+          "Improved Stings",
+        },
+        {
+          58,
+          "Efficiency",
+        },
+        {
+          59,
+          "Mortal Shots",
+        },
+        {
+          60,
+          "Mortal Shots",
+        },
+      },
+      ["source"] = "Icy Veins: Survival Hunter leveling",
+      ["tree"] = "Survival",
+      ["url"] = "https://www.icy-veins.com/wow-forever/survival-hunter-leveling",
+    },
+    ["MAGE:arcane"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Wand Specialization",
+        },
+        {
+          11,
+          "Wand Specialization",
+        },
+        {
+          12,
+          "Improved Channeling",
+        },
+        {
+          13,
+          "Improved Channeling",
+        },
+        {
+          14,
+          "Improved Channeling",
+        },
+        {
+          15,
+          "Missile Barrage",
+        },
+        {
+          16,
+          "Missile Barrage",
+        },
+        {
+          17,
+          "Arcane Concentration",
+        },
+        {
+          18,
+          "Arcane Concentration",
+        },
+        {
+          19,
+          "Arcane Concentration",
+        },
+        {
+          20,
+          "Arcane Blast",
+        },
+        {
+          21,
+          "Precision",
+        },
+        {
+          22,
+          "Precision",
+        },
+        {
+          23,
+          "Improved Channeling",
+        },
+        {
+          24,
+          "Improved Channeling",
+        },
+        {
+          25,
+          "Arcane Concentration",
+        },
+        {
+          26,
+          "Arcane Concentration",
+        },
+        {
+          27,
+          "Arcane Wrath",
+        },
+        {
+          28,
+          "Arcane Meditation",
+        },
+        {
+          29,
+          "Arcane Meditation",
+        },
+        {
+          30,
+          "Arcane Meditation",
+        },
+        {
+          31,
+          "Arcane Subtlety",
+        },
+        {
+          32,
+          "Presence of Mind",
+        },
+        {
+          33,
+          "Arcane Mind",
+        },
+        {
+          34,
+          "Arcane Mind",
+        },
+        {
+          35,
+          "Arcane Mind",
+        },
+        {
+          36,
+          "Arcane Mind",
+        },
+        {
+          37,
+          "Arcane Mind",
+        },
+        {
+          38,
+          "Arcane Instability",
+        },
+        {
+          39,
+          "Arcane Instability",
+        },
+        {
+          40,
+          "Arcane Instability",
+        },
+        {
+          41,
+          "Arcane Subtlety",
+        },
+        {
+          42,
+          "Arcane Power",
+        },
+        {
+          43,
+          "Incineration",
+        },
+        {
+          44,
+          "Incineration",
+        },
+        {
+          45,
+          "Incineration",
+        },
+        {
+          46,
+          "Incineration",
+        },
+        {
+          47,
+          "Incineration",
+        },
+        {
+          48,
+          "Accelerant",
+        },
+        {
+          49,
+          "Accelerant",
+        },
+        {
+          50,
+          "Accelerant",
+        },
+        {
+          51,
+          "Accelerant",
+        },
+        {
+          52,
+          "Accelerant",
+        },
+        {
+          53,
+          "Improved Fire Blast",
+        },
+        {
+          54,
+          "Improved Fire Blast",
+        },
+        {
+          55,
+          "Ignite",
+        },
+        {
+          56,
+          "Ignite",
+        },
+        {
+          57,
+          "Pyroblast",
+        },
+        {
+          58,
+          "Heating Up",
+        },
+        {
+          59,
+          "Ignite",
+        },
+        {
+          60,
+          "Precision",
+        },
+      },
+      ["source"] = "Icy Veins: Arcane Mage leveling",
+      ["tree"] = "Arcane",
+      ["url"] = "https://www.icy-veins.com/wow-forever/arcane-mage-leveling",
+    },
+    ["MAGE:fire"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Wand Specialization",
+        },
+        {
+          11,
+          "Wand Specialization",
+        },
+        {
+          12,
+          "Improved Channeling",
+        },
+        {
+          13,
+          "Improved Channeling",
+        },
+        {
+          14,
+          "Improved Channeling",
+        },
+        {
+          15,
+          "Missile Barrage",
+        },
+        {
+          16,
+          "Missile Barrage",
+        },
+        {
+          17,
+          "Arcane Concentration",
+        },
+        {
+          18,
+          "Arcane Concentration",
+        },
+        {
+          19,
+          "Arcane Concentration",
+        },
+        {
+          20,
+          "Arcane Blast",
+        },
+        {
+          21,
+          "Precision",
+        },
+        {
+          22,
+          "Precision",
+        },
+        {
+          23,
+          "Improved Channeling",
+        },
+        {
+          24,
+          "Improved Channeling",
+        },
+        {
+          25,
+          "Arcane Concentration",
+        },
+        {
+          26,
+          "Arcane Concentration",
+        },
+        {
+          27,
+          "Arcane Meditation",
+        },
+        {
+          28,
+          "Arcane Meditation",
+        },
+        {
+          29,
+          "Arcane Meditation",
+        },
+        {
+          30,
+          "Incineration",
+        },
+        {
+          31,
+          "Incineration",
+        },
+        {
+          32,
+          "Incineration",
+        },
+        {
+          33,
+          "Incineration",
+        },
+        {
+          34,
+          "Incineration",
+        },
+        {
+          35,
+          "Accelerant",
+        },
+        {
+          36,
+          "Accelerant",
+        },
+        {
+          37,
+          "Accelerant",
+        },
+        {
+          38,
+          "Accelerant",
+        },
+        {
+          39,
+          "Accelerant",
+        },
+        {
+          40,
+          "Improved Fire Blast",
+        },
+        {
+          41,
+          "Improved Fire Blast",
+        },
+        {
+          42,
+          "Ignite",
+        },
+        {
+          43,
+          "Ignite",
+        },
+        {
+          44,
+          "Pyroblast",
+        },
+        {
+          45,
+          "Heating Up",
+        },
+        {
+          46,
+          "Ignite",
+        },
+        {
+          47,
+          "Ignite",
+        },
+        {
+          48,
+          "Ignite",
+        },
+        {
+          49,
+          "Improved Scorch",
+        },
+        {
+          50,
+          "Blast Wave",
+        },
+        {
+          51,
+          "Critical Mass",
+        },
+        {
+          52,
+          "Critical Mass",
+        },
+        {
+          53,
+          "Critical Mass",
+        },
+        {
+          54,
+          "Improved Scorch",
+        },
+        {
+          55,
+          "Fire Power",
+        },
+        {
+          56,
+          "Fire Power",
+        },
+        {
+          57,
+          "Fire Power",
+        },
+        {
+          58,
+          "Improved Scorch",
+        },
+        {
+          59,
+          "Master of Elements",
+        },
+        {
+          60,
+          "Combustion",
+        },
+      },
+      ["source"] = "Icy Veins: Fire Mage leveling",
+      ["tree"] = "Fire",
+      ["url"] = "https://www.icy-veins.com/wow-forever/fire-mage-leveling",
+    },
+    ["MAGE:frost"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Precision",
+        },
+        {
+          11,
+          "Precision",
+        },
+        {
+          12,
+          "Wand Specialization",
+        },
+        {
+          13,
+          "Wand Specialization",
+        },
+        {
+          14,
+          "Improved Channeling",
+        },
+        {
+          15,
+          "Improved Channeling",
+        },
+        {
+          16,
+          "Improved Channeling",
+        },
+        {
+          17,
+          "Missile Barrage",
+        },
+        {
+          18,
+          "Missile Barrage",
+        },
+        {
+          19,
+          "Improved Frostbolt",
+        },
+        {
+          20,
+          "Improved Frostbolt",
+        },
+        {
+          21,
+          "Improved Frostbolt",
+        },
+        {
+          22,
+          "Frostbite",
+        },
+        {
+          23,
+          "Frostbite",
+        },
+        {
+          24,
+          "Frostbite",
+        },
+        {
+          25,
+          "Improved Frostbolt",
+        },
+        {
+          26,
+          "Improved Frostbolt",
+        },
+        {
+          27,
+          "Ice Lance",
+        },
+        {
+          28,
+          "Ice Shards",
+        },
+        {
+          29,
+          "Ice Shards",
+        },
+        {
+          30,
+          "Ice Shards",
+        },
+        {
+          31,
+          "Ice Shards",
+        },
+        {
+          32,
+          "Shatter",
+        },
+        {
+          33,
+          "Shatter",
+        },
+        {
+          34,
+          "Shatter",
+        },
+        {
+          35,
+          "Ice Shards",
+        },
+        {
+          36,
+          "Improved Blizzard",
+        },
+        {
+          37,
+          "Fingers of Frost",
+        },
+        {
+          38,
+          "Fingers of Frost",
+        },
+        {
+          39,
+          "Arctic Reach",
+        },
+        {
+          40,
+          "Arctic Reach",
+        },
+        {
+          41,
+          "Frost Channeling",
+        },
+        {
+          42,
+          "Frost Channeling",
+        },
+        {
+          43,
+          "Frost Channeling",
+        },
+        {
+          44,
+          "Ice Block",
+        },
+        {
+          45,
+          "Permafrost",
+        },
+        {
+          46,
+          "Cold Snap",
+        },
+        {
+          47,
+          "Ice Barrier",
+        },
+        {
+          48,
+          "Arcane Subtlety",
+        },
+        {
+          49,
+          "Arcane Subtlety",
+        },
+        {
+          50,
+          "Precision",
+        },
+        {
+          51,
+          "Improved Cone of Cold",
+        },
+        {
+          52,
+          "Improved Cone of Cold",
+        },
+        {
+          53,
+          "Improved Cone of Cold",
+        },
+        {
+          54,
+          "Winter's Chill",
+        },
+        {
+          55,
+          "Winter's Chill",
+        },
+        {
+          56,
+          "Winter's Chill",
+        },
+        {
+          57,
+          "Winter's Chill",
+        },
+        {
+          58,
+          "Winter's Chill",
+        },
+        {
+          59,
+          "Improved Frost Nova",
+        },
+        {
+          60,
+          "Improved Frost Nova",
+        },
+      },
+      ["source"] = "Icy Veins: Frost Mage leveling",
+      ["tree"] = "Frost",
+      ["url"] = "https://www.icy-veins.com/wow-forever/frost-mage-leveling",
+    },
+    ["PALADIN:holy"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Benediction",
+        },
+        {
+          11,
+          "Benediction",
+        },
+        {
+          12,
+          "Benediction",
+        },
+        {
+          13,
+          "Benediction",
+        },
+        {
+          14,
+          "Benediction",
+        },
+        {
+          15,
+          "Conviction",
+        },
+        {
+          16,
+          "Conviction",
+        },
+        {
+          17,
+          "Conviction",
+        },
+        {
+          18,
+          "Improved Judgement",
+        },
+        {
+          19,
+          "Improved Judgement",
+        },
+        {
+          20,
+          "Pursuit of Justice",
+        },
+        {
+          21,
+          "Pursuit of Justice",
+        },
+        {
+          22,
+          "Spiritual Focus",
+        },
+        {
+          23,
+          "Spiritual Focus",
+        },
+        {
+          24,
+          "Spiritual Focus",
+        },
+        {
+          25,
+          "Spiritual Focus",
+        },
+        {
+          26,
+          "Spiritual Focus",
+        },
+        {
+          27,
+          "Reverence",
+        },
+        {
+          28,
+          "Reverence",
+        },
+        {
+          29,
+          "Healing Light",
+        },
+        {
+          30,
+          "Healing Light",
+        },
+        {
+          31,
+          "Healing Light",
+        },
+        {
+          32,
+          "Illumination",
+        },
+        {
+          33,
+          "Illumination",
+        },
+        {
+          34,
+          "Illumination",
+        },
+        {
+          35,
+          "Illumination",
+        },
+        {
+          36,
+          "Illumination",
+        },
+        {
+          37,
+          "Oath of Light",
+        },
+        {
+          38,
+          "Infusion of Light",
+        },
+        {
+          39,
+          "Infusion of Light",
+        },
+        {
+          40,
+          "Holy Conduit",
+        },
+        {
+          41,
+          "Holy Conduit",
+        },
+        {
+          42,
+          "Holy Shock",
+        },
+        {
+          43,
+          "Boundless Light",
+        },
+        {
+          44,
+          "Boundless Light",
+        },
+        {
+          45,
+          "Divine Favor",
+        },
+        {
+          46,
+          "Consecrated Ground",
+        },
+        {
+          47,
+          "Holy Power",
+        },
+        {
+          48,
+          "Holy Power",
+        },
+        {
+          49,
+          "Holy Power",
+        },
+        {
+          50,
+          "Holy Power",
+        },
+        {
+          51,
+          "Holy Power",
+        },
+        {
+          52,
+          "Light's Vigil",
+        },
+        {
+          53,
+          "Divine Intellect",
+        },
+        {
+          54,
+          "Divine Intellect",
+        },
+        {
+          55,
+          "Divine Intellect",
+        },
+        {
+          56,
+          "Divine Intellect",
+        },
+        {
+          57,
+          "Divine Intellect",
+        },
+        {
+          58,
+          "Consecrated Ground",
+        },
+        {
+          59,
+          "Improved Seals",
+        },
+        {
+          60,
+          "Improved Seals",
+        },
+      },
+      ["source"] = "Icy Veins: Holy Paladin leveling",
+      ["tree"] = "Holy",
+      ["url"] = "https://www.icy-veins.com/wow-forever/holy-paladin-leveling",
+    },
+    ["PALADIN:protection"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Benediction",
+        },
+        {
+          11,
+          "Benediction",
+        },
+        {
+          12,
+          "Benediction",
+        },
+        {
+          13,
+          "Benediction",
+        },
+        {
+          14,
+          "Benediction",
+        },
+        {
+          15,
+          "Conviction",
+        },
+        {
+          16,
+          "Conviction",
+        },
+        {
+          17,
+          "Conviction",
+        },
+        {
+          18,
+          "Improved Judgement",
+        },
+        {
+          19,
+          "Improved Judgement",
+        },
+        {
+          20,
+          "Pursuit of Justice",
+        },
+        {
+          21,
+          "Pursuit of Justice",
+        },
+        {
+          22,
+          "Redoubt",
+        },
+        {
+          23,
+          "Redoubt",
+        },
+        {
+          24,
+          "Redoubt",
+        },
+        {
+          25,
+          "Redoubt",
+        },
+        {
+          26,
+          "Redoubt",
+        },
+        {
+          27,
+          "Precision",
+        },
+        {
+          28,
+          "Precision",
+        },
+        {
+          29,
+          "Precision",
+        },
+        {
+          30,
+          "Sacred Duty",
+        },
+        {
+          31,
+          "Sacred Duty",
+        },
+        {
+          32,
+          "Shield Specialization",
+        },
+        {
+          33,
+          "Shield Specialization",
+        },
+        {
+          34,
+          "Templar's Bulwark",
+        },
+        {
+          35,
+          "Toughness",
+        },
+        {
+          36,
+          "Toughness",
+        },
+        {
+          37,
+          "Swift Judgement",
+        },
+        {
+          38,
+          "Improved Righteous Fury",
+        },
+        {
+          39,
+          "Improved Righteous Fury",
+        },
+        {
+          40,
+          "Improved Righteous Fury",
+        },
+        {
+          41,
+          "Anticipation",
+        },
+        {
+          42,
+          "Holy Shield",
+        },
+        {
+          43,
+          "Reckoning",
+        },
+        {
+          44,
+          "Reckoning",
+        },
+        {
+          45,
+          "Reckoning",
+        },
+        {
+          46,
+          "Reckoning",
+        },
+        {
+          47,
+          "Reckoning",
+        },
+        {
+          48,
+          "Iron Creed",
+        },
+        {
+          49,
+          "Iron Creed",
+        },
+        {
+          50,
+          "Iron Creed",
+        },
+        {
+          51,
+          "Anticipation",
+        },
+        {
+          52,
+          "Shieldsworn",
+        },
+        {
+          53,
+          "Anticipation",
+        },
+        {
+          54,
+          "Anticipation",
+        },
+        {
+          55,
+          "Anticipation",
+        },
+        {
+          56,
+          "Sanctified Judgement",
+        },
+        {
+          57,
+          "Sanctified Judgement",
+        },
+        {
+          58,
+          "Sanctified Judgement",
+        },
+        {
+          59,
+          "Sacred Arbiter",
+        },
+        {
+          60,
+          "Toughness",
+        },
+      },
+      ["source"] = "Icy Veins: Protection Paladin leveling",
+      ["tree"] = "Protection",
+      ["url"] = "https://www.icy-veins.com/wow-forever/protection-paladin-leveling",
+    },
+    ["PALADIN:retribution"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Deflection",
+        },
+        {
+          11,
+          "Deflection",
+        },
+        {
+          12,
+          "Deflection",
+        },
+        {
+          13,
+          "Deflection",
+        },
+        {
+          14,
+          "Deflection",
+        },
+        {
+          15,
+          "Improved Judgement",
+        },
+        {
+          16,
+          "Improved Judgement",
+        },
+        {
+          17,
+          "Conviction",
+        },
+        {
+          18,
+          "Conviction",
+        },
+        {
+          19,
+          "Conviction",
+        },
+        {
+          20,
+          "Pursuit of Justice",
+        },
+        {
+          21,
+          "Pursuit of Justice",
+        },
+        {
+          22,
+          "Seal of Command",
+        },
+        {
+          23,
+          "Sanctified Judgement",
+        },
+        {
+          24,
+          "Sanctified Judgement",
+        },
+        {
+          25,
+          "Sacred Arbiter",
+        },
+        {
+          26,
+          "Two-Handed Weapon Specialization",
+        },
+        {
+          27,
+          "Two-Handed Weapon Specialization",
+        },
+        {
+          28,
+          "Two-Handed Weapon Specialization",
+        },
+        {
+          29,
+          "Sanctified Judgement",
+        },
+        {
+          30,
+          "Vengeance",
+        },
+        {
+          31,
+          "Vengeance",
+        },
+        {
+          32,
+          "Vengeance",
+        },
+        {
+          33,
+          "Repentance",
+        },
+        {
+          34,
+          "Vindication",
+        },
+        {
+          35,
+          "Champion of the Light",
+        },
+        {
+          36,
+          "Champion of the Light",
+        },
+        {
+          37,
+          "Champion of the Light",
+        },
+        {
+          38,
+          "Champion of the Light",
+        },
+        {
+          39,
+          "Champion of the Light",
+        },
+        {
+          40,
+          "Unsealed Wrath",
+        },
+        {
+          41,
+          "Divine Strength",
+        },
+        {
+          42,
+          "Divine Strength",
+        },
+        {
+          43,
+          "Divine Strength",
+        },
+        {
+          44,
+          "Divine Strength",
+        },
+        {
+          45,
+          "Divine Strength",
+        },
+        {
+          46,
+          "Reverence",
+        },
+        {
+          47,
+          "Reverence",
+        },
+        {
+          48,
+          "Improved Seals",
+        },
+        {
+          49,
+          "Improved Seals",
+        },
+        {
+          50,
+          "Improved Seals",
+        },
+        {
+          51,
+          "Holy Conduit",
+        },
+        {
+          52,
+          "Holy Conduit",
+        },
+        {
+          53,
+          "Improved Seals",
+        },
+        {
+          54,
+          "Improved Seals",
+        },
+        {
+          55,
+          "Purifying Power",
+        },
+        {
+          56,
+          "Purifying Power",
+        },
+        {
+          57,
+          "Divine Precision",
+        },
+        {
+          58,
+          "Divine Precision",
+        },
+        {
+          59,
+          "Vindication",
+        },
+        {
+          60,
+          "Vindication",
+        },
+      },
+      ["source"] = "Icy Veins: Retribution Paladin leveling",
+      ["tree"] = "Retribution",
+      ["url"] = "https://www.icy-veins.com/wow-forever/retribution-paladin-leveling",
+    },
+    ["PRIEST:discipline"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Wand Specialization",
+        },
+        {
+          11,
+          "Wand Specialization",
+        },
+        {
+          12,
+          "Spirit Tap",
+        },
+        {
+          13,
+          "Spirit Tap",
+        },
+        {
+          14,
+          "Spirit Tap",
+        },
+        {
+          15,
+          "Spirit Tap",
+        },
+        {
+          16,
+          "Spirit Tap",
+        },
+        {
+          17,
+          "Twilight Focus",
+        },
+        {
+          18,
+          "Twilight Focus",
+        },
+        {
+          19,
+          "Twilight Focus",
+        },
+        {
+          20,
+          "Power in Light",
+        },
+        {
+          21,
+          "Power in Light",
+        },
+        {
+          22,
+          "Power in Light",
+        },
+        {
+          23,
+          "Power in Light",
+        },
+        {
+          24,
+          "Power in Light",
+        },
+        {
+          25,
+          "Mental Strength",
+        },
+        {
+          26,
+          "Mental Strength",
+        },
+        {
+          27,
+          "Mental Strength",
+        },
+        {
+          28,
+          "Meditation",
+        },
+        {
+          29,
+          "Meditation",
+        },
+        {
+          30,
+          "Meditation",
+        },
+        {
+          31,
+          "Mental Strength",
+        },
+        {
+          32,
+          "Mental Strength",
+        },
+        {
+          33,
+          "Improved Power Word: Shield",
+        },
+        {
+          34,
+          "Improved Power Word: Shield",
+        },
+        {
+          35,
+          "Improved Power Word: Shield",
+        },
+        {
+          36,
+          "Soul Warding",
+        },
+        {
+          37,
+          "Mental Agility",
+        },
+        {
+          38,
+          "Penance",
+        },
+        {
+          39,
+          "Renewed Hope",
+        },
+        {
+          40,
+          "Renewed Hope",
+        },
+        {
+          41,
+          "Renewed Hope",
+        },
+        {
+          42,
+          "Renewed Hope",
+        },
+        {
+          43,
+          "Divine Aegis",
+        },
+        {
+          44,
+          "Renewed Hope",
+        },
+        {
+          45,
+          "Divine Aegis",
+        },
+        {
+          46,
+          "Divine Aegis",
+        },
+        {
+          47,
+          "Mental Agility",
+        },
+        {
+          48,
+          "Power Infusion",
+        },
+        {
+          49,
+          "Holy Specialization",
+        },
+        {
+          50,
+          "Holy Specialization",
+        },
+        {
+          51,
+          "Holy Specialization",
+        },
+        {
+          52,
+          "Holy Specialization",
+        },
+        {
+          53,
+          "Holy Specialization",
+        },
+        {
+          54,
+          "Divine Fury",
+        },
+        {
+          55,
+          "Divine Fury",
+        },
+        {
+          56,
+          "Divine Fury",
+        },
+        {
+          57,
+          "Divine Fury",
+        },
+        {
+          58,
+          "Divine Fury",
+        },
+        {
+          59,
+          "Mental Agility",
+        },
+        {
+          60,
+          "Inner Focus",
+        },
+      },
+      ["source"] = "Icy Veins: Discipline Priest leveling",
+      ["tree"] = "Discipline",
+      ["url"] = "https://www.icy-veins.com/wow-forever/discipline-priest-leveling",
+    },
+    ["PRIEST:holy"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Wand Specialization",
+        },
+        {
+          11,
+          "Wand Specialization",
+        },
+        {
+          12,
+          "Spirit Tap",
+        },
+        {
+          13,
+          "Spirit Tap",
+        },
+        {
+          14,
+          "Spirit Tap",
+        },
+        {
+          15,
+          "Spirit Tap",
+        },
+        {
+          16,
+          "Spirit Tap",
+        },
+        {
+          17,
+          "Twilight Focus",
+        },
+        {
+          18,
+          "Twilight Focus",
+        },
+        {
+          19,
+          "Twilight Focus",
+        },
+        {
+          20,
+          "Improved Renew",
+        },
+        {
+          21,
+          "Improved Renew",
+        },
+        {
+          22,
+          "Improved Renew",
+        },
+        {
+          23,
+          "Twin Disciplines",
+        },
+        {
+          24,
+          "Twin Disciplines",
+        },
+        {
+          25,
+          "Twin Disciplines",
+        },
+        {
+          26,
+          "Mental Strength",
+        },
+        {
+          27,
+          "Mental Strength",
+        },
+        {
+          28,
+          "Mental Strength",
+        },
+        {
+          29,
+          "Mental Strength",
+        },
+        {
+          30,
+          "Mental Strength",
+        },
+        {
+          31,
+          "Meditation",
+        },
+        {
+          32,
+          "Meditation",
+        },
+        {
+          33,
+          "Meditation",
+        },
+        {
+          34,
+          "Divine Fury",
+        },
+        {
+          35,
+          "Divine Fury",
+        },
+        {
+          36,
+          "Divine Fury",
+        },
+        {
+          37,
+          "Divine Fury",
+        },
+        {
+          38,
+          "Holy Nova",
+        },
+        {
+          39,
+          "Inspiration",
+        },
+        {
+          40,
+          "Divine Fury",
+        },
+        {
+          41,
+          "Holy Specialization",
+        },
+        {
+          42,
+          "Holy Specialization",
+        },
+        {
+          43,
+          "Searing Light",
+        },
+        {
+          44,
+          "Searing Light",
+        },
+        {
+          45,
+          "Improved Healing",
+        },
+        {
+          46,
+          "Improved Healing",
+        },
+        {
+          47,
+          "Improved Healing",
+        },
+        {
+          48,
+          "Spirit of Redemption",
+        },
+        {
+          49,
+          "Litany of Light",
+        },
+        {
+          50,
+          "Litany of Light",
+        },
+        {
+          51,
+          "Spiritual Guidance",
+        },
+        {
+          52,
+          "Spiritual Guidance",
+        },
+        {
+          53,
+          "Spiritual Healing",
+        },
+        {
+          54,
+          "Spiritual Healing",
+        },
+        {
+          55,
+          "Spiritual Healing",
+        },
+        {
+          56,
+          "Spiritual Guidance",
+        },
+        {
+          57,
+          "Spiritual Guidance",
+        },
+        {
+          58,
+          "Prayer of Mending",
+        },
+        {
+          59,
+          "Spiritual Guidance",
+        },
+        {
+          60,
+          "Inner Focus",
+        },
+      },
+      ["source"] = "Icy Veins: Holy Priest leveling",
+      ["tree"] = "Holy",
+      ["url"] = "https://www.icy-veins.com/wow-forever/holy-priest-leveling",
+    },
+    ["PRIEST:shadow"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Wand Specialization",
+        },
+        {
+          11,
+          "Wand Specialization",
+        },
+        {
+          12,
+          "Spirit Tap",
+        },
+        {
+          13,
+          "Spirit Tap",
+        },
+        {
+          14,
+          "Spirit Tap",
+        },
+        {
+          15,
+          "Spirit Tap",
+        },
+        {
+          16,
+          "Spirit Tap",
+        },
+        {
+          17,
+          "Improved Shadow Word: Pain",
+        },
+        {
+          18,
+          "Improved Shadow Word: Pain",
+        },
+        {
+          19,
+          "Improved Mind Blast",
+        },
+        {
+          20,
+          "Improved Mind Blast",
+        },
+        {
+          21,
+          "Improved Mind Blast",
+        },
+        {
+          22,
+          "Mind Flay",
+        },
+        {
+          23,
+          "Improved Mind Flay",
+        },
+        {
+          24,
+          "Improved Mind Flay",
+        },
+        {
+          25,
+          "Improved Mind Blast",
+        },
+        {
+          26,
+          "Shadow Reach",
+        },
+        {
+          27,
+          "Vampiric Embrace",
+        },
+        {
+          28,
+          "Dark Inspiration",
+        },
+        {
+          29,
+          "Dark Inspiration",
+        },
+        {
+          30,
+          "Dark Inspiration",
+        },
+        {
+          31,
+          "Dark Inspiration",
+        },
+        {
+          32,
+          "Dark Inspiration",
+        },
+        {
+          33,
+          "Devouring Contagion",
+        },
+        {
+          34,
+          "Devouring Contagion",
+        },
+        {
+          35,
+          "Silence",
+        },
+        {
+          36,
+          "Shadow Weaving",
+        },
+        {
+          37,
+          "Darkness",
+        },
+        {
+          38,
+          "Darkness",
+        },
+        {
+          39,
+          "Darkness",
+        },
+        {
+          40,
+          "Darkness",
+        },
+        {
+          41,
+          "Darkness",
+        },
+        {
+          42,
+          "Shadowform",
+        },
+        {
+          43,
+          "Twin Disciplines",
+        },
+        {
+          44,
+          "Twin Disciplines",
+        },
+        {
+          45,
+          "Twin Disciplines",
+        },
+        {
+          46,
+          "Mental Strength",
+        },
+        {
+          47,
+          "Mental Strength",
+        },
+        {
+          48,
+          "Mental Strength",
+        },
+        {
+          49,
+          "Mental Strength",
+        },
+        {
+          50,
+          "Mental Strength",
+        },
+        {
+          51,
+          "Meditation",
+        },
+        {
+          52,
+          "Meditation",
+        },
+        {
+          53,
+          "Meditation",
+        },
+        {
+          54,
+          "Twilight Focus",
+        },
+        {
+          55,
+          "Twilight Focus",
+        },
+        {
+          56,
+          "Twilight Focus",
+        },
+        {
+          57,
+          "Shadow Weaving",
+        },
+        {
+          58,
+          "Shadow Weaving",
+        },
+        {
+          59,
+          "Shadow Focus",
+        },
+        {
+          60,
+          "Shadow Focus",
+        },
+      },
+      ["source"] = "Icy Veins: Shadow Priest leveling",
+      ["tree"] = "Shadow Magic",
+      ["url"] = "https://www.icy-veins.com/wow-forever/shadow-priest-leveling",
+    },
+    ["ROGUE:assassination"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Remorseless Attacks",
+        },
+        {
+          11,
+          "Remorseless Attacks",
+        },
+        {
+          12,
+          "Malice",
+        },
+        {
+          13,
+          "Malice",
+        },
+        {
+          14,
+          "Malice",
+        },
+        {
+          15,
+          "Ruthlessness",
+        },
+        {
+          16,
+          "Ruthlessness",
+        },
+        {
+          17,
+          "Ruthlessness",
+        },
+        {
+          18,
+          "Malice",
+        },
+        {
+          19,
+          "Malice",
+        },
+        {
+          20,
+          "Blood Splatter",
+        },
+        {
+          21,
+          "Lethality",
+        },
+        {
+          22,
+          "Lethality",
+        },
+        {
+          23,
+          "Improved Slice and Dice",
+        },
+        {
+          24,
+          "Improved Slice and Dice",
+        },
+        {
+          25,
+          "Cold Blood",
+        },
+        {
+          26,
+          "Vile Poisons",
+        },
+        {
+          27,
+          "Vile Poisons",
+        },
+        {
+          28,
+          "Vile Poisons",
+        },
+        {
+          29,
+          "Vile Poisons",
+        },
+        {
+          30,
+          "Venom",
+        },
+        {
+          31,
+          "Relentless Strikes",
+        },
+        {
+          32,
+          "Relentless Strikes",
+        },
+        {
+          33,
+          "Relentless Strikes",
+        },
+        {
+          34,
+          "Relentless Strikes",
+        },
+        {
+          35,
+          "Seal Fate",
+        },
+        {
+          36,
+          "Seal Fate",
+        },
+        {
+          37,
+          "Seal Fate",
+        },
+        {
+          38,
+          "Relentless Strikes",
+        },
+        {
+          39,
+          "Vile Poisons",
+        },
+        {
+          40,
+          "Mutilate",
+        },
+        {
+          41,
+          "Opportunity",
+        },
+        {
+          42,
+          "Opportunity",
+        },
+        {
+          43,
+          "Opportunity",
+        },
+        {
+          44,
+          "Opportunity",
+        },
+        {
+          45,
+          "Opportunity",
+        },
+        {
+          46,
+          "Coup de Grace",
+        },
+        {
+          47,
+          "Coup de Grace",
+        },
+        {
+          48,
+          "Coup de Grace",
+        },
+        {
+          49,
+          "Lightning Reflexes",
+        },
+        {
+          50,
+          "Lightning Reflexes",
+        },
+        {
+          51,
+          "Precision",
+        },
+        {
+          52,
+          "Precision",
+        },
+        {
+          53,
+          "Precision",
+        },
+        {
+          54,
+          "Puncturing Wounds",
+        },
+        {
+          55,
+          "Puncturing Wounds",
+        },
+        {
+          56,
+          "Puncturing Wounds",
+        },
+        {
+          57,
+          "Composure",
+        },
+        {
+          58,
+          "Composure",
+        },
+        {
+          59,
+          "Endurance",
+        },
+        {
+          60,
+          "Endurance",
+        },
+      },
+      ["source"] = "Icy Veins: Assassination Rogue leveling",
+      ["tree"] = "Assassination",
+      ["url"] = "https://www.icy-veins.com/wow-forever/assassination-rogue-leveling",
+    },
+    ["ROGUE:combat"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Efficient Strikes",
+        },
+        {
+          11,
+          "Efficient Strikes",
+        },
+        {
+          12,
+          "Coup de Grace",
+        },
+        {
+          13,
+          "Coup de Grace",
+        },
+        {
+          14,
+          "Coup de Grace",
+        },
+        {
+          15,
+          "Precision",
+        },
+        {
+          16,
+          "Precision",
+        },
+        {
+          17,
+          "Deflection",
+        },
+        {
+          18,
+          "Deflection",
+        },
+        {
+          19,
+          "Deflection",
+        },
+        {
+          20,
+          "Riposte",
+        },
+        {
+          21,
+          "Precision",
+        },
+        {
+          22,
+          "Composure",
+        },
+        {
+          23,
+          "Composure",
+        },
+        {
+          24,
+          "Endurance",
+        },
+        {
+          25,
+          "Flawless Execution",
+        },
+        {
+          26,
+          "Weapon Expertise",
+        },
+        {
+          27,
+          "Weapon Expertise",
+        },
+        {
+          28,
+          "Aggression",
+        },
+        {
+          29,
+          "Aggression",
+        },
+        {
+          30,
+          "Blade Flurry",
+        },
+        {
+          31,
+          "Hack and Slash",
+        },
+        {
+          32,
+          "Hack and Slash",
+        },
+        {
+          33,
+          "Hack and Slash",
+        },
+        {
+          34,
+          "Hack and Slash",
+        },
+        {
+          35,
+          "Flash of Steel",
+        },
+        {
+          36,
+          "Flash of Steel",
+        },
+        {
+          37,
+          "Flash of Steel",
+        },
+        {
+          38,
+          "Flash of Steel",
+        },
+        {
+          39,
+          "Flash of Steel",
+        },
+        {
+          40,
+          "Adrenaline Rush",
+        },
+        {
+          41,
+          "Hack and Slash",
+        },
+        {
+          42,
+          "Aggression",
+        },
+        {
+          43,
+          "Dual Wield Specialization",
+        },
+        {
+          44,
+          "Dual Wield Specialization",
+        },
+        {
+          45,
+          "Remorseless Attacks",
+        },
+        {
+          46,
+          "Remorseless Attacks",
+        },
+        {
+          47,
+          "Malice",
+        },
+        {
+          48,
+          "Malice",
+        },
+        {
+          49,
+          "Malice",
+        },
+        {
+          50,
+          "Ruthlessness",
+        },
+        {
+          51,
+          "Ruthlessness",
+        },
+        {
+          52,
+          "Ruthlessness",
+        },
+        {
+          53,
+          "Malice",
+        },
+        {
+          54,
+          "Malice",
+        },
+        {
+          55,
+          "Blood Splatter",
+        },
+        {
+          56,
+          "Lethality",
+        },
+        {
+          57,
+          "Lethality",
+        },
+        {
+          58,
+          "Improved Slice and Dice",
+        },
+        {
+          59,
+          "Improved Slice and Dice",
+        },
+        {
+          60,
+          "Cold Blood",
+        },
+      },
+      ["source"] = "Icy Veins: Combat Rogue leveling",
+      ["tree"] = "Combat",
+      ["url"] = "https://www.icy-veins.com/wow-forever/combat-rogue-leveling",
+    },
+    ["ROGUE:subtlety"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Opportunity",
+        },
+        {
+          11,
+          "Opportunity",
+        },
+        {
+          12,
+          "Opportunity",
+        },
+        {
+          13,
+          "Opportunity",
+        },
+        {
+          14,
+          "Opportunity",
+        },
+        {
+          15,
+          "Improved Ambush",
+        },
+        {
+          16,
+          "Improved Ambush",
+        },
+        {
+          17,
+          "Improved Ambush",
+        },
+        {
+          18,
+          "Setup",
+        },
+        {
+          19,
+          "Setup",
+        },
+        {
+          20,
+          "Serrated Blades",
+        },
+        {
+          21,
+          "Serrated Blades",
+        },
+        {
+          22,
+          "Serrated Blades",
+        },
+        {
+          23,
+          "Premeditation",
+        },
+        {
+          24,
+          "Dirty Deeds",
+        },
+        {
+          25,
+          "Ghostly Strike",
+        },
+        {
+          26,
+          "Setup",
+        },
+        {
+          27,
+          "Camouflage",
+        },
+        {
+          28,
+          "Camouflage",
+        },
+        {
+          29,
+          "Camouflage",
+        },
+        {
+          30,
+          "Hemorrhage",
+        },
+        {
+          31,
+          "Efficient Strikes",
+        },
+        {
+          32,
+          "Efficient Strikes",
+        },
+        {
+          33,
+          "Preparation",
+        },
+        {
+          34,
+          "Initiative",
+        },
+        {
+          35,
+          "Initiative",
+        },
+        {
+          36,
+          "Initiative",
+        },
+        {
+          37,
+          "Boot Knife",
+        },
+        {
+          38,
+          "Boot Knife",
+        },
+        {
+          39,
+          "Boot Knife",
+        },
+        {
+          40,
+          "Boot Knife",
+        },
+        {
+          41,
+          "Boot Knife",
+        },
+        {
+          42,
+          "Death Mark",
+        },
+        {
+          43,
+          "Coup de Grace",
+        },
+        {
+          44,
+          "Coup de Grace",
+        },
+        {
+          45,
+          "Coup de Grace",
+        },
+        {
+          46,
+          "Remorseless Attacks",
+        },
+        {
+          47,
+          "Remorseless Attacks",
+        },
+        {
+          48,
+          "Malice",
+        },
+        {
+          49,
+          "Malice",
+        },
+        {
+          50,
+          "Malice",
+        },
+        {
+          51,
+          "Ruthlessness",
+        },
+        {
+          52,
+          "Ruthlessness",
+        },
+        {
+          53,
+          "Ruthlessness",
+        },
+        {
+          54,
+          "Malice",
+        },
+        {
+          55,
+          "Malice",
+        },
+        {
+          56,
+          "Blood Splatter",
+        },
+        {
+          57,
+          "Lethality",
+        },
+        {
+          58,
+          "Lethality",
+        },
+        {
+          59,
+          "Improved Slice and Dice",
+        },
+        {
+          60,
+          "Improved Slice and Dice",
+        },
+      },
+      ["source"] = "Icy Veins: Subtlety Rogue leveling",
+      ["tree"] = "Subtlety",
+      ["url"] = "https://www.icy-veins.com/wow-forever/subtlety-rogue-leveling",
+    },
+    ["SHAMAN:elemental"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Concussion",
+        },
+        {
+          11,
+          "Concussion",
+        },
+        {
+          12,
+          "Concussion",
+        },
+        {
+          13,
+          "Concussion",
+        },
+        {
+          14,
+          "Concussion",
+        },
+        {
+          15,
+          "Elemental Alacrity",
+        },
+        {
+          16,
+          "Elemental Alacrity",
+        },
+        {
+          17,
+          "Elemental Alacrity",
+        },
+        {
+          18,
+          "Call of Flame",
+        },
+        {
+          19,
+          "Call of Flame",
+        },
+        {
+          20,
+          "Elemental Focus",
+        },
+        {
+          21,
+          "Call of Flame",
+        },
+        {
+          22,
+          "Convection",
+        },
+        {
+          23,
+          "Convection",
+        },
+        {
+          24,
+          "Convection",
+        },
+        {
+          25,
+          "Earthbound",
+        },
+        {
+          26,
+          "Trial by Fire",
+        },
+        {
+          27,
+          "Trial by Fire",
+        },
+        {
+          28,
+          "Eye of the Storm",
+        },
+        {
+          29,
+          "Eye of the Storm",
+        },
+        {
+          30,
+          "Call of Thunder",
+        },
+        {
+          31,
+          "Lightning Overload",
+        },
+        {
+          32,
+          "Lightning Overload",
+        },
+        {
+          33,
+          "Lightning Overload",
+        },
+        {
+          34,
+          "Eye of the Storm",
+        },
+        {
+          35,
+          "Elemental Fury",
+        },
+        {
+          36,
+          "Elemental Fury",
+        },
+        {
+          37,
+          "Elemental Fury",
+        },
+        {
+          38,
+          "Elemental Fury",
+        },
+        {
+          39,
+          "Elemental Fury",
+        },
+        {
+          40,
+          "Lightning Mastery",
+        },
+        {
+          41,
+          "Tidal Focus",
+        },
+        {
+          42,
+          "Tidal Focus",
+        },
+        {
+          43,
+          "Tidal Focus",
+        },
+        {
+          44,
+          "Tidal Focus",
+        },
+        {
+          45,
+          "Tidal Focus",
+        },
+        {
+          46,
+          "Mindfulness",
+        },
+        {
+          47,
+          "Mindfulness",
+        },
+        {
+          48,
+          "Mindfulness",
+        },
+        {
+          49,
+          "Improved Reincarnation",
+        },
+        {
+          50,
+          "Improved Reincarnation",
+        },
+        {
+          51,
+          "Water Shield",
+        },
+        {
+          52,
+          "Thundering Strikes",
+        },
+        {
+          53,
+          "Thundering Strikes",
+        },
+        {
+          54,
+          "Thundering Strikes",
+        },
+        {
+          55,
+          "Thundering Strikes",
+        },
+        {
+          56,
+          "Thundering Strikes",
+        },
+        {
+          57,
+          "Convection",
+        },
+        {
+          58,
+          "Convection",
+        },
+        {
+          59,
+          "Ancestral Knowledge",
+        },
+        {
+          60,
+          "Ancestral Knowledge",
+        },
+      },
+      ["source"] = "Icy Veins: Elemental Shaman leveling",
+      ["tree"] = "Elemental Combat",
+      ["url"] = "https://www.icy-veins.com/wow-forever/elemental-shaman-leveling",
+    },
+    ["SHAMAN:enhancement"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Thundering Strikes",
+        },
+        {
+          11,
+          "Thundering Strikes",
+        },
+        {
+          12,
+          "Thundering Strikes",
+        },
+        {
+          13,
+          "Thundering Strikes",
+        },
+        {
+          14,
+          "Thundering Strikes",
+        },
+        {
+          15,
+          "Mental Dexterity",
+        },
+        {
+          16,
+          "Mental Dexterity",
+        },
+        {
+          17,
+          "Mental Dexterity",
+        },
+        {
+          18,
+          "Ancestral Knowledge",
+        },
+        {
+          19,
+          "Ancestral Knowledge",
+        },
+        {
+          20,
+          "Shamanistic Focus",
+        },
+        {
+          21,
+          "Elemental Weapons",
+        },
+        {
+          22,
+          "Elemental Weapons",
+        },
+        {
+          23,
+          "Elemental Weapons",
+        },
+        {
+          24,
+          "Ancestral Knowledge",
+        },
+        {
+          25,
+          "Stormstrike",
+        },
+        {
+          26,
+          "Improved Ghost Wolf",
+        },
+        {
+          27,
+          "Improved Ghost Wolf",
+        },
+        {
+          28,
+          "Flurry",
+        },
+        {
+          29,
+          "Flurry",
+        },
+        {
+          30,
+          "Improved Stormstrike",
+        },
+        {
+          31,
+          "Improved Stormstrike",
+        },
+        {
+          32,
+          "Mental Quickness",
+        },
+        {
+          33,
+          "Mental Quickness",
+        },
+        {
+          34,
+          "Spirit Weapons",
+        },
+        {
+          35,
+          "Tidal Focus",
+        },
+        {
+          36,
+          "Tidal Focus",
+        },
+        {
+          37,
+          "Tidal Focus",
+        },
+        {
+          38,
+          "Tidal Focus",
+        },
+        {
+          39,
+          "Tidal Focus",
+        },
+        {
+          40,
+          "Mindfulness",
+        },
+        {
+          41,
+          "Mindfulness",
+        },
+        {
+          42,
+          "Mindfulness",
+        },
+        {
+          43,
+          "Flurry",
+        },
+        {
+          44,
+          "Flurry",
+        },
+        {
+          45,
+          "Flurry",
+        },
+        {
+          46,
+          "Maelstrom Weapon",
+        },
+        {
+          47,
+          "Maelstrom Weapon",
+        },
+        {
+          48,
+          "Maelstrom Weapon",
+        },
+        {
+          49,
+          "Maelstrom Weapon",
+        },
+        {
+          50,
+          "Maelstrom Weapon",
+        },
+        {
+          51,
+          "Rage of the Farseer",
+        },
+        {
+          52,
+          "Concussion",
+        },
+        {
+          53,
+          "Concussion",
+        },
+        {
+          54,
+          "Concussion",
+        },
+        {
+          55,
+          "Concussion",
+        },
+        {
+          56,
+          "Concussion",
+        },
+        {
+          57,
+          "Elemental Devastation",
+        },
+        {
+          58,
+          "Elemental Devastation",
+        },
+        {
+          59,
+          "Elemental Devastation",
+        },
+        {
+          60,
+          "Call of Flame",
+        },
+      },
+      ["source"] = "Icy Veins: Enhancement Shaman leveling",
+      ["tree"] = "Enhancement",
+      ["url"] = "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling",
+    },
+    ["SHAMAN:restoration"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Tidal Focus",
+        },
+        {
+          11,
+          "Tidal Focus",
+        },
+        {
+          12,
+          "Tidal Focus",
+        },
+        {
+          13,
+          "Tidal Focus",
+        },
+        {
+          14,
+          "Tidal Focus",
+        },
+        {
+          15,
+          "Mindfulness",
+        },
+        {
+          16,
+          "Mindfulness",
+        },
+        {
+          17,
+          "Mindfulness",
+        },
+        {
+          18,
+          "Improved Healing Wave",
+        },
+        {
+          19,
+          "Improved Healing Wave",
+        },
+        {
+          20,
+          "Water Shield",
+        },
+        {
+          21,
+          "Improved Healing Wave",
+        },
+        {
+          22,
+          "Improved Healing Wave",
+        },
+        {
+          23,
+          "Improved Healing Wave",
+        },
+        {
+          24,
+          "Healing Focus",
+        },
+        {
+          25,
+          "Mana Tide Totem",
+        },
+        {
+          26,
+          "Tidal Mastery",
+        },
+        {
+          27,
+          "Tidal Mastery",
+        },
+        {
+          28,
+          "Tidal Mastery",
+        },
+        {
+          29,
+          "Tidal Mastery",
+        },
+        {
+          30,
+          "Nature's Swiftness",
+        },
+        {
+          31,
+          "Healing Way",
+        },
+        {
+          32,
+          "Healing Way",
+        },
+        {
+          33,
+          "Healing Way",
+        },
+        {
+          34,
+          "Tidal Mastery",
+        },
+        {
+          35,
+          "Purification",
+        },
+        {
+          36,
+          "Purification",
+        },
+        {
+          37,
+          "Purification",
+        },
+        {
+          38,
+          "Purification",
+        },
+        {
+          39,
+          "Purification",
+        },
+        {
+          40,
+          "Riptide",
+        },
+        {
+          41,
+          "Healing Focus",
+        },
+        {
+          42,
+          "Healing Focus",
+        },
+        {
+          43,
+          "Ancestral Healing",
+        },
+        {
+          44,
+          "Ancestral Healing",
+        },
+        {
+          45,
+          "Ancestral Healing",
+        },
+        {
+          46,
+          "Thundering Strikes",
+        },
+        {
+          47,
+          "Thundering Strikes",
+        },
+        {
+          48,
+          "Thundering Strikes",
+        },
+        {
+          49,
+          "Thundering Strikes",
+        },
+        {
+          50,
+          "Thundering Strikes",
+        },
+        {
+          51,
+          "Restorative Totems",
+        },
+        {
+          52,
+          "Restorative Totems",
+        },
+        {
+          53,
+          "Restorative Totems",
+        },
+        {
+          54,
+          "Restorative Totems",
+        },
+        {
+          55,
+          "Restorative Totems",
+        },
+        {
+          56,
+          "Ancestral Knowledge",
+        },
+        {
+          57,
+          "Ancestral Knowledge",
+        },
+        {
+          58,
+          "Ancestral Knowledge",
+        },
+        {
+          59,
+          "Ancestral Knowledge",
+        },
+        {
+          60,
+          "Ancestral Knowledge",
+        },
+      },
+      ["source"] = "Icy Veins: Restoration Shaman leveling",
+      ["tree"] = "Restoration",
+      ["url"] = "https://www.icy-veins.com/wow-forever/restoration-shaman-leveling",
+    },
+    ["WARLOCK:affliction"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Suppression",
+        },
+        {
+          11,
+          "Suppression",
+        },
+        {
+          12,
+          "Suppression",
+        },
+        {
+          13,
+          "Suppression",
+        },
+        {
+          14,
+          "Improved Corruption",
+        },
+        {
+          15,
+          "Improved Corruption",
+        },
+        {
+          16,
+          "Improved Corruption",
+        },
+        {
+          17,
+          "Improved Corruption",
+        },
+        {
+          18,
+          "Improved Corruption",
+        },
+        {
+          19,
+          "Grim Reach",
+        },
+        {
+          20,
+          "Improved Bane of Agony",
+        },
+        {
+          21,
+          "Improved Bane of Agony",
+        },
+        {
+          22,
+          "Pandemic",
+        },
+        {
+          23,
+          "Pandemic",
+        },
+        {
+          24,
+          "Pandemic",
+        },
+        {
+          25,
+          "Nightfall",
+        },
+        {
+          26,
+          "Nightfall",
+        },
+        {
+          27,
+          "Malevolence",
+        },
+        {
+          28,
+          "Malevolence",
+        },
+        {
+          29,
+          "Malevolence",
+        },
+        {
+          30,
+          "Siphon Life",
+        },
+        {
+          31,
+          "Demonic Embrace",
+        },
+        {
+          32,
+          "Demonic Embrace",
+        },
+        {
+          33,
+          "Demonic Embrace",
+        },
+        {
+          34,
+          "Demonic Embrace",
+        },
+        {
+          35,
+          "Demonic Embrace",
+        },
+        {
+          36,
+          "Demonic Aegis",
+        },
+        {
+          37,
+          "Demonic Aegis",
+        },
+        {
+          38,
+          "Fel Vitality",
+        },
+        {
+          39,
+          "Fel Vitality",
+        },
+        {
+          40,
+          "Fel Vitality",
+        },
+        {
+          41,
+          "Demonic Sacrifice",
+        },
+        {
+          42,
+          "Malevolence",
+        },
+        {
+          43,
+          "Malevolence",
+        },
+        {
+          44,
+          "Grim Reach",
+        },
+        {
+          45,
+          "Improved Life Tap",
+        },
+        {
+          46,
+          "Shadow Mastery",
+        },
+        {
+          47,
+          "Shadow Mastery",
+        },
+        {
+          48,
+          "Shadow Mastery",
+        },
+        {
+          49,
+          "Shadow Mastery",
+        },
+        {
+          50,
+          "Shadow Mastery",
+        },
+        {
+          51,
+          "Wrack",
+        },
+        {
+          52,
+          "Improved Life Tap",
+        },
+        {
+          53,
+          "Soul Siphon",
+        },
+        {
+          54,
+          "Soul Siphon",
+        },
+        {
+          55,
+          "Soul Siphon",
+        },
+        {
+          56,
+          "Improved Drains",
+        },
+        {
+          57,
+          "Improved Drains",
+        },
+        {
+          58,
+          "Improved Drains",
+        },
+        {
+          59,
+          "Fel Concentration",
+        },
+        {
+          60,
+          "Fel Concentration",
+        },
+      },
+      ["source"] = "Icy Veins: Affliction Warlock leveling",
+      ["tree"] = "Affliction",
+      ["url"] = "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling",
+    },
+    ["WARLOCK:demonology"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Unholy Power",
+        },
+        {
+          11,
+          "Unholy Power",
+        },
+        {
+          12,
+          "Unholy Power",
+        },
+        {
+          13,
+          "Unholy Power",
+        },
+        {
+          14,
+          "Unholy Power",
+        },
+        {
+          15,
+          "Demonic Energies",
+        },
+        {
+          16,
+          "Demonic Energies",
+        },
+        {
+          17,
+          "Fel Vitality",
+        },
+        {
+          18,
+          "Fel Vitality",
+        },
+        {
+          19,
+          "Fel Vitality",
+        },
+        {
+          20,
+          "Master Summoner",
+        },
+        {
+          21,
+          "Master Summoner",
+        },
+        {
+          22,
+          "Improved Voidwalker",
+        },
+        {
+          23,
+          "Improved Voidwalker",
+        },
+        {
+          24,
+          "Improved Voidwalker",
+        },
+        {
+          25,
+          "Demonic Brand",
+        },
+        {
+          26,
+          "Demonic Brand",
+        },
+        {
+          27,
+          "Demonic Brand",
+        },
+        {
+          28,
+          "Fel Domination",
+        },
+        {
+          29,
+          "Demonic Sacrifice",
+        },
+        {
+          30,
+          "Soul Link",
+        },
+        {
+          31,
+          "Demonic Knowledge",
+        },
+        {
+          32,
+          "Demonic Knowledge",
+        },
+        {
+          33,
+          "Demonic Knowledge",
+        },
+        {
+          34,
+          "Demonic Aegis",
+        },
+        {
+          35,
+          "Master Demonologist",
+        },
+        {
+          36,
+          "Master Demonologist",
+        },
+        {
+          37,
+          "Master Demonologist",
+        },
+        {
+          38,
+          "Master Demonologist",
+        },
+        {
+          39,
+          "Master Demonologist",
+        },
+        {
+          40,
+          "Demonic Pact",
+        },
+        {
+          41,
+          "Suppression",
+        },
+        {
+          42,
+          "Suppression",
+        },
+        {
+          43,
+          "Suppression",
+        },
+        {
+          44,
+          "Suppression",
+        },
+        {
+          45,
+          "Improved Corruption",
+        },
+        {
+          46,
+          "Improved Corruption",
+        },
+        {
+          47,
+          "Improved Corruption",
+        },
+        {
+          48,
+          "Improved Corruption",
+        },
+        {
+          49,
+          "Improved Corruption",
+        },
+        {
+          50,
+          "Improved Life Tap",
+        },
+        {
+          51,
+          "Improved Bane of Agony",
+        },
+        {
+          52,
+          "Improved Bane of Agony",
+        },
+        {
+          53,
+          "Pandemic",
+        },
+        {
+          54,
+          "Pandemic",
+        },
+        {
+          55,
+          "Pandemic",
+        },
+        {
+          56,
+          "Malevolence",
+        },
+        {
+          57,
+          "Malevolence",
+        },
+        {
+          58,
+          "Malevolence",
+        },
+        {
+          59,
+          "Malevolence",
+        },
+        {
+          60,
+          "Malevolence",
+        },
+      },
+      ["source"] = "Icy Veins: Demonology Warlock leveling",
+      ["tree"] = "Demonology",
+      ["url"] = "https://www.icy-veins.com/wow-forever/demonology-warlock-leveling",
+    },
+    ["WARLOCK:destruction"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Bane",
+        },
+        {
+          11,
+          "Bane",
+        },
+        {
+          12,
+          "Bane",
+        },
+        {
+          13,
+          "Bane",
+        },
+        {
+          14,
+          "Bane",
+        },
+        {
+          15,
+          "Aftermath",
+        },
+        {
+          16,
+          "Aftermath",
+        },
+        {
+          17,
+          "Aftermath",
+        },
+        {
+          18,
+          "Aftermath",
+        },
+        {
+          19,
+          "Aftermath",
+        },
+        {
+          20,
+          "Shadowburn",
+        },
+        {
+          21,
+          "Destructive Reach",
+        },
+        {
+          22,
+          "Destructive Reach",
+        },
+        {
+          23,
+          "Ruin",
+        },
+        {
+          24,
+          "Ruin",
+        },
+        {
+          25,
+          "Conflagrate",
+        },
+        {
+          26,
+          "Intensity",
+        },
+        {
+          27,
+          "Intensity",
+        },
+        {
+          28,
+          "Intensity",
+        },
+        {
+          29,
+          "Agonizing Flames",
+        },
+        {
+          30,
+          "Fire and Brimstone",
+        },
+        {
+          31,
+          "Fire and Brimstone",
+        },
+        {
+          32,
+          "Fire and Brimstone",
+        },
+        {
+          33,
+          "Bane of Havoc",
+        },
+        {
+          34,
+          "Agonizing Flames",
+        },
+        {
+          35,
+          "Shadow and Flame",
+        },
+        {
+          36,
+          "Shadow and Flame",
+        },
+        {
+          37,
+          "Shadow and Flame",
+        },
+        {
+          38,
+          "Shadow and Flame",
+        },
+        {
+          39,
+          "Shadow and Flame",
+        },
+        {
+          40,
+          "Incinerate",
+        },
+        {
+          41,
+          "Agonizing Flames",
+        },
+        {
+          42,
+          "Suppression",
+        },
+        {
+          43,
+          "Suppression",
+        },
+        {
+          44,
+          "Suppression",
+        },
+        {
+          45,
+          "Suppression",
+        },
+        {
+          46,
+          "Demonic Embrace",
+        },
+        {
+          47,
+          "Demonic Embrace",
+        },
+        {
+          48,
+          "Demonic Embrace",
+        },
+        {
+          49,
+          "Demonic Embrace",
+        },
+        {
+          50,
+          "Demonic Embrace",
+        },
+        {
+          51,
+          "Demonic Aegis",
+        },
+        {
+          52,
+          "Demonic Aegis",
+        },
+        {
+          53,
+          "Fel Vitality",
+        },
+        {
+          54,
+          "Fel Vitality",
+        },
+        {
+          55,
+          "Fel Vitality",
+        },
+        {
+          56,
+          "Demonic Sacrifice",
+        },
+        {
+          57,
+          "Improved Life Tap",
+        },
+        {
+          58,
+          "Improved Life Tap",
+        },
+        {
+          59,
+          "Ruin",
+        },
+        {
+          60,
+          "Ruin",
+        },
+      },
+      ["source"] = "Icy Veins: Destruction Warlock leveling",
+      ["tree"] = "Destruction",
+      ["url"] = "https://www.icy-veins.com/wow-forever/destruction-warlock-leveling",
+    },
+    ["WARRIOR:arms"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Improved Rend",
+        },
+        {
+          11,
+          "Improved Rend",
+        },
+        {
+          12,
+          "Improved Rend",
+        },
+        {
+          13,
+          "Deflection",
+        },
+        {
+          14,
+          "Deflection",
+        },
+        {
+          15,
+          "Improved Overpower",
+        },
+        {
+          16,
+          "Improved Overpower",
+        },
+        {
+          17,
+          "Improved Charge",
+        },
+        {
+          18,
+          "Improved Charge",
+        },
+        {
+          19,
+          "Improved Tactical Mastery",
+        },
+        {
+          20,
+          "Improved Tactical Mastery",
+        },
+        {
+          21,
+          "Improved Tactical Mastery",
+        },
+        {
+          22,
+          "Anger Management",
+        },
+        {
+          23,
+          "Deep Wounds",
+        },
+        {
+          24,
+          "Deep Wounds",
+        },
+        {
+          25,
+          "Spearing Strike",
+        },
+        {
+          26,
+          "Two-Handed Weapon Specialization",
+        },
+        {
+          27,
+          "Two-Handed Weapon Specialization",
+        },
+        {
+          28,
+          "Two-Handed Weapon Specialization",
+        },
+        {
+          29,
+          "Deep Wounds",
+        },
+        {
+          30,
+          "Sweeping Strikes",
+        },
+        {
+          31,
+          "Bloodthrill",
+        },
+        {
+          32,
+          "Bloodthrill",
+        },
+        {
+          33,
+          "Weaponmaster",
+        },
+        {
+          34,
+          "Weaponmaster",
+        },
+        {
+          35,
+          "Improved Slam",
+        },
+        {
+          36,
+          "Improved Slam",
+        },
+        {
+          37,
+          "Weaponmaster",
+        },
+        {
+          38,
+          "Weaponmaster",
+        },
+        {
+          39,
+          "Weaponmaster",
+        },
+        {
+          40,
+          "Mortal Strike",
+        },
+        {
+          41,
+          "Cruelty",
+        },
+        {
+          42,
+          "Cruelty",
+        },
+        {
+          43,
+          "Cruelty",
+        },
+        {
+          44,
+          "Cruelty",
+        },
+        {
+          45,
+          "Cruelty",
+        },
+        {
+          46,
+          "Lingering Rage",
+        },
+        {
+          47,
+          "Lingering Rage",
+        },
+        {
+          48,
+          "Lingering Rage",
+        },
+        {
+          49,
+          "Lingering Rage",
+        },
+        {
+          50,
+          "Lingering Rage",
+        },
+        {
+          51,
+          "Enrage",
+        },
+        {
+          52,
+          "Enrage",
+        },
+        {
+          53,
+          "Enrage",
+        },
+        {
+          54,
+          "Enrage",
+        },
+        {
+          55,
+          "Enrage",
+        },
+        {
+          56,
+          "Reckless Swings",
+        },
+        {
+          57,
+          "Improved Bloodrage",
+        },
+        {
+          58,
+          "Improved Bloodrage",
+        },
+        {
+          59,
+          "Impale",
+        },
+        {
+          60,
+          "Impale",
+        },
+      },
+      ["source"] = "Icy Veins: Arms Warrior leveling",
+      ["tree"] = "Arms",
+      ["url"] = "https://www.icy-veins.com/wow-forever/arms-warrior-leveling",
+    },
+    ["WARRIOR:fury"] = {
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
+      ["order"] = {
+        {
+          10,
+          "Cruelty",
+        },
+        {
+          11,
+          "Cruelty",
+        },
+        {
+          12,
+          "Cruelty",
+        },
+        {
+          13,
+          "Cruelty",
+        },
+        {
+          14,
+          "Cruelty",
+        },
+        {
+          15,
+          "Unbridled Wrath",
+        },
+        {
+          16,
+          "Unbridled Wrath",
+        },
+        {
+          17,
+          "Unbridled Wrath",
+        },
+        {
+          18,
+          "Unbridled Wrath",
+        },
+        {
+          19,
+          "Unbridled Wrath",
+        },
+        {
+          20,
+          "Furious Precision",
+        },
+        {
+          21,
+          "Furious Precision",
+        },
+        {
+          22,
+          "Furious Precision",
+        },
+        {
+          23,
+          "Enrage",
+        },
+        {
+          24,
+          "Enrage",
+        },
+        {
+          25,
+          "Dual Wield Specialization",
+        },
+        {
+          26,
+          "Dual Wield Specialization",
+        },
+        {
+          27,
+          "Dual Wield Specialization",
+        },
+        {
+          28,
+          "Dual Wield Specialization",
+        },
+        {
+          29,
+          "Dual Wield Specialization",
+        },
+        {
+          30,
+          "Death Wish",
+        },
+        {
+          31,
+          "Reckless Swings",
+        },
+        {
+          32,
+          "Improved Berserker Rage",
+        },
+        {
+          33,
+          "Improved Berserker Rage",
+        },
+        {
+          34,
+          "Enrage",
+        },
+        {
+          35,
+          "Improved Whirlwind",
+        },
+        {
+          36,
+          "Improved Whirlwind",
+        },
+        {
+          37,
+          "Flurry",
+        },
+        {
+          38,
+          "Flurry",
+        },
+        {
+          39,
+          "Flurry",
+        },
+        {
+          40,
+          "Bloodthirst",
+        },
+        {
+          41,
+          "Improved Rend",
+        },
+        {
+          42,
+          "Improved Rend",
+        },
+        {
+          43,
+          "Improved Rend",
+        },
+        {
+          44,
+          "Deflection",
+        },
+        {
+          45,
+          "Deflection",
+        },
+        {
+          46,
+          "Improved Charge",
+        },
+        {
+          47,
+          "Improved Charge",
+        },
+        {
+          48,
+          "Improved Overpower",
+        },
+        {
+          49,
+          "Improved Overpower",
+        },
+        {
+          50,
+          "Improved Tactical Mastery",
+        },
+        {
+          51,
+          "Improved Tactical Mastery",
+        },
+        {
+          52,
+          "Improved Tactical Mastery",
+        },
+        {
+          53,
+          "Anger Management",
+        },
+        {
+          54,
+          "Improved Bloodrage",
+        },
+        {
+          55,
+          "Improved Bloodrage",
+        },
+        {
+          56,
+          "Enrage",
+        },
+        {
+          57,
+          "Enrage",
+        },
+        {
+          58,
+          "Deep Wounds",
+        },
+        {
+          59,
+          "Deep Wounds",
+        },
+        {
+          60,
+          "Deep Wounds",
+        },
+      },
+      ["source"] = "Icy Veins: Fury Warrior leveling",
+      ["tree"] = "Fury",
+      ["url"] = "https://www.icy-veins.com/wow-forever/fury-warrior-leveling",
+    },
     ["WARRIOR:protection"] = {
-      ["note"] = "Levels marked 'any Protection talent' are not specified by the guide; spend them in the Protection tree to reach the next listed talent.",
+      ["note"] = "Leveling order from the guide's talent calculator (level 10-60). Spec-specific, not end-game.",
       ["order"] = {
         {
           10,
@@ -1513,11 +10387,11 @@ ForeverCoach_Rules = {
         },
         {
           18,
-          "*",
+          "Improved Thunder Clap",
         },
         {
           19,
-          "*",
+          "Improved Thunder Clap",
         },
         {
           20,
@@ -1529,7 +10403,7 @@ ForeverCoach_Rules = {
         },
         {
           22,
-          "*",
+          "Improved Thunder Clap",
         },
         {
           23,
@@ -1545,15 +10419,15 @@ ForeverCoach_Rules = {
         },
         {
           26,
-          "*",
+          "Improved Sunder Armor",
         },
         {
           27,
-          "*",
+          "Improved Sunder Armor",
         },
         {
           28,
-          "*",
+          "Improved Sunder Armor",
         },
         {
           29,
@@ -1581,30 +10455,110 @@ ForeverCoach_Rules = {
         },
         {
           35,
-          "*",
+          "Bastion",
         },
         {
           36,
-          "*",
+          "Bastion",
         },
         {
           37,
-          "*",
+          "Bastion",
         },
         {
           38,
-          "*",
+          "Bastion",
         },
         {
           39,
-          "*",
+          "Bastion",
         },
         {
           40,
           "Shield Slam",
         },
+        {
+          41,
+          "Improved Rend",
+        },
+        {
+          42,
+          "Improved Rend",
+        },
+        {
+          43,
+          "Improved Rend",
+        },
+        {
+          44,
+          "Cruelty",
+        },
+        {
+          45,
+          "Cruelty",
+        },
+        {
+          46,
+          "Cruelty",
+        },
+        {
+          47,
+          "Cruelty",
+        },
+        {
+          48,
+          "Cruelty",
+        },
+        {
+          49,
+          "Unbridled Wrath",
+        },
+        {
+          50,
+          "Unbridled Wrath",
+        },
+        {
+          51,
+          "Unbridled Wrath",
+        },
+        {
+          52,
+          "Unbridled Wrath",
+        },
+        {
+          53,
+          "Unbridled Wrath",
+        },
+        {
+          54,
+          "Enrage",
+        },
+        {
+          55,
+          "Enrage",
+        },
+        {
+          56,
+          "Enrage",
+        },
+        {
+          57,
+          "Enrage",
+        },
+        {
+          58,
+          "Enrage",
+        },
+        {
+          59,
+          "Reckless Swings",
+        },
+        {
+          60,
+          "Deflection",
+        },
       },
-      ["source"] = "Icy Veins: Protection Warrior leveling (Abide)",
+      ["source"] = "Icy Veins: Protection Warrior leveling",
       ["tree"] = "Protection",
       ["url"] = "https://www.icy-veins.com/wow-forever/protection-warrior-leveling",
     },
@@ -1623,7 +10577,7 @@ ForeverCoach_Rules = {
   ["unavailablePatterns"] = {
     "Old Hillsbrad",
   },
-  ["version"] = "1.1.0",
+  ["version"] = "1.2.0",
   ["zoneParents"] = {
     ["Alcaz Prison"] = "Dustwallow Marsh",
     ["Astranaar"] = "Ashenvale",

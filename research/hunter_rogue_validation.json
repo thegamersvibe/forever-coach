@@ -1,0 +1,32 @@
+{
+  "status": "PARTIAL_RESEARCH_VALIDATED",
+  "schemaChecks": "PASS",
+  "citationChecks": "PASS",
+  "talentBuilds": 6,
+  "talentPoints": 306,
+  "verifiedTalentPicks": 0,
+  "unknownTalentPicks": 306,
+  "spellMilestones": 38,
+  "milestonesByClass": {"HUNTER": 23, "ROGUE": 15},
+  "uniqueMilestoneSpellIds": 47,
+  "procSpells": 4,
+  "raceOnlyQuests": 5,
+  "checksRun": [
+    "Exact six requested spec keys and tree names",
+    "Every order has each level 10 through 60 exactly once",
+    "Every unverified talent pick is *",
+    "No duplicate milestone identity or duplicate ID inside a milestone",
+    "All milestone/proc IDs match retrieved Forever spell records",
+    "Milestone unlock levels match retrieved spell requirements where supplied",
+    "Allowed kinds, confidence codes, race tokens and importance ranges",
+    "All numbered notes citations resolve to the retrieved source ledger"
+  ],
+  "blockingUncertainties": [
+    "Cloudflare blocked browser and raw JS retrieval; no exact talent order was recovered",
+    "Riposte ID 14251 verified, but reaction-window duration unverified; omitted from procSpells",
+    "Mongoose Bite 10-second window verified only for Expose Prey, not natural dodge triggers",
+    "Pick Lock is level 16 in two Forever sources but level 15 in Icy Veins milestone tables",
+    "Skyborne raceFile token is secondary recorded evidence, not verified live here",
+    "Human/Dwarf/Gnome/NightElf reward quest race locks need eligibility UI confirmation"
+  ]
+}

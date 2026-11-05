@@ -1,0 +1,371 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "http://worldofwarcraft.blizzard.com/news/24302071/wow-forever-meet-the-new-skyborne",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 2,
+      "url": "http://worldofwarcraft.blizzard.com/en-us/forever",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 3,
+      "url": "http://worldofwarcraft.blizzard.com/news/24315820/world-of-warcraft-forever-now-live",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 4,
+      "url": "http://worldofwarcraft.blizzard.com/news/24315280/new-players-starter-guide-welcome-to-world-of-warcraft-forever",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 5,
+      "url": "http://worldofwarcraft.blizzard.com/news/24303862/world-of-warcraft-forever-whats-next-panel-recap",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 6,
+      "url": "https://www.wowhead.com/forever/news/skyborne-druid-forms-in-wow-forever-382861",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 7,
+      "url": "https://www.wowhead.com/forever/guide/new-race-class-combinations",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 8,
+      "url": "https://www.method.gg/wow-forever/all-class-and-race-combinations-in-world-of-warcraft-forever",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 9,
+      "url": "https://www.wowhead.com/forever/guide/zephras-isle-zone-overview",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 10,
+      "url": "https://www.icy-veins.com/wow/news/are-wow-forevers-skyborne-coming-to-retail",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 11,
+      "url": "https://us.forums.blizzard.com/en/wow/t/druid-questline-for-bear-form-broken-for-me/2353628",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 12,
+      "url": "https://warcraft.wiki.gg/wiki/Skyborne",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 13,
+      "url": "file:///opt/data/cache/scratch/wowf/x/Journey_core/Condition.lua",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 14,
+      "url": "file:///opt/data/cache/scratch/wowf/x/dec/guides.lua",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 15,
+      "url": "file:///opt/data/cache/scratch/wowf/x/dec/0010.lua",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 16,
+      "url": "file:///opt/data/cache/scratch/wowf/x/dec/0011.lua",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 17,
+      "url": "https://www.wowhead.com/forever/quest=94006/the-great-ursera-spirit",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 18,
+      "url": "https://www.wowhead.com/forever/quest=94638/strength-and-mercy",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 19,
+      "url": "https://www.wowhead.com/forever/quest=94003/the-skybreaker-bulwark",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 20,
+      "url": "https://www.wowhead.com/forever/quest=93797/boughs-in-the-wind",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 21,
+      "url": "https://www.wowhead.com/forever/zone=16593/zephras-isle",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 22,
+      "url": "https://warcraft.wiki.gg/wiki/API_UnitRace",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 23,
+      "url": "https://wowlua.dev/docs/emulator-coverage",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 24,
+      "url": "https://wow-forever.gg/db/zones/16635-thendal-village",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 25,
+      "url": "https://0hp.com/wow-forever-zones",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 26,
+      "url": "https://icy-veins.com/wow-forever/druid-shapeshift-forms",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 27,
+      "url": "https://icy-veins.com/wow-forever/skyborne",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 28,
+      "url": "https://daybreakforever.com/static/forever/datamine.json",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 29,
+      "url": "https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 30,
+      "url": "https://www.wowhead.com/forever/quest=97243",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 31,
+      "url": "https://www.wowhead.com/forever/quest=92466",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 32,
+      "url": "https://www.wowhead.com/forever/quest=94978/taming-the-beast",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 33,
+      "url": "https://www.wowhead.com/forever/quest=93791/speak-with-belann",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 34,
+      "url": "https://www.icy-veins.com/wow-forever/warrior-class-quests",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 35,
+      "url": "https://www.wowhead.com/forever/quest=1693/weapons-of-elunite",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 36,
+      "url": "https://www.wowhead.com/forever/quest=1682/grey-iron-weapons",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 37,
+      "url": "https://www.wowhead.com/forever/quest=1821/agamand-heirlooms",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 38,
+      "url": "https://gamer-guides.com/warcraft-forever/boughs-in-the-wind",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 39,
+      "url": "https://wowfdb.com/races/human",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 40,
+      "url": "https://wowfdb.com/races/dwarf",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 41,
+      "url": "https://wowfdb.com/races/night-elf",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 42,
+      "url": "https://wowfdb.com/races/orc",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 43,
+      "url": "https://wowfdb.com/races/tauren",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 44,
+      "url": "https://wowfdb.com/races/troll",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 45,
+      "url": "https://wowfdb.com/races/undead",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 46,
+      "url": "https://wowfdb.com/races/skyborne-high-order",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 47,
+      "url": "https://wowfdb.com/races/skyborne-windshaper",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 48,
+      "url": "https://www.wowhead.com/forever/quest=1667/dead-tooth-jack",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 49,
+      "url": "https://www.wowhead.com/forever/quest=1503/forged-steel",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 50,
+      "url": "https://www.wowhead.com/forever/quest=1822/heirloom-weapon",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 51,
+      "url": "https://www.wowhead.com/forever/quest=94427/a-lesson-in-divinity",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 52,
+      "url": "https://www.warcrafttavern.com/forever/guides/dwarf-shaman-totem-quests",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 53,
+      "url": "https://www.icy-veins.com/wow-forever/paladin-class-quests",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 54,
+      "url": "https://wowfdb.com/races/gnome",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 55,
+      "url": "https://warcraftforever.wiki/wiki/Horde",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 56,
+      "url": "https://warcraftforever.wiki/wiki/Alliance",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 57,
+      "url": "https://www.wowhead.com/forever/quest=95140/old-fire-eye",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 58,
+      "url": "file:///opt/data/cache/scratch/wowf/x/dec/0021.lua",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 59,
+      "url": "file:///opt/data/cache/scratch/wowf/x/dec/0001.lua",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 60,
+      "url": "https://www.wowhead.com/forever/npc=246378/danitha-morr",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 61,
+      "url": "https://www.wowhead.com/forever/quest=94450/call-of-fire",
+      "title": "",
+      "accessed": "2026-11-05"
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "retrievedAt": "2026-11-05T13:29:15.521368+00:00",
+  "talentSources": [
+    {
+      "key": "HUNTER:beast_mastery",
+      "url": "https://www.icy-veins.com/wow-forever/beast-mastery-hunter-leveling",
+      "tree": "Beast Mastery",
+      "sliderStatus": "blocked_by_cloudflare",
+      "verifiedPointCount": 0,
+      "unknownPointCount": 51
+    },
+    {
+      "key": "HUNTER:marksmanship",
+      "url": "https://www.icy-veins.com/wow-forever/marksmanship-hunter-leveling",
+      "tree": "Marksmanship",
+      "sliderStatus": "blocked_by_cloudflare",
+      "verifiedPointCount": 0,
+      "unknownPointCount": 51
+    },
+    {
+      "key": "HUNTER:survival",
+      "url": "https://www.icy-veins.com/wow-forever/survival-hunter-leveling",
+      "tree": "Survival",
+      "sliderStatus": "blocked_by_cloudflare",
+      "verifiedPointCount": 0,
+      "unknownPointCount": 51
+    },
+    {
+      "key": "ROGUE:combat",
+      "url": "https://www.icy-veins.com/wow-forever/combat-rogue-leveling",
+      "tree": "Combat",
+      "sliderStatus": "blocked_by_cloudflare",
+      "verifiedPointCount": 0,
+      "unknownPointCount": 51
+    },
+    {
+      "key": "ROGUE:assassination",
+      "url": "https://www.icy-veins.com/wow-forever/assassination-rogue-leveling",
+      "tree": "Assassination",
+      "sliderStatus": "blocked_by_cloudflare",
+      "verifiedPointCount": 0,
+      "unknownPointCount": 51
+    },
+    {
+      "key": "ROGUE:subtlety",
+      "url": "https://www.icy-veins.com/wow-forever/subtlety-rogue-leveling",
+      "tree": "Subtlety",
+      "sliderStatus": "blocked_by_cloudflare",
+      "verifiedPointCount": 0,
+      "unknownPointCount": 51
+    }
+  ],
+  "spells": [
+    {
+      "spellId": 136,
+      "name": "Mend Pet",
+      "requirementsLevel": 12,
+      "url": "https://db.icy-veins.com/wow-forever/spells/136"
+    },
+    {
+      "spellId": 408,
+      "name": "Kidney Shot",
+      "requirementsLevel": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/408"
+    },
+    {
+      "spellId": 674,
+      "name": "Dual Wield",
+      "requirementsLevel": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/674"
+    },
+    {
+      "spellId": 883,
+      "name": "Call Pet",
+      "requirementsLevel": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/883"
+    },
+    {
+      "spellId": 921,
+      "name": "Pick Pocket",
+      "requirementsLevel": 4,
+      "url": "https://db.icy-veins.com/wow-forever/spells/921"
+    },
+    {
+      "spellId": 982,
+      "name": "Revive Pet",
+      "requirementsLevel": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/982"
+    },
+    {
+      "spellId": 1495,
+      "name": "Mongoose Bite",
+      "requirementsLevel": 16,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1495"
+    },
+    {
+      "spellId": 1513,
+      "name": "Scare Beast",
+      "requirementsLevel": 14,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1513"
+    },
+    {
+      "spellId": 1515,
+      "name": "Tame Beast",
+      "requirementsLevel": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1515"
+    },
+    {
+      "spellId": 1766,
+      "name": "Kick",
+      "requirementsLevel": 12,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1766"
+    },
+    {
+      "spellId": 1767,
+      "name": "Kick",
+      "requirementsLevel": 26,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1767"
+    },
+    {
+      "spellId": 1768,
+      "name": "Kick",
+      "requirementsLevel": 42,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1768"
+    },
+    {
+      "spellId": 1769,
+      "name": "Kick",
+      "requirementsLevel": 58,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1769"
+    },
+    {
+      "spellId": 1804,
+      "name": "Pick Lock",
+      "requirementsLevel": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1804"
+    },
+    {
+      "spellId": 1833,
+      "name": "Cheap Shot",
+      "requirementsLevel": 26,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1833"
+    },
+    {
+      "spellId": 1856,
+      "name": "Vanish",
+      "requirementsLevel": 22,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1856"
+    },
+    {
+      "spellId": 1857,
+      "name": "Vanish",
+      "requirementsLevel": 42,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1857"
+    },
+    {
+      "spellId": 1978,
+      "name": "Serpent Sting",
+      "requirementsLevel": 4,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1978"
+    },
+    {
+      "spellId": 2094,
+      "name": "Blind",
+      "requirementsLevel": 34,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2094"
+    },
+    {
+      "spellId": 2641,
+      "name": "Dismiss Pet",
+      "requirementsLevel": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2641"
+    },
+    {
+      "spellId": 2643,
+      "name": "Multi-Shot",
+      "requirementsLevel": 18,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2643"
+    },
+    {
+      "spellId": 2842,
+      "name": "Poisons",
+      "requirementsLevel": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2842"
+    },
+    {
+      "spellId": 2974,
+      "name": "Wing Clip",
+      "requirementsLevel": 12,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2974"
+    },
+    {
+      "spellId": 2983,
+      "name": "Sprint",
+      "requirementsLevel": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2983"
+    },
+    {
+      "spellId": 3045,
+      "name": "Rapid Fire",
+      "requirementsLevel": 26,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3045"
+    },
+    {
+      "spellId": 5116,
+      "name": "Concussive Shot",
+      "requirementsLevel": 8,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5116"
+    },
+    {
+      "spellId": 5118,
+      "name": "Aspect of the Cheetah",
+      "requirementsLevel": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5118"
+    },
+    {
+      "spellId": 5149,
+      "name": "Beast Training",
+      "requirementsLevel": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5149"
+    },
+    {
+      "spellId": 5171,
+      "name": "Slice and Dice",
+      "requirementsLevel": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5171"
+    },
+    {
+      "spellId": 5277,
+      "name": "Evasion",
+      "requirementsLevel": 8,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5277"
+    },
+    {
+      "spellId": 5384,
+      "name": "Feign Death",
+      "requirementsLevel": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5384"
+    },
+    {
+      "spellId": 6991,
+      "name": "Feed Pet",
+      "requirementsLevel": 10,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6991"
+    },
+    {
+      "spellId": 8676,
+      "name": "Ambush",
+      "requirementsLevel": 18,
+      "url": "https://db.icy-veins.com/wow-forever/spells/8676"
+    },
+    {
+      "spellId": 8696,
+      "name": "Sprint",
+      "requirementsLevel": 34,
+      "url": "https://db.icy-veins.com/wow-forever/spells/8696"
+    },
+    {
+      "spellId": 11305,
+      "name": "Sprint",
+      "requirementsLevel": 58,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11305"
+    },
+    {
+      "spellId": 13159,
+      "name": "Aspect of the Pack",
+      "requirementsLevel": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/13159"
+    },
+    {
+      "spellId": 14269,
+      "name": "Mongoose Bite",
+      "requirementsLevel": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/14269"
+    },
+    {
+      "spellId": 14270,
+      "name": "Mongoose Bite",
+      "requirementsLevel": 44,
+      "url": "https://db.icy-veins.com/wow-forever/spells/14270"
+    },
+    {
+      "spellId": 14271,
+      "name": "Mongoose Bite",
+      "requirementsLevel": 58,
+      "url": "https://db.icy-veins.com/wow-forever/spells/14271"
+    },
+    {
+      "spellId": 19434,
+      "name": "Aimed Shot",
+      "requirementsLevel": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/19434"
+    },
+    {
+      "spellId": 20900,
+      "name": "Aimed Shot",
+      "requirementsLevel": 28,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20900"
+    },
+    {
+      "spellId": 20901,
+      "name": "Aimed Shot",
+      "requirementsLevel": 36,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20901"
+    },
+    {
+      "spellId": 20902,
+      "name": "Aimed Shot",
+      "requirementsLevel": 44,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20902"
+    },
+    {
+      "spellId": 20903,
+      "name": "Aimed Shot",
+      "requirementsLevel": 52,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20903"
+    },
+    {
+      "spellId": 20904,
+      "name": "Aimed Shot",
+      "requirementsLevel": 60,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20904"
+    },
+    {
+      "spellId": 1329283,
+      "name": "Shank",
+      "requirementsLevel": 24,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1329283"
+    },
+    {
+      "spellId": 1329549,
+      "name": "Shank",
+      "requirementsLevel": 44,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1329549"
+    }
+  ],
+  "otherVerifiedSpells": [
+    {
+      "spellId": 14251,
+      "name": "Riposte",
+      "requirementsLevel": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/14251"
+    },
+    {
+      "spellId": 19506,
+      "name": "Trueshot Aura",
+      "requirementsLevel": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/19506"
+    },
+    {
+      "spellId": 1299346,
+      "name": "Trueshot Aura",
+      "requirementsLevel": 25,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1299346"
+    },
+    {
+      "spellId": 1310726,
+      "name": "Expose Prey",
+      "requirementsLevel": null,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1310726"
+    }
+  ],
+  "raceOnlyQuestSources": [
+    {
+      "name": "Snatch and Grab",
+      "questId": 2206,
+      "races": [
+        "Human"
+      ],
+      "url": "https://db.icy-veins.com/wow-forever/quests/2206",
+      "raceSource": "https://www.icy-veins.com/wow-forever/rogue-class-quests",
+      "raceConfidence": "M"
+    },
+    {
+      "name": "Onin's Report",
+      "questId": 2239,
+      "races": [
+        "Dwarf",
+        "Gnome"
+      ],
+      "url": "https://db.icy-veins.com/wow-forever/quests/2239",
+      "raceSource": "https://www.icy-veins.com/wow-forever/rogue-class-quests",
+      "raceConfidence": "M"
+    },
+    {
+      "name": "Destiny Calls",
+      "questId": 2242,
+      "races": [
+        "NightElf"
+      ],
+      "url": "https://db.icy-veins.com/wow-forever/quests/2242",
+      "raceSource": "https://www.icy-veins.com/wow-forever/rogue-class-quests",
+      "raceConfidence": "M"
+    },
+    {
+      "name": "The Deathstalkers",
+      "questId": 1978,
+      "races": [
+        "Scourge"
+      ],
+      "url": "https://db.icy-veins.com/wow-forever/quests/1978",
+      "raceSource": "https://www.icy-veins.com/wow-forever/rogue-class-quests",
+      "raceConfidence": "H"
+    },
+    {
+      "name": "The Shattered Hand",
+      "questId": 1858,
+      "races": [
+        "Orc",
+        "Troll"
+      ],
+      "url": "https://db.icy-veins.com/wow-forever/quests/1858",
+      "raceSource": "https://www.icy-veins.com/wow-forever/rogue-class-quests",
+      "raceConfidence": "H"
+    }
+  ]
+}

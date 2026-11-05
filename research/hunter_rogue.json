@@ -1,0 +1,1836 @@
+{
+  "talentBuilds": {
+    "HUNTER:beast_mastery": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/beast-mastery-hunter-leveling",
+      "tree": "Beast Mastery",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "HUNTER:marksmanship": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/marksmanship-hunter-leveling",
+      "tree": "Marksmanship",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "HUNTER:survival": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/survival-hunter-leveling",
+      "tree": "Survival",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "ROGUE:combat": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/combat-rogue-leveling",
+      "tree": "Combat",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "ROGUE:assassination": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/assassination-rogue-leveling",
+      "tree": "Assassination",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "ROGUE:subtlety": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/subtlety-rogue-leveling",
+      "tree": "Subtlety",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    }
+  },
+  "spellMilestones": [
+    {
+      "level": 4,
+      "spellIds": [
+        1978
+      ],
+      "name": "Serpent Sting",
+      "kind": "trainer",
+      "importance": 70,
+      "how": "Train Serpent Sting at a Hunter trainer.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 8,
+      "spellIds": [
+        5116
+      ],
+      "name": "Concussive Shot",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Train Concussive Shot; use it to create distance or begin a tame.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        5149
+      ],
+      "name": "Beast Training",
+      "kind": "quest",
+      "importance": 90,
+      "how": "Finish Training the Beast; use Beast Training to teach your pet learned skills.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        883
+      ],
+      "name": "Call Pet",
+      "kind": "quest",
+      "importance": 90,
+      "how": "Complete the racial Taming the Beast chain.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        2641
+      ],
+      "name": "Dismiss Pet",
+      "kind": "quest",
+      "importance": 70,
+      "how": "Complete the racial Taming the Beast chain.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        6991
+      ],
+      "name": "Feed Pet",
+      "kind": "quest",
+      "importance": 95,
+      "how": "Finish Training the Beast after the taming trials; visit its named pet trainer.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        982
+      ],
+      "name": "Revive Pet",
+      "kind": "quest",
+      "importance": 95,
+      "how": "Finish Training the Beast after the taming trials; visit its named pet trainer.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        1515
+      ],
+      "name": "Tame Beast",
+      "kind": "quest",
+      "importance": 100,
+      "how": "Complete the three Taming the Beast trials from Grif Wildheart in Kharanos.",
+      "confidence": "H",
+      "class": "HUNTER",
+      "races": [
+        "Dwarf"
+      ]
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        1515
+      ],
+      "name": "Tame Beast",
+      "kind": "quest",
+      "importance": 100,
+      "how": "Complete the three Taming the Beast trials from Josephine Carson in Elwynn Forest.",
+      "confidence": "H",
+      "class": "HUNTER",
+      "races": [
+        "Human"
+      ]
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        1515
+      ],
+      "name": "Tame Beast",
+      "kind": "quest",
+      "importance": 100,
+      "how": "Complete the three Taming the Beast trials from Dazalar in Dolanaar.",
+      "confidence": "H",
+      "class": "HUNTER",
+      "races": [
+        "NightElf"
+      ]
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        1515
+      ],
+      "name": "Tame Beast",
+      "kind": "quest",
+      "importance": 100,
+      "how": "Complete the three Taming the Beast trials from Thotar in Razor Hill.",
+      "confidence": "H",
+      "class": "HUNTER",
+      "races": [
+        "Orc",
+        "Troll"
+      ]
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        1515
+      ],
+      "name": "Tame Beast",
+      "kind": "quest",
+      "importance": 100,
+      "how": "Complete the three Taming the Beast trials from Quel'ana Quickgale in Valanaar.",
+      "confidence": "M",
+      "class": "HUNTER",
+      "races": [
+        "Skyborne"
+      ]
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        1515
+      ],
+      "name": "Tame Beast",
+      "kind": "quest",
+      "importance": 100,
+      "how": "Complete the three Taming the Beast trials from Yaw Sharpmane in Bloodhoof Village.",
+      "confidence": "H",
+      "class": "HUNTER",
+      "races": [
+        "Tauren"
+      ]
+    },
+    {
+      "level": 12,
+      "spellIds": [
+        136
+      ],
+      "name": "Mend Pet",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Train Mend Pet at a Hunter trainer.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 12,
+      "spellIds": [
+        2974
+      ],
+      "name": "Wing Clip",
+      "kind": "trainer",
+      "importance": 65,
+      "how": "Train Wing Clip for a melee slow and escape.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 14,
+      "spellIds": [
+        1513
+      ],
+      "name": "Scare Beast",
+      "kind": "trainer",
+      "importance": 55,
+      "how": "Train Scare Beast at a Hunter trainer.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 16,
+      "spellIds": [
+        1495,
+        14269,
+        14270,
+        14271
+      ],
+      "name": "Mongoose Bite",
+      "kind": "trainer",
+      "importance": 70,
+      "how": "Train Mongoose Bite; use when its reactive condition is active.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 18,
+      "spellIds": [
+        2643
+      ],
+      "name": "Multi-Shot",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Train Multi-Shot; it shares a cooldown with Aimed Shot in Forever.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 20,
+      "spellIds": [
+        19434,
+        20900,
+        20901,
+        20902,
+        20903,
+        20904
+      ],
+      "name": "Aimed Shot",
+      "kind": "trainer",
+      "importance": 95,
+      "how": "Train baseline Aimed Shot; all three Hunter specs can learn it.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 20,
+      "spellIds": [
+        5118
+      ],
+      "name": "Aspect of the Cheetah",
+      "kind": "trainer",
+      "importance": 95,
+      "how": "Train Aspect of the Cheetah for travel between fights.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 26,
+      "spellIds": [
+        3045
+      ],
+      "name": "Rapid Fire",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Train Rapid Fire at a Hunter trainer.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 30,
+      "spellIds": [
+        5384
+      ],
+      "name": "Feign Death",
+      "kind": "trainer",
+      "importance": 98,
+      "how": "Train Feign Death for threat resets and escaping combat.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 40,
+      "spellIds": [
+        13159
+      ],
+      "name": "Aspect of the Pack",
+      "kind": "trainer",
+      "importance": 60,
+      "how": "Train Aspect of the Pack for group travel; avoid using it while taking hits.",
+      "confidence": "H",
+      "class": "HUNTER"
+    },
+    {
+      "level": 4,
+      "spellIds": [
+        921
+      ],
+      "name": "Pick Pocket",
+      "kind": "trainer",
+      "importance": 65,
+      "how": "Train Pick Pocket before attempting Rogue class quests.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 8,
+      "spellIds": [
+        5277
+      ],
+      "name": "Evasion",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Train Evasion at a Rogue trainer.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        674
+      ],
+      "name": "Dual Wield",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Train Dual Wield and equip an off-hand weapon.",
+      "confidence": "M",
+      "class": "ROGUE"
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        5171
+      ],
+      "name": "Slice and Dice",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Train Slice and Dice at a Rogue trainer.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 10,
+      "spellIds": [
+        2983,
+        8696,
+        11305
+      ],
+      "name": "Sprint",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Train Sprint for travel and escape.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 12,
+      "spellIds": [
+        1766,
+        1767,
+        1768,
+        1769
+      ],
+      "name": "Kick",
+      "kind": "trainer",
+      "importance": 98,
+      "how": "Train Kick and interrupt dangerous casts.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 16,
+      "spellIds": [
+        1804
+      ],
+      "name": "Pick Lock",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Learn Pick Lock from a Rogue trainer; carry Thieves' Tools and practice to skill 75 before poisons.",
+      "confidence": "M",
+      "class": "ROGUE"
+    },
+    {
+      "level": 18,
+      "spellIds": [
+        8676
+      ],
+      "name": "Ambush",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Train Ambush; it requires a dagger and Stealth.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 20,
+      "spellIds": [
+        2842
+      ],
+      "name": "Poisons",
+      "kind": "quest",
+      "importance": 100,
+      "how": "Complete the poison chain: Mathias Shaw in Stormwind (Alliance) or Shenthul in Orgrimmar (Horde); Lockpicking 75 required.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 22,
+      "spellIds": [
+        1856,
+        1857
+      ],
+      "name": "Vanish",
+      "kind": "trainer",
+      "importance": 98,
+      "how": "Train Vanish and stock its reagent from a Rogue supplies vendor.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 24,
+      "spellIds": [
+        1329283,
+        1329549
+      ],
+      "name": "Shank",
+      "kind": "trainer",
+      "importance": 98,
+      "how": "Train Shank; use an off-hand weapon to generate Energy.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 26,
+      "spellIds": [
+        1833
+      ],
+      "name": "Cheap Shot",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Train Cheap Shot at a Rogue trainer.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 30,
+      "spellIds": [
+        408
+      ],
+      "name": "Kidney Shot",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Train Kidney Shot for a finishing-move stun.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 34,
+      "spellIds": [
+        2094
+      ],
+      "name": "Blind",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Train Blind at a Rogue trainer.",
+      "confidence": "H",
+      "class": "ROGUE"
+    },
+    {
+      "level": 44,
+      "spellIds": [
+        1329549
+      ],
+      "name": "Shank (Rank 2)",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Train Shank Rank 2; its Energy generation improves to 25.",
+      "confidence": "H",
+      "class": "ROGUE"
+    }
+  ],
+  "procSpells": [
+    {
+      "class": "HUNTER",
+      "spellId": 1495,
+      "name": "Mongoose Bite",
+      "window": 10
+    },
+    {
+      "class": "HUNTER",
+      "spellId": 14269,
+      "name": "Mongoose Bite (Rank 2)",
+      "window": 10
+    },
+    {
+      "class": "HUNTER",
+      "spellId": 14270,
+      "name": "Mongoose Bite (Rank 3)",
+      "window": 10
+    },
+    {
+      "class": "HUNTER",
+      "spellId": 14271,
+      "name": "Mongoose Bite (Rank 4)",
+      "window": 10
+    }
+  ],
+  "raceOnlyQuests": {
+    "Snatch and Grab": [
+      "Human"
+    ],
+    "Onin's Report": [
+      "Dwarf",
+      "Gnome"
+    ],
+    "Destiny Calls": [
+      "NightElf"
+    ],
+    "The Deathstalkers": [
+      "Scourge"
+    ],
+    "The Shattered Hand": [
+      "Orc",
+      "Troll"
+    ]
+  },
+  "notes": [
+    "PARTIAL TALENT DATA: all six Icy Veins leveling pages were retrieved as static text, but Cloudflare blocked the browser and raw HTML/JavaScript. All level-10-through-60 picks remain \"*\"; no static talent milestone or prerequisite was promoted into an exact per-level order. These are source placeholders, not usable completed builds.",
+    "Priority/importance scores are editorial, not source measurements. H means ID, level and acquisition have strong retrieved support; M marks a source conflict or secondary race-token evidence. No entries were tested in the live client.",
+    "Every listed spell ID has a fetched Icy Veins Forever record. Verified higher ranks are alternatives in the first-unlock milestone; Shank also has a level-44 upgrade reminder. Factual provenance is in hunter_rogue_evidence.json.",
+    "Human Hunter: Josephine Carson gives the Elwynn taming trials, ending with quest 94864. Training the Beast 94793 sends the player to Isaac Chan in Goldshire. Its reward is labelled Training Lesson; the completion text explicitly mentions feeding, revival and pet training.[74][76]",
+    "Dwarf Hunter: Grif Wildheart in Kharanos ends the taming trials with quest 6085. Training the Beast 6086 sends the player to Belia Thundergranite in Ironforge.[83][87]",
+    "Night Elf Hunter: Dazalar in Dolanaar ends the taming trials with quest 6102. Training the Beast 6103 sends the player to Jocaste in Darnassus. The database final objective says Strigid Screecher, whereas the class guide says Forest Owl; no beast-name assumption is embedded in the milestone.[85][89][9]",
+    "Orc/Troll Hunter: Thotar in Razor Hill ends the taming trials with quest 6082. Training the Beast 6081 sends the player to Ormak Grimshot in Orgrimmar.[82][86]",
+    "Tauren Hunter: Yaw Sharpmane in Bloodhoof Village ends the taming trials with quest 6088. Training the Beast 6089 sends the player to Holt Thunderhorn in Thunder Bluff.[84][88]",
+    "Skyborne Hunter: Quel'ana Quickgale in Valanaar ends the taming trials with quest 94013. Training the Beast 94050 sends the player to Quel'dora Quickgale in Valanaar and rewards Beast Training, Feed Pet and Revive Pet.[73][75]",
+    "Tame Beast, Call Pet and Dismiss Pet come from the taming trials. Feed Pet, Revive Pet and Beast Training need the subsequent Training the Beast step; the steps must not be conflated.[11][15][94]",
+    "Human Hunter and both-faction Skyborne Hunter/Rogue combinations are documented in the Forever race guides.[90][109]",
+    "The raceFile token Skyborne comes from a third-party recorded UnitRace mapping (Windshaper ID 96; an Alliance ID-95 record is discussed), not an in-game test in this task. The Skyborne milestone is M confidence: verify the token for both factions before shipping. Undead uses Scourge, not Undead.[115]",
+    "Skyborne Rogue introduction: At Home in the Shadows (92483) starts at Rorian the Dayseeker and sends the player to Akeri Duskblade in the Thendal Grove watchtower. It has no listed spell/equipment reward, so it is not a spell milestone or a raceOnlyQuests entry. A Skyborne level-10 Blade of Cunning reward chain was not verified.[107]",
+    "Poisons 2842 unlocks at 20. Alliance uses Mathias Shaw and Agent Kearnen; Horde uses Shenthul, Taskmaster Fizzule and the Hinott's Assistance completion from Serge Hinott in Tarren Mill. Both routes need Lockpicking 75. The class-guide poison section nesting under Undead is not a race restriction.[10][92][93]",
+    "Pick Lock is level 16/trainer with M confidence: the Forever ability list and dedicated Lockpicking guide agree, while Icy Veins tables say level 15 Lockpicking Class Quest. Check the actual trainer before making this alert strict.[100][104][6]",
+    "Aimed Shot is baseline for all Hunter specs at 20, spell 19434. The level-60 guide hyperlink 20904 is rank 6, not the unlock spell.[21][22][91]",
+    "Trueshot Aura is a Marksmanship talent, not a trainer/quest unlock. Spell 1299346 is the level-25 rank-1 record; 19506 is the level-40 rank-3 record. It is excluded from spellMilestones because kind has no talent option and its allocation level was not recovered.[103][23]",
+    "Shank first unlocks at 24 as 1329283; 1329549 is the level-44 rank. Icy Veins links the latter from its level-24 discussion, so that link cannot serve as the first-rank ID.[105][29][8]",
+    "Riposte 14251 is verified as the Rogue reactive talent. It is omitted from procSpells because a Forever activation-window duration was not verified. The database's 6 seconds is cooldown/disarm, not a proven reaction window.[12][6]",
+    "PROVISIONAL PROC SCOPE: Mongoose Bite rank entries use 10 seconds because Expose Prey buff 1310726 has a verified 10-second duration. This confirms the talent-triggered activation, not every natural-dodge activation. Validate/gate native-dodge timing before enabling strict missed-proc findings.[95][106]",
+    "Mongoose Bite rank IDs 1495, 14269 and 14270 are verified separately, with first-rank training at 16. Pet-only Growl/Bite/Claw are not player-spell milestones; they require pet-spellbook handling.[13][126][127]",
+    "Mongoose Bite rank 4 is 14271, requiring level 58.[128]",
+    "Equipment filters use the actual Blade of Cunning reward quests, not breadcrumbs: Snatch and Grab 2206 (Human), Onin's Report 2239 (Dwarf/Gnome), Destiny Calls 2242 (NightElf), The Deathstalkers 1978 (Scourge), The Shattered Hand 1858 (Orc/Troll). The class guide and item reward list support these; treat the first three race locks as M until quest eligibility is checked.[10][72]",
+    "Wowhead Forever explicitly confirms Undead for The Deathstalkers 1978 and Orc/Troll for The Shattered Hand 1858. Quest-name filters may collide with other quest stages or unrelated quests; prefer IDs if the consumer supports them.[113][114]",
+    "No Hunter level-50 quest reward is asserted: the class-quest guide says post-30 quests were not confirmed in the beta.[9]",
+    "Orders cover the ordinary level-10-through-60 schedule; no Legacy Talented bonus schedule is inferred. Do not publish wildcard-only builds as a reconstruction of the launch talent reshuffle.",
+    "Sources:\n[6] https://www.icy-veins.com/wow-forever/combat-rogue-leveling — World of Warcraft: Forever Combat Rogue Leveling Guide\n[8] https://www.icy-veins.com/wow-forever/subtlety-rogue-leveling — World of Warcraft: Forever Subtlety Rogue Leveling Guide\n[9] https://www.icy-veins.com/wow-forever/hunter-class-quests — World of Warcraft: Forever Hunter Class Quests Guide - WoW Forever - Icy Veins\n[10] https://www.icy-veins.com/wow-forever/rogue-class-quests — World of Warcraft: Forever Rogue Class Quests Guide - WoW Forever - Icy Veins\n[11] https://db.icy-veins.com/wow-forever/spells/1515 — Tame Beast - Spell - World of Warcraft: Forever - Icy Veins Database\n[12] https://db.icy-veins.com/wow-forever/spells/14251 — Riposte - Spell - World of Warcraft: Forever - Icy Veins Database\n[13] https://db.icy-veins.com/wow-forever/spells/1495 — Mongoose Bite - Spell - World of Warcraft: Forever - Icy Veins Database\n[15] https://db.icy-veins.com/wow-forever/spells/982 — Revive Pet - Spell - World of Warcraft: Forever - Icy Veins Database\n[21] https://db.icy-veins.com/wow-forever/spells/19434 — Aimed Shot - Spell - World of Warcraft: Forever - Icy Veins Database\n[22] https://db.icy-veins.com/wow-forever/spells/20904 — Aimed Shot - Spell - World of Warcraft: Forever - Icy Veins Database\n[23] https://db.icy-veins.com/wow-forever/spells/19506 — Trueshot Aura - Spell - World of Warcraft: Forever - Icy Veins Database\n[29] https://db.icy-veins.com/wow-forever/spells/1329549 — Shank - Spell - World of Warcraft: Forever - Icy Veins Database\n[72] https://db.icy-veins.com/wow-forever/items/7298 — Blade of Cunning - Item - World of Warcraft: Forever - Icy Veins Database\n[73] https://db.icy-veins.com/wow-forever/quests/94013 — Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[74] https://db.icy-veins.com/wow-forever/quests/94864 — Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[75] https://db.icy-veins.com/wow-forever/quests/94050 — Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[76] https://db.icy-veins.com/wow-forever/quests/94793 — Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[82] https://db.icy-veins.com/wow-forever/quests/6082 — Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[83] https://db.icy-veins.com/wow-forever/quests/6085 — Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[84] https://db.icy-veins.com/wow-forever/quests/6088 — Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[85] https://db.icy-veins.com/wow-forever/quests/6102 — Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[86] https://db.icy-veins.com/wow-forever/quests/6081 — Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[87] https://db.icy-veins.com/wow-forever/quests/6086 — Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[88] https://db.icy-veins.com/wow-forever/quests/6089 — Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[89] https://db.icy-veins.com/wow-forever/quests/6103 — Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database\n[90] https://www.icy-veins.com/wow-forever/race-guide — WoW Forever Racial Guide\n[91] https://www.icy-veins.com/wow-forever/news/talents-as-baseline-abilities-leveling-changes-and-more-class-deep-dives-hunter-and-druid — Talents as Baseline Abilities, Leveling Changes, and More: Class Deep Dives, Hunter and Druid - Icy Veins\n[92] https://db.icy-veins.com/wow-forever/quests/2480 — Hinott's Assistance - Quest - World of Warcraft: Forever - Icy Veins Database\n[93] https://db.icy-veins.com/wow-forever/quests/2359 — Klaven's Tower - Quest - World of Warcraft: Forever - Icy Veins Database\n[94] https://db.icy-veins.com/wow-forever/spells/5149 — Beast Training - Spell - World of Warcraft: Forever - Icy Veins Database\n[95] https://warcraft.wiki.gg/wiki/Expose_Prey — Expose Prey\n[100] https://warcraft.wiki.gg/wiki/Rogue_abilities_(Forever) — Rogue abilities (Forever)\n[103] https://db.icy-veins.com/wow-forever/spells/1299346 — Trueshot Aura - Spell - World of Warcraft: Forever - Icy Veins Database\n[104] https://www.zockify.com/forever/rogue/lockpicking — WoW Forever Lockpicking Guide 1–300: Alliance & Horde\n[105] https://db.icy-veins.com/wow-forever/spells/1329283 — Shank - Spell - World of Warcraft: Forever - Icy Veins Database\n[106] https://db.icy-veins.com/wow-forever/spells/1310726 — Expose Prey - Spell - World of Warcraft: Forever - Icy Veins Database\n[107] https://db.icy-veins.com/wow-forever/quests/92483 — At Home in the Shadows - Quest - World of Warcraft: Forever - Icy Veins Database\n[109] https://www.icy-veins.com/wow-forever/skyborne-race-guide — Skyborne Race Guide for WoW Forever\n[113] https://www.wowhead.com/forever/quest=1978 — The Deathstalkers\n[114] https://www.wowhead.com/forever/quest=1858 — The Shattered Hand\n[115] https://raw.githubusercontent.com/DomenikIrrgang/wowlua/main/crates/wowlua-engine/src/units.rs — Recorded UnitRace mapping in wowlua\n[126] https://db.icy-veins.com/wow-forever/spells/14269 — Mongoose Bite - Spell - World of Warcraft: Forever - Icy Veins Database\n[127] https://db.icy-veins.com/wow-forever/spells/14270 — Mongoose Bite - Spell - World of Warcraft: Forever - Icy Veins Database\n[128] https://db.icy-veins.com/wow-forever/spells/14271 — Mongoose Bite - Spell - World of Warcraft: Forever - Icy Veins Database"
+  ]
+}

@@ -13,6 +13,13 @@ function T:Plan(snap, spec)
     if type(b) ~= "table" or type(b.order) ~= "table" then return nil end
     local t = snap.talents or {}
     local ranks = t.ranks or {}
+    -- no talent detail but nothing spent anywhere: every step is simply not done yet
+    local detailed = t.detailed
+    if not detailed then
+        local any = false
+        for _, tab in ipairs(t.tabs or {}) do if (tab.spent or 0) > 0 then any = true end end
+        detailed = (#(t.tabs or {}) > 0) and not any
+    end
     local lvl = snap.level or 1
     -- expected ranks per talent at this level
     local want, wantAny = {}, 0
@@ -45,8 +52,8 @@ function T:Plan(snap, spec)
                 if freeTree > 0 then freeTree = freeTree - 1; s.state = "done" else s.state = "todo" end
             else
                 used[raw] = (used[raw] or 0) + 1
-                if t.detailed and (ranks[raw] or 0) >= used[raw] then s.state = "done"
-                elseif not t.detailed then s.state = "unknown"
+                if detailed and (ranks[raw] or 0) >= used[raw] then s.state = "done"
+                elseif not detailed then s.state = "unknown"
                 else s.state = "todo" end
             end
             if s.state == "todo" and not nextStep then nextStep = s end
@@ -54,7 +61,7 @@ function T:Plan(snap, spec)
     end
     -- points in talents the guide doesn't list up to this level (only when talent detail is readable)
     local offPlan = 0
-    if t.detailed then
+    if detailed then
         local guideNames = {}
         for _, step in ipairs(b.order) do if step[2] ~= "*" then guideNames[step[2]] = true end end
         local anySlack = wantAny
@@ -72,5 +79,5 @@ function T:Plan(snap, spec)
     local upcoming = {}
     for _, s in ipairs(timeline) do if s.state == "later" and #upcoming < 3 then upcoming[#upcoming + 1] = s end end
     return { source = b.source, url = b.url, note = b.note, next = nextStep, upcoming = upcoming, offPlan = offPlan,
-        detailed = t.detailed, unspent = t.unspent, timeline = timeline }
+        detailed = detailed, unspent = t.unspent, timeline = timeline }
 end

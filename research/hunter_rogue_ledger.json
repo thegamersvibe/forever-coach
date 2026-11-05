@@ -1,0 +1,797 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.icy-veins.com/wow-forever/hunter-class-overview",
+      "title": "Hunter Class Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 2,
+      "url": "https://www.icy-veins.com/wow-forever/rogue-class-overview",
+      "title": "Rogue Class Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 3,
+      "url": "https://www.icy-veins.com/wow-forever/beast-mastery-hunter-leveling",
+      "title": "World of Warcraft: Forever Beast Mastery Hunter Leveling Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 4,
+      "url": "https://www.icy-veins.com/wow-forever/marksmanship-hunter-leveling",
+      "title": "World of Warcraft: Forever Marksmanship Hunter Leveling Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 5,
+      "url": "https://www.icy-veins.com/wow-forever/survival-hunter-leveling",
+      "title": "World of Warcraft: Forever Survival Hunter Leveling Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 6,
+      "url": "https://www.icy-veins.com/wow-forever/combat-rogue-leveling",
+      "title": "World of Warcraft: Forever Combat Rogue Leveling Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 7,
+      "url": "https://www.icy-veins.com/wow-forever/assassination-rogue-leveling",
+      "title": "World of Warcraft: Forever Assassination Rogue Leveling Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 8,
+      "url": "https://www.icy-veins.com/wow-forever/subtlety-rogue-leveling",
+      "title": "World of Warcraft: Forever Subtlety Rogue Leveling Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 9,
+      "url": "https://www.icy-veins.com/wow-forever/hunter-class-quests",
+      "title": "World of Warcraft: Forever Hunter Class Quests Guide - WoW Forever - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 10,
+      "url": "https://www.icy-veins.com/wow-forever/rogue-class-quests",
+      "title": "World of Warcraft: Forever Rogue Class Quests Guide - WoW Forever - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 11,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1515",
+      "title": "Tame Beast - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 12,
+      "url": "https://db.icy-veins.com/wow-forever/spells/14251",
+      "title": "Riposte - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 13,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1495",
+      "title": "Mongoose Bite - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 14,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5118",
+      "title": "Aspect of the Cheetah - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 15,
+      "url": "https://db.icy-veins.com/wow-forever/spells/982",
+      "title": "Revive Pet - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 16,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6991",
+      "title": "Feed Pet - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 17,
+      "url": "https://db.icy-veins.com/wow-forever/spells/883",
+      "title": "Call Pet - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 18,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2641",
+      "title": "Dismiss Pet - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 19,
+      "url": "https://db.icy-veins.com/wow-forever/spells/136",
+      "title": "Mend Pet - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1513",
+      "title": "Scare Beast - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 21,
+      "url": "https://db.icy-veins.com/wow-forever/spells/19434",
+      "title": "Aimed Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 22,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20904",
+      "title": "Aimed Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 23,
+      "url": "https://db.icy-veins.com/wow-forever/spells/19506",
+      "title": "Trueshot Aura - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 24,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1804",
+      "title": "Pick Lock - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 25,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2983",
+      "title": "Sprint - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 26,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1766",
+      "title": "Kick - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 27,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1856",
+      "title": "Vanish - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 28,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2842",
+      "title": "Poisons - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 29,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1329549",
+      "title": "Shank - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 30,
+      "url": "https://icy-veins.com/wow-forever/beast-mastery-hunter-ranged-dps-pve-guide",
+      "title": "World of Warcraft: Forever Beast Mastery Hunter Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 31,
+      "url": "https://icy-veins.com/forums/topic/11924-wow-feature-mastering-the-menagerie",
+      "title": "WoW Feature - 'Mastering the Menagerie'",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 32,
+      "url": "https://icy-veins.com/wow-forever/demonology-warlock-ranged-dps-pve-rotation-cooldowns-abilities",
+      "title": "World of Warcraft: Forever Demonology Warlock - Rotation, Cooldowns, and Abilities",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 33,
+      "url": "https://icy-veins.com/wow-forever/beast-mastery-hunter-leveling",
+      "title": "World of Warcraft: Forever Beast Mastery Hunter Leveling Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 34,
+      "url": "https://icy-veins.com/wow-forever/restoration-druid-healer-pve-rotation-cooldowns-abilities",
+      "title": "World of Warcraft: Forever Restoration Druid - Rotation, Cooldowns, and Abilities",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 35,
+      "url": "https://icy-veins.com/wow-forever/marksmanship-hunter-ranged-dps-pve-guide",
+      "title": "World of Warcraft: Forever Marksmanship Hunter Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 36,
+      "url": "https://icy-veins.com/wow/marksmanship-hunter-pve-dps-easy-mode?area=area_2",
+      "title": "Marksmanship Hunter DPS Easy Mode - 12.0.7",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 37,
+      "url": "https://icy-veins.com/wow/marksmanship-hunter-pve-dps-rotation-cooldowns-abilities?area=area_2",
+      "title": "Marksmanship Hunter DPS Rotation, Cooldowns, and Abilities - 12.0.5",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 38,
+      "url": "http://icy-veins.com/wotlk-classic/marksmanship-hunter-dps-pve-spell-summary",
+      "title": "WotLK Classic Marksmanship Hunter Spell Summary",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 39,
+      "url": "https://icy-veins.com/tbc-classic/marksmanship-hunter-level-58-boost-guide",
+      "title": "Marksmanship Hunter Level 58 Boost Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 40,
+      "url": "https://icy-veins.com/wow-classic/hunter-dps-pve-spell-summary",
+      "title": "Classic Hunter DPS Spell Summary",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 41,
+      "url": "https://icy-veins.com/wow/marksmanship-hunter-pve-dps-spell-summary",
+      "title": "Marksmanship Hunter DPS Spell List and Glossary - 12.1",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 42,
+      "url": "https://icy-veins.com/wow-forever/news/new-abilities-for-hunter-mage-and-paladin-in-wow-forever",
+      "title": "New Abilities For Hunter, Mage, and Paladin in WoW Forever - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 43,
+      "url": "http://icy-veins.com/wow/marksmanship-hunter-pve-dps-rotation-cooldowns-abilities",
+      "title": "Marksmanship Hunter DPS Rotation, Cooldowns, and Abilities - 12.0.5",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 44,
+      "url": "https://icy-veins.com/wow-forever/news/talents-as-baseline-abilities-leveling-changes-and-more-class-deep-dives-hunter-and-druid",
+      "title": "Talents as Baseline Abilities, Leveling Changes, and More: Class Deep Dives, Hunter and Druid - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 45,
+      "url": "https://icy-veins.com/wow-forever/news/everything-you-need-to-know-official-full-wow-forever-launch-feature-overview",
+      "title": "Everything You Need to Know: Official Full WoW Forever Launch Feature Overview - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 46,
+      "url": "https://icy-veins.com/wow-forever/wow-forever-overview",
+      "title": "WoW Forever Overview",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 47,
+      "url": "https://icy-veins.com/wow-forever/choosing-your-main",
+      "title": "World of Warcraft: Forever - Choosing Your Class",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 48,
+      "url": "https://icy-veins.com/wow-forever/news/did-blizzard-just-sneak-two-future-race-and-class-combos-into-wow-forever",
+      "title": "Did Blizzard Just Sneak Two Future Race and Class Combos Into WoW Forever? - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 49,
+      "url": "https://icy-veins.com/wow-forever/race-guide",
+      "title": "WoW Forever Racial Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 50,
+      "url": "https://icy-veins.com/wow-forever/assassination-rogue-melee-dps-pve-spec-builds-talents",
+      "title": "World of Warcraft: Forever Assassination Rogue - Spec, Builds, and Talents",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 51,
+      "url": "https://icy-veins.com/wow-forever/news/poisons-daggers-pet-scaling-and-banes-rogue-and-warlock-forever-deep-dives",
+      "title": "Poisons, Daggers, Pet Scaling and Banes: Rogue and Warlock Forever Deep Dives - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 52,
+      "url": "https://icy-veins.com/wow-forever/news/countdown-to-forever-3-will-rogues-sneak-to-the-top",
+      "title": "Countdown to Forever: 3 - Will Rogues Sneak to the Top? - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 53,
+      "url": "https://icy-veins.com/wow-forever/assassination-rogue-melee-dps-pve-guide",
+      "title": "World of Warcraft: Forever Assassination Rogue Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 54,
+      "url": "https://icy-veins.com/wow-forever/rogue-class-quests",
+      "title": "World of Warcraft: Forever Rogue Class Quests Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 55,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1809",
+      "title": "Lockpicking - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 56,
+      "url": "https://db.icy-veins.com/wow-forever/spells/264",
+      "title": "Bows - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 57,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5384",
+      "title": "Feign Death - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 58,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2974",
+      "title": "Wing Clip - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 59,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2643",
+      "title": "Multi-Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 60,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3045",
+      "title": "Rapid Fire - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 61,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6197",
+      "title": "Eagle Eye - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 62,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1978",
+      "title": "Serpent Sting - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 63,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5116",
+      "title": "Concussive Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 64,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2973",
+      "title": "Raptor Strike - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 65,
+      "url": "https://db.icy-veins.com/wow-forever/spells/13159",
+      "title": "Aspect of the Pack - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 66,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5277",
+      "title": "Evasion - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 67,
+      "url": "https://db.icy-veins.com/wow-forever/spells/921",
+      "title": "Pick Pocket - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 68,
+      "url": "https://db.icy-veins.com/wow-forever/spells/8676",
+      "title": "Ambush - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 69,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1833",
+      "title": "Cheap Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 70,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2094",
+      "title": "Blind - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 71,
+      "url": "https://db.icy-veins.com/wow-forever/spells/674",
+      "title": "Dual Wield - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 72,
+      "url": "https://db.icy-veins.com/wow-forever/items/7298",
+      "title": "Blade of Cunning - Item - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 73,
+      "url": "https://db.icy-veins.com/wow-forever/quests/94013",
+      "title": "Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 74,
+      "url": "https://db.icy-veins.com/wow-forever/quests/94864",
+      "title": "Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 75,
+      "url": "https://db.icy-veins.com/wow-forever/quests/94050",
+      "title": "Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 76,
+      "url": "https://db.icy-veins.com/wow-forever/quests/94793",
+      "title": "Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 77,
+      "url": "https://db.icy-veins.com/wow-forever/quests/2242",
+      "title": "Destiny Calls - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 78,
+      "url": "https://db.icy-veins.com/wow-forever/quests/2239",
+      "title": "Onin's Report - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 79,
+      "url": "https://db.icy-veins.com/wow-forever/quests/2206",
+      "title": "Snatch and Grab - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 80,
+      "url": "https://db.icy-veins.com/wow-forever/quests/1978",
+      "title": "The Deathstalkers - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 81,
+      "url": "https://db.icy-veins.com/wow-forever/quests/1858",
+      "title": "The Shattered Hand - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 82,
+      "url": "https://db.icy-veins.com/wow-forever/quests/6082",
+      "title": "Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 83,
+      "url": "https://db.icy-veins.com/wow-forever/quests/6085",
+      "title": "Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 84,
+      "url": "https://db.icy-veins.com/wow-forever/quests/6088",
+      "title": "Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 85,
+      "url": "https://db.icy-veins.com/wow-forever/quests/6102",
+      "title": "Taming the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 86,
+      "url": "https://db.icy-veins.com/wow-forever/quests/6081",
+      "title": "Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 87,
+      "url": "https://db.icy-veins.com/wow-forever/quests/6086",
+      "title": "Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 88,
+      "url": "https://db.icy-veins.com/wow-forever/quests/6089",
+      "title": "Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 89,
+      "url": "https://db.icy-veins.com/wow-forever/quests/6103",
+      "title": "Training the Beast - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 90,
+      "url": "https://www.icy-veins.com/wow-forever/race-guide",
+      "title": "WoW Forever Racial Guide",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 91,
+      "url": "https://www.icy-veins.com/wow-forever/news/talents-as-baseline-abilities-leveling-changes-and-more-class-deep-dives-hunter-and-druid",
+      "title": "Talents as Baseline Abilities, Leveling Changes, and More: Class Deep Dives, Hunter and Druid - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 92,
+      "url": "https://db.icy-veins.com/wow-forever/quests/2480",
+      "title": "Hinott's Assistance - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 93,
+      "url": "https://db.icy-veins.com/wow-forever/quests/2359",
+      "title": "Klaven's Tower - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 94,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5149",
+      "title": "Beast Training - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 95,
+      "url": "https://warcraft.wiki.gg/wiki/Expose_Prey",
+      "title": "Expose Prey",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 96,
+      "url": "https://warcraft.wiki.gg/wiki/Riposte",
+      "title": "Riposte",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 97,
+      "url": "https://warcraft.wiki.gg/wiki/Pick_Lock",
+      "title": "Pick Lock",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 98,
+      "url": "https://wowforevertierlist.com/races/skyborne/rogue",
+      "title": "Good for PvE, Weak for PvP?",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 99,
+      "url": "https://www.icy-veins.com/wow/news/are-wow-forevers-skyborne-coming-to-retail",
+      "title": "Are WoW Forever's Skyborne Coming to Retail? - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 100,
+      "url": "https://warcraft.wiki.gg/wiki/Rogue_abilities_(Forever)",
+      "title": "Rogue abilities (Forever)",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 101,
+      "url": "https://warcraft.wiki.gg/wiki/Shank",
+      "title": "Shank",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 102,
+      "url": "https://warcraft.wiki.gg/wiki/Riposte_(Classic)",
+      "title": "Riposte (Classic)",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 103,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1299346",
+      "title": "Trueshot Aura - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 104,
+      "url": "https://www.zockify.com/forever/rogue/lockpicking",
+      "title": "WoW Forever Lockpicking Guide 1–300: Alliance & Horde",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 105,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1329283",
+      "title": "Shank - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 106,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1310726",
+      "title": "Expose Prey - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 107,
+      "url": "https://db.icy-veins.com/wow-forever/quests/92483",
+      "title": "At Home in the Shadows - Quest - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 108,
+      "url": "https://www.wowhead.com/forever/spells/name:shank",
+      "title": "Forever Spells",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 109,
+      "url": "https://www.icy-veins.com/wow-forever/skyborne-race-guide",
+      "title": "Skyborne Race Guide for WoW Forever",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 110,
+      "url": "https://www.wowhead.com/forever/quest=2206/snatch-and-grab",
+      "title": "Snatch and Grab",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 111,
+      "url": "https://www.wowhead.com/forever/quest=2239",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 112,
+      "url": "https://www.wowhead.com/forever/quest=2242",
+      "title": "Destiny Calls",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 113,
+      "url": "https://www.wowhead.com/forever/quest=1978",
+      "title": "The Deathstalkers",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 114,
+      "url": "https://www.wowhead.com/forever/quest=1858",
+      "title": "The Shattered Hand",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 115,
+      "url": "https://raw.githubusercontent.com/DomenikIrrgang/wowlua/main/crates/wowlua-engine/src/units.rs",
+      "title": "Recorded UnitRace mapping in wowlua",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 116,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20900",
+      "title": "Aimed Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 117,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20901",
+      "title": "Aimed Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 118,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20902",
+      "title": "Aimed Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 119,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20903",
+      "title": "Aimed Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 120,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1857",
+      "title": "Vanish - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 121,
+      "url": "https://db.icy-veins.com/wow-forever/spells/8696",
+      "title": "Sprint - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 122,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11305",
+      "title": "Sprint - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 123,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1767",
+      "title": "Kick - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 124,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1768",
+      "title": "Kick - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 125,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1769",
+      "title": "Kick - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 126,
+      "url": "https://db.icy-veins.com/wow-forever/spells/14269",
+      "title": "Mongoose Bite - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 127,
+      "url": "https://db.icy-veins.com/wow-forever/spells/14270",
+      "title": "Mongoose Bite - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 128,
+      "url": "https://db.icy-veins.com/wow-forever/spells/14271",
+      "title": "Mongoose Bite - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 129,
+      "url": "https://db.icy-veins.com/wow-forever/spells/408",
+      "title": "Kidney Shot - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 130,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1784",
+      "title": "Stealth - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 131,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1752",
+      "title": "Sinister Strike - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 132,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5171",
+      "title": "Slice and Dice - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    }
+  ]
+}

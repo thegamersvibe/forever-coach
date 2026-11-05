@@ -1,0 +1,2261 @@
+{
+  "talentBuilds": {
+    "PRIEST:shadow": {
+      "source": "Icy Veins — Anshlun and Rainy",
+      "url": "https://www.icy-veins.com/wow-forever/shadow-priest-leveling",
+      "tree": "Shadow Magic",
+      "order": [
+        [
+          10,
+          "Wand Specialization"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "PRIEST:discipline": {
+      "source": "Icy Veins — Rainy",
+      "url": "https://www.icy-veins.com/wow-forever/discipline-priest-leveling",
+      "tree": "Discipline",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "PRIEST:holy": {
+      "source": "Icy Veins — Rainy",
+      "url": "https://www.icy-veins.com/wow-forever/holy-priest-leveling",
+      "tree": "Holy",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "SHAMAN:elemental": {
+      "source": "Icy Veins — Seksixeny and Wordup",
+      "url": "https://www.icy-veins.com/wow-forever/elemental-shaman-leveling",
+      "tree": "Elemental Combat",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "Elemental Alacrity"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "Earthbound"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "Call of Thunder"
+        ],
+        [
+          31,
+          "Lightning Overload"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "Lightning Mastery"
+        ],
+        [
+          41,
+          "Tidal Focus"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "Thundering Strikes"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "SHAMAN:enhancement": {
+      "source": "Icy Veins — Seksixeny and Wordup",
+      "url": "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling",
+      "tree": "Enhancement",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "Shamanistic Focus"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "Improved Stormstrike"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "Mindfulness"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "Water Shield"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "SHAMAN:enhancement_tank": {
+      "source": "The Dungeon Coach — WoW Forever Shaman Tank Beginners Guide (partial transcript)",
+      "url": "https://www.youtube.com/watch?v=vG9CuJFtdb0",
+      "tree": "Enhancement",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "Stormstrike"
+        ],
+        [
+          26,
+          "Flurry"
+        ],
+        [
+          27,
+          "Flurry"
+        ],
+        [
+          28,
+          "Flurry"
+        ],
+        [
+          29,
+          "Flurry"
+        ],
+        [
+          30,
+          "Spirit Weapons"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "Concussion"
+        ],
+        [
+          42,
+          "Concussion"
+        ],
+        [
+          43,
+          "Concussion"
+        ],
+        [
+          44,
+          "Concussion"
+        ],
+        [
+          45,
+          "Concussion"
+        ],
+        [
+          46,
+          "Call of Flame"
+        ],
+        [
+          47,
+          "Call of Flame"
+        ],
+        [
+          48,
+          "Call of Flame"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "SHAMAN:restoration": {
+      "source": "Icy Veins — Seksixeny and Wordup",
+      "url": "https://www.icy-veins.com/wow-forever/restoration-shaman-leveling",
+      "tree": "Restoration",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "Mindfulness"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "Water Shield"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "Mana Tide Totem"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "Nature's Swiftness"
+        ],
+        [
+          31,
+          "Healing Way"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "Riptide"
+        ],
+        [
+          41,
+          "Thundering Strikes"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    }
+  },
+  "spellMilestones": [
+    {
+      "class": "PRIEST",
+      "level": 6,
+      "spellIds": [
+        17
+      ],
+      "name": "Power Word: Shield",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 10,
+      "spellIds": [
+        1277455
+      ],
+      "name": "Confounding Flash",
+      "kind": "quest",
+      "importance": 80,
+      "how": "Confounding Flash: High Priestess Mims, Mystic Ward, Ironforge.",
+      "confidence": "H",
+      "races": [
+        "Gnome"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 10,
+      "spellIds": [
+        13908
+      ],
+      "name": "Desperate Prayer",
+      "kind": "quest",
+      "importance": 80,
+      "how": "Desperate Prayer: High Priest Rohan, Mystic Ward, Ironforge.",
+      "confidence": "H",
+      "races": [
+        "Dwarf"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 10,
+      "spellIds": [
+        1277370
+      ],
+      "name": "Divine Grace",
+      "kind": "quest",
+      "importance": 75,
+      "how": "Divine Grace: High Priestess Laurena, Cathedral Square, Stormwind.",
+      "confidence": "H",
+      "races": [
+        "Human"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 10,
+      "spellIds": [
+        9035
+      ],
+      "name": "Hex of Weakness",
+      "kind": "quest",
+      "importance": 65,
+      "how": "Hex of Weakness: Ur'kyo, Valley of Spirits, Orgrimmar.",
+      "confidence": "H",
+      "races": [
+        "Troll"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 10,
+      "spellIds": [
+        8092
+      ],
+      "name": "Mind Blast",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 10,
+      "spellIds": [
+        2006
+      ],
+      "name": "Resurrection",
+      "kind": "trainer",
+      "importance": 75,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 10,
+      "spellIds": [
+        10797
+      ],
+      "name": "Starshards",
+      "kind": "quest",
+      "importance": 65,
+      "how": "Stars of Elune: Priestess Alathea, Temple of the Moon, Darnassus.",
+      "confidence": "H",
+      "races": [
+        "NightElf"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 10,
+      "spellIds": [
+        2652
+      ],
+      "name": "Touch of Weakness",
+      "kind": "quest",
+      "importance": 65,
+      "how": "Touch of Weakness: Aelthalyste, War Quarter, Undercity.",
+      "confidence": "H",
+      "races": [
+        "Scourge"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 12,
+      "spellIds": [
+        588
+      ],
+      "name": "Inner Fire",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 14,
+      "spellIds": [
+        528
+      ],
+      "name": "Cure Disease",
+      "kind": "trainer",
+      "importance": 60,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 14,
+      "spellIds": [
+        8122
+      ],
+      "name": "Psychic Scream",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 18,
+      "spellIds": [
+        527
+      ],
+      "name": "Dispel Magic",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        1277331
+      ],
+      "name": "Chastise",
+      "kind": "quest",
+      "importance": 75,
+      "how": "Chastise: High Priest Rohan, Mystic Ward, Ironforge.",
+      "confidence": "H",
+      "races": [
+        "Dwarf"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        1277462
+      ],
+      "name": "Contingency Plan",
+      "kind": "quest",
+      "importance": 75,
+      "how": "Contingency Plan: High Priestess Mims, Mystic Ward, Ironforge.",
+      "confidence": "H",
+      "races": [
+        "Gnome"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        1277324
+      ],
+      "name": "Dark Sacrifice",
+      "kind": "quest",
+      "importance": 80,
+      "how": "Dark Sacrifice: Aelthalyste, War Quarter, Undercity.",
+      "confidence": "H",
+      "races": [
+        "Scourge"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        2944
+      ],
+      "name": "Devouring Plague",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        2651
+      ],
+      "name": "Elune's Grace",
+      "kind": "quest",
+      "importance": 60,
+      "how": "Elune's Grace: Priestess Alathea, Temple of the Moon, Darnassus.",
+      "confidence": "H",
+      "races": [
+        "NightElf"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        6346
+      ],
+      "name": "Fear Ward",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        13896
+      ],
+      "name": "Feedback",
+      "kind": "quest",
+      "importance": 60,
+      "how": "Arcane Feedback: High Priestess Laurena, Cathedral Square, Stormwind.",
+      "confidence": "H",
+      "races": [
+        "Human"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        2061
+      ],
+      "name": "Flash Heal",
+      "kind": "trainer",
+      "importance": 75,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        14914
+      ],
+      "name": "Holy Fire",
+      "kind": "trainer",
+      "importance": 70,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 20,
+      "spellIds": [
+        18137
+      ],
+      "name": "Shadowguard",
+      "kind": "quest",
+      "importance": 70,
+      "how": "Shadowguard: Ur'kyo, Valley of Spirits, Orgrimmar.",
+      "confidence": "H",
+      "races": [
+        "Troll"
+      ]
+    },
+    {
+      "class": "PRIEST",
+      "level": 30,
+      "spellIds": [
+        14752
+      ],
+      "name": "Divine Spirit",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 30,
+      "spellIds": [
+        596
+      ],
+      "name": "Prayer of Healing",
+      "kind": "trainer",
+      "importance": 75,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 30,
+      "spellIds": [
+        976
+      ],
+      "name": "Shadow Protection",
+      "kind": "trainer",
+      "importance": 60,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 32,
+      "spellIds": [
+        1309595
+      ],
+      "name": "Shadow Word: Death",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "PRIEST",
+      "level": 40,
+      "spellIds": [
+        2060
+      ],
+      "name": "Greater Heal",
+      "kind": "trainer",
+      "importance": 75,
+      "how": "Priest trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 3,
+      "spellIds": [
+        8071
+      ],
+      "name": "Call of Earth / Stoneskin Totem",
+      "kind": "quest",
+      "importance": 90,
+      "how": "Start Call of Earth with Windshaper Boro, Thendal Grove, Zephras Isle; Stoneskin spell metadata lists level 4.",
+      "confidence": "M",
+      "races": [
+        "Skyborne"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 4,
+      "spellIds": [
+        8071
+      ],
+      "name": "Call of Earth / Stoneskin Totem",
+      "kind": "quest",
+      "importance": 90,
+      "how": "Call of Earth: Teo Hammerstorm in Anvilmar, Dun Morogh; complete the Earth Sapta chain.",
+      "confidence": "H",
+      "races": [
+        "Dwarf"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 4,
+      "spellIds": [
+        8071
+      ],
+      "name": "Call of Earth / Stoneskin Totem",
+      "kind": "quest",
+      "importance": 90,
+      "how": "Call of Earth: Canaga Earthcaller in the Valley of Trials, Durotar.",
+      "confidence": "H",
+      "races": [
+        "Orc",
+        "Troll"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 4,
+      "spellIds": [
+        8071
+      ],
+      "name": "Call of Earth / Stoneskin Totem",
+      "kind": "quest",
+      "importance": 90,
+      "how": "Call of Earth: Seer Ravenfeather in Camp Narache, Mulgore.",
+      "confidence": "H",
+      "races": [
+        "Tauren"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 4,
+      "spellIds": [
+        8042
+      ],
+      "name": "Earth Shock",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Shaman trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 6,
+      "spellIds": [
+        2484
+      ],
+      "name": "Earthbind Totem",
+      "kind": "trainer",
+      "importance": 75,
+      "how": "Shaman trainer after obtaining the Earth Totem from Call of Earth.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 8,
+      "spellIds": [
+        324
+      ],
+      "name": "Lightning Shield",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Shaman trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 10,
+      "spellIds": [
+        3599
+      ],
+      "name": "Call of Fire / Searing Totem",
+      "kind": "quest",
+      "importance": 90,
+      "how": "Call of Fire: Shaman trainer to Bruegs Kindleborn in eastern Dun Morogh, then Braldir Ashmantle in Loch Modan.",
+      "confidence": "H",
+      "races": [
+        "Dwarf"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 10,
+      "spellIds": [
+        3599
+      ],
+      "name": "Call of Fire / Searing Totem",
+      "kind": "quest",
+      "importance": 90,
+      "how": "Call of Fire: Shaman trainer to Kranal Fiss in The Barrens, then Telf Joolan in southern Durotar.",
+      "confidence": "H",
+      "races": [
+        "Orc",
+        "Troll",
+        "Tauren"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 10,
+      "spellIds": [
+        3599
+      ],
+      "name": "Call of Fire / Searing Totem",
+      "kind": "quest",
+      "importance": 90,
+      "how": "Call of Fire: Aarnor Galestrike, Shen'dar Village; Olariaan Swiftburn; finish with Sessaria Skystride in Valanaar.",
+      "confidence": "H",
+      "races": [
+        "Skyborne"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 12,
+      "spellIds": [
+        408341
+      ],
+      "name": "Fire Nova",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Shaman trainer; requires an active fire totem to use. Complete Call of Fire first.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 18,
+      "spellIds": [
+        8143
+      ],
+      "name": "Tremor Totem",
+      "kind": "trainer",
+      "importance": 75,
+      "how": "Shaman trainer after obtaining the Earth Totem from Call of Earth.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 20,
+      "spellIds": [
+        5394
+      ],
+      "name": "Call of Water / Healing Stream Totem",
+      "kind": "quest",
+      "importance": 75,
+      "how": "Call of Water: follow the Loch Modan chain to Hervdana Saegrund in Wetlands; finish its water-gathering and elemental trials.",
+      "confidence": "H",
+      "races": [
+        "Dwarf"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 20,
+      "spellIds": [
+        5394
+      ],
+      "name": "Call of Water / Healing Stream Totem",
+      "kind": "quest",
+      "importance": 75,
+      "how": "Call of Water: follow the Ratchet chain to Brine in southern Barrens; finish its water-gathering and elemental trials.",
+      "confidence": "H",
+      "races": [
+        "Orc",
+        "Troll",
+        "Tauren",
+        "Skyborne"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 20,
+      "spellIds": [
+        66842
+      ],
+      "name": "Call of the Elements",
+      "kind": "trainer",
+      "importance": 60,
+      "how": "Shaman trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 20,
+      "spellIds": [
+        2645
+      ],
+      "name": "Ghost Wolf",
+      "kind": "trainer",
+      "importance": 95,
+      "how": "Shaman trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 20,
+      "spellIds": [
+        36936
+      ],
+      "name": "Totemic Recall",
+      "kind": "trainer",
+      "importance": 70,
+      "how": "Shaman trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 22,
+      "spellIds": [
+        437009
+      ],
+      "name": "Totemic Call",
+      "kind": "trainer",
+      "importance": 60,
+      "how": "Shaman trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 30,
+      "spellIds": [
+        8177
+      ],
+      "name": "Call of Air / Air Totem access",
+      "kind": "quest",
+      "importance": 85,
+      "how": "Call of Air: Shaman trainer to Veyric Thundervein, Arathi Highlands. Rewards Air Totem item; train Grounding Totem separately.",
+      "confidence": "M",
+      "races": [
+        "Dwarf"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 30,
+      "spellIds": [
+        8177
+      ],
+      "name": "Call of Air / Air Totem access",
+      "kind": "quest",
+      "importance": 85,
+      "how": "Call of Air: Shaman trainer to Prate Cloudseer, Thousand Needles. Rewards Air Totem item; train Grounding Totem separately.",
+      "confidence": "M",
+      "races": [
+        "Orc",
+        "Troll",
+        "Tauren",
+        "Skyborne"
+      ]
+    },
+    {
+      "class": "SHAMAN",
+      "level": 30,
+      "spellIds": [
+        8232
+      ],
+      "name": "Windfury Weapon",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Shaman trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 32,
+      "spellIds": [
+        421
+      ],
+      "name": "Chain Lightning",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Shaman trainer; learn the first rank at this level.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 32,
+      "spellIds": [
+        8512
+      ],
+      "name": "Windfury Totem",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Shaman trainer after obtaining the Air Totem from Call of Air.",
+      "confidence": "H"
+    },
+    {
+      "class": "SHAMAN",
+      "level": 40,
+      "spellIds": [
+        1064
+      ],
+      "name": "Chain Heal",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Shaman trainer; learn the first rank at this level.",
+      "confidence": "H"
+    }
+  ],
+  "procSpells": [],
+  "raceOnlyQuests": {
+    "Garments of the Moon": [
+      "NightElf"
+    ],
+    "Garments of the Light": [
+      "Human",
+      "Dwarf",
+      "Gnome"
+    ],
+    "Garments of Spirituality": [
+      "Troll"
+    ],
+    "Garments of Darkness": [
+      "Scourge"
+    ],
+    "Returning Home": [
+      "NightElf"
+    ],
+    "Stars of Elune": [
+      "NightElf"
+    ],
+    "Elune's Grace": [
+      "NightElf"
+    ],
+    "Divine Grace": [
+      "Human"
+    ],
+    "Arcane Feedback": [
+      "Human"
+    ],
+    "Desperate Prayer": [
+      "Dwarf"
+    ],
+    "Chastise": [
+      "Dwarf"
+    ],
+    "Confounding Flash": [
+      "Gnome"
+    ],
+    "Contingency Plan": [
+      "Gnome"
+    ],
+    "Hex of Weakness": [
+      "Troll"
+    ],
+    "Shadowguard": [
+      "Troll"
+    ],
+    "Touch of Weakness": [
+      "Scourge"
+    ],
+    "Dark Sacrifice": [
+      "Scourge"
+    ]
+  },
+  "notes": [
+    "TALENT COVERAGE: Browser attempts were blocked by Cloudflare and no slider/JavaScript build data could be recovered. Every requested spec has levels 10–60; * means the point is not attributable, not a recommendation to leave it unspent. Do not present these sparse records as complete builds.",
+    "TALENT METHOD: PRIEST:shadow level 10 is the rendered static slider state. SHAMAN:elemental, enhancement and restoration contain only levels explicitly named in the Icy Veins Leveling Talent Build bullets; earliest-unlock tables were not converted into point orders. Discipline and Holy have no recoverable per-level picks.",
+    "TALENT SOURCE FRESHNESS: Discipline and Holy extracts are dated October 16 and October 15, 2026, respectively, and retain beta-era statements. Shaman leveling pages were updated November 3–4. The live slider still needs checking after the launch reshuffle; no Classic Era order was substituted.",
+    "TREE NAMES: Shadow Magic and Elemental Combat are the source calculator/database tree labels, rather than the shortened spec names Shadow and Elemental. Confirm them against GetTalentTabInfo on client build 1.60.1 before shipping.",
+    "TANK BUILD: A Forever tank-shaman leveling guide exists: The Dungeon Coach, https://www.youtube.com/watch?v=vG9CuJFtdb0. Its transcript section 36:40–40:08 names the recorded partial order. Unnamed on-screen clicks remain *. No separate Icy Veins tank-shaman leveling build was found; do not copy the DPS build into enhancement_tank.",
+    "ALTERNATIVE SOURCE: https://mobalytics.gg/wow-forever/classes/shaman-leveling-guide-nicktew supplies an explicit 51-point Enhancement leveling order, captured separately in priest_shaman.sources.json under alternativeTalentBuilds rather than substituted for the requested Icy Veins order. Its Water Shield timing differs from the Icy Veins prose.",
+    "TALENT-ONLY UNLOCK: Shadowform spell 15473 is a Shadow Magic talent, earliest level 40 with 31 points, not a trainer purchase or quest reward. It is intentionally not misclassified in spellMilestones because the requested kind enum allows only quest|trainer. Source: https://www.icy-veins.com/wow-forever/shadow-priest-leveling and https://db.icy-veins.com/wow-forever/spells/15473. The default guide invests in Wand Specialization first, so earliest possible is not necessarily the recommended acquisition level.",
+    "SPELL IDS: Use rank-one/player-cast IDs, not guide auto-links to the highest rank or triggered damage. Verified examples: Desperate Prayer 13908 (level 10, Dwarf only; confidence H), not 19243 (level 58); Stoneskin Totem 8071, Searing Totem 3599 and Healing Stream Totem 5394, not 10408/10438/10463. Spell evidence is in priest_shaman.sources.json.",
+    "PRIEST RACIALS: Human has Divine Grace 1277370 at 10 and Feedback 13896 at 20; Dwarf has Desperate Prayer 13908 and Chastise 1277331; Gnome has Confounding Flash 1277455 and Contingency Plan 1277462. Fear Ward 6346 and Devouring Plague 2944 are baseline level-20 trainer spells without race restrictions in the Forever database. Source: https://www.icy-veins.com/wow-forever/priest-class-quests and the corresponding Forever spell pages.",
+    "NEW GNOME QUEST GIVERS: Level-4 Garments of the Light follows Branstock Khalder in Coldridge Valley to Maxan Anvol in Kharanos. Level-10 and level-20 racial quests end with High Priestess Mims in Ironforge. Source: https://www.icy-veins.com/wow-forever/priest-class-quests.",
+    "SKYBORNE: Only Horde/Windshaper Skyborne can be Shamans; neither Skyborne faction can be Priests. Their Earth quest starts at 3, while Stoneskin Totem spell metadata says 4; this conflict is retained with confidence M. Fire starts at 10; mainland Water/Air use the Horde routes. The Skyborne race token follows the existing rules.json convention and still needs runtime confirmation. Sources: https://www.icy-veins.com/wow-forever/shaman-class-quests and https://news.blizzard.com/en-us/article/24302071/wow-forever-meet-the-new-skyborne.",
+    "AIR TOTEM CAVEAT: Call of Air rewards inventory item 5178, not a learned spell. The two quest milestones use Grounding Totem 8177 as a spell-access proxy only; it must be trained separately at 30. This does not directly prove quest completion. Quest sources: https://db.icy-veins.com/wow-forever/quests/94789 and https://db.icy-veins.com/wow-forever/quests/1531.",
+    "TOTEM QUEST LEVELS: Levels are minimum quest-start levels from the class guide, not recommended solo completion levels. Database quest-chain labels (for example the level-22 Dwarf Water steps) are quest levels, not proof of a level-22 minimum. Dwarf Water final quest 94505 labels its Healing Stream reward Cast on you while the spell page lists it as a reward; confirm the actual learned spell in-game.",
+    "SHAMAN TRAINER IDS: Fire Nova 408341 is the level-12 player-cast spell. Guide-linked 8349 is a triggered damage spell; Classic candidate 1535 returned 404 in the Forever database. Totemic Call 437009 is the database name at 22, although prose also calls the relocation ability Totemic Projection.",
+    "PROC SAFETY: procSpells is intentionally empty. Maelstrom Weapon 408498, Improved Stormstrike 1223031 and Searing Light 14909 are passive talents; Lightning Bolt, Stormstrike and Holy Nova are not inherently proc-only actions. No validated proc-only cast ID/window suitable for this add-on usability detector was found. Do not insert passive aura IDs or arbitrary windows.",
+    "RACE FILTERS: Scourge is the Undead raceFile token; NightElf is the Night Elf token. Shared-named Shaman quests are routed using milestone races, not raceOnlyQuests, because their identical names/rewards span all Shaman races. The Tempest's Weapons rewards are shared and are not race-locked.",
+    "POST-30 QUEST GAP: The class-quest guides explicitly lack verified later-level quest coverage. The Tempest's Weapons chain starts after Call of Air at 30 but is difficult until roughly 35–40 or with assistance; no unsupported later class-quest unlock was invented.",
+    "IMPORTANCE: The numeric importance scores are editorial prioritization, not sourced game mechanics. Confidence rates evidence for each milestone, not the numerical score."
+  ]
+}

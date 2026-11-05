@@ -1,0 +1,593 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.icy-veins.com/wow-forever/frost-mage-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 2,
+      "url": "https://www.icy-veins.com/wow-forever/arcane-mage-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 3,
+      "url": "https://www.icy-veins.com/wow-forever/fire-mage-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 4,
+      "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 5,
+      "url": "https://www.icy-veins.com/wow-forever/demonology-warlock-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 6,
+      "url": "https://www.icy-veins.com/wow-forever/destruction-warlock-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 7,
+      "url": "https://www.icy-veins.com/wow-forever/mage-class-overview",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 8,
+      "url": "https://www.icy-veins.com/wow-forever/warlock-class-overview",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 9,
+      "url": "https://www.icy-veins.com/wow-forever/mage-class-quests",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 10,
+      "url": "https://www.icy-veins.com/wow-forever/warlock-class-quests",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 11,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3566",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 12,
+      "url": "https://db.icy-veins.com/wow-forever/spells/10059",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 13,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11416",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 14,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11417",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 15,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11418",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 16,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11419",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 17,
+      "url": "https://db.icy-veins.com/wow-forever/spells/11420",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 18,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1326053",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 19,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1318827",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/400640",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 21,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1296017",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 22,
+      "url": "https://db.icy-veins.com/wow-forever/spells/691",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 23,
+      "url": "https://db.icy-veins.com/wow-forever/spells/688",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 24,
+      "url": "https://db.icy-veins.com/wow-forever/spells/697",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 25,
+      "url": "https://db.icy-veins.com/wow-forever/spells/712",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 26,
+      "url": "https://db.icy-veins.com/wow-forever/spells/713",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 27,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5784",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 28,
+      "url": "https://db.icy-veins.com/wow-forever/spells/400588",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 29,
+      "url": "https://db.icy-veins.com/wow-forever/spells/400624",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/18094",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 31,
+      "url": "https://db.icy-veins.com/wow-forever/spells/118",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 32,
+      "url": "https://db.icy-veins.com/wow-forever/spells/587",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 33,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5504",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 34,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1953",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 35,
+      "url": "https://db.icy-veins.com/wow-forever/spells/12051",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 36,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2139",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 37,
+      "url": "https://db.icy-veins.com/wow-forever/spells/130",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 38,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1459",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 39,
+      "url": "https://db.icy-veins.com/wow-forever/spells/122",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1449",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 41,
+      "url": "https://db.icy-veins.com/wow-forever/spells/475",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 42,
+      "url": "https://db.icy-veins.com/wow-forever/spells/10",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 43,
+      "url": "https://db.icy-veins.com/wow-forever/spells/120",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 44,
+      "url": "https://db.icy-veins.com/wow-forever/spells/759",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 45,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6117",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 46,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1463",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 47,
+      "url": "https://db.icy-veins.com/wow-forever/spells/28285",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 48,
+      "url": "https://db.icy-veins.com/wow-forever/spells/401502",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 49,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1240047",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 50,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1312002",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 51,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3561",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 52,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3562",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 53,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3563",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 54,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3565",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 55,
+      "url": "https://www.wowhead.com/forever/quest=4490/summon-felsteed",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 56,
+      "url": "https://eu.forums.blizzard.com/en/wow/t/deep-dive-into-battlemage-in-wow-forever-aka-melee-mage/632020",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 57,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1454",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 58,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5782",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 59,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1120",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 60,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6201",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 61,
+      "url": "https://db.icy-veins.com/wow-forever/spells/755",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 62,
+      "url": "https://db.icy-veins.com/wow-forever/spells/689",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 63,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5697",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 64,
+      "url": "https://db.icy-veins.com/wow-forever/spells/693",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 65,
+      "url": "https://db.icy-veins.com/wow-forever/spells/698",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 66,
+      "url": "https://db.icy-veins.com/wow-forever/spells/710",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 67,
+      "url": "https://db.icy-veins.com/wow-forever/spells/126",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 68,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5500",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 69,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1714",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 70,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1490",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 71,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1098",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 72,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5484",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 73,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6789",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 74,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6229",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 75,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6366",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 76,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2362",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 77,
+      "url": "https://db.icy-veins.com/wow-forever/spells/172",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 78,
+      "url": "https://db.icy-veins.com/wow-forever/spells/980",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 79,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5676",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 80,
+      "url": "https://db.icy-veins.com/wow-forever/spells/687",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 81,
+      "url": "https://db.icy-veins.com/wow-forever/spells/706",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 82,
+      "url": "https://www.icy-veins.com/wow-forever/news/mages-might-unlock-a-new-playstyle-in-wow-forever",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 83,
+      "url": "https://www.method.gg/wow-forever/mage-comprehension-and-study-guide-in-wow-forever-how-scrolls-work-and-all-scroll-effects",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 84,
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/arcane/dps-leveling-tips",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 85,
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/fire/dps-leveling-tips",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 86,
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/frost/dps-leveling-tips",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 87,
+      "url": "https://db.icy-veins.com/wow-forever/spells/440892",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 88,
+      "url": "https://db.icy-veins.com/wow-forever/spells/400589",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 89,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1302284",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 90,
+      "url": "https://db.icy-veins.com/wow-forever/items/277488",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 91,
+      "url": "https://db.icy-veins.com/wow-forever/items/276631",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 92,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5740",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 93,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1949",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 94,
+      "url": "https://db.icy-veins.com/wow-forever/spells/3567",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 95,
+      "url": "https://db.icy-veins.com/wow-forever/spells/17941",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 96,
+      "url": "https://db.icy-veins.com/wow-forever/spells/25307",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 97,
+      "url": "https://db.icy-veins.com/wow-forever/spells/25345",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 98,
+      "url": "https://db.icy-veins.com/wow-forever/spells/28272",
+      "title": "",
+      "accessed": "2026-11-05"
+    }
+  ]
+}

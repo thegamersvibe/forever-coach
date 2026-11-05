@@ -1,0 +1,48 @@
+{
+  "status": "PASS_WITH_EXPLICIT_RESEARCH_GAPS",
+  "target": "World of Warcraft: Forever 1.60.1",
+  "checks": {
+    "jsonSchemaAndRequiredKeys": "pass",
+    "sixRequestedNonShockadinBuilds": "pass",
+    "oneRowPerLevel10Through60": "pass",
+    "noDuplicateMilestoneKeys": "pass",
+    "allSpellIdNamesMatchCurrentSpellName": "pass",
+    "allBaseSpellLevelsMatchCurrentSpellLevels": "pass",
+    "raceFileTokensMatchChrRaces": "pass",
+    "suppliedProtectionNamedPointsMatchIcyVeins": "pass",
+    "unattributedPointsAreAsterisks": "pass"
+  },
+  "counts": {
+    "talentBuilds": 6,
+    "talentRows": 306,
+    "namedTalentPoints": 199,
+    "unknownTalentPoints": 107,
+    "spellMilestones": 50,
+    "uniqueMilestoneSpellIds": 99,
+    "procSpells": 3,
+    "raceOnlyQuests": 16,
+    "existingProtectionNamedPointsVerified": 20,
+    "completeAlternativeOrders": 1
+  },
+  "independentValidationSources": [
+    "https://wago.tools/db2/SpellName/csv?build=1.60.1.70790",
+    "https://wago.tools/db2/SpellLevels/csv?build=1.60.1.70790",
+    "https://wago.tools/db2/ChrRaces/csv?build=1.60.1.70707"
+  ],
+  "limitations": [
+    "Icy Veins browser slider blocked by Cloudflare; 107 points unattributed.",
+    "Holy Paladin has only two explicit source milestones, neither slider-verified.",
+    "Shockadin found as endgame hybrid, not as an attributed leveling order.",
+    "Three class-mount routes/givers remain unverified; client conditions do not prove live quest availability."
+  ],
+  "files": {
+    "warrior_paladin.json": {
+      "bytes": 50918,
+      "sha256": "eb6fe139fdb63b357e5230df78842cd4145eb7a7c0b2adfca286d7e54cb6c3bd"
+    },
+    "warrior_paladin_evidence.json": {
+      "bytes": 11592,
+      "sha256": "a3c1ecf289616c5fe25e6ebebddae688e00c5c7b1913496b2ee87a42c6fa9ac5"
+    }
+  }
+}

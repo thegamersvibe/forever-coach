@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "artifact": "/opt/data/projects/forever-coach/research/races.json",
+  "raceFileRecords": 9,
+  "sourceRaceFactionRows": 10,
+  "raceOnlyQuestNames": 9,
+  "classQuestGiverRows": 20,
+  "zoneRecords": 2,
+  "checks": [
+    "requested schema and token set",
+    "race classes and faction match pinned table",
+    "both Skyborne factions allow Druid",
+    "all six new original-race class combinations present",
+    "quest giver class/race references and level bounds",
+    "no exact duplicate giver rows",
+    "race-only filters reference valid tokens",
+    "shared totem/taming titles excluded from race-only map",
+    "Skyborne Earth minimum 3 and Bear Form route 10",
+    "zone format and parent data",
+    "Skyborne quest IDs found in local Journey"
+  ],
+  "liveClientVerified": false,
+  "citationValidationExitCode": 0,
+  "citationValidationOutput": "Sources block rewritten in /opt/data/projects/forever-coach/research/races.evidence.md\ninfo: stats: 85 prose sentence(s), 39 with declared provenance (46%) \u2014 39 cited, 0 marked [unverified] (a sentence may be both); 38 distinct source(s) cited, 61 in ledger (0 with evidence quotes)\nwarn: registered in the ledger but not cited in this draft: [2], [3], [4], [5], [6], [7], [8], [10], [12], [22], [23], [25], [27], [28], [41], [42], [43], [44], [45], [46], [47], [51], [61]\ncitations OK",
+  "remainingUncertainties": [
+    "No live client API/character creation/quest availability tests",
+    "Skyborne classes need faction filtering beyond the union in the fixed schema",
+    "Thendal Village territory inherits parent metadata; live PvP flag not verified",
+    "Valanaar capital field is a practical service-hub designation",
+    "No verified level-10 Skyborne Rogue quest giver",
+    "Class-quest and race-only reward sets are sourced subsets, not exhaustive server masks"
+  ]
+}

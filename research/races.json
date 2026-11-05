@@ -1,0 +1,408 @@
+{
+  "races": {
+    "Human": {
+      "name": "Human",
+      "faction": "Alliance",
+      "classes": [
+        "WARRIOR",
+        "PALADIN",
+        "PRIEST",
+        "ROGUE",
+        "MAGE",
+        "WARLOCK",
+        "HUNTER"
+      ],
+      "startZones": [
+        "Elwynn Forest",
+        "Northshire Valley"
+      ],
+      "capital": "Stormwind City",
+      "raceFileConfidence": "H",
+      "raceFileEvidence": "Exact ChrRaces file token 'Human', race ID 1, in the camelot section of the game-table-derived races.txt for wowf 1.60.1.70755: https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt. Header identifies ChrRaces and CharBaseInfo as sources. This is a pinned third-party table extraction, not a UnitRace call performed in this research session."
+    },
+    "Orc": {
+      "name": "Orc",
+      "faction": "Horde",
+      "classes": [
+        "WARRIOR",
+        "SHAMAN",
+        "ROGUE",
+        "MAGE",
+        "WARLOCK",
+        "HUNTER"
+      ],
+      "startZones": [
+        "Durotar",
+        "Valley of Trials"
+      ],
+      "capital": "Orgrimmar",
+      "raceFileConfidence": "H",
+      "raceFileEvidence": "Exact ChrRaces file token 'Orc', race ID 2, in the camelot section of the game-table-derived races.txt for wowf 1.60.1.70755: https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt. Header identifies ChrRaces and CharBaseInfo as sources. This is a pinned third-party table extraction, not a UnitRace call performed in this research session."
+    },
+    "Dwarf": {
+      "name": "Dwarf",
+      "faction": "Alliance",
+      "classes": [
+        "WARRIOR",
+        "PALADIN",
+        "PRIEST",
+        "SHAMAN",
+        "ROGUE",
+        "HUNTER"
+      ],
+      "startZones": [
+        "Dun Morogh",
+        "Coldridge Valley"
+      ],
+      "capital": "Ironforge",
+      "raceFileConfidence": "H",
+      "raceFileEvidence": "Exact ChrRaces file token 'Dwarf', race ID 3, in the camelot section of the game-table-derived races.txt for wowf 1.60.1.70755: https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt. Header identifies ChrRaces and CharBaseInfo as sources. This is a pinned third-party table extraction, not a UnitRace call performed in this research session."
+    },
+    "NightElf": {
+      "name": "Night Elf",
+      "faction": "Alliance",
+      "classes": [
+        "WARRIOR",
+        "PRIEST",
+        "DRUID",
+        "ROGUE",
+        "HUNTER"
+      ],
+      "startZones": [
+        "Teldrassil",
+        "Shadowglen"
+      ],
+      "capital": "Darnassus",
+      "raceFileConfidence": "H",
+      "raceFileEvidence": "Exact ChrRaces file token 'NightElf', race ID 4, in the camelot section of the game-table-derived races.txt for wowf 1.60.1.70755: https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt. Header identifies ChrRaces and CharBaseInfo as sources. This is a pinned third-party table extraction, not a UnitRace call performed in this research session."
+    },
+    "Scourge": {
+      "name": "Undead",
+      "faction": "Horde",
+      "classes": [
+        "WARRIOR",
+        "PALADIN",
+        "PRIEST",
+        "ROGUE",
+        "MAGE",
+        "WARLOCK"
+      ],
+      "startZones": [
+        "Tirisfal Glades",
+        "Deathknell"
+      ],
+      "capital": "Undercity",
+      "raceFileConfidence": "H",
+      "raceFileEvidence": "Exact ChrRaces file token 'Scourge', race ID 5, in the camelot section of the game-table-derived races.txt for wowf 1.60.1.70755: https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt. Header identifies ChrRaces and CharBaseInfo as sources. This is a pinned third-party table extraction, not a UnitRace call performed in this research session."
+    },
+    "Tauren": {
+      "name": "Tauren",
+      "faction": "Horde",
+      "classes": [
+        "WARRIOR",
+        "SHAMAN",
+        "DRUID",
+        "HUNTER"
+      ],
+      "startZones": [
+        "Mulgore",
+        "Red Cloud Mesa",
+        "Camp Narache"
+      ],
+      "capital": "Thunder Bluff",
+      "raceFileConfidence": "H",
+      "raceFileEvidence": "Exact ChrRaces file token 'Tauren', race ID 6, in the camelot section of the game-table-derived races.txt for wowf 1.60.1.70755: https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt. Header identifies ChrRaces and CharBaseInfo as sources. This is a pinned third-party table extraction, not a UnitRace call performed in this research session."
+    },
+    "Gnome": {
+      "name": "Gnome",
+      "faction": "Alliance",
+      "classes": [
+        "WARRIOR",
+        "PRIEST",
+        "ROGUE",
+        "MAGE",
+        "WARLOCK"
+      ],
+      "startZones": [
+        "Dun Morogh",
+        "Coldridge Valley"
+      ],
+      "capital": "Ironforge",
+      "raceFileConfidence": "H",
+      "raceFileEvidence": "Exact ChrRaces file token 'Gnome', race ID 7, in the camelot section of the game-table-derived races.txt for wowf 1.60.1.70755: https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt. Header identifies ChrRaces and CharBaseInfo as sources. This is a pinned third-party table extraction, not a UnitRace call performed in this research session."
+    },
+    "Troll": {
+      "name": "Troll",
+      "faction": "Horde",
+      "classes": [
+        "WARRIOR",
+        "PRIEST",
+        "SHAMAN",
+        "ROGUE",
+        "MAGE",
+        "WARLOCK",
+        "HUNTER"
+      ],
+      "startZones": [
+        "Durotar",
+        "Valley of Trials"
+      ],
+      "capital": "Orgrimmar",
+      "raceFileConfidence": "H",
+      "raceFileEvidence": "Exact ChrRaces file token 'Troll', race ID 8, in the camelot section of the game-table-derived races.txt for wowf 1.60.1.70755: https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt. Header identifies ChrRaces and CharBaseInfo as sources. This is a pinned third-party table extraction, not a UnitRace call performed in this research session."
+    },
+    "Skyborne": {
+      "name": "Skyborne",
+      "faction": "Both",
+      "classes": [
+        "DRUID",
+        "HUNTER",
+        "MAGE",
+        "ROGUE",
+        "SHAMAN",
+        "WARRIOR"
+      ],
+      "startZones": [
+        "Zephras Isle",
+        "Thendal Village"
+      ],
+      "capital": "Valanaar",
+      "raceFileConfidence": "H",
+      "raceFileEvidence": "Both playable Skyborne ChrRaces rows use exact case-sensitive file token Skyborne: Alliance High Order race ID 95 and Horde Windshaper race ID 96, in wowf 1.60.1.70755 table extraction https://github.com/DomenikIrrgang/wowlua/blob/f6b59823c32957dd20fd4afad139b06d9b6061ec/crates/wowlua-flavors/data/races.txt. Independent local corroboration: Journey_core/Condition.lua:524-525 uppercases the SECOND UnitRace return; dec/guides.lua:95-122 uses SKYBORNE for both factions. Uppercasing alone would not establish casing; the pinned table establishes Skyborne. No direct live-client UnitRace capture was made."
+    }
+  },
+  "raceOnlyQuests": {
+    "Dead-tooth Jack": [
+      "Human"
+    ],
+    "Grey Iron Weapons": [
+      "Dwarf",
+      "Gnome"
+    ],
+    "Weapons of Elunite": [
+      "NightElf"
+    ],
+    "Forged Steel": [
+      "Orc",
+      "Tauren",
+      "Troll"
+    ],
+    "Heirloom Weapon": [
+      "Scourge"
+    ],
+    "The Skybreaker Bulwark": [
+      "Skyborne"
+    ],
+    "Boughs in the Wind": [
+      "Skyborne"
+    ],
+    "Strength and Mercy": [
+      "Skyborne"
+    ],
+    "Old Fire-Eye": [
+      "Scourge"
+    ]
+  },
+  "classQuestGivers": [
+    {
+      "class": "DRUID",
+      "race": "Skyborne",
+      "level": 10,
+      "quest": "The Great Ursera Spirit",
+      "npc": "Lotheluum Starbreeze",
+      "zone": "Zephras Isle"
+    },
+    {
+      "class": "DRUID",
+      "race": "Skyborne",
+      "level": 10,
+      "quest": "Strength and Mercy",
+      "npc": "Urs'endris",
+      "zone": "Zephras Isle"
+    },
+    {
+      "class": "WARRIOR",
+      "race": "Skyborne",
+      "level": 10,
+      "quest": "The Skybreaker Bulwark",
+      "npc": "Seena Skybreaker",
+      "zone": "Zephras Isle"
+    },
+    {
+      "class": "HUNTER",
+      "race": "Skyborne",
+      "level": 10,
+      "quest": "Taming the Beast",
+      "npc": "Quel'ana Quickgale",
+      "zone": "Zephras Isle"
+    },
+    {
+      "class": "MAGE",
+      "race": "Skyborne",
+      "level": 10,
+      "quest": "Speak with Belann",
+      "npc": "Anathamaas Aetherwind",
+      "zone": "Zephras Isle"
+    },
+    {
+      "class": "MAGE",
+      "race": "Skyborne",
+      "level": 10,
+      "quest": "Boughs in the Wind",
+      "npc": "Belann Windwood",
+      "zone": "Zephras Isle"
+    },
+    {
+      "class": "SHAMAN",
+      "race": "Skyborne",
+      "level": 3,
+      "quest": "Call of Earth",
+      "npc": "Windshaper Boro",
+      "zone": "Zephras Isle"
+    },
+    {
+      "class": "SHAMAN",
+      "race": "Skyborne",
+      "level": 10,
+      "quest": "Call of Fire",
+      "npc": "Sessaria Skystride",
+      "zone": "Zephras Isle"
+    },
+    {
+      "class": "SHAMAN",
+      "race": "Skyborne",
+      "level": 10,
+      "quest": "Call of Fire",
+      "npc": "Aarnor Galestrike",
+      "zone": "Zephras Isle"
+    },
+    {
+      "class": "SHAMAN",
+      "race": "Dwarf",
+      "level": 4,
+      "quest": "Call of Earth",
+      "npc": "Teo Hammerstorm",
+      "zone": "Dun Morogh"
+    },
+    {
+      "class": "PALADIN",
+      "race": "Scourge",
+      "level": 12,
+      "quest": "A Lesson in Divinity",
+      "npc": "Danitha Morr",
+      "zone": "Tirisfal Glades"
+    },
+    {
+      "class": "PALADIN",
+      "race": "Scourge",
+      "level": 20,
+      "quest": "Diplomatic Incident",
+      "npc": "Danitha Morr",
+      "zone": "Tirisfal Glades"
+    },
+    {
+      "class": "WARRIOR",
+      "race": "Human",
+      "level": 10,
+      "quest": "Dead-tooth Jack",
+      "npc": "Marshal Haggard",
+      "zone": "Elwynn Forest"
+    },
+    {
+      "class": "WARRIOR",
+      "race": "Dwarf",
+      "level": 10,
+      "quest": "Grey Iron Weapons",
+      "npc": "Tormus Deepforge",
+      "zone": "Ironforge"
+    },
+    {
+      "class": "WARRIOR",
+      "race": "Gnome",
+      "level": 10,
+      "quest": "Grey Iron Weapons",
+      "npc": "Tormus Deepforge",
+      "zone": "Ironforge"
+    },
+    {
+      "class": "WARRIOR",
+      "race": "NightElf",
+      "level": 10,
+      "quest": "Weapons of Elunite",
+      "npc": "Mathiel",
+      "zone": "Darnassus"
+    },
+    {
+      "class": "WARRIOR",
+      "race": "Orc",
+      "level": 10,
+      "quest": "Forged Steel",
+      "npc": "Thun'grim Firegaze",
+      "zone": "The Barrens"
+    },
+    {
+      "class": "WARRIOR",
+      "race": "Tauren",
+      "level": 10,
+      "quest": "Forged Steel",
+      "npc": "Thun'grim Firegaze",
+      "zone": "The Barrens"
+    },
+    {
+      "class": "WARRIOR",
+      "race": "Troll",
+      "level": 10,
+      "quest": "Forged Steel",
+      "npc": "Thun'grim Firegaze",
+      "zone": "The Barrens"
+    },
+    {
+      "class": "WARRIOR",
+      "race": "Scourge",
+      "level": 10,
+      "quest": "Heirloom Weapon",
+      "npc": "Coleman Farthing",
+      "zone": "Tirisfal Glades"
+    }
+  ],
+  "zones": [
+    {
+      "zone": "Zephras Isle",
+      "levels": "1-12",
+      "faction": "Contested"
+    },
+    {
+      "zone": "Thendal Village",
+      "levels": "1-6",
+      "faction": "Contested",
+      "parent": "Zephras Isle"
+    }
+  ],
+  "notes": [
+    "Research snapshot: Forever 1.60.1; exact race/class table is pinned to build 1.60.1.70755 and wowlua commit f6b59823c32957dd20fd4afad139b06d9b6061ec. Provenance, quest IDs, conflicts, confidence and citations are in races.evidence.md; races.sources.json is the discovery ledger; races.client-table.tsv preserves the extracted race rows.",
+    "CRITICAL: Skyborne is ONE raceFile key shared by both factions, NOT SkyborneAlliance, HighOrderSkyborne, WindshaperSkyborne or two inferred file-token variants. Use UnitFactionGroup(\"player\") in addition to the SECOND return of UnitRace(\"player\"). Undead uses Scourge, not Undead; Night Elf uses NightElf.",
+    "CRITICAL: races.Skyborne.classes is the UNION required by this schema. Alliance/High Order allows DRUID,HUNTER,MAGE,ROGUE,WARRIOR; Horde/Windshaper allows DRUID,HUNTER,ROGUE,SHAMAN,WARRIOR. DRUID is valid for BOTH. Do not allow Alliance Skyborne Shaman or Horde Skyborne Mage just because both occur in the union.",
+    "Skyborne faction is chosen at character creation, not at the end of a neutral starting zone. Shared raceFile and shared starting zone do not imply cross-faction grouping or faction-neutral characters.",
+    "New combinations beyond Classic Era are Human HUNTER, Dwarf SHAMAN, Gnome PRIEST, Orc MAGE, Troll WARLOCK, Scourge PALADIN, plus the Skyborne combinations. No Retail-only races or classes have been imported.",
+    "startZones lists the parent zone and verified initial subarea names, not separate alternative starts. Skyborne begins in Thendal Village within Zephras Isle. Journey routes Thendal Village at 1-6, then Zephras Isle at 6-12; Blizzard describes the complete island experience as 1-12.",
+    "Use Thendal Village (one l at the end of Thendal), matching Journey and area record 16635. The Wowhead zone overview trainer table spells it Thendall Village; retain that only as a search alias, not as the primary zone key. Zephras Isle area ID is 16593; Journey uses UI map ID 2521. Area IDs and UI map IDs are different namespaces.",
+    "zones.faction=Contested for Zephras Isle follows Wowhead territory metadata, not an assertion that PvP is forced there. Thendal Village inherits that parent classification provisionally; a subzone-specific live PvP flag was not verified. Do not use these entries to infer PvP safety.",
+    "Valanaar is verified as the major Skyborne trainer/service/transport hub. Its capital value is a practical hub designation corroborated by community race tables, not a Blizzard-confirmed political-capital statement. Other capital values follow the Classic-era cities and Forever race references.",
+    "Only the Skyborne parent zone and initial subzone are included in zones. Shen'dar Village and Valanaar are confirmed island settlements, but no independently bounded leveling ranges were established for them; no invented per-settlement ranges or unrelated new-zone entries were added.",
+    "Skyborne DRUID Bear Form: at level 10 take The Great Ursera Spirit (94006) from Lotheluum Starbreeze (252359) in Valanaar, approximately 64.0,75.1 on the Zephras Isle map. Meet Urs'endris (255853) near 69.8,61.7, accept Strength and Mercy (94638), kill Ur'endra (258443) near 53.7,65.1, and return to Urs'endris for Bear Form (5487). Enter Ur'endra's cave from the upper/northern side. This is NOT the Night Elf/Tauren Moonglade Bear Form chain.",
+    "Skyborne DRUID routing caveat: a September beta forum thread reports High Order and Windshaper players reaching Moonglade without a Bear Form follow-up. The original poster later directs Skyborne players back to the Druid trainer in Valanaar, and another reports completing the island spirit/mate quest. This corroborates the separate Skyborne route; it is not evidence of a current launch bug. No bug state or workaround was live-tested.",
+    "Skyborne WARRIOR level 10: The Skybreaker Bulwark (94003), Seena Skybreaker (252377), Valanaar approximately 59.9,72.9. Reward: Defensive Stance (71) and Stormforged Protector (275290). This route applies to both Skyborne factions.",
+    "Skyborne MAGE (Alliance only) level 10: Speak with Belann (93791), Anathamaas Aetherwind (252373), then Boughs in the Wind (93797) from Belann Windwood (256507) at approximately 62.9,77.4 in Valanaar. Rewards include Windbough Wand (263430) and Elixir of Minor Spirit (250344). Journey collapses accept/turn-in for the lead-in onto Belann; the independent guide identifies Anathamaas as the actual lead-in giver.",
+    "Skyborne HUNTER level 10: Taming the Beast (94978) starts at Quel'ana Quickgale (252389), Valanaar approximately 59.6,72.6. Journey contains follow-up Taming the Beast IDs 94979 and 94013, followed by Training the Beast (94050). Taming the Beast is NOT placed in raceOnlyQuests because other races have quests with exactly that name.",
+    "Skyborne SHAMAN (Horde only): Call of Earth starts at level 3, NOT an assumed level 4, from Windshaper Boro (251374) in Thendal Village, approximately 42.8,23.5. Quest 92466 is quest-level 4 but requires player level 3; the chain continues through 92467 and 92468 for Earth Totem (5175). Wowhead related-list race/class badges are inconsistent here (showing Tauren/Druid); local HORDE and SHAMAN conditions and the zone guide support the Skyborne route.",
+    "Skyborne SHAMAN level 10: Call of Fire (97243) can start at Sessaria Skystride (252382) in Valanaar approximately 58.2,78.4, or Aarnor Galestrike (254082) in Shen'dar Village. Continue with Olariaan Swiftburn (268592) at the Shrine of Flames through 97244,97245,97257; the final turn-in to Sessaria grants Fire Totem (5176). Call of Earth and Call of Fire names are shared across races and must be keyed by quest ID plus race/faction if filtering.",
+    "Skyborne ROGUE: Eltheen Nightbreeze (252379) is a verified Valanaar rogue TRAINER, not a proven level-10 class-quest giver. Akeri Duskblade (251389) is the Thendal Village introductory trainer. No confirmed Skyborne level-10 rogue quest/unlock was found, so no fabricated rogue classQuestGivers row was added.",
+    "Dwarf SHAMAN: Call of Earth (94373) begins at Teo Hammerstorm (257446), Anvilmar in Dun Morogh, level 4, approximately 28.8,66.2. Do not reuse the Skyborne level-3 minimum or Horde totem chain for a Dwarf.",
+    "Undead PALADIN: Scourge is the correct race key. A Lesson in Divinity (94427) begins at Danitha Morr (246378), Bandarion Keep in Tirisfal Glades; the Icy Veins guide places the Redemption chain at level 12. Diplomatic Incident (91858) begins there at level 20 and leads to the Old Fire-Eye (95140) / Wolfsbane (267369) weapon chain. These are not Alliance Paladin routes.",
+    "raceOnlyQuests describes acquisition through race-specific class quest chains, not item equip restrictions or a complete quest database. Also check class, faction, level and prerequisite completion. Classic warrior weapon routes are Human=Dead-tooth Jack (1667), Dwarf/Gnome=Grey Iron Weapons (1682), NightElf=Weapons of Elunite (1693), Orc/Tauren/Troll=Forged Steel (1503), Scourge=Heirloom Weapon (1822). Agamand Heirlooms (1821) is the preceding collection quest, not the final weapon-choice quest.",
+    "raceOnlyQuests includes Strength and Mercy for the race-specific Bear Form acquisition, although its reward is a spell rather than equipment. Boughs in the Wind is additionally Mage/Alliance-only; The Skybreaker Bulwark additionally requires Warrior. Generic island quests such as The Problem With Prideclaws and Meddlesome Mages were not declared race-exclusive merely because they occur on Zephras Isle.",
+    "classQuestGivers is a sourced subset focused on Skyborne, the new cross-faction class combinations, and race-specific early Warrior rewards, not an exhaustive list of all class quests. level is the minimum/start checkpoint reported by the cited quest or class guide; reward-stage rows still require their prior chain. Alternate starters appear as separate rows, not duplicate quest identities.",
+    "No live Forever client API, quest-availability test, or character-creation test was run. raceFileConfidence=H reflects exact case-preserved game-table extraction plus addon/API corroboration, not an invented live capture. Recommended tester checks: /dump UnitRace(\"player\") and /dump UnitFactionGroup(\"player\") on both Skyborne factions, plus quest availability after reaching the relevant level.",
+    "API integration should prefer raceFile plus faction and quest ID over display-name or quest-title matching. The fixed requested schema cannot represent the Skyborne per-faction class split or duplicate-titled totem quest chains directly; their constraints are retained in these notes and the evidence document."
+  ]
+}

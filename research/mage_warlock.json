@@ -1,0 +1,2868 @@
+{
+  "talentBuilds": {
+    "MAGE:frost": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/frost-mage-leveling",
+      "tree": "Frost",
+      "order": [
+        [
+          10,
+          "Precision"
+        ],
+        [
+          11,
+          "Precision"
+        ],
+        [
+          12,
+          "Wand Specialization"
+        ],
+        [
+          13,
+          "Wand Specialization"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "Ice Lance"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "MAGE:arcane": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/arcane-mage-leveling",
+      "tree": "Arcane",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "Heating Up"
+        ]
+      ]
+    },
+    "MAGE:fire": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/fire-mage-leveling",
+      "tree": "Fire",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "MAGE:battlemage_frost": {
+      "source": "No attributable Icy Veins or Wowhead leveling order found",
+      "url": "https://www.icy-veins.com/wow-forever/mage-class-overview",
+      "tree": "Frost",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "MAGE:battlemage_fire": {
+      "source": "No attributable Icy Veins or Wowhead leveling order found",
+      "url": "https://www.icy-veins.com/wow-forever/mage-class-overview",
+      "tree": "Fire",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "MAGE:battlemage_arcane": {
+      "source": "No attributable Icy Veins or Wowhead leveling order found",
+      "url": "https://www.icy-veins.com/wow-forever/mage-class-overview",
+      "tree": "Arcane",
+      "order": [
+        [
+          10,
+          "*"
+        ],
+        [
+          11,
+          "*"
+        ],
+        [
+          12,
+          "*"
+        ],
+        [
+          13,
+          "*"
+        ],
+        [
+          14,
+          "*"
+        ],
+        [
+          15,
+          "*"
+        ],
+        [
+          16,
+          "*"
+        ],
+        [
+          17,
+          "*"
+        ],
+        [
+          18,
+          "*"
+        ],
+        [
+          19,
+          "*"
+        ],
+        [
+          20,
+          "*"
+        ],
+        [
+          21,
+          "*"
+        ],
+        [
+          22,
+          "*"
+        ],
+        [
+          23,
+          "*"
+        ],
+        [
+          24,
+          "*"
+        ],
+        [
+          25,
+          "*"
+        ],
+        [
+          26,
+          "*"
+        ],
+        [
+          27,
+          "*"
+        ],
+        [
+          28,
+          "*"
+        ],
+        [
+          29,
+          "*"
+        ],
+        [
+          30,
+          "*"
+        ],
+        [
+          31,
+          "*"
+        ],
+        [
+          32,
+          "*"
+        ],
+        [
+          33,
+          "*"
+        ],
+        [
+          34,
+          "*"
+        ],
+        [
+          35,
+          "*"
+        ],
+        [
+          36,
+          "*"
+        ],
+        [
+          37,
+          "*"
+        ],
+        [
+          38,
+          "*"
+        ],
+        [
+          39,
+          "*"
+        ],
+        [
+          40,
+          "*"
+        ],
+        [
+          41,
+          "*"
+        ],
+        [
+          42,
+          "*"
+        ],
+        [
+          43,
+          "*"
+        ],
+        [
+          44,
+          "*"
+        ],
+        [
+          45,
+          "*"
+        ],
+        [
+          46,
+          "*"
+        ],
+        [
+          47,
+          "*"
+        ],
+        [
+          48,
+          "*"
+        ],
+        [
+          49,
+          "*"
+        ],
+        [
+          50,
+          "*"
+        ],
+        [
+          51,
+          "*"
+        ],
+        [
+          52,
+          "*"
+        ],
+        [
+          53,
+          "*"
+        ],
+        [
+          54,
+          "*"
+        ],
+        [
+          55,
+          "*"
+        ],
+        [
+          56,
+          "*"
+        ],
+        [
+          57,
+          "*"
+        ],
+        [
+          58,
+          "*"
+        ],
+        [
+          59,
+          "*"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "WARLOCK:affliction": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling",
+      "tree": "Affliction",
+      "order": [
+        [
+          10,
+          "Suppression"
+        ],
+        [
+          11,
+          "Suppression"
+        ],
+        [
+          12,
+          "Suppression"
+        ],
+        [
+          13,
+          "Suppression"
+        ],
+        [
+          14,
+          "Improved Corruption"
+        ],
+        [
+          15,
+          "Improved Corruption"
+        ],
+        [
+          16,
+          "Improved Corruption"
+        ],
+        [
+          17,
+          "Improved Corruption"
+        ],
+        [
+          18,
+          "Improved Corruption"
+        ],
+        [
+          19,
+          "Grim Reach"
+        ],
+        [
+          20,
+          "Improved Bane of Agony"
+        ],
+        [
+          21,
+          "Improved Bane of Agony"
+        ],
+        [
+          22,
+          "Grim Reach"
+        ],
+        [
+          23,
+          "Improved Life Tap"
+        ],
+        [
+          24,
+          "Improved Life Tap"
+        ],
+        [
+          25,
+          "Nightfall"
+        ],
+        [
+          26,
+          "Nightfall"
+        ],
+        [
+          27,
+          "Pandemic"
+        ],
+        [
+          28,
+          "Pandemic"
+        ],
+        [
+          29,
+          "Pandemic"
+        ],
+        [
+          30,
+          "Siphon Life"
+        ],
+        [
+          31,
+          "Demonic Embrace"
+        ],
+        [
+          32,
+          "Demonic Embrace"
+        ],
+        [
+          33,
+          "Demonic Embrace"
+        ],
+        [
+          34,
+          "Demonic Embrace"
+        ],
+        [
+          35,
+          "Demonic Embrace"
+        ],
+        [
+          36,
+          "Demonic Aegis"
+        ],
+        [
+          37,
+          "Demonic Aegis"
+        ],
+        [
+          38,
+          "Fel Vitality"
+        ],
+        [
+          39,
+          "Fel Vitality"
+        ],
+        [
+          40,
+          "Fel Vitality"
+        ],
+        [
+          41,
+          "Demonic Sacrifice"
+        ],
+        [
+          42,
+          "Malevolence"
+        ],
+        [
+          43,
+          "Malevolence"
+        ],
+        [
+          44,
+          "Malevolence"
+        ],
+        [
+          45,
+          "Malevolence"
+        ],
+        [
+          46,
+          "Shadow Mastery"
+        ],
+        [
+          47,
+          "Shadow Mastery"
+        ],
+        [
+          48,
+          "Shadow Mastery"
+        ],
+        [
+          49,
+          "Shadow Mastery"
+        ],
+        [
+          50,
+          "Shadow Mastery"
+        ],
+        [
+          51,
+          "Wrack"
+        ],
+        [
+          52,
+          "Malevolence"
+        ],
+        [
+          53,
+          "Soul Siphon"
+        ],
+        [
+          54,
+          "Soul Siphon"
+        ],
+        [
+          55,
+          "Soul Siphon"
+        ],
+        [
+          56,
+          "Improved Drains"
+        ],
+        [
+          57,
+          "Improved Drains"
+        ],
+        [
+          58,
+          "Improved Drains"
+        ],
+        [
+          59,
+          "Fel Concentration"
+        ],
+        [
+          60,
+          "Fel Concentration"
+        ]
+      ]
+    },
+    "WARLOCK:demonology": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/demonology-warlock-leveling",
+      "tree": "Demonology",
+      "order": [
+        [
+          10,
+          "Unholy Power"
+        ],
+        [
+          11,
+          "Unholy Power"
+        ],
+        [
+          12,
+          "Unholy Power"
+        ],
+        [
+          13,
+          "Unholy Power"
+        ],
+        [
+          14,
+          "Unholy Power"
+        ],
+        [
+          15,
+          "Demonic Energies"
+        ],
+        [
+          16,
+          "Demonic Energies"
+        ],
+        [
+          17,
+          "Fel Vitality"
+        ],
+        [
+          18,
+          "Fel Vitality"
+        ],
+        [
+          19,
+          "Fel Vitality"
+        ],
+        [
+          20,
+          "Improved Voidwalker"
+        ],
+        [
+          21,
+          "Improved Voidwalker"
+        ],
+        [
+          22,
+          "Improved Voidwalker"
+        ],
+        [
+          23,
+          "Master Summoner"
+        ],
+        [
+          24,
+          "Master Summoner"
+        ],
+        [
+          25,
+          "Demonic Brand"
+        ],
+        [
+          26,
+          "Demonic Brand"
+        ],
+        [
+          27,
+          "Demonic Brand"
+        ],
+        [
+          28,
+          "Fel Domination"
+        ],
+        [
+          29,
+          "Demonic Sacrifice"
+        ],
+        [
+          30,
+          "Soul Link"
+        ],
+        [
+          31,
+          "Demonic Knowledge"
+        ],
+        [
+          32,
+          "Demonic Knowledge"
+        ],
+        [
+          33,
+          "Demonic Knowledge"
+        ],
+        [
+          34,
+          "Demonic Aegis"
+        ],
+        [
+          35,
+          "Master Demonologist"
+        ],
+        [
+          36,
+          "Master Demonologist"
+        ],
+        [
+          37,
+          "Master Demonologist"
+        ],
+        [
+          38,
+          "Master Demonologist"
+        ],
+        [
+          39,
+          "Master Demonologist"
+        ],
+        [
+          40,
+          "Demonic Pact"
+        ],
+        [
+          41,
+          "Suppression"
+        ],
+        [
+          42,
+          "Suppression"
+        ],
+        [
+          43,
+          "Suppression"
+        ],
+        [
+          44,
+          "Suppression"
+        ],
+        [
+          45,
+          "Improved Corruption"
+        ],
+        [
+          46,
+          "Improved Corruption"
+        ],
+        [
+          47,
+          "Improved Corruption"
+        ],
+        [
+          48,
+          "Improved Corruption"
+        ],
+        [
+          49,
+          "Improved Corruption"
+        ],
+        [
+          50,
+          "Improved Life Tap"
+        ],
+        [
+          51,
+          "Improved Bane of Agony"
+        ],
+        [
+          52,
+          "Improved Bane of Agony"
+        ],
+        [
+          53,
+          "Pandemic"
+        ],
+        [
+          54,
+          "Pandemic"
+        ],
+        [
+          55,
+          "Pandemic"
+        ],
+        [
+          56,
+          "Nightfall"
+        ],
+        [
+          57,
+          "Nightfall"
+        ],
+        [
+          58,
+          "Improved Life Tap"
+        ],
+        [
+          59,
+          "Amplify Curse"
+        ],
+        [
+          60,
+          "*"
+        ]
+      ]
+    },
+    "WARLOCK:destruction": {
+      "source": "Icy Veins",
+      "url": "https://www.icy-veins.com/wow-forever/destruction-warlock-leveling",
+      "tree": "Destruction",
+      "order": [
+        [
+          10,
+          "Bane"
+        ],
+        [
+          11,
+          "Bane"
+        ],
+        [
+          12,
+          "Bane"
+        ],
+        [
+          13,
+          "Bane"
+        ],
+        [
+          14,
+          "Bane"
+        ],
+        [
+          15,
+          "Aftermath"
+        ],
+        [
+          16,
+          "Aftermath"
+        ],
+        [
+          17,
+          "Aftermath"
+        ],
+        [
+          18,
+          "Aftermath"
+        ],
+        [
+          19,
+          "Aftermath"
+        ],
+        [
+          20,
+          "Shadowburn"
+        ],
+        [
+          21,
+          "Destructive Reach"
+        ],
+        [
+          22,
+          "Destructive Reach"
+        ],
+        [
+          23,
+          "Ruin"
+        ],
+        [
+          24,
+          "Ruin"
+        ],
+        [
+          25,
+          "Conflagrate"
+        ],
+        [
+          26,
+          "Agonizing Flames"
+        ],
+        [
+          27,
+          "Agonizing Flames"
+        ],
+        [
+          28,
+          "Agonizing Flames"
+        ],
+        [
+          29,
+          "Intensity"
+        ],
+        [
+          30,
+          "Intensity"
+        ],
+        [
+          31,
+          "Intensity"
+        ],
+        [
+          32,
+          "Fire and Brimstone"
+        ],
+        [
+          33,
+          "Fire and Brimstone"
+        ],
+        [
+          34,
+          "Bane of Havoc"
+        ],
+        [
+          35,
+          "Shadow and Flame"
+        ],
+        [
+          36,
+          "Shadow and Flame"
+        ],
+        [
+          37,
+          "Shadow and Flame"
+        ],
+        [
+          38,
+          "Shadow and Flame"
+        ],
+        [
+          39,
+          "Shadow and Flame"
+        ],
+        [
+          40,
+          "Incinerate"
+        ],
+        [
+          41,
+          "Suppression"
+        ],
+        [
+          42,
+          "Suppression"
+        ],
+        [
+          43,
+          "Suppression"
+        ],
+        [
+          44,
+          "Suppression"
+        ],
+        [
+          45,
+          "Demonic Embrace"
+        ],
+        [
+          46,
+          "Demonic Embrace"
+        ],
+        [
+          47,
+          "Demonic Embrace"
+        ],
+        [
+          48,
+          "Demonic Embrace"
+        ],
+        [
+          49,
+          "Demonic Embrace"
+        ],
+        [
+          50,
+          "Demonic Aegis"
+        ],
+        [
+          51,
+          "Demonic Aegis"
+        ],
+        [
+          52,
+          "Fel Vitality"
+        ],
+        [
+          53,
+          "Fel Vitality"
+        ],
+        [
+          54,
+          "Fel Vitality"
+        ],
+        [
+          55,
+          "Demonic Sacrifice"
+        ],
+        [
+          56,
+          "Improved Life Tap"
+        ],
+        [
+          57,
+          "Improved Life Tap"
+        ],
+        [
+          58,
+          "Fire and Brimstone"
+        ],
+        [
+          59,
+          "Ruin"
+        ],
+        [
+          60,
+          "Ruin"
+        ]
+      ]
+    }
+  },
+  "spellMilestones": [
+    {
+      "class": "MAGE",
+      "level": 4,
+      "spellIds": [
+        5504
+      ],
+      "name": "Conjure Water",
+      "kind": "trainer",
+      "importance": 88,
+      "how": "Learn from a Mage trainer; conjure drinks before leaving town.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 6,
+      "spellIds": [
+        1296017
+      ],
+      "name": "Comprehend Scroll",
+      "kind": "trainer",
+      "importance": 82,
+      "how": "Learn from a Mage trainer; decipher eligible untranslated scrolls to raise Comprehension.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 6,
+      "spellIds": [
+        587
+      ],
+      "name": "Conjure Food",
+      "kind": "trainer",
+      "importance": 70,
+      "how": "Learn from a Mage trainer; conjure food for recovery between pulls.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 8,
+      "spellIds": [
+        118
+      ],
+      "name": "Polymorph",
+      "kind": "trainer",
+      "importance": 93,
+      "how": "Learn from a Mage trainer; control an extra Humanoid or Beast.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 10,
+      "spellIds": [
+        122
+      ],
+      "name": "Frost Nova",
+      "kind": "trainer",
+      "importance": 94,
+      "how": "Learn from a Mage trainer; root nearby enemies to create distance.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 12,
+      "spellIds": [
+        130
+      ],
+      "name": "Slow Fall",
+      "kind": "trainer",
+      "importance": 60,
+      "how": "Learn from a Mage trainer; carry Light Feathers.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 14,
+      "spellIds": [
+        1449
+      ],
+      "name": "Arcane Explosion",
+      "kind": "trainer",
+      "importance": 78,
+      "how": "Learn from a Mage trainer; use carefully when several enemies are nearby.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 18,
+      "spellIds": [
+        475
+      ],
+      "name": "Remove Lesser Curse",
+      "kind": "trainer",
+      "importance": 75,
+      "how": "Check a Mage trainer for rank 1; dispel curses on yourself or allies.",
+      "confidence": "M"
+    },
+    {
+      "class": "MAGE",
+      "level": 20,
+      "spellIds": [
+        1953
+      ],
+      "name": "Blink",
+      "kind": "trainer",
+      "importance": 96,
+      "how": "Learn from a Mage trainer; escape roots or create distance.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 20,
+      "spellIds": [
+        10
+      ],
+      "name": "Blizzard",
+      "kind": "trainer",
+      "importance": 78,
+      "how": "Learn from a Mage trainer; channel from a safe position.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 20,
+      "spellIds": [
+        12051
+      ],
+      "name": "Evocation",
+      "kind": "trainer",
+      "importance": 94,
+      "how": "Learn from a Mage trainer; channel in a safe place to recover Mana.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 20,
+      "spellIds": [
+        1463
+      ],
+      "name": "Mana Shield",
+      "kind": "trainer",
+      "importance": 70,
+      "how": "Learn from a Mage trainer; reserve it for danger because absorbed damage costs Mana.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 20,
+      "spellIds": [
+        3562
+      ],
+      "name": "Teleport: Ironforge",
+      "kind": "trainer",
+      "importance": 86,
+      "races": [
+        "Human",
+        "Gnome",
+        "Skyborne"
+      ],
+      "how": "Visit the portal trainer in Ironforge; carry a Rune of Teleportation.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 20,
+      "spellIds": [
+        3567
+      ],
+      "name": "Teleport: Orgrimmar",
+      "kind": "trainer",
+      "importance": 86,
+      "races": [
+        "Orc",
+        "Troll",
+        "Scourge"
+      ],
+      "how": "Visit the portal trainer in Orgrimmar; carry a Rune of Teleportation.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 20,
+      "spellIds": [
+        3561
+      ],
+      "name": "Teleport: Stormwind",
+      "kind": "trainer",
+      "importance": 86,
+      "races": [
+        "Human",
+        "Gnome",
+        "Skyborne"
+      ],
+      "how": "Visit the portal trainer in Stormwind; carry a Rune of Teleportation.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 20,
+      "spellIds": [
+        3563
+      ],
+      "name": "Teleport: Undercity",
+      "kind": "trainer",
+      "importance": 86,
+      "races": [
+        "Orc",
+        "Troll",
+        "Scourge"
+      ],
+      "how": "Visit the portal trainer in Undercity; carry a Rune of Teleportation.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 24,
+      "spellIds": [
+        2139
+      ],
+      "name": "Counterspell",
+      "kind": "trainer",
+      "importance": 94,
+      "how": "Learn from a Mage trainer; interrupt important enemy spells.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 24,
+      "spellIds": [
+        1326053
+      ],
+      "name": "Frost Blast",
+      "kind": "trainer",
+      "importance": 78,
+      "how": "Learn from a Mage trainer; short cast with a movement slow.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 26,
+      "spellIds": [
+        120
+      ],
+      "name": "Cone of Cold",
+      "kind": "trainer",
+      "importance": 84,
+      "how": "Learn from a Mage trainer; damage and slow nearby enemies.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 28,
+      "spellIds": [
+        759
+      ],
+      "name": "Conjure Mana Agate",
+      "kind": "trainer",
+      "importance": 84,
+      "how": "Learn from a Mage trainer; prepare a Mana gem before fighting.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 30,
+      "spellIds": [
+        3565
+      ],
+      "name": "Teleport: Darnassus",
+      "kind": "trainer",
+      "importance": 86,
+      "races": [
+        "Human",
+        "Gnome",
+        "Skyborne"
+      ],
+      "how": "Visit the portal trainer in Darnassus; carry a Rune of Teleportation.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 30,
+      "spellIds": [
+        3566
+      ],
+      "name": "Teleport: Thunder Bluff",
+      "kind": "trainer",
+      "importance": 86,
+      "races": [
+        "Orc",
+        "Troll",
+        "Scourge"
+      ],
+      "how": "Visit the portal trainer in Thunder Bluff; carry a Rune of Teleportation.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 34,
+      "spellIds": [
+        6117
+      ],
+      "name": "Mage Armor",
+      "kind": "trainer",
+      "importance": 82,
+      "how": "Learn from a Mage trainer; use for better Mana sustain.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 40,
+      "spellIds": [
+        401502
+      ],
+      "name": "Frostfire Bolt",
+      "kind": "trainer",
+      "importance": 80,
+      "how": "Learn from a Mage trainer; combines Fire and Frost damage support.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 40,
+      "spellIds": [
+        11416
+      ],
+      "name": "Portal: Ironforge",
+      "kind": "trainer",
+      "importance": 68,
+      "races": [
+        "Human",
+        "Gnome",
+        "Skyborne"
+      ],
+      "how": "Visit the portal trainer in Ironforge; carry a Rune of Portals.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 40,
+      "spellIds": [
+        11417
+      ],
+      "name": "Portal: Orgrimmar",
+      "kind": "trainer",
+      "importance": 68,
+      "races": [
+        "Orc",
+        "Troll",
+        "Scourge"
+      ],
+      "how": "Visit the portal trainer in Orgrimmar; carry a Rune of Portals.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 40,
+      "spellIds": [
+        10059
+      ],
+      "name": "Portal: Stormwind",
+      "kind": "trainer",
+      "importance": 68,
+      "races": [
+        "Human",
+        "Gnome",
+        "Skyborne"
+      ],
+      "how": "Visit the portal trainer in Stormwind; carry a Rune of Portals.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 40,
+      "spellIds": [
+        11418
+      ],
+      "name": "Portal: Undercity",
+      "kind": "trainer",
+      "importance": 68,
+      "races": [
+        "Orc",
+        "Troll",
+        "Scourge"
+      ],
+      "how": "Visit the portal trainer in Undercity; carry a Rune of Portals.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 50,
+      "spellIds": [
+        11419
+      ],
+      "name": "Portal: Darnassus",
+      "kind": "trainer",
+      "importance": 68,
+      "races": [
+        "Human",
+        "Gnome",
+        "Skyborne"
+      ],
+      "how": "Visit the portal trainer in Darnassus; carry a Rune of Portals.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 50,
+      "spellIds": [
+        11420
+      ],
+      "name": "Portal: Thunder Bluff",
+      "kind": "trainer",
+      "importance": 68,
+      "races": [
+        "Orc",
+        "Troll",
+        "Scourge"
+      ],
+      "how": "Visit the portal trainer in Thunder Bluff; carry a Rune of Portals.",
+      "confidence": "H"
+    },
+    {
+      "class": "MAGE",
+      "level": 60,
+      "spellIds": [
+        28272
+      ],
+      "name": "Polymorph: Pig",
+      "kind": "quest",
+      "importance": 15,
+      "how": "Archmage Xylem in Azshara: complete Warlord Krellian, then Fragmented Magic; cosmetic Polymorph variant.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 1,
+      "spellIds": [
+        688
+      ],
+      "name": "Summon Imp",
+      "kind": "quest",
+      "importance": 98,
+      "races": [
+        "Gnome"
+      ],
+      "how": "Alamar Grimm in Anvilmar: complete Beginnings with 3 Feather Charms.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 1,
+      "spellIds": [
+        688
+      ],
+      "name": "Summon Imp",
+      "kind": "quest",
+      "importance": 98,
+      "races": [
+        "Human"
+      ],
+      "how": "Drusilla La Salle in Northshire: complete The Stolen Tome.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 1,
+      "spellIds": [
+        688
+      ],
+      "name": "Summon Imp",
+      "kind": "quest",
+      "importance": 98,
+      "races": [
+        "Orc",
+        "Troll"
+      ],
+      "how": "Ruzan in the Valley of Trials: complete Vile Familiars with 6 Vile Familiar Heads.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 1,
+      "spellIds": [
+        688
+      ],
+      "name": "Summon Imp",
+      "kind": "quest",
+      "importance": 98,
+      "races": [
+        "Scourge"
+      ],
+      "how": "Venya Marthand in Deathknell: complete Piercing the Veil with 3 Rattlecage Skulls.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 4,
+      "spellIds": [
+        172
+      ],
+      "name": "Corruption",
+      "kind": "trainer",
+      "importance": 94,
+      "how": "Learn from a Warlock trainer; keep its damage-over-time active on durable enemies.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 6,
+      "spellIds": [
+        1454
+      ],
+      "name": "Life Tap",
+      "kind": "trainer",
+      "importance": 96,
+      "how": "Learn from a Warlock trainer; exchange spare Health for Mana.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 8,
+      "spellIds": [
+        980
+      ],
+      "name": "Bane of Agony",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Learn from a Warlock trainer; a damaging Bane can coexist with a utility Curse.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 8,
+      "spellIds": [
+        5782
+      ],
+      "name": "Fear",
+      "kind": "trainer",
+      "importance": 86,
+      "how": "Learn from a Warlock trainer; avoid sending feared enemies into other packs.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 10,
+      "spellIds": [
+        6201
+      ],
+      "name": "Create Healthstone",
+      "kind": "trainer",
+      "importance": 90,
+      "how": "Learn from a Warlock trainer; keep a Healthstone ready for emergency healing.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 10,
+      "spellIds": [
+        1120
+      ],
+      "name": "Drain Soul",
+      "kind": "trainer",
+      "importance": 95,
+      "how": "Learn from a Warlock trainer; use on nontrivial enemies to collect Soul Shards.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 10,
+      "spellIds": [
+        697
+      ],
+      "name": "Summon Voidwalker",
+      "kind": "quest",
+      "importance": 99,
+      "races": [
+        "Human",
+        "Gnome"
+      ],
+      "how": "Gakin the Darkbinder beneath the Slaughtered Lamb, Stormwind; recover Surena's Choker and finish The Binding. Gnomes can start with Lago Blackwrench in Ironforge.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 10,
+      "spellIds": [
+        697
+      ],
+      "name": "Summon Voidwalker",
+      "kind": "quest",
+      "importance": 99,
+      "races": [
+        "Orc",
+        "Troll"
+      ],
+      "how": "Gan'rul Bloodeye, Cleft of Shadow, Orgrimmar; recover the Tablet of Verga from Skull Rock and finish The Binding.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 10,
+      "spellIds": [
+        697
+      ],
+      "name": "Summon Voidwalker",
+      "kind": "quest",
+      "importance": 99,
+      "races": [
+        "Scourge"
+      ],
+      "how": "Carendin Halgar, Temple of the Damned, Undercity; recover Egalin's Grimoire and finish The Binding.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 12,
+      "spellIds": [
+        755
+      ],
+      "name": "Health Funnel",
+      "kind": "trainer",
+      "importance": 86,
+      "how": "Learn from a Warlock trainer; channel to keep your Demon alive.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 14,
+      "spellIds": [
+        689
+      ],
+      "name": "Drain Life",
+      "kind": "trainer",
+      "importance": 91,
+      "how": "Learn from a Warlock trainer; recover Health while your DoTs and Demon attack.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 16,
+      "spellIds": [
+        5697
+      ],
+      "name": "Unending Breath",
+      "kind": "trainer",
+      "importance": 58,
+      "how": "Learn from a Warlock trainer before underwater questing.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 18,
+      "spellIds": [
+        693
+      ],
+      "name": "Create Soulstone",
+      "kind": "trainer",
+      "importance": 91,
+      "how": "Learn from a Warlock trainer; protect yourself or the group healer before combat.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 18,
+      "spellIds": [
+        5676
+      ],
+      "name": "Searing Pain",
+      "kind": "trainer",
+      "importance": 78,
+      "how": "Learn from a Warlock trainer; it supports Demonic Brand once talented.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 20,
+      "spellIds": [
+        440892
+      ],
+      "name": "Curse of the Elements",
+      "kind": "trainer",
+      "importance": 85,
+      "how": "Learn the Forever version from a Warlock trainer; improves Magic damage taken.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 20,
+      "spellIds": [
+        706
+      ],
+      "name": "Demon Armor",
+      "kind": "trainer",
+      "importance": 83,
+      "how": "Learn from a Warlock trainer; replace Demon Skin and refresh after death.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 20,
+      "spellIds": [
+        5740
+      ],
+      "name": "Rain of Fire",
+      "kind": "trainer",
+      "importance": 68,
+      "how": "Learn from a Warlock trainer; ranged area damage while the tank holds enemies.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 20,
+      "spellIds": [
+        698
+      ],
+      "name": "Ritual of Summoning",
+      "kind": "trainer",
+      "importance": 87,
+      "how": "Learn from a Warlock trainer; bring a Soul Shard and two assisting group members.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 20,
+      "spellIds": [
+        712,
+        713
+      ],
+      "name": "Summon Succubus or Summon Incubus",
+      "kind": "quest",
+      "importance": 92,
+      "races": [
+        "Human",
+        "Gnome"
+      ],
+      "how": "Gakin in Stormwind: follow the Heartswood or What Is Love? chain through Takar the Seer; finish its summoning ritual.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 20,
+      "spellIds": [
+        712,
+        713
+      ],
+      "name": "Summon Succubus or Summon Incubus",
+      "kind": "quest",
+      "importance": 92,
+      "races": [
+        "Orc",
+        "Troll"
+      ],
+      "how": "Gan'rul and Cazul in Orgrimmar: choose the Dogran pendant route or Love Hurts / Wish You Were Here; finish The Binding.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 20,
+      "spellIds": [
+        712,
+        713
+      ],
+      "name": "Summon Succubus or Summon Incubus",
+      "kind": "quest",
+      "importance": 92,
+      "races": [
+        "Scourge"
+      ],
+      "how": "Carendin and Godrick Farsan in Undercity: choose Hearts of the Pure or Hearts of the Lovers; finish The Binding.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 26,
+      "spellIds": [
+        1714
+      ],
+      "name": "Curse of Tongues",
+      "kind": "trainer",
+      "importance": 65,
+      "how": "Learn from a Warlock trainer; slow dangerous enemy casting.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 28,
+      "spellIds": [
+        710
+      ],
+      "name": "Banish",
+      "kind": "trainer",
+      "importance": 79,
+      "how": "Learn from a Warlock trainer; isolate an extra Demon or Elemental.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 28,
+      "spellIds": [
+        6366
+      ],
+      "name": "Create Firestone",
+      "kind": "trainer",
+      "importance": 72,
+      "how": "Learn from a Warlock trainer; create the weapon imbue.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 30,
+      "spellIds": [
+        1949
+      ],
+      "name": "Hellfire",
+      "kind": "trainer",
+      "importance": 63,
+      "how": "Learn from a Warlock trainer; use close-range area damage only with safe healing support.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 30,
+      "spellIds": [
+        1098
+      ],
+      "name": "Subjugate Demon",
+      "kind": "trainer",
+      "importance": 65,
+      "how": "Learn from a Warlock trainer; temporarily control an eligible Demon.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 30,
+      "spellIds": [
+        691
+      ],
+      "name": "Summon Felhunter",
+      "kind": "quest",
+      "importance": 92,
+      "how": "Take Seeking Strahad from your capital Warlock trainer; meet Strahad Farsan in Ratchet and complete the Tome of the Cabal summoning chain.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 32,
+      "spellIds": [
+        6229
+      ],
+      "name": "Shadow Ward",
+      "kind": "trainer",
+      "importance": 64,
+      "how": "Learn from a Warlock trainer; absorb incoming Shadow damage.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 36,
+      "spellIds": [
+        2362
+      ],
+      "name": "Create Spellstone",
+      "kind": "trainer",
+      "importance": 77,
+      "how": "Learn from a Warlock trainer; useful weapon imbue for Shadow-focused builds.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 40,
+      "spellIds": [
+        5484
+      ],
+      "name": "Howl of Terror",
+      "kind": "trainer",
+      "importance": 82,
+      "how": "Learn from a Warlock trainer; escape multiple nearby enemies without pulling extra packs.",
+      "confidence": "H"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 40,
+      "spellIds": [
+        5784
+      ],
+      "name": "Summon Felsteed",
+      "kind": "quest",
+      "importance": 98,
+      "how": "Speak to Strahad Farsan near Ratchet for Summon Felsteed (quest 4490).",
+      "confidence": "M"
+    },
+    {
+      "class": "WARLOCK",
+      "level": 42,
+      "spellIds": [
+        6789
+      ],
+      "name": "Death Coil",
+      "kind": "trainer",
+      "importance": 91,
+      "how": "Learn from a Warlock trainer; emergency heal and short Horror control.",
+      "confidence": "H"
+    }
+  ],
+  "procSpells": [],
+  "raceOnlyQuests": {
+    "Ju-Ju Heaps": [
+      "Orc",
+      "Troll"
+    ],
+    "The Balnir Farmstead": [
+      "Scourge"
+    ],
+    "Mirror Lake": [
+      "Human"
+    ],
+    "Mage-tastic Gizmonitor": [
+      "Gnome"
+    ],
+    "Boughs in the Wind": [
+      "Skyborne"
+    ],
+    "Spellfire Robes": [
+      "Orc",
+      "Troll",
+      "Scourge"
+    ],
+    "Nether-lace Garment": [
+      "Orc",
+      "Troll",
+      "Scourge"
+    ],
+    "Manaweave Robe": [
+      "Human",
+      "Gnome",
+      "Skyborne"
+    ],
+    "Astral Knot Garment": [
+      "Human",
+      "Gnome",
+      "Skyborne"
+    ]
+  },
+  "notes": [
+    "Coverage is partial, not slider-verified. Icy Veins guide pages were blocked by Cloudflare in the browser, including Frost Mage, Arcane Mage and Affliction Warlock; Wowhead's Arcane guide returned HTTP 403 in the browser. Public text extraction succeeded. No per-level slider traversal or underlying JavaScript order was recovered. Unknown or conflicting talent points are deliberately '*', never reconstructed from prerequisites.",
+    "All nine requested spec keys have one order entry for each level 10 through 60. These are ordinary level-up points, without Legacy Talented bonus points or any assumed respec. The tree field is the build's primary in-game tree, not the tree containing every selected talent.",
+    "Warlock orders use the explicit level ranges in the Icy Veins Leveling Talent Build sections: https://www.icy-veins.com/wow-forever/affliction-warlock-leveling ; https://www.icy-veins.com/wow-forever/demonology-warlock-leveling ; https://www.icy-veins.com/wow-forever/destruction-warlock-leveling . Affliction and Destruction each attribute every point. Demonology level 60 is '*': its Suppression paragraph says to finish that talent at 60, while its final paragraph says Curse of Exhaustion at 60. Do not silently choose one.",
+    "Mage orders retain only directly attributable choices from Icy Veins text: Frost begins with two Precision points, then Wand Specialization, and explicitly learns Ice Lance at 27; Arcane explicitly ends with Heating Up at 60. Fire's text lists priorities but no unambiguous per-level order. Sources: https://www.icy-veins.com/wow-forever/frost-mage-leveling ; https://www.icy-veins.com/wow-forever/arcane-mage-leveling ; https://www.icy-veins.com/wow-forever/fire-mage-leveling . Do not fill remaining positions from a Classic tree or a level-60 allocation.",
+    "Guide metadata is not uniform: the extracted Frost leveling page reports November 4, while other pages retain October dates and some inconsistent relative ages. Database pages identify Forever build 1.60.1.70532 and sometimes later hotfixes. This research does not certify every talent against the launch client or later hotfixes.",
+    "Battlemage is an experimental melee-oriented Mage playstyle using weapon/scroll interactions, not a fourth Mage talent tree. Icy Veins discusses Coldflame Saber and frozen-target interactions in https://www.icy-veins.com/wow-forever/news/mages-might-unlock-a-new-playstyle-in-wow-forever/ . Its class hub lists only Arcane, Fire and Frost: https://www.icy-veins.com/wow-forever/mage-class-overview . GearQuest's battlemage_frost, battlemage_fire and battlemage_arcane keys therefore retain Frost, Fire and Arcane as tree names.",
+    "No dedicated Icy Veins or Wowhead battlemage leveling order was found in their Mage hubs, retrieved leveling guides or targeted searches. All three battlemage orders remain '*'; ranged Mage orders were not copied onto them. Community Frost-melee experiments exist, but the beta-era post is not a verified launch-level 10-60 order: https://eu.forums.blizzard.com/en/wow/t/deep-dive-into-battlemage-in-wow-forever-aka-melee-mage/632020 .",
+    "Battlemage-specific findings: Comprehend Scroll (1296017) is trained at level 6. Scroll of Imbue Iceknife (item 277488) requires level 16 and uses Imbue Iceknife (spell 1302284), an item-use dagger enchant rather than a permanently learned class spell. Coldflame Saber (item 276631) requires level 21 and equips Frostburn (1300128); it is made from Blade of Silverlaine with Scroll of the Saber. Sources: https://db.icy-veins.com/wow-forever/spells/1296017 ; https://db.icy-veins.com/wow-forever/items/277488 ; https://db.icy-veins.com/wow-forever/spells/1302284 ; https://db.icy-veins.com/wow-forever/items/276631 ; https://www.method.gg/wow-forever/mage-comprehension-and-study-guide-in-wow-forever-how-scrolls-work-and-all-scroll-effects . Item enchants and equipment effects are intentionally not mislabeled as quest/trainer spell milestones.",
+    "Ice Lance is talent-dependent: the verified level-20 spell is 1312002, while the frequently linked 400640 requires level 28 and 1240047 requires level 56. Icy Veins' Frost leveling route chooses Ice Lance at 27 after its Arcane detour. Do not use a high-rank spell ID as the initial unlock or advertise a universal trainer unlock at level 20. Sources: https://db.icy-veins.com/wow-forever/spells/1312002 ; https://db.icy-veins.com/wow-forever/spells/400640 ; https://db.icy-veins.com/wow-forever/spells/1240047 . Talent-acquired abilities are omitted from spellMilestones because the requested kind enum only permits quest or trainer.",
+    "spellMilestones uses first-unlock spell IDs, not the highest rank linked by a guide. Individual ID, name and requirement provenance is in mage_warlock_evidence.json. Core Mage utility is corroborated by https://www.wowhead.com/forever/guide/classes/mage/arcane/dps-leveling-tips ; Warlock trainer levels are corroborated by the Icy Veins leveling guides. This is a selected leveling-milestone set, not every rank of every spell.",
+    "Remove Lesser Curse is an unresolved source discrepancy: Icy Veins database spell 475 requires level 18, but Wowhead's Mage leveling table says 20. The milestone follows the database with confidence M and tells the player to check the trainer. Sources: https://db.icy-veins.com/wow-forever/spells/475 ; https://www.wowhead.com/forever/guide/classes/mage/arcane/dps-leveling-tips .",
+    "Teleports and portals are separate trainer unlocks, not one interchangeable spell: Stormwind/Ironforge/Undercity/Orgrimmar teleport at 20 and portal at 40; Darnassus/Thunder Bluff teleport at 30 and portal at 50. Rows use each individual verified ID and class-eligible faction races. Skyborne is Alliance-only for Mage; Orc Mage is included among Horde Mages. These race tokens match the addon's existing convention, including Scourge for Undead and Skyborne; they were not reverified through a live client UnitRace call.",
+    "Warlock demon quests are verified at Imp 1, Voidwalker 10, Succubus or Incubus 20, Felhunter 30. spellIds [712,713] means either summon satisfies the level-20 milestone; do not require both. Troll Warlocks share the Orc route: Ruzan in the Valley of Trials for Imp, Gan'rul Bloodeye in Orgrimmar for Voidwalker, and Gan'rul/Cazul for the level-20 chains. Source: https://www.icy-veins.com/wow-forever/warlock-class-quests .",
+    "Orc Mages share Troll early class quests: Uthel'nay in Orgrimmar gives Speak with Un'thuwa; Un'Thuwa in Durotar gives Ju-Ju Heaps. At 15 the Horde robe chain uses Anastasia Hartwell/Josef Gregorian in Undercity, and at 26 the garment chain uses Deino/Kil'hala. These are gear rewards, not required ability unlocks. Source: https://www.icy-veins.com/wow-forever/mage-class-quests .",
+    "raceOnlyQuests includes the race-specific level-10 Mage rewards and the faction-shared robe/garment reward quest names, with all eligible Mage races including the new Orc and Skyborne options. Restrict the named quest source, not an item globally: several races receive the same Ley Orb/Ley Staff from differently named quests. Warlock The Binding is intentionally not race-filtered by bare name because multiple race and demon chains reuse it. Source: https://www.icy-veins.com/wow-forever/mage-class-quests ; https://www.icy-veins.com/wow-forever/warlock-class-quests .",
+    "Summon Felsteed (5784) requires level 40 in the Forever database; Wowhead Forever quest 4490 teaches it through Strahad Farsan in Ratchet. Included as confidence M because the Icy Veins Warlock class-quest guide stops at Felhunter and the complete live acquisition chain was not tested. Sources: https://db.icy-veins.com/wow-forever/spells/5784 ; https://www.wowhead.com/forever/quest=4490/summon-felsteed .",
+    "Polymorph: Pig (player-cast spell 28272) is the level-60 Fragmented Magic cosmetic reward from Archmage Xylem; the guide links teaching spell 28285, which must not be used for IsSpellKnown checks. Normal Polymorph (118) is trained at 8. Thus the Mage quest guide's general statement that no abilities require class quests should be read as no essential combat ability, not literally no spell reward. Sources: https://www.icy-veins.com/wow-forever/mage-class-quests ; https://db.icy-veins.com/wow-forever/spells/28285 ; https://db.icy-veins.com/wow-forever/spells/28272 .",
+    "procSpells is intentionally empty for the addon's current usability-gated detector. Missile Barrage modifies Arcane Missiles, Nightfall/Shadow Trance modifies Shadow Bolt, Heating Up modifies Pyroblast, and Fingers of Frost modifies Frost attacks; the consumer spells are not proven unusable outside a proc. Adding those consumer spells would count ordinary casts/readiness as procs. The Missile Barrage aura 400589 has a verified 15-second duration and Shadow Trance 17941 has a verified 10-second duration, but these auras are not player-cast spell IDs suitable for UNIT_SPELLCAST_SUCCEEDED consumption tracking. Sources: https://db.icy-veins.com/wow-forever/spells/400589 ; https://db.icy-veins.com/wow-forever/spells/17941 ; https://www.icy-veins.com/wow-forever/mage-class-overview ; https://www.icy-veins.com/wow-forever/warlock-class-overview . A future aura-aware detector needs separate trigger-aura and consumer-spell fields plus live API permission checks.",
+    "Warlock Curse of the Elements uses the verified Forever rank-1 ID 440892 at level 20, not the unverified legacy ID 1490. Sources: https://db.icy-veins.com/wow-forever/spells/440892 ; https://www.icy-veins.com/wow-forever/affliction-warlock-leveling .",
+    "importance scores are editorial addon priorities, not measurements from the sources. Confidence H means the unlock and ID are directly supported by Forever sources; M marks a source conflict or untested acquisition detail. No entry is claimed to have been verified by playing the launch client."
+  ]
+}

@@ -5,7 +5,7 @@ A leveling auditor for **World of Warcraft: Forever**, for every class and spec.
 Play, type `/reload` (or `/coach`), and get a ranked list of what's slowing you down, sorted by what's cheapest and closest:
 
 - **Gear**: upgrades already in your bags first, then the best piece for your level and spec ranked by where it is: your current zone, the next zones on your leveling route (Journey guide), dungeons, then everything else. Items you can't get are left out: the other faction's zones, reputation you don't have, other races' class quests, items not in Forever. Unknown items are shown as "not checked", never as bad gear.
-- **Build**: unspent talent points with the next pick from a leveling guide (Protection Warrior: Icy Veins), class milestones with verified spell IDs (Defensive Stance, Revenge, Shield Block, Bear Form, pets, demons...), skills left at your class trainer.
+- **Build**: unspent talent points with the next pick from Icy Veins' leveling build for your spec (all 9 classes, 28 specs, levels 10-60), class quests and trainer skills with verified spell IDs for every class, including race-specific quest routes (e.g. Skyborne Bear Form on Zephras Isle), skills left at your class trainer.
 - **Dungeons**: which dungeons fit your level and the quests to pick up before you go (from ForeverDungeonJournal).
 - **Play** (estimates): deaths per active hour, short stops out of combat, rage near cap, and how often you cast Revenge/Overpower/Victory Rush when they light up. WoW Forever hides health and the combat log from addons, so these are labelled as estimates.
 - **Next**: bag space, empty bag slots, rested XP.

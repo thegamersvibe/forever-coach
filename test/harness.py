@@ -195,7 +195,7 @@ show(c)
 texts = [f.text for f in findings(c)]
 check(any('2 unspent talent points' in t for t in texts), 'unspent talents detected')
 check(not any('Defensive Stance' in t for t in texts), 'known Defensive Stance not flagged')
-check(any(t.startswith('Revenge not learned') for t in texts), 'Revenge (14) flagged as missing for prot')
+check(any('not learned' in t and 'Revenge' in t for t in texts), 'Revenge (14) flagged as missing for prot')
 check(c.lastError is None, f'no internal error ({c.lastError and c.lastError.err})')
 check(all(1 <= f.impact <= 100 for f in findings(c)), 'impacts clamped to 1..100')
 tp = c.talentPlan
@@ -349,6 +349,49 @@ if GQ_SRC:
     L.execute('table.insert(GearQuest.Data.warriorPicks, 1, { "x", "MainHand", "1", 60, 1, "protection", "Alliance", 5 }); table.insert(GearQuest.Data.warriorPicks, 1, {})')
     refresh(FC)
     check(c.lastError is None and c.findings is not None and len(findings(c)) > 0, 'malformed GearQuest rows ignored')
+
+# 8. Baleful: Skyborne druid, level 10 on Zephras Isle, Bear Form not learned yet
+print('== scenario: level 10 Skyborne druid on Zephras Isle')
+L, G, FC, c = client({'class': 'DRUID', 'race': 'Skyborne', 'faction': 'Alliance', 'level': 10, 'zone': 'Zephras Isle', 'unspent': 1,
+                      'known': {5487: False, 768: False}, 'talents': [['Balance', {}], ['Feral Combat', {}], ['Restoration', {}]]}, gq=False)
+show(c, 10)
+t = [(f.text or '') + ' | ' + (f.fix or '') for f in findings(c)]
+bear = [x for x in t if x.startswith('Bear Form')]
+check(len(bear) == 1 and "Urs'endris" in bear[0], f'Skyborne gets the Zephras Isle Bear Form quest, once ({bear})')
+check(not any('Darnassus' in x or 'Thunder Bluff' in x for x in bear), 'no Night Elf/Tauren Bear Form route for Skyborne')
+check(not any(x.startswith('Cat Form') for x in t), 'Cat Form (20) not nagged at 10')
+route = FC.Route.ForPlayer(FC.Route, c.snapshot)
+check(route['Zephras Isle'] is not None, 'Zephras Isle on the Skyborne route')
+check(c.lastError is None, f'no internal error ({c.lastError and c.lastError.err})')
+L.execute('ForeverCoach:Char().specOverride = "feral"'); refresh(FC)
+check(c.talentPlan is not None and 'Feral' in c.talentPlan.source, 'feral talent plan available')
+check(any('Ferocity' in (f.fix or '') for f in findings(c)), 'unspent point names the next Feral talent (Ferocity)')
+
+# 9. Every class and spec: plan builds, no errors, milestone tips only for own class
+import json as _json
+RULES = _json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'rules', 'rules.json'), encoding='utf-8'))
+TREES = {}
+for key, b in RULES['talentBuilds'].items():
+    TREES.setdefault(key.split(':')[0], set()).add(b['tree'])
+print('== sweep: every class/spec at levels 12, 30, 55')
+sweep_fail = []
+for key, b in sorted(RULES['talentBuilds'].items()):
+    cls, spec = key.split(':')
+    race = {'PALADIN': 'Human', 'SHAMAN': 'Orc', 'DRUID': 'Skyborne', 'HUNTER': 'Skyborne'}.get(cls, 'Human' if cls != 'WARLOCK' else 'Gnome')
+    fac = 'Horde' if race == 'Orc' else 'Alliance'
+    for lvl in (12, 30, 55):
+        spent = {}
+        for L_, name in b['order']:
+            if L_ <= lvl: spent[name] = spent.get(name, 0) + 1
+        tabs = [[tree, ({n: r for n, r in spent.items()} if tree == b['tree'] else {})] for tree in sorted(TREES[cls])]
+        L, G, FC, c = client({'class': cls, 'race': race, 'faction': fac, 'level': lvl, 'zone': 'Ashenvale', 'unspent': 0, 'talents': tabs}, gq=False)
+        L.execute(f'ForeverCoach:Char().specOverride = "{spec}"'); refresh(FC)
+        ok = c.lastError is None and c.talentPlan is not None
+        other = [f.text for f in findings(c) if any(m['name'] in (f.text or '') for m in RULES['spellMilestones'] if m['class'] != cls and m['name'] not in ('Shoot',))
+                 and not any(m['name'] in (f.text or '') for m in RULES['spellMilestones'] if m['class'] == cls)]
+        if not ok or other:
+            sweep_fail.append((key, lvl, c.lastError and c.lastError.err, other[:2]))
+check(not sweep_fail, f'{len(RULES["talentBuilds"])} specs x 3 levels: plan built, no errors, no other-class tips {sweep_fail[:4]}')
 
 print('ALL OK' if not fails else f'{len(fails)} FAILED')
 sys.exit(1 if fails else 0)

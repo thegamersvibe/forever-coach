@@ -1,0 +1,407 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.icy-veins.com/wow-forever/arms-warrior-leveling",
+      "title": "World of Warcraft: Forever Arms Warrior Leveling Guide - WoW Forever - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 2,
+      "url": "https://www.icy-veins.com/wow-forever/protection-warrior-leveling",
+      "title": "World of Warcraft: Forever Protection Warrior Leveling Guide - WoW Forever - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 3,
+      "url": "https://www.icy-veins.com/wow-forever/warrior-class-quests",
+      "title": "World of Warcraft: Forever Warrior Class Quests Guide - WoW Forever - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 4,
+      "url": "https://www.icy-veins.com/wow-forever/paladin-class-quests",
+      "title": "World of Warcraft: Forever Paladin Class Quests Guide - WoW Forever - Icy Veins",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 5,
+      "url": "https://www.icy-veins.com/wow-forever/fury-warrior-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 6,
+      "url": "https://www.icy-veins.com/wow-forever/retribution-paladin-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 7,
+      "url": "https://www.icy-veins.com/wow-forever/holy-paladin-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 8,
+      "url": "https://www.icy-veins.com/wow-forever/protection-paladin-leveling",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 9,
+      "url": "https://www.method.gg/wow-forever/wow-forever-paladin-leveling-guide-and-talents",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 10,
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/retribution/dps-leveling-tips",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 11,
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/protection/tank-leveling-tips",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 12,
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/dps-leveling-tips",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 13,
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/fury/dps-leveling-tips",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 14,
+      "url": "https://www.icy-veins.com/wow-forever/retribution-paladin-melee-dps-pve-spec-builds-talents",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 15,
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/holy/healer-leveling-tips",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 16,
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/protection/tank-leveling-tips",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 17,
+      "url": "https://db.icy-veins.com/wow-forever/spells/71",
+      "title": "Defensive Stance - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 18,
+      "url": "https://db.icy-veins.com/wow-forever/spells/355",
+      "title": "Taunt - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 19,
+      "url": "https://db.icy-veins.com/wow-forever/spells/7386",
+      "title": "Sunder Armor - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 20,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2565",
+      "title": "Shield Block - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 21,
+      "url": "https://db.icy-veins.com/wow-forever/spells/2458",
+      "title": "Berserker Stance - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 22,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1310185",
+      "title": "Tactical Mastery - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 23,
+      "url": "https://db.icy-veins.com/wow-forever/spells/679",
+      "title": "Holy Strike - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 24,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20217",
+      "title": "Blessing of Kings - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 25,
+      "url": "https://db.icy-veins.com/wow-forever/spells/25780",
+      "title": "Righteous Fury - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 26,
+      "url": "https://db.icy-veins.com/wow-forever/spells/20375",
+      "title": "Seal of Command - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 27,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1279399",
+      "title": "Summon Warhorse - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 28,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5302",
+      "title": "Defensive State - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 29,
+      "url": "https://db.icy-veins.com/wow-forever/spells/5301",
+      "title": "Defensive State (DND) - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 30,
+      "url": "https://db.icy-veins.com/wow-forever/spells/402975",
+      "title": "Victorious - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 31,
+      "url": "https://db.icy-veins.com/wow-forever/spells/402974",
+      "title": "Victorious State (DND) - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 32,
+      "url": "https://db.icy-veins.com/wow-forever/spells/72",
+      "title": "Shield Bash - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 33,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1680",
+      "title": "Whirlwind - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 34,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6552",
+      "title": "Pummel - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 35,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1719",
+      "title": "Recklessness - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 36,
+      "url": "https://db.icy-veins.com/wow-forever/spells/871",
+      "title": "Shield Wall - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 37,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1311649",
+      "title": "Seal of Fury - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 38,
+      "url": "https://db.icy-veins.com/wow-forever/spells/26573",
+      "title": "Consecration - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 39,
+      "url": "https://db.icy-veins.com/wow-forever/spells/19750",
+      "title": "Flash of Light - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 40,
+      "url": "https://db.icy-veins.com/wow-forever/spells/24275",
+      "title": "Hammer of Wrath - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 41,
+      "url": "https://db.icy-veins.com/wow-forever/spells/498",
+      "title": "Divine Protection - Spell - World of Warcraft: Forever - Icy Veins Database",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 42,
+      "url": "https://db.icy-veins.com/wow-forever/items/267369",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 43,
+      "url": "https://db.icy-veins.com/wow-forever/items/268484",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 44,
+      "url": "https://db.icy-veins.com/wow-forever/items/277205",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 45,
+      "url": "https://db.icy-veins.com/wow-forever/quests/1785",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 46,
+      "url": "https://db.icy-veins.com/wow-forever/quests/1788",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 47,
+      "url": "https://db.icy-veins.com/wow-forever/quests/78093",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 48,
+      "url": "https://db.icy-veins.com/wow-forever/quests/94441",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 49,
+      "url": "https://db.icy-veins.com/wow-forever/quests/95140",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 50,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1282733",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 51,
+      "url": "https://db.icy-veins.com/wow-forever/spells/1296534",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 52,
+      "url": "https://db.icy-veins.com/wow-forever/spells/13819",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 53,
+      "url": "https://db.icy-veins.com/wow-forever/spells/23214",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 54,
+      "url": "https://db.icy-veins.com/wow-forever/spells/402927",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 55,
+      "url": "https://db.icy-veins.com/wow-forever/spells/6572",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 56,
+      "url": "https://db.icy-veins.com/wow-forever/spells/7328",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 57,
+      "url": "https://db.icy-veins.com/wow-forever/spells/7384",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 58,
+      "url": "https://wago.tools/db2/ChrRaces/csv?build=1.60.1.70707",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 59,
+      "url": "https://wago.tools/db2/Mount/csv?build=1.60.1.70707",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 60,
+      "url": "https://wago.tools/db2/PlayerCondition/csv?build=1.60.1.70707",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 61,
+      "url": "https://wago.tools/db2/SpellName/csv?build=1.60.1.70790",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 62,
+      "url": "https://worldofwarcraft.blizzard.com/en-us/news/24304075",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 63,
+      "url": "https://www.method.gg/dfc/ForeverTalents.min.js?version=1.60.1-2nov&v=1",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 64,
+      "url": "https://www.method.gg/dfc/ForeverTalentsData-1.60.1-2nov.json",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 65,
+      "url": "https://www.method.gg/wow-forever/class-guides/holy-paladin/talents",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 66,
+      "url": "https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents",
+      "title": "",
+      "accessed": "2026-11-05"
+    },
+    {
+      "id": 67,
+      "url": "https://www.wowhead.com/forever/quest=1661/the-tome-of-nobility",
+      "title": "",
+      "accessed": "2026-11-05"
+    }
+  ]
+}

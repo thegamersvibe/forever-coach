@@ -1,0 +1,5938 @@
+{
+ "DRUID:balance": {
+  "source": "Icy Veins: Balance Druid leveling",
+  "url": "https://www.icy-veins.com/wow-forever/balance-druid-leveling",
+  "guideVersion": "70755-6b631983",
+  "tree": "Balance",
+  "order": [
+   [
+    10,
+    "Improved Wrath"
+   ],
+   [
+    11,
+    "Improved Wrath"
+   ],
+   [
+    12,
+    "Improved Wrath"
+   ],
+   [
+    13,
+    "Improved Wrath"
+   ],
+   [
+    14,
+    "Improved Wrath"
+   ],
+   [
+    15,
+    "Nature's Focus"
+   ],
+   [
+    16,
+    "Nature's Focus"
+   ],
+   [
+    17,
+    "Nature's Focus"
+   ],
+   [
+    18,
+    "Nature's Focus"
+   ],
+   [
+    19,
+    "Nature's Focus"
+   ],
+   [
+    20,
+    "Reflection"
+   ],
+   [
+    21,
+    "Reflection"
+   ],
+   [
+    22,
+    "Reflection"
+   ],
+   [
+    23,
+    "Nature's Reach"
+   ],
+   [
+    24,
+    "Nature's Reach"
+   ],
+   [
+    25,
+    "Nature's Majesty"
+   ],
+   [
+    26,
+    "Nature's Majesty"
+   ],
+   [
+    27,
+    "Moonglow"
+   ],
+   [
+    28,
+    "Nature's Splendor"
+   ],
+   [
+    29,
+    "Moonglow"
+   ],
+   [
+    30,
+    "Moonglow"
+   ],
+   [
+    31,
+    "Improved Moonfire"
+   ],
+   [
+    32,
+    "Improved Moonfire"
+   ],
+   [
+    33,
+    "Insect Swarm"
+   ],
+   [
+    34,
+    "Genesis"
+   ],
+   [
+    35,
+    "Genesis"
+   ],
+   [
+    36,
+    "Genesis"
+   ],
+   [
+    37,
+    "Genesis"
+   ],
+   [
+    38,
+    "Nature's Grace"
+   ],
+   [
+    39,
+    "Genesis"
+   ],
+   [
+    40,
+    "Naturalist"
+   ],
+   [
+    41,
+    "Naturalist"
+   ],
+   [
+    42,
+    "Naturalist"
+   ],
+   [
+    43,
+    "Naturalist"
+   ],
+   [
+    44,
+    "Naturalist"
+   ],
+   [
+    45,
+    "Eclipse"
+   ],
+   [
+    46,
+    "Eclipse"
+   ],
+   [
+    47,
+    "Eclipse"
+   ],
+   [
+    48,
+    "Moonfury"
+   ],
+   [
+    49,
+    "Moonfury"
+   ],
+   [
+    50,
+    "Moonfury"
+   ],
+   [
+    51,
+    "Moonfury"
+   ],
+   [
+    52,
+    "Moonfury"
+   ],
+   [
+    53,
+    "Moonkin Form"
+   ],
+   [
+    54,
+    "Improved Starfire"
+   ],
+   [
+    55,
+    "Improved Starfire"
+   ],
+   [
+    56,
+    "Improved Starfire"
+   ],
+   [
+    57,
+    "Improved Starfire"
+   ],
+   [
+    58,
+    "Improved Starfire"
+   ],
+   [
+    59,
+    "Vengeance"
+   ],
+   [
+    60,
+    "Vengeance"
+   ]
+  ]
+ },
+ "DRUID:bear": {
+  "source": "Icy Veins: Feral Druid leveling (cat/bear build)",
+  "url": "https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+  "guideVersion": "70755-f7fd84eb",
+  "tree": "Feral Combat",
+  "order": [
+   [
+    10,
+    "Ferocity"
+   ],
+   [
+    11,
+    "Ferocity"
+   ],
+   [
+    12,
+    "Ferocity"
+   ],
+   [
+    13,
+    "Ferocity"
+   ],
+   [
+    14,
+    "Ferocity"
+   ],
+   [
+    15,
+    "Feral Instinct"
+   ],
+   [
+    16,
+    "Feral Instinct"
+   ],
+   [
+    17,
+    "Feral Instinct"
+   ],
+   [
+    18,
+    "Feral Swiftness"
+   ],
+   [
+    19,
+    "Feral Swiftness"
+   ],
+   [
+    20,
+    "Feral Charge"
+   ],
+   [
+    21,
+    "Savage Fury"
+   ],
+   [
+    22,
+    "Savage Fury"
+   ],
+   [
+    23,
+    "Sharpened Claws"
+   ],
+   [
+    24,
+    "Sharpened Claws"
+   ],
+   [
+    25,
+    "Lacerate"
+   ],
+   [
+    26,
+    "Blood Frenzy"
+   ],
+   [
+    27,
+    "Blood Frenzy"
+   ],
+   [
+    28,
+    "Predatory Discipline"
+   ],
+   [
+    29,
+    "Predatory Strikes"
+   ],
+   [
+    30,
+    "Leader of the Pack"
+   ],
+   [
+    31,
+    "Natural Instinct"
+   ],
+   [
+    32,
+    "Natural Instinct"
+   ],
+   [
+    33,
+    "Predatory Strikes"
+   ],
+   [
+    34,
+    "Predatory Strikes"
+   ],
+   [
+    35,
+    "Rend and Tear"
+   ],
+   [
+    36,
+    "Rend and Tear"
+   ],
+   [
+    37,
+    "Rend and Tear"
+   ],
+   [
+    38,
+    "Rend and Tear"
+   ],
+   [
+    39,
+    "Rend and Tear"
+   ],
+   [
+    40,
+    "Primal Bite"
+   ],
+   [
+    41,
+    "Shifting Power"
+   ],
+   [
+    42,
+    "Heart of the Wild"
+   ],
+   [
+    43,
+    "Heart of the Wild"
+   ],
+   [
+    44,
+    "Heart of the Wild"
+   ],
+   [
+    45,
+    "Heart of the Wild"
+   ],
+   [
+    46,
+    "Heart of the Wild"
+   ],
+   [
+    47,
+    "Naturalist"
+   ],
+   [
+    48,
+    "Naturalist"
+   ],
+   [
+    49,
+    "Naturalist"
+   ],
+   [
+    50,
+    "Naturalist"
+   ],
+   [
+    51,
+    "Naturalist"
+   ],
+   [
+    52,
+    "Genesis"
+   ],
+   [
+    53,
+    "Genesis"
+   ],
+   [
+    54,
+    "Genesis"
+   ],
+   [
+    55,
+    "Genesis"
+   ],
+   [
+    56,
+    "Genesis"
+   ],
+   [
+    57,
+    "Nature's Reach"
+   ],
+   [
+    58,
+    "Nature's Reach"
+   ],
+   [
+    59,
+    "Nature's Majesty"
+   ],
+   [
+    60,
+    "Nature's Majesty"
+   ]
+  ]
+ },
+ "DRUID:feral": {
+  "source": "Icy Veins: Feral Druid leveling",
+  "url": "https://www.icy-veins.com/wow-forever/feral-druid-leveling",
+  "guideVersion": "70755-f7fd84eb",
+  "tree": "Feral Combat",
+  "order": [
+   [
+    10,
+    "Ferocity"
+   ],
+   [
+    11,
+    "Ferocity"
+   ],
+   [
+    12,
+    "Ferocity"
+   ],
+   [
+    13,
+    "Ferocity"
+   ],
+   [
+    14,
+    "Ferocity"
+   ],
+   [
+    15,
+    "Feral Instinct"
+   ],
+   [
+    16,
+    "Feral Instinct"
+   ],
+   [
+    17,
+    "Feral Instinct"
+   ],
+   [
+    18,
+    "Feral Swiftness"
+   ],
+   [
+    19,
+    "Feral Swiftness"
+   ],
+   [
+    20,
+    "Feral Charge"
+   ],
+   [
+    21,
+    "Savage Fury"
+   ],
+   [
+    22,
+    "Savage Fury"
+   ],
+   [
+    23,
+    "Sharpened Claws"
+   ],
+   [
+    24,
+    "Sharpened Claws"
+   ],
+   [
+    25,
+    "Lacerate"
+   ],
+   [
+    26,
+    "Blood Frenzy"
+   ],
+   [
+    27,
+    "Blood Frenzy"
+   ],
+   [
+    28,
+    "Predatory Discipline"
+   ],
+   [
+    29,
+    "Predatory Strikes"
+   ],
+   [
+    30,
+    "Leader of the Pack"
+   ],
+   [
+    31,
+    "Natural Instinct"
+   ],
+   [
+    32,
+    "Natural Instinct"
+   ],
+   [
+    33,
+    "Predatory Strikes"
+   ],
+   [
+    34,
+    "Predatory Strikes"
+   ],
+   [
+    35,
+    "Rend and Tear"
+   ],
+   [
+    36,
+    "Rend and Tear"
+   ],
+   [
+    37,
+    "Rend and Tear"
+   ],
+   [
+    38,
+    "Rend and Tear"
+   ],
+   [
+    39,
+    "Rend and Tear"
+   ],
+   [
+    40,
+    "Primal Bite"
+   ],
+   [
+    41,
+    "Shifting Power"
+   ],
+   [
+    42,
+    "Heart of the Wild"
+   ],
+   [
+    43,
+    "Heart of the Wild"
+   ],
+   [
+    44,
+    "Heart of the Wild"
+   ],
+   [
+    45,
+    "Heart of the Wild"
+   ],
+   [
+    46,
+    "Heart of the Wild"
+   ],
+   [
+    47,
+    "Naturalist"
+   ],
+   [
+    48,
+    "Naturalist"
+   ],
+   [
+    49,
+    "Naturalist"
+   ],
+   [
+    50,
+    "Naturalist"
+   ],
+   [
+    51,
+    "Naturalist"
+   ],
+   [
+    52,
+    "Genesis"
+   ],
+   [
+    53,
+    "Genesis"
+   ],
+   [
+    54,
+    "Genesis"
+   ],
+   [
+    55,
+    "Genesis"
+   ],
+   [
+    56,
+    "Genesis"
+   ],
+   [
+    57,
+    "Nature's Reach"
+   ],
+   [
+    58,
+    "Nature's Reach"
+   ],
+   [
+    59,
+    "Nature's Majesty"
+   ],
+   [
+    60,
+    "Nature's Majesty"
+   ]
+  ]
+ },
+ "DRUID:restoration": {
+  "source": "Icy Veins: Restoration Druid leveling",
+  "url": "https://www.icy-veins.com/wow-forever/restoration-druid-leveling",
+  "guideVersion": "70755-6b631983",
+  "tree": "Restoration",
+  "order": [
+   [
+    10,
+    "Improved Wrath"
+   ],
+   [
+    11,
+    "Improved Wrath"
+   ],
+   [
+    12,
+    "Improved Wrath"
+   ],
+   [
+    13,
+    "Improved Wrath"
+   ],
+   [
+    14,
+    "Improved Wrath"
+   ],
+   [
+    15,
+    "Nature's Focus"
+   ],
+   [
+    16,
+    "Nature's Focus"
+   ],
+   [
+    17,
+    "Nature's Focus"
+   ],
+   [
+    18,
+    "Nature's Focus"
+   ],
+   [
+    19,
+    "Nature's Focus"
+   ],
+   [
+    20,
+    "Reflection"
+   ],
+   [
+    21,
+    "Reflection"
+   ],
+   [
+    22,
+    "Reflection"
+   ],
+   [
+    23,
+    "Nature's Reach"
+   ],
+   [
+    24,
+    "Nature's Reach"
+   ],
+   [
+    25,
+    "Nature's Majesty"
+   ],
+   [
+    26,
+    "Nature's Majesty"
+   ],
+   [
+    27,
+    "Moonglow"
+   ],
+   [
+    28,
+    "Nature's Splendor"
+   ],
+   [
+    29,
+    "Moonglow"
+   ],
+   [
+    30,
+    "Moonglow"
+   ],
+   [
+    31,
+    "Genesis"
+   ],
+   [
+    32,
+    "Genesis"
+   ],
+   [
+    33,
+    "Insect Swarm"
+   ],
+   [
+    34,
+    "Naturalist"
+   ],
+   [
+    35,
+    "Naturalist"
+   ],
+   [
+    36,
+    "Bloom"
+   ],
+   [
+    37,
+    "Naturalist"
+   ],
+   [
+    38,
+    "Naturalist"
+   ],
+   [
+    39,
+    "Naturalist"
+   ],
+   [
+    40,
+    "Gift of Nature"
+   ],
+   [
+    41,
+    "Swiftmend"
+   ],
+   [
+    42,
+    "Gift of Nature"
+   ],
+   [
+    43,
+    "Gift of Nature"
+   ],
+   [
+    44,
+    "Gift of Nature"
+   ],
+   [
+    45,
+    "Gift of Nature"
+   ],
+   [
+    46,
+    "Nature's Swiftness"
+   ],
+   [
+    47,
+    "Living Spirit"
+   ],
+   [
+    48,
+    "Living Spirit"
+   ],
+   [
+    49,
+    "Living Spirit"
+   ],
+   [
+    50,
+    "Improved Rejuvenation"
+   ],
+   [
+    51,
+    "Improved Rejuvenation"
+   ],
+   [
+    52,
+    "Improved Rejuvenation"
+   ],
+   [
+    53,
+    "Improved Regrowth"
+   ],
+   [
+    54,
+    "Improved Regrowth"
+   ],
+   [
+    55,
+    "Improved Regrowth"
+   ],
+   [
+    56,
+    "Improved Regrowth"
+   ],
+   [
+    57,
+    "Improved Regrowth"
+   ],
+   [
+    58,
+    "Wild Growth"
+   ],
+   [
+    59,
+    "Genesis"
+   ],
+   [
+    60,
+    "Genesis"
+   ]
+  ]
+ },
+ "HUNTER:beast_mastery": {
+  "source": "Icy Veins: Beast Mastery Hunter leveling",
+  "url": "https://www.icy-veins.com/wow-forever/beast-mastery-hunter-leveling",
+  "guideVersion": "70755-c04a9251",
+  "tree": "Beast Mastery",
+  "order": [
+   [
+    10,
+    "Deadly Aspects"
+   ],
+   [
+    11,
+    "Deadly Aspects"
+   ],
+   [
+    12,
+    "Deadly Aspects"
+   ],
+   [
+    13,
+    "Deadly Aspects"
+   ],
+   [
+    14,
+    "Deadly Aspects"
+   ],
+   [
+    15,
+    "Focused Fire"
+   ],
+   [
+    16,
+    "Focused Fire"
+   ],
+   [
+    17,
+    "Improved Revive Pet"
+   ],
+   [
+    18,
+    "Improved Revive Pet"
+   ],
+   [
+    19,
+    "Endurance Training"
+   ],
+   [
+    20,
+    "Pathfinding"
+   ],
+   [
+    21,
+    "Pathfinding"
+   ],
+   [
+    22,
+    "Bestial Swiftness"
+   ],
+   [
+    23,
+    "Unleashed Fury"
+   ],
+   [
+    24,
+    "Unleashed Fury"
+   ],
+   [
+    25,
+    "Summon Hawk"
+   ],
+   [
+    26,
+    "Unleashed Fury"
+   ],
+   [
+    27,
+    "Unleashed Fury"
+   ],
+   [
+    28,
+    "Unleashed Fury"
+   ],
+   [
+    29,
+    "Ferocity"
+   ],
+   [
+    30,
+    "Bestial Discipline"
+   ],
+   [
+    31,
+    "Bestial Discipline"
+   ],
+   [
+    32,
+    "Ferocity"
+   ],
+   [
+    33,
+    "Ferocity"
+   ],
+   [
+    34,
+    "Ferocity"
+   ],
+   [
+    35,
+    "Ferocity"
+   ],
+   [
+    36,
+    "Intimidation"
+   ],
+   [
+    37,
+    "Frenzy"
+   ],
+   [
+    38,
+    "Frenzy"
+   ],
+   [
+    39,
+    "Frenzy"
+   ],
+   [
+    40,
+    "Bestial Wrath"
+   ],
+   [
+    41,
+    "Frenzy"
+   ],
+   [
+    42,
+    "Lethal Attacks"
+   ],
+   [
+    43,
+    "Lethal Attacks"
+   ],
+   [
+    44,
+    "Lethal Attacks"
+   ],
+   [
+    45,
+    "Lethal Attacks"
+   ],
+   [
+    46,
+    "Lethal Attacks"
+   ],
+   [
+    47,
+    "Careful Aim"
+   ],
+   [
+    48,
+    "Careful Aim"
+   ],
+   [
+    49,
+    "Careful Aim"
+   ],
+   [
+    50,
+    "Careful Aim"
+   ],
+   [
+    51,
+    "Careful Aim"
+   ],
+   [
+    52,
+    "Rapid Killing"
+   ],
+   [
+    53,
+    "Rapid Killing"
+   ],
+   [
+    54,
+    "Improved Tracking"
+   ],
+   [
+    55,
+    "Improved Tracking"
+   ],
+   [
+    56,
+    "Improved Tracking"
+   ],
+   [
+    57,
+    "Improved Tracking"
+   ],
+   [
+    58,
+    "Improved Tracking"
+   ],
+   [
+    59,
+    "Improved Stings"
+   ],
+   [
+    60,
+    "Improved Stings"
+   ]
+  ]
+ },
+ "HUNTER:marksmanship": {
+  "source": "Icy Veins: Marksmanship Hunter leveling",
+  "url": "https://www.icy-veins.com/wow-forever/marksmanship-hunter-leveling",
+  "guideVersion": "70755-c04a9251",
+  "tree": "Marksmanship",
+  "order": [
+   [
+    10,
+    "Lethal Attacks"
+   ],
+   [
+    11,
+    "Lethal Attacks"
+   ],
+   [
+    12,
+    "Lethal Attacks"
+   ],
+   [
+    13,
+    "Lethal Attacks"
+   ],
+   [
+    14,
+    "Lethal Attacks"
+   ],
+   [
+    15,
+    "Careful Aim"
+   ],
+   [
+    16,
+    "Careful Aim"
+   ],
+   [
+    17,
+    "Careful Aim"
+   ],
+   [
+    18,
+    "Careful Aim"
+   ],
+   [
+    19,
+    "Careful Aim"
+   ],
+   [
+    20,
+    "Rapid Killing"
+   ],
+   [
+    21,
+    "Rapid Killing"
+   ],
+   [
+    22,
+    "Improved Stings"
+   ],
+   [
+    23,
+    "Improved Stings"
+   ],
+   [
+    24,
+    "Improved Stings"
+   ],
+   [
+    25,
+    "Trueshot Aura"
+   ],
+   [
+    26,
+    "Mortal Shots"
+   ],
+   [
+    27,
+    "Mortal Shots"
+   ],
+   [
+    28,
+    "Mortal Shots"
+   ],
+   [
+    29,
+    "Mortal Shots"
+   ],
+   [
+    30,
+    "Rapid Recuperation"
+   ],
+   [
+    31,
+    "Rapid Recuperation"
+   ],
+   [
+    32,
+    "Mortal Shots"
+   ],
+   [
+    33,
+    "Barrage"
+   ],
+   [
+    34,
+    "Barrage"
+   ],
+   [
+    35,
+    "Ranged Weapon Specialization"
+   ],
+   [
+    36,
+    "Ranged Weapon Specialization"
+   ],
+   [
+    37,
+    "Ranged Weapon Specialization"
+   ],
+   [
+    38,
+    "Ranged Weapon Specialization"
+   ],
+   [
+    39,
+    "Ranged Weapon Specialization"
+   ],
+   [
+    40,
+    "Sniper Shot"
+   ],
+   [
+    41,
+    "Deadly Aspects"
+   ],
+   [
+    42,
+    "Deadly Aspects"
+   ],
+   [
+    43,
+    "Deadly Aspects"
+   ],
+   [
+    44,
+    "Deadly Aspects"
+   ],
+   [
+    45,
+    "Deadly Aspects"
+   ],
+   [
+    46,
+    "Focused Fire"
+   ],
+   [
+    47,
+    "Focused Fire"
+   ],
+   [
+    48,
+    "Improved Revive Pet"
+   ],
+   [
+    49,
+    "Improved Revive Pet"
+   ],
+   [
+    50,
+    "Endurance Training"
+   ],
+   [
+    51,
+    "Pathfinding"
+   ],
+   [
+    52,
+    "Pathfinding"
+   ],
+   [
+    53,
+    "Bestial Swiftness"
+   ],
+   [
+    54,
+    "Barrage"
+   ],
+   [
+    55,
+    "Unleashed Fury"
+   ],
+   [
+    56,
+    "Unleashed Fury"
+   ],
+   [
+    57,
+    "Summon Hawk"
+   ],
+   [
+    58,
+    "Unleashed Fury"
+   ],
+   [
+    59,
+    "Unleashed Fury"
+   ],
+   [
+    60,
+    "Unleashed Fury"
+   ]
+  ]
+ },
+ "HUNTER:survival": {
+  "source": "Icy Veins: Survival Hunter leveling",
+  "url": "https://www.icy-veins.com/wow-forever/survival-hunter-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Survival",
+  "order": [
+   [
+    10,
+    "Lethal Attacks"
+   ],
+   [
+    11,
+    "Lethal Attacks"
+   ],
+   [
+    12,
+    "Lethal Attacks"
+   ],
+   [
+    13,
+    "Lethal Attacks"
+   ],
+   [
+    14,
+    "Lethal Attacks"
+   ],
+   [
+    15,
+    "Improved Tracking"
+   ],
+   [
+    16,
+    "Improved Tracking"
+   ],
+   [
+    17,
+    "Improved Tracking"
+   ],
+   [
+    18,
+    "Improved Tracking"
+   ],
+   [
+    19,
+    "Improved Tracking"
+   ],
+   [
+    20,
+    "Savage Strikes"
+   ],
+   [
+    21,
+    "Savage Strikes"
+   ],
+   [
+    22,
+    "Survivalist"
+   ],
+   [
+    23,
+    "Survivalist"
+   ],
+   [
+    24,
+    "Survivalist"
+   ],
+   [
+    25,
+    "Surefooted"
+   ],
+   [
+    26,
+    "Surefooted"
+   ],
+   [
+    27,
+    "Surefooted"
+   ],
+   [
+    28,
+    "Clever Traps"
+   ],
+   [
+    29,
+    "Clever Traps"
+   ],
+   [
+    30,
+    "Predator's Edge"
+   ],
+   [
+    31,
+    "Predator's Edge"
+   ],
+   [
+    32,
+    "Predator's Edge"
+   ],
+   [
+    33,
+    "Predator's Edge"
+   ],
+   [
+    34,
+    "Predator's Edge"
+   ],
+   [
+    35,
+    "Strider Kick"
+   ],
+   [
+    36,
+    "Expose Prey"
+   ],
+   [
+    37,
+    "Expose Prey"
+   ],
+   [
+    38,
+    "Survivalist's Discipline"
+   ],
+   [
+    39,
+    "Survivalist's Discipline"
+   ],
+   [
+    40,
+    "Lightning Reflexes"
+   ],
+   [
+    41,
+    "Lightning Reflexes"
+   ],
+   [
+    42,
+    "Lightning Reflexes"
+   ],
+   [
+    43,
+    "Lightning Reflexes"
+   ],
+   [
+    44,
+    "Lightning Reflexes"
+   ],
+   [
+    45,
+    "Lacerating Strikes"
+   ],
+   [
+    46,
+    "Resourcefulness"
+   ],
+   [
+    47,
+    "Survival Tactics"
+   ],
+   [
+    48,
+    "Survival Tactics"
+   ],
+   [
+    49,
+    "Careful Aim"
+   ],
+   [
+    50,
+    "Careful Aim"
+   ],
+   [
+    51,
+    "Careful Aim"
+   ],
+   [
+    52,
+    "Careful Aim"
+   ],
+   [
+    53,
+    "Careful Aim"
+   ],
+   [
+    54,
+    "Lone Wolf"
+   ],
+   [
+    55,
+    "Improved Stings"
+   ],
+   [
+    56,
+    "Improved Stings"
+   ],
+   [
+    57,
+    "Improved Stings"
+   ],
+   [
+    58,
+    "Efficiency"
+   ],
+   [
+    59,
+    "Mortal Shots"
+   ],
+   [
+    60,
+    "Mortal Shots"
+   ]
+  ]
+ },
+ "MAGE:arcane": {
+  "source": "Icy Veins: Arcane Mage leveling",
+  "url": "https://www.icy-veins.com/wow-forever/arcane-mage-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Arcane",
+  "order": [
+   [
+    10,
+    "Wand Specialization"
+   ],
+   [
+    11,
+    "Wand Specialization"
+   ],
+   [
+    12,
+    "Improved Channeling"
+   ],
+   [
+    13,
+    "Improved Channeling"
+   ],
+   [
+    14,
+    "Improved Channeling"
+   ],
+   [
+    15,
+    "Missile Barrage"
+   ],
+   [
+    16,
+    "Missile Barrage"
+   ],
+   [
+    17,
+    "Arcane Concentration"
+   ],
+   [
+    18,
+    "Arcane Concentration"
+   ],
+   [
+    19,
+    "Arcane Concentration"
+   ],
+   [
+    20,
+    "Arcane Blast"
+   ],
+   [
+    21,
+    "Precision"
+   ],
+   [
+    22,
+    "Precision"
+   ],
+   [
+    23,
+    "Improved Channeling"
+   ],
+   [
+    24,
+    "Improved Channeling"
+   ],
+   [
+    25,
+    "Arcane Concentration"
+   ],
+   [
+    26,
+    "Arcane Concentration"
+   ],
+   [
+    27,
+    "Arcane Wrath"
+   ],
+   [
+    28,
+    "Arcane Meditation"
+   ],
+   [
+    29,
+    "Arcane Meditation"
+   ],
+   [
+    30,
+    "Arcane Meditation"
+   ],
+   [
+    31,
+    "Arcane Subtlety"
+   ],
+   [
+    32,
+    "Presence of Mind"
+   ],
+   [
+    33,
+    "Arcane Mind"
+   ],
+   [
+    34,
+    "Arcane Mind"
+   ],
+   [
+    35,
+    "Arcane Mind"
+   ],
+   [
+    36,
+    "Arcane Mind"
+   ],
+   [
+    37,
+    "Arcane Mind"
+   ],
+   [
+    38,
+    "Arcane Instability"
+   ],
+   [
+    39,
+    "Arcane Instability"
+   ],
+   [
+    40,
+    "Arcane Instability"
+   ],
+   [
+    41,
+    "Arcane Subtlety"
+   ],
+   [
+    42,
+    "Arcane Power"
+   ],
+   [
+    43,
+    "Incineration"
+   ],
+   [
+    44,
+    "Incineration"
+   ],
+   [
+    45,
+    "Incineration"
+   ],
+   [
+    46,
+    "Incineration"
+   ],
+   [
+    47,
+    "Incineration"
+   ],
+   [
+    48,
+    "Accelerant"
+   ],
+   [
+    49,
+    "Accelerant"
+   ],
+   [
+    50,
+    "Accelerant"
+   ],
+   [
+    51,
+    "Accelerant"
+   ],
+   [
+    52,
+    "Accelerant"
+   ],
+   [
+    53,
+    "Improved Fire Blast"
+   ],
+   [
+    54,
+    "Improved Fire Blast"
+   ],
+   [
+    55,
+    "Ignite"
+   ],
+   [
+    56,
+    "Ignite"
+   ],
+   [
+    57,
+    "Pyroblast"
+   ],
+   [
+    58,
+    "Heating Up"
+   ],
+   [
+    59,
+    "Ignite"
+   ],
+   [
+    60,
+    "Precision"
+   ]
+  ]
+ },
+ "MAGE:fire": {
+  "source": "Icy Veins: Fire Mage leveling",
+  "url": "https://www.icy-veins.com/wow-forever/fire-mage-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Fire",
+  "order": [
+   [
+    10,
+    "Wand Specialization"
+   ],
+   [
+    11,
+    "Wand Specialization"
+   ],
+   [
+    12,
+    "Improved Channeling"
+   ],
+   [
+    13,
+    "Improved Channeling"
+   ],
+   [
+    14,
+    "Improved Channeling"
+   ],
+   [
+    15,
+    "Missile Barrage"
+   ],
+   [
+    16,
+    "Missile Barrage"
+   ],
+   [
+    17,
+    "Arcane Concentration"
+   ],
+   [
+    18,
+    "Arcane Concentration"
+   ],
+   [
+    19,
+    "Arcane Concentration"
+   ],
+   [
+    20,
+    "Arcane Blast"
+   ],
+   [
+    21,
+    "Precision"
+   ],
+   [
+    22,
+    "Precision"
+   ],
+   [
+    23,
+    "Improved Channeling"
+   ],
+   [
+    24,
+    "Improved Channeling"
+   ],
+   [
+    25,
+    "Arcane Concentration"
+   ],
+   [
+    26,
+    "Arcane Concentration"
+   ],
+   [
+    27,
+    "Arcane Meditation"
+   ],
+   [
+    28,
+    "Arcane Meditation"
+   ],
+   [
+    29,
+    "Arcane Meditation"
+   ],
+   [
+    30,
+    "Incineration"
+   ],
+   [
+    31,
+    "Incineration"
+   ],
+   [
+    32,
+    "Incineration"
+   ],
+   [
+    33,
+    "Incineration"
+   ],
+   [
+    34,
+    "Incineration"
+   ],
+   [
+    35,
+    "Accelerant"
+   ],
+   [
+    36,
+    "Accelerant"
+   ],
+   [
+    37,
+    "Accelerant"
+   ],
+   [
+    38,
+    "Accelerant"
+   ],
+   [
+    39,
+    "Accelerant"
+   ],
+   [
+    40,
+    "Improved Fire Blast"
+   ],
+   [
+    41,
+    "Improved Fire Blast"
+   ],
+   [
+    42,
+    "Ignite"
+   ],
+   [
+    43,
+    "Ignite"
+   ],
+   [
+    44,
+    "Pyroblast"
+   ],
+   [
+    45,
+    "Heating Up"
+   ],
+   [
+    46,
+    "Ignite"
+   ],
+   [
+    47,
+    "Ignite"
+   ],
+   [
+    48,
+    "Ignite"
+   ],
+   [
+    49,
+    "Improved Scorch"
+   ],
+   [
+    50,
+    "Blast Wave"
+   ],
+   [
+    51,
+    "Critical Mass"
+   ],
+   [
+    52,
+    "Critical Mass"
+   ],
+   [
+    53,
+    "Critical Mass"
+   ],
+   [
+    54,
+    "Improved Scorch"
+   ],
+   [
+    55,
+    "Fire Power"
+   ],
+   [
+    56,
+    "Fire Power"
+   ],
+   [
+    57,
+    "Fire Power"
+   ],
+   [
+    58,
+    "Improved Scorch"
+   ],
+   [
+    59,
+    "Master of Elements"
+   ],
+   [
+    60,
+    "Combustion"
+   ]
+  ]
+ },
+ "MAGE:frost": {
+  "source": "Icy Veins: Frost Mage leveling",
+  "url": "https://www.icy-veins.com/wow-forever/frost-mage-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Frost",
+  "order": [
+   [
+    10,
+    "Precision"
+   ],
+   [
+    11,
+    "Precision"
+   ],
+   [
+    12,
+    "Wand Specialization"
+   ],
+   [
+    13,
+    "Wand Specialization"
+   ],
+   [
+    14,
+    "Improved Channeling"
+   ],
+   [
+    15,
+    "Improved Channeling"
+   ],
+   [
+    16,
+    "Improved Channeling"
+   ],
+   [
+    17,
+    "Missile Barrage"
+   ],
+   [
+    18,
+    "Missile Barrage"
+   ],
+   [
+    19,
+    "Improved Frostbolt"
+   ],
+   [
+    20,
+    "Improved Frostbolt"
+   ],
+   [
+    21,
+    "Improved Frostbolt"
+   ],
+   [
+    22,
+    "Frostbite"
+   ],
+   [
+    23,
+    "Frostbite"
+   ],
+   [
+    24,
+    "Frostbite"
+   ],
+   [
+    25,
+    "Improved Frostbolt"
+   ],
+   [
+    26,
+    "Improved Frostbolt"
+   ],
+   [
+    27,
+    "Ice Lance"
+   ],
+   [
+    28,
+    "Ice Shards"
+   ],
+   [
+    29,
+    "Ice Shards"
+   ],
+   [
+    30,
+    "Ice Shards"
+   ],
+   [
+    31,
+    "Ice Shards"
+   ],
+   [
+    32,
+    "Shatter"
+   ],
+   [
+    33,
+    "Shatter"
+   ],
+   [
+    34,
+    "Shatter"
+   ],
+   [
+    35,
+    "Ice Shards"
+   ],
+   [
+    36,
+    "Improved Blizzard"
+   ],
+   [
+    37,
+    "Fingers of Frost"
+   ],
+   [
+    38,
+    "Fingers of Frost"
+   ],
+   [
+    39,
+    "Arctic Reach"
+   ],
+   [
+    40,
+    "Arctic Reach"
+   ],
+   [
+    41,
+    "Frost Channeling"
+   ],
+   [
+    42,
+    "Frost Channeling"
+   ],
+   [
+    43,
+    "Frost Channeling"
+   ],
+   [
+    44,
+    "Ice Block"
+   ],
+   [
+    45,
+    "Permafrost"
+   ],
+   [
+    46,
+    "Cold Snap"
+   ],
+   [
+    47,
+    "Ice Barrier"
+   ],
+   [
+    48,
+    "Arcane Subtlety"
+   ],
+   [
+    49,
+    "Arcane Subtlety"
+   ],
+   [
+    50,
+    "Precision"
+   ],
+   [
+    51,
+    "Improved Cone of Cold"
+   ],
+   [
+    52,
+    "Improved Cone of Cold"
+   ],
+   [
+    53,
+    "Improved Cone of Cold"
+   ],
+   [
+    54,
+    "Winter's Chill"
+   ],
+   [
+    55,
+    "Winter's Chill"
+   ],
+   [
+    56,
+    "Winter's Chill"
+   ],
+   [
+    57,
+    "Winter's Chill"
+   ],
+   [
+    58,
+    "Winter's Chill"
+   ],
+   [
+    59,
+    "Improved Frost Nova"
+   ],
+   [
+    60,
+    "Improved Frost Nova"
+   ]
+  ]
+ },
+ "PALADIN:holy": {
+  "source": "Icy Veins: Holy Paladin leveling",
+  "url": "https://www.icy-veins.com/wow-forever/holy-paladin-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Holy",
+  "order": [
+   [
+    10,
+    "Benediction"
+   ],
+   [
+    11,
+    "Benediction"
+   ],
+   [
+    12,
+    "Benediction"
+   ],
+   [
+    13,
+    "Benediction"
+   ],
+   [
+    14,
+    "Benediction"
+   ],
+   [
+    15,
+    "Conviction"
+   ],
+   [
+    16,
+    "Conviction"
+   ],
+   [
+    17,
+    "Conviction"
+   ],
+   [
+    18,
+    "Improved Judgement"
+   ],
+   [
+    19,
+    "Improved Judgement"
+   ],
+   [
+    20,
+    "Pursuit of Justice"
+   ],
+   [
+    21,
+    "Pursuit of Justice"
+   ],
+   [
+    22,
+    "Spiritual Focus"
+   ],
+   [
+    23,
+    "Spiritual Focus"
+   ],
+   [
+    24,
+    "Spiritual Focus"
+   ],
+   [
+    25,
+    "Spiritual Focus"
+   ],
+   [
+    26,
+    "Spiritual Focus"
+   ],
+   [
+    27,
+    "Reverence"
+   ],
+   [
+    28,
+    "Reverence"
+   ],
+   [
+    29,
+    "Healing Light"
+   ],
+   [
+    30,
+    "Healing Light"
+   ],
+   [
+    31,
+    "Healing Light"
+   ],
+   [
+    32,
+    "Illumination"
+   ],
+   [
+    33,
+    "Illumination"
+   ],
+   [
+    34,
+    "Illumination"
+   ],
+   [
+    35,
+    "Illumination"
+   ],
+   [
+    36,
+    "Illumination"
+   ],
+   [
+    37,
+    "Oath of Light"
+   ],
+   [
+    38,
+    "Infusion of Light"
+   ],
+   [
+    39,
+    "Infusion of Light"
+   ],
+   [
+    40,
+    "Holy Conduit"
+   ],
+   [
+    41,
+    "Holy Conduit"
+   ],
+   [
+    42,
+    "Holy Shock"
+   ],
+   [
+    43,
+    "Boundless Light"
+   ],
+   [
+    44,
+    "Boundless Light"
+   ],
+   [
+    45,
+    "Divine Favor"
+   ],
+   [
+    46,
+    "Consecrated Ground"
+   ],
+   [
+    47,
+    "Holy Power"
+   ],
+   [
+    48,
+    "Holy Power"
+   ],
+   [
+    49,
+    "Holy Power"
+   ],
+   [
+    50,
+    "Holy Power"
+   ],
+   [
+    51,
+    "Holy Power"
+   ],
+   [
+    52,
+    "Light's Vigil"
+   ],
+   [
+    53,
+    "Divine Intellect"
+   ],
+   [
+    54,
+    "Divine Intellect"
+   ],
+   [
+    55,
+    "Divine Intellect"
+   ],
+   [
+    56,
+    "Divine Intellect"
+   ],
+   [
+    57,
+    "Divine Intellect"
+   ],
+   [
+    58,
+    "Consecrated Ground"
+   ],
+   [
+    59,
+    "Improved Seals"
+   ],
+   [
+    60,
+    "Improved Seals"
+   ]
+  ]
+ },
+ "PALADIN:protection": {
+  "source": "Icy Veins: Protection Paladin leveling",
+  "url": "https://www.icy-veins.com/wow-forever/protection-paladin-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Protection",
+  "order": [
+   [
+    10,
+    "Benediction"
+   ],
+   [
+    11,
+    "Benediction"
+   ],
+   [
+    12,
+    "Benediction"
+   ],
+   [
+    13,
+    "Benediction"
+   ],
+   [
+    14,
+    "Benediction"
+   ],
+   [
+    15,
+    "Conviction"
+   ],
+   [
+    16,
+    "Conviction"
+   ],
+   [
+    17,
+    "Conviction"
+   ],
+   [
+    18,
+    "Improved Judgement"
+   ],
+   [
+    19,
+    "Improved Judgement"
+   ],
+   [
+    20,
+    "Pursuit of Justice"
+   ],
+   [
+    21,
+    "Pursuit of Justice"
+   ],
+   [
+    22,
+    "Redoubt"
+   ],
+   [
+    23,
+    "Redoubt"
+   ],
+   [
+    24,
+    "Redoubt"
+   ],
+   [
+    25,
+    "Redoubt"
+   ],
+   [
+    26,
+    "Redoubt"
+   ],
+   [
+    27,
+    "Precision"
+   ],
+   [
+    28,
+    "Precision"
+   ],
+   [
+    29,
+    "Precision"
+   ],
+   [
+    30,
+    "Sacred Duty"
+   ],
+   [
+    31,
+    "Sacred Duty"
+   ],
+   [
+    32,
+    "Shield Specialization"
+   ],
+   [
+    33,
+    "Shield Specialization"
+   ],
+   [
+    34,
+    "Templar's Bulwark"
+   ],
+   [
+    35,
+    "Toughness"
+   ],
+   [
+    36,
+    "Toughness"
+   ],
+   [
+    37,
+    "Swift Judgement"
+   ],
+   [
+    38,
+    "Improved Righteous Fury"
+   ],
+   [
+    39,
+    "Improved Righteous Fury"
+   ],
+   [
+    40,
+    "Improved Righteous Fury"
+   ],
+   [
+    41,
+    "Anticipation"
+   ],
+   [
+    42,
+    "Holy Shield"
+   ],
+   [
+    43,
+    "Reckoning"
+   ],
+   [
+    44,
+    "Reckoning"
+   ],
+   [
+    45,
+    "Reckoning"
+   ],
+   [
+    46,
+    "Reckoning"
+   ],
+   [
+    47,
+    "Reckoning"
+   ],
+   [
+    48,
+    "Iron Creed"
+   ],
+   [
+    49,
+    "Iron Creed"
+   ],
+   [
+    50,
+    "Iron Creed"
+   ],
+   [
+    51,
+    "Anticipation"
+   ],
+   [
+    52,
+    "Shieldsworn"
+   ],
+   [
+    53,
+    "Anticipation"
+   ],
+   [
+    54,
+    "Anticipation"
+   ],
+   [
+    55,
+    "Anticipation"
+   ],
+   [
+    56,
+    "Sanctified Judgement"
+   ],
+   [
+    57,
+    "Sanctified Judgement"
+   ],
+   [
+    58,
+    "Sanctified Judgement"
+   ],
+   [
+    59,
+    "Sacred Arbiter"
+   ],
+   [
+    60,
+    "Toughness"
+   ]
+  ]
+ },
+ "PALADIN:retribution": {
+  "source": "Icy Veins: Retribution Paladin leveling",
+  "url": "https://www.icy-veins.com/wow-forever/retribution-paladin-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Retribution",
+  "order": [
+   [
+    10,
+    "Deflection"
+   ],
+   [
+    11,
+    "Deflection"
+   ],
+   [
+    12,
+    "Deflection"
+   ],
+   [
+    13,
+    "Deflection"
+   ],
+   [
+    14,
+    "Deflection"
+   ],
+   [
+    15,
+    "Improved Judgement"
+   ],
+   [
+    16,
+    "Improved Judgement"
+   ],
+   [
+    17,
+    "Conviction"
+   ],
+   [
+    18,
+    "Conviction"
+   ],
+   [
+    19,
+    "Conviction"
+   ],
+   [
+    20,
+    "Pursuit of Justice"
+   ],
+   [
+    21,
+    "Pursuit of Justice"
+   ],
+   [
+    22,
+    "Seal of Command"
+   ],
+   [
+    23,
+    "Sanctified Judgement"
+   ],
+   [
+    24,
+    "Sanctified Judgement"
+   ],
+   [
+    25,
+    "Sacred Arbiter"
+   ],
+   [
+    26,
+    "Two-Handed Weapon Specialization"
+   ],
+   [
+    27,
+    "Two-Handed Weapon Specialization"
+   ],
+   [
+    28,
+    "Two-Handed Weapon Specialization"
+   ],
+   [
+    29,
+    "Sanctified Judgement"
+   ],
+   [
+    30,
+    "Vengeance"
+   ],
+   [
+    31,
+    "Vengeance"
+   ],
+   [
+    32,
+    "Vengeance"
+   ],
+   [
+    33,
+    "Repentance"
+   ],
+   [
+    34,
+    "Vindication"
+   ],
+   [
+    35,
+    "Champion of the Light"
+   ],
+   [
+    36,
+    "Champion of the Light"
+   ],
+   [
+    37,
+    "Champion of the Light"
+   ],
+   [
+    38,
+    "Champion of the Light"
+   ],
+   [
+    39,
+    "Champion of the Light"
+   ],
+   [
+    40,
+    "Unsealed Wrath"
+   ],
+   [
+    41,
+    "Divine Strength"
+   ],
+   [
+    42,
+    "Divine Strength"
+   ],
+   [
+    43,
+    "Divine Strength"
+   ],
+   [
+    44,
+    "Divine Strength"
+   ],
+   [
+    45,
+    "Divine Strength"
+   ],
+   [
+    46,
+    "Reverence"
+   ],
+   [
+    47,
+    "Reverence"
+   ],
+   [
+    48,
+    "Improved Seals"
+   ],
+   [
+    49,
+    "Improved Seals"
+   ],
+   [
+    50,
+    "Improved Seals"
+   ],
+   [
+    51,
+    "Holy Conduit"
+   ],
+   [
+    52,
+    "Holy Conduit"
+   ],
+   [
+    53,
+    "Improved Seals"
+   ],
+   [
+    54,
+    "Improved Seals"
+   ],
+   [
+    55,
+    "Purifying Power"
+   ],
+   [
+    56,
+    "Purifying Power"
+   ],
+   [
+    57,
+    "Divine Precision"
+   ],
+   [
+    58,
+    "Divine Precision"
+   ],
+   [
+    59,
+    "Vindication"
+   ],
+   [
+    60,
+    "Vindication"
+   ]
+  ]
+ },
+ "PRIEST:discipline": {
+  "source": "Icy Veins: Discipline Priest leveling",
+  "url": "https://www.icy-veins.com/wow-forever/discipline-priest-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Discipline",
+  "order": [
+   [
+    10,
+    "Wand Specialization"
+   ],
+   [
+    11,
+    "Wand Specialization"
+   ],
+   [
+    12,
+    "Spirit Tap"
+   ],
+   [
+    13,
+    "Spirit Tap"
+   ],
+   [
+    14,
+    "Spirit Tap"
+   ],
+   [
+    15,
+    "Spirit Tap"
+   ],
+   [
+    16,
+    "Spirit Tap"
+   ],
+   [
+    17,
+    "Twilight Focus"
+   ],
+   [
+    18,
+    "Twilight Focus"
+   ],
+   [
+    19,
+    "Twilight Focus"
+   ],
+   [
+    20,
+    "Power in Light"
+   ],
+   [
+    21,
+    "Power in Light"
+   ],
+   [
+    22,
+    "Power in Light"
+   ],
+   [
+    23,
+    "Power in Light"
+   ],
+   [
+    24,
+    "Power in Light"
+   ],
+   [
+    25,
+    "Mental Strength"
+   ],
+   [
+    26,
+    "Mental Strength"
+   ],
+   [
+    27,
+    "Mental Strength"
+   ],
+   [
+    28,
+    "Meditation"
+   ],
+   [
+    29,
+    "Meditation"
+   ],
+   [
+    30,
+    "Meditation"
+   ],
+   [
+    31,
+    "Mental Strength"
+   ],
+   [
+    32,
+    "Mental Strength"
+   ],
+   [
+    33,
+    "Improved Power Word: Shield"
+   ],
+   [
+    34,
+    "Improved Power Word: Shield"
+   ],
+   [
+    35,
+    "Improved Power Word: Shield"
+   ],
+   [
+    36,
+    "Soul Warding"
+   ],
+   [
+    37,
+    "Mental Agility"
+   ],
+   [
+    38,
+    "Penance"
+   ],
+   [
+    39,
+    "Renewed Hope"
+   ],
+   [
+    40,
+    "Renewed Hope"
+   ],
+   [
+    41,
+    "Renewed Hope"
+   ],
+   [
+    42,
+    "Renewed Hope"
+   ],
+   [
+    43,
+    "Divine Aegis"
+   ],
+   [
+    44,
+    "Renewed Hope"
+   ],
+   [
+    45,
+    "Divine Aegis"
+   ],
+   [
+    46,
+    "Divine Aegis"
+   ],
+   [
+    47,
+    "Mental Agility"
+   ],
+   [
+    48,
+    "Power Infusion"
+   ],
+   [
+    49,
+    "Holy Specialization"
+   ],
+   [
+    50,
+    "Holy Specialization"
+   ],
+   [
+    51,
+    "Holy Specialization"
+   ],
+   [
+    52,
+    "Holy Specialization"
+   ],
+   [
+    53,
+    "Holy Specialization"
+   ],
+   [
+    54,
+    "Divine Fury"
+   ],
+   [
+    55,
+    "Divine Fury"
+   ],
+   [
+    56,
+    "Divine Fury"
+   ],
+   [
+    57,
+    "Divine Fury"
+   ],
+   [
+    58,
+    "Divine Fury"
+   ],
+   [
+    59,
+    "Mental Agility"
+   ],
+   [
+    60,
+    "Inner Focus"
+   ]
+  ]
+ },
+ "PRIEST:holy": {
+  "source": "Icy Veins: Holy Priest leveling",
+  "url": "https://www.icy-veins.com/wow-forever/holy-priest-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Holy",
+  "order": [
+   [
+    10,
+    "Wand Specialization"
+   ],
+   [
+    11,
+    "Wand Specialization"
+   ],
+   [
+    12,
+    "Spirit Tap"
+   ],
+   [
+    13,
+    "Spirit Tap"
+   ],
+   [
+    14,
+    "Spirit Tap"
+   ],
+   [
+    15,
+    "Spirit Tap"
+   ],
+   [
+    16,
+    "Spirit Tap"
+   ],
+   [
+    17,
+    "Twilight Focus"
+   ],
+   [
+    18,
+    "Twilight Focus"
+   ],
+   [
+    19,
+    "Twilight Focus"
+   ],
+   [
+    20,
+    "Improved Renew"
+   ],
+   [
+    21,
+    "Improved Renew"
+   ],
+   [
+    22,
+    "Improved Renew"
+   ],
+   [
+    23,
+    "Twin Disciplines"
+   ],
+   [
+    24,
+    "Twin Disciplines"
+   ],
+   [
+    25,
+    "Twin Disciplines"
+   ],
+   [
+    26,
+    "Mental Strength"
+   ],
+   [
+    27,
+    "Mental Strength"
+   ],
+   [
+    28,
+    "Mental Strength"
+   ],
+   [
+    29,
+    "Mental Strength"
+   ],
+   [
+    30,
+    "Mental Strength"
+   ],
+   [
+    31,
+    "Meditation"
+   ],
+   [
+    32,
+    "Meditation"
+   ],
+   [
+    33,
+    "Meditation"
+   ],
+   [
+    34,
+    "Divine Fury"
+   ],
+   [
+    35,
+    "Divine Fury"
+   ],
+   [
+    36,
+    "Divine Fury"
+   ],
+   [
+    37,
+    "Divine Fury"
+   ],
+   [
+    38,
+    "Holy Nova"
+   ],
+   [
+    39,
+    "Inspiration"
+   ],
+   [
+    40,
+    "Divine Fury"
+   ],
+   [
+    41,
+    "Holy Specialization"
+   ],
+   [
+    42,
+    "Holy Specialization"
+   ],
+   [
+    43,
+    "Searing Light"
+   ],
+   [
+    44,
+    "Searing Light"
+   ],
+   [
+    45,
+    "Improved Healing"
+   ],
+   [
+    46,
+    "Improved Healing"
+   ],
+   [
+    47,
+    "Improved Healing"
+   ],
+   [
+    48,
+    "Spirit of Redemption"
+   ],
+   [
+    49,
+    "Litany of Light"
+   ],
+   [
+    50,
+    "Litany of Light"
+   ],
+   [
+    51,
+    "Spiritual Guidance"
+   ],
+   [
+    52,
+    "Spiritual Guidance"
+   ],
+   [
+    53,
+    "Spiritual Healing"
+   ],
+   [
+    54,
+    "Spiritual Healing"
+   ],
+   [
+    55,
+    "Spiritual Healing"
+   ],
+   [
+    56,
+    "Spiritual Guidance"
+   ],
+   [
+    57,
+    "Spiritual Guidance"
+   ],
+   [
+    58,
+    "Prayer of Mending"
+   ],
+   [
+    59,
+    "Spiritual Guidance"
+   ],
+   [
+    60,
+    "Inner Focus"
+   ]
+  ]
+ },
+ "PRIEST:shadow": {
+  "source": "Icy Veins: Shadow Priest leveling",
+  "url": "https://www.icy-veins.com/wow-forever/shadow-priest-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Shadow Magic",
+  "order": [
+   [
+    10,
+    "Wand Specialization"
+   ],
+   [
+    11,
+    "Wand Specialization"
+   ],
+   [
+    12,
+    "Spirit Tap"
+   ],
+   [
+    13,
+    "Spirit Tap"
+   ],
+   [
+    14,
+    "Spirit Tap"
+   ],
+   [
+    15,
+    "Spirit Tap"
+   ],
+   [
+    16,
+    "Spirit Tap"
+   ],
+   [
+    17,
+    "Improved Shadow Word: Pain"
+   ],
+   [
+    18,
+    "Improved Shadow Word: Pain"
+   ],
+   [
+    19,
+    "Improved Mind Blast"
+   ],
+   [
+    20,
+    "Improved Mind Blast"
+   ],
+   [
+    21,
+    "Improved Mind Blast"
+   ],
+   [
+    22,
+    "Mind Flay"
+   ],
+   [
+    23,
+    "Improved Mind Flay"
+   ],
+   [
+    24,
+    "Improved Mind Flay"
+   ],
+   [
+    25,
+    "Improved Mind Blast"
+   ],
+   [
+    26,
+    "Shadow Reach"
+   ],
+   [
+    27,
+    "Vampiric Embrace"
+   ],
+   [
+    28,
+    "Dark Inspiration"
+   ],
+   [
+    29,
+    "Dark Inspiration"
+   ],
+   [
+    30,
+    "Dark Inspiration"
+   ],
+   [
+    31,
+    "Dark Inspiration"
+   ],
+   [
+    32,
+    "Dark Inspiration"
+   ],
+   [
+    33,
+    "Devouring Contagion"
+   ],
+   [
+    34,
+    "Devouring Contagion"
+   ],
+   [
+    35,
+    "Silence"
+   ],
+   [
+    36,
+    "Shadow Weaving"
+   ],
+   [
+    37,
+    "Darkness"
+   ],
+   [
+    38,
+    "Darkness"
+   ],
+   [
+    39,
+    "Darkness"
+   ],
+   [
+    40,
+    "Darkness"
+   ],
+   [
+    41,
+    "Darkness"
+   ],
+   [
+    42,
+    "Shadowform"
+   ],
+   [
+    43,
+    "Twin Disciplines"
+   ],
+   [
+    44,
+    "Twin Disciplines"
+   ],
+   [
+    45,
+    "Twin Disciplines"
+   ],
+   [
+    46,
+    "Mental Strength"
+   ],
+   [
+    47,
+    "Mental Strength"
+   ],
+   [
+    48,
+    "Mental Strength"
+   ],
+   [
+    49,
+    "Mental Strength"
+   ],
+   [
+    50,
+    "Mental Strength"
+   ],
+   [
+    51,
+    "Meditation"
+   ],
+   [
+    52,
+    "Meditation"
+   ],
+   [
+    53,
+    "Meditation"
+   ],
+   [
+    54,
+    "Twilight Focus"
+   ],
+   [
+    55,
+    "Twilight Focus"
+   ],
+   [
+    56,
+    "Twilight Focus"
+   ],
+   [
+    57,
+    "Shadow Weaving"
+   ],
+   [
+    58,
+    "Shadow Weaving"
+   ],
+   [
+    59,
+    "Shadow Focus"
+   ],
+   [
+    60,
+    "Shadow Focus"
+   ]
+  ]
+ },
+ "ROGUE:assassination": {
+  "source": "Icy Veins: Assassination Rogue leveling",
+  "url": "https://www.icy-veins.com/wow-forever/assassination-rogue-leveling",
+  "guideVersion": "70755-6b631983",
+  "tree": "Assassination",
+  "order": [
+   [
+    10,
+    "Remorseless Attacks"
+   ],
+   [
+    11,
+    "Remorseless Attacks"
+   ],
+   [
+    12,
+    "Malice"
+   ],
+   [
+    13,
+    "Malice"
+   ],
+   [
+    14,
+    "Malice"
+   ],
+   [
+    15,
+    "Ruthlessness"
+   ],
+   [
+    16,
+    "Ruthlessness"
+   ],
+   [
+    17,
+    "Ruthlessness"
+   ],
+   [
+    18,
+    "Malice"
+   ],
+   [
+    19,
+    "Malice"
+   ],
+   [
+    20,
+    "Blood Splatter"
+   ],
+   [
+    21,
+    "Lethality"
+   ],
+   [
+    22,
+    "Lethality"
+   ],
+   [
+    23,
+    "Improved Slice and Dice"
+   ],
+   [
+    24,
+    "Improved Slice and Dice"
+   ],
+   [
+    25,
+    "Cold Blood"
+   ],
+   [
+    26,
+    "Vile Poisons"
+   ],
+   [
+    27,
+    "Vile Poisons"
+   ],
+   [
+    28,
+    "Vile Poisons"
+   ],
+   [
+    29,
+    "Vile Poisons"
+   ],
+   [
+    30,
+    "Venom"
+   ],
+   [
+    31,
+    "Relentless Strikes"
+   ],
+   [
+    32,
+    "Relentless Strikes"
+   ],
+   [
+    33,
+    "Relentless Strikes"
+   ],
+   [
+    34,
+    "Relentless Strikes"
+   ],
+   [
+    35,
+    "Seal Fate"
+   ],
+   [
+    36,
+    "Seal Fate"
+   ],
+   [
+    37,
+    "Seal Fate"
+   ],
+   [
+    38,
+    "Relentless Strikes"
+   ],
+   [
+    39,
+    "Vile Poisons"
+   ],
+   [
+    40,
+    "Mutilate"
+   ],
+   [
+    41,
+    "Opportunity"
+   ],
+   [
+    42,
+    "Opportunity"
+   ],
+   [
+    43,
+    "Opportunity"
+   ],
+   [
+    44,
+    "Opportunity"
+   ],
+   [
+    45,
+    "Opportunity"
+   ],
+   [
+    46,
+    "Coup de Grace"
+   ],
+   [
+    47,
+    "Coup de Grace"
+   ],
+   [
+    48,
+    "Coup de Grace"
+   ],
+   [
+    49,
+    "Lightning Reflexes"
+   ],
+   [
+    50,
+    "Lightning Reflexes"
+   ],
+   [
+    51,
+    "Precision"
+   ],
+   [
+    52,
+    "Precision"
+   ],
+   [
+    53,
+    "Precision"
+   ],
+   [
+    54,
+    "Puncturing Wounds"
+   ],
+   [
+    55,
+    "Puncturing Wounds"
+   ],
+   [
+    56,
+    "Puncturing Wounds"
+   ],
+   [
+    57,
+    "Composure"
+   ],
+   [
+    58,
+    "Composure"
+   ],
+   [
+    59,
+    "Endurance"
+   ],
+   [
+    60,
+    "Endurance"
+   ]
+  ]
+ },
+ "ROGUE:combat": {
+  "source": "Icy Veins: Combat Rogue leveling",
+  "url": "https://www.icy-veins.com/wow-forever/combat-rogue-leveling",
+  "guideVersion": "70755-6b631983",
+  "tree": "Combat",
+  "order": [
+   [
+    10,
+    "Efficient Strikes"
+   ],
+   [
+    11,
+    "Efficient Strikes"
+   ],
+   [
+    12,
+    "Coup de Grace"
+   ],
+   [
+    13,
+    "Coup de Grace"
+   ],
+   [
+    14,
+    "Coup de Grace"
+   ],
+   [
+    15,
+    "Precision"
+   ],
+   [
+    16,
+    "Precision"
+   ],
+   [
+    17,
+    "Deflection"
+   ],
+   [
+    18,
+    "Deflection"
+   ],
+   [
+    19,
+    "Deflection"
+   ],
+   [
+    20,
+    "Riposte"
+   ],
+   [
+    21,
+    "Precision"
+   ],
+   [
+    22,
+    "Composure"
+   ],
+   [
+    23,
+    "Composure"
+   ],
+   [
+    24,
+    "Endurance"
+   ],
+   [
+    25,
+    "Flawless Execution"
+   ],
+   [
+    26,
+    "Weapon Expertise"
+   ],
+   [
+    27,
+    "Weapon Expertise"
+   ],
+   [
+    28,
+    "Aggression"
+   ],
+   [
+    29,
+    "Aggression"
+   ],
+   [
+    30,
+    "Blade Flurry"
+   ],
+   [
+    31,
+    "Hack and Slash"
+   ],
+   [
+    32,
+    "Hack and Slash"
+   ],
+   [
+    33,
+    "Hack and Slash"
+   ],
+   [
+    34,
+    "Hack and Slash"
+   ],
+   [
+    35,
+    "Flash of Steel"
+   ],
+   [
+    36,
+    "Flash of Steel"
+   ],
+   [
+    37,
+    "Flash of Steel"
+   ],
+   [
+    38,
+    "Flash of Steel"
+   ],
+   [
+    39,
+    "Flash of Steel"
+   ],
+   [
+    40,
+    "Adrenaline Rush"
+   ],
+   [
+    41,
+    "Hack and Slash"
+   ],
+   [
+    42,
+    "Aggression"
+   ],
+   [
+    43,
+    "Dual Wield Specialization"
+   ],
+   [
+    44,
+    "Dual Wield Specialization"
+   ],
+   [
+    45,
+    "Remorseless Attacks"
+   ],
+   [
+    46,
+    "Remorseless Attacks"
+   ],
+   [
+    47,
+    "Malice"
+   ],
+   [
+    48,
+    "Malice"
+   ],
+   [
+    49,
+    "Malice"
+   ],
+   [
+    50,
+    "Ruthlessness"
+   ],
+   [
+    51,
+    "Ruthlessness"
+   ],
+   [
+    52,
+    "Ruthlessness"
+   ],
+   [
+    53,
+    "Malice"
+   ],
+   [
+    54,
+    "Malice"
+   ],
+   [
+    55,
+    "Blood Splatter"
+   ],
+   [
+    56,
+    "Lethality"
+   ],
+   [
+    57,
+    "Lethality"
+   ],
+   [
+    58,
+    "Improved Slice and Dice"
+   ],
+   [
+    59,
+    "Improved Slice and Dice"
+   ],
+   [
+    60,
+    "Cold Blood"
+   ]
+  ]
+ },
+ "ROGUE:subtlety": {
+  "source": "Icy Veins: Subtlety Rogue leveling",
+  "url": "https://www.icy-veins.com/wow-forever/subtlety-rogue-leveling",
+  "guideVersion": "70755-c04a9251",
+  "tree": "Subtlety",
+  "order": [
+   [
+    10,
+    "Opportunity"
+   ],
+   [
+    11,
+    "Opportunity"
+   ],
+   [
+    12,
+    "Opportunity"
+   ],
+   [
+    13,
+    "Opportunity"
+   ],
+   [
+    14,
+    "Opportunity"
+   ],
+   [
+    15,
+    "Improved Ambush"
+   ],
+   [
+    16,
+    "Improved Ambush"
+   ],
+   [
+    17,
+    "Improved Ambush"
+   ],
+   [
+    18,
+    "Setup"
+   ],
+   [
+    19,
+    "Setup"
+   ],
+   [
+    20,
+    "Serrated Blades"
+   ],
+   [
+    21,
+    "Serrated Blades"
+   ],
+   [
+    22,
+    "Serrated Blades"
+   ],
+   [
+    23,
+    "Premeditation"
+   ],
+   [
+    24,
+    "Dirty Deeds"
+   ],
+   [
+    25,
+    "Ghostly Strike"
+   ],
+   [
+    26,
+    "Setup"
+   ],
+   [
+    27,
+    "Camouflage"
+   ],
+   [
+    28,
+    "Camouflage"
+   ],
+   [
+    29,
+    "Camouflage"
+   ],
+   [
+    30,
+    "Hemorrhage"
+   ],
+   [
+    31,
+    "Efficient Strikes"
+   ],
+   [
+    32,
+    "Efficient Strikes"
+   ],
+   [
+    33,
+    "Preparation"
+   ],
+   [
+    34,
+    "Initiative"
+   ],
+   [
+    35,
+    "Initiative"
+   ],
+   [
+    36,
+    "Initiative"
+   ],
+   [
+    37,
+    "Boot Knife"
+   ],
+   [
+    38,
+    "Boot Knife"
+   ],
+   [
+    39,
+    "Boot Knife"
+   ],
+   [
+    40,
+    "Boot Knife"
+   ],
+   [
+    41,
+    "Boot Knife"
+   ],
+   [
+    42,
+    "Death Mark"
+   ],
+   [
+    43,
+    "Coup de Grace"
+   ],
+   [
+    44,
+    "Coup de Grace"
+   ],
+   [
+    45,
+    "Coup de Grace"
+   ],
+   [
+    46,
+    "Remorseless Attacks"
+   ],
+   [
+    47,
+    "Remorseless Attacks"
+   ],
+   [
+    48,
+    "Malice"
+   ],
+   [
+    49,
+    "Malice"
+   ],
+   [
+    50,
+    "Malice"
+   ],
+   [
+    51,
+    "Ruthlessness"
+   ],
+   [
+    52,
+    "Ruthlessness"
+   ],
+   [
+    53,
+    "Ruthlessness"
+   ],
+   [
+    54,
+    "Malice"
+   ],
+   [
+    55,
+    "Malice"
+   ],
+   [
+    56,
+    "Blood Splatter"
+   ],
+   [
+    57,
+    "Lethality"
+   ],
+   [
+    58,
+    "Lethality"
+   ],
+   [
+    59,
+    "Improved Slice and Dice"
+   ],
+   [
+    60,
+    "Improved Slice and Dice"
+   ]
+  ]
+ },
+ "SHAMAN:elemental": {
+  "source": "Icy Veins: Elemental Shaman leveling",
+  "url": "https://www.icy-veins.com/wow-forever/elemental-shaman-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Elemental Combat",
+  "order": [
+   [
+    10,
+    "Concussion"
+   ],
+   [
+    11,
+    "Concussion"
+   ],
+   [
+    12,
+    "Concussion"
+   ],
+   [
+    13,
+    "Concussion"
+   ],
+   [
+    14,
+    "Concussion"
+   ],
+   [
+    15,
+    "Elemental Alacrity"
+   ],
+   [
+    16,
+    "Elemental Alacrity"
+   ],
+   [
+    17,
+    "Elemental Alacrity"
+   ],
+   [
+    18,
+    "Call of Flame"
+   ],
+   [
+    19,
+    "Call of Flame"
+   ],
+   [
+    20,
+    "Elemental Focus"
+   ],
+   [
+    21,
+    "Call of Flame"
+   ],
+   [
+    22,
+    "Convection"
+   ],
+   [
+    23,
+    "Convection"
+   ],
+   [
+    24,
+    "Convection"
+   ],
+   [
+    25,
+    "Earthbound"
+   ],
+   [
+    26,
+    "Trial by Fire"
+   ],
+   [
+    27,
+    "Trial by Fire"
+   ],
+   [
+    28,
+    "Eye of the Storm"
+   ],
+   [
+    29,
+    "Eye of the Storm"
+   ],
+   [
+    30,
+    "Call of Thunder"
+   ],
+   [
+    31,
+    "Lightning Overload"
+   ],
+   [
+    32,
+    "Lightning Overload"
+   ],
+   [
+    33,
+    "Lightning Overload"
+   ],
+   [
+    34,
+    "Eye of the Storm"
+   ],
+   [
+    35,
+    "Elemental Fury"
+   ],
+   [
+    36,
+    "Elemental Fury"
+   ],
+   [
+    37,
+    "Elemental Fury"
+   ],
+   [
+    38,
+    "Elemental Fury"
+   ],
+   [
+    39,
+    "Elemental Fury"
+   ],
+   [
+    40,
+    "Lightning Mastery"
+   ],
+   [
+    41,
+    "Tidal Focus"
+   ],
+   [
+    42,
+    "Tidal Focus"
+   ],
+   [
+    43,
+    "Tidal Focus"
+   ],
+   [
+    44,
+    "Tidal Focus"
+   ],
+   [
+    45,
+    "Tidal Focus"
+   ],
+   [
+    46,
+    "Mindfulness"
+   ],
+   [
+    47,
+    "Mindfulness"
+   ],
+   [
+    48,
+    "Mindfulness"
+   ],
+   [
+    49,
+    "Improved Reincarnation"
+   ],
+   [
+    50,
+    "Improved Reincarnation"
+   ],
+   [
+    51,
+    "Water Shield"
+   ],
+   [
+    52,
+    "Thundering Strikes"
+   ],
+   [
+    53,
+    "Thundering Strikes"
+   ],
+   [
+    54,
+    "Thundering Strikes"
+   ],
+   [
+    55,
+    "Thundering Strikes"
+   ],
+   [
+    56,
+    "Thundering Strikes"
+   ],
+   [
+    57,
+    "Convection"
+   ],
+   [
+    58,
+    "Convection"
+   ],
+   [
+    59,
+    "Ancestral Knowledge"
+   ],
+   [
+    60,
+    "Ancestral Knowledge"
+   ]
+  ]
+ },
+ "SHAMAN:enhancement": {
+  "source": "Icy Veins: Enhancement Shaman leveling",
+  "url": "https://www.icy-veins.com/wow-forever/enhancement-shaman-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Enhancement",
+  "order": [
+   [
+    10,
+    "Thundering Strikes"
+   ],
+   [
+    11,
+    "Thundering Strikes"
+   ],
+   [
+    12,
+    "Thundering Strikes"
+   ],
+   [
+    13,
+    "Thundering Strikes"
+   ],
+   [
+    14,
+    "Thundering Strikes"
+   ],
+   [
+    15,
+    "Mental Dexterity"
+   ],
+   [
+    16,
+    "Mental Dexterity"
+   ],
+   [
+    17,
+    "Mental Dexterity"
+   ],
+   [
+    18,
+    "Ancestral Knowledge"
+   ],
+   [
+    19,
+    "Ancestral Knowledge"
+   ],
+   [
+    20,
+    "Shamanistic Focus"
+   ],
+   [
+    21,
+    "Elemental Weapons"
+   ],
+   [
+    22,
+    "Elemental Weapons"
+   ],
+   [
+    23,
+    "Elemental Weapons"
+   ],
+   [
+    24,
+    "Ancestral Knowledge"
+   ],
+   [
+    25,
+    "Stormstrike"
+   ],
+   [
+    26,
+    "Improved Ghost Wolf"
+   ],
+   [
+    27,
+    "Improved Ghost Wolf"
+   ],
+   [
+    28,
+    "Flurry"
+   ],
+   [
+    29,
+    "Flurry"
+   ],
+   [
+    30,
+    "Improved Stormstrike"
+   ],
+   [
+    31,
+    "Improved Stormstrike"
+   ],
+   [
+    32,
+    "Mental Quickness"
+   ],
+   [
+    33,
+    "Mental Quickness"
+   ],
+   [
+    34,
+    "Spirit Weapons"
+   ],
+   [
+    35,
+    "Tidal Focus"
+   ],
+   [
+    36,
+    "Tidal Focus"
+   ],
+   [
+    37,
+    "Tidal Focus"
+   ],
+   [
+    38,
+    "Tidal Focus"
+   ],
+   [
+    39,
+    "Tidal Focus"
+   ],
+   [
+    40,
+    "Mindfulness"
+   ],
+   [
+    41,
+    "Mindfulness"
+   ],
+   [
+    42,
+    "Mindfulness"
+   ],
+   [
+    43,
+    "Flurry"
+   ],
+   [
+    44,
+    "Flurry"
+   ],
+   [
+    45,
+    "Flurry"
+   ],
+   [
+    46,
+    "Maelstrom Weapon"
+   ],
+   [
+    47,
+    "Maelstrom Weapon"
+   ],
+   [
+    48,
+    "Maelstrom Weapon"
+   ],
+   [
+    49,
+    "Maelstrom Weapon"
+   ],
+   [
+    50,
+    "Maelstrom Weapon"
+   ],
+   [
+    51,
+    "Rage of the Farseer"
+   ],
+   [
+    52,
+    "Concussion"
+   ],
+   [
+    53,
+    "Concussion"
+   ],
+   [
+    54,
+    "Concussion"
+   ],
+   [
+    55,
+    "Concussion"
+   ],
+   [
+    56,
+    "Concussion"
+   ],
+   [
+    57,
+    "Elemental Devastation"
+   ],
+   [
+    58,
+    "Elemental Devastation"
+   ],
+   [
+    59,
+    "Elemental Devastation"
+   ],
+   [
+    60,
+    "Call of Flame"
+   ]
+  ]
+ },
+ "SHAMAN:restoration": {
+  "source": "Icy Veins: Restoration Shaman leveling",
+  "url": "https://www.icy-veins.com/wow-forever/restoration-shaman-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Restoration",
+  "order": [
+   [
+    10,
+    "Tidal Focus"
+   ],
+   [
+    11,
+    "Tidal Focus"
+   ],
+   [
+    12,
+    "Tidal Focus"
+   ],
+   [
+    13,
+    "Tidal Focus"
+   ],
+   [
+    14,
+    "Tidal Focus"
+   ],
+   [
+    15,
+    "Mindfulness"
+   ],
+   [
+    16,
+    "Mindfulness"
+   ],
+   [
+    17,
+    "Mindfulness"
+   ],
+   [
+    18,
+    "Improved Healing Wave"
+   ],
+   [
+    19,
+    "Improved Healing Wave"
+   ],
+   [
+    20,
+    "Water Shield"
+   ],
+   [
+    21,
+    "Improved Healing Wave"
+   ],
+   [
+    22,
+    "Improved Healing Wave"
+   ],
+   [
+    23,
+    "Improved Healing Wave"
+   ],
+   [
+    24,
+    "Healing Focus"
+   ],
+   [
+    25,
+    "Mana Tide Totem"
+   ],
+   [
+    26,
+    "Tidal Mastery"
+   ],
+   [
+    27,
+    "Tidal Mastery"
+   ],
+   [
+    28,
+    "Tidal Mastery"
+   ],
+   [
+    29,
+    "Tidal Mastery"
+   ],
+   [
+    30,
+    "Nature's Swiftness"
+   ],
+   [
+    31,
+    "Healing Way"
+   ],
+   [
+    32,
+    "Healing Way"
+   ],
+   [
+    33,
+    "Healing Way"
+   ],
+   [
+    34,
+    "Tidal Mastery"
+   ],
+   [
+    35,
+    "Purification"
+   ],
+   [
+    36,
+    "Purification"
+   ],
+   [
+    37,
+    "Purification"
+   ],
+   [
+    38,
+    "Purification"
+   ],
+   [
+    39,
+    "Purification"
+   ],
+   [
+    40,
+    "Riptide"
+   ],
+   [
+    41,
+    "Healing Focus"
+   ],
+   [
+    42,
+    "Healing Focus"
+   ],
+   [
+    43,
+    "Ancestral Healing"
+   ],
+   [
+    44,
+    "Ancestral Healing"
+   ],
+   [
+    45,
+    "Ancestral Healing"
+   ],
+   [
+    46,
+    "Thundering Strikes"
+   ],
+   [
+    47,
+    "Thundering Strikes"
+   ],
+   [
+    48,
+    "Thundering Strikes"
+   ],
+   [
+    49,
+    "Thundering Strikes"
+   ],
+   [
+    50,
+    "Thundering Strikes"
+   ],
+   [
+    51,
+    "Restorative Totems"
+   ],
+   [
+    52,
+    "Restorative Totems"
+   ],
+   [
+    53,
+    "Restorative Totems"
+   ],
+   [
+    54,
+    "Restorative Totems"
+   ],
+   [
+    55,
+    "Restorative Totems"
+   ],
+   [
+    56,
+    "Ancestral Knowledge"
+   ],
+   [
+    57,
+    "Ancestral Knowledge"
+   ],
+   [
+    58,
+    "Ancestral Knowledge"
+   ],
+   [
+    59,
+    "Ancestral Knowledge"
+   ],
+   [
+    60,
+    "Ancestral Knowledge"
+   ]
+  ]
+ },
+ "WARLOCK:affliction": {
+  "source": "Icy Veins: Affliction Warlock leveling",
+  "url": "https://www.icy-veins.com/wow-forever/affliction-warlock-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Affliction",
+  "order": [
+   [
+    10,
+    "Suppression"
+   ],
+   [
+    11,
+    "Suppression"
+   ],
+   [
+    12,
+    "Suppression"
+   ],
+   [
+    13,
+    "Suppression"
+   ],
+   [
+    14,
+    "Improved Corruption"
+   ],
+   [
+    15,
+    "Improved Corruption"
+   ],
+   [
+    16,
+    "Improved Corruption"
+   ],
+   [
+    17,
+    "Improved Corruption"
+   ],
+   [
+    18,
+    "Improved Corruption"
+   ],
+   [
+    19,
+    "Grim Reach"
+   ],
+   [
+    20,
+    "Improved Bane of Agony"
+   ],
+   [
+    21,
+    "Improved Bane of Agony"
+   ],
+   [
+    22,
+    "Pandemic"
+   ],
+   [
+    23,
+    "Pandemic"
+   ],
+   [
+    24,
+    "Pandemic"
+   ],
+   [
+    25,
+    "Nightfall"
+   ],
+   [
+    26,
+    "Nightfall"
+   ],
+   [
+    27,
+    "Malevolence"
+   ],
+   [
+    28,
+    "Malevolence"
+   ],
+   [
+    29,
+    "Malevolence"
+   ],
+   [
+    30,
+    "Siphon Life"
+   ],
+   [
+    31,
+    "Demonic Embrace"
+   ],
+   [
+    32,
+    "Demonic Embrace"
+   ],
+   [
+    33,
+    "Demonic Embrace"
+   ],
+   [
+    34,
+    "Demonic Embrace"
+   ],
+   [
+    35,
+    "Demonic Embrace"
+   ],
+   [
+    36,
+    "Demonic Aegis"
+   ],
+   [
+    37,
+    "Demonic Aegis"
+   ],
+   [
+    38,
+    "Fel Vitality"
+   ],
+   [
+    39,
+    "Fel Vitality"
+   ],
+   [
+    40,
+    "Fel Vitality"
+   ],
+   [
+    41,
+    "Demonic Sacrifice"
+   ],
+   [
+    42,
+    "Malevolence"
+   ],
+   [
+    43,
+    "Malevolence"
+   ],
+   [
+    44,
+    "Grim Reach"
+   ],
+   [
+    45,
+    "Improved Life Tap"
+   ],
+   [
+    46,
+    "Shadow Mastery"
+   ],
+   [
+    47,
+    "Shadow Mastery"
+   ],
+   [
+    48,
+    "Shadow Mastery"
+   ],
+   [
+    49,
+    "Shadow Mastery"
+   ],
+   [
+    50,
+    "Shadow Mastery"
+   ],
+   [
+    51,
+    "Wrack"
+   ],
+   [
+    52,
+    "Improved Life Tap"
+   ],
+   [
+    53,
+    "Soul Siphon"
+   ],
+   [
+    54,
+    "Soul Siphon"
+   ],
+   [
+    55,
+    "Soul Siphon"
+   ],
+   [
+    56,
+    "Improved Drains"
+   ],
+   [
+    57,
+    "Improved Drains"
+   ],
+   [
+    58,
+    "Improved Drains"
+   ],
+   [
+    59,
+    "Fel Concentration"
+   ],
+   [
+    60,
+    "Fel Concentration"
+   ]
+  ]
+ },
+ "WARLOCK:demonology": {
+  "source": "Icy Veins: Demonology Warlock leveling",
+  "url": "https://www.icy-veins.com/wow-forever/demonology-warlock-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Demonology",
+  "order": [
+   [
+    10,
+    "Unholy Power"
+   ],
+   [
+    11,
+    "Unholy Power"
+   ],
+   [
+    12,
+    "Unholy Power"
+   ],
+   [
+    13,
+    "Unholy Power"
+   ],
+   [
+    14,
+    "Unholy Power"
+   ],
+   [
+    15,
+    "Demonic Energies"
+   ],
+   [
+    16,
+    "Demonic Energies"
+   ],
+   [
+    17,
+    "Fel Vitality"
+   ],
+   [
+    18,
+    "Fel Vitality"
+   ],
+   [
+    19,
+    "Fel Vitality"
+   ],
+   [
+    20,
+    "Master Summoner"
+   ],
+   [
+    21,
+    "Master Summoner"
+   ],
+   [
+    22,
+    "Improved Voidwalker"
+   ],
+   [
+    23,
+    "Improved Voidwalker"
+   ],
+   [
+    24,
+    "Improved Voidwalker"
+   ],
+   [
+    25,
+    "Demonic Brand"
+   ],
+   [
+    26,
+    "Demonic Brand"
+   ],
+   [
+    27,
+    "Demonic Brand"
+   ],
+   [
+    28,
+    "Fel Domination"
+   ],
+   [
+    29,
+    "Demonic Sacrifice"
+   ],
+   [
+    30,
+    "Soul Link"
+   ],
+   [
+    31,
+    "Demonic Knowledge"
+   ],
+   [
+    32,
+    "Demonic Knowledge"
+   ],
+   [
+    33,
+    "Demonic Knowledge"
+   ],
+   [
+    34,
+    "Demonic Aegis"
+   ],
+   [
+    35,
+    "Master Demonologist"
+   ],
+   [
+    36,
+    "Master Demonologist"
+   ],
+   [
+    37,
+    "Master Demonologist"
+   ],
+   [
+    38,
+    "Master Demonologist"
+   ],
+   [
+    39,
+    "Master Demonologist"
+   ],
+   [
+    40,
+    "Demonic Pact"
+   ],
+   [
+    41,
+    "Suppression"
+   ],
+   [
+    42,
+    "Suppression"
+   ],
+   [
+    43,
+    "Suppression"
+   ],
+   [
+    44,
+    "Suppression"
+   ],
+   [
+    45,
+    "Improved Corruption"
+   ],
+   [
+    46,
+    "Improved Corruption"
+   ],
+   [
+    47,
+    "Improved Corruption"
+   ],
+   [
+    48,
+    "Improved Corruption"
+   ],
+   [
+    49,
+    "Improved Corruption"
+   ],
+   [
+    50,
+    "Improved Life Tap"
+   ],
+   [
+    51,
+    "Improved Bane of Agony"
+   ],
+   [
+    52,
+    "Improved Bane of Agony"
+   ],
+   [
+    53,
+    "Pandemic"
+   ],
+   [
+    54,
+    "Pandemic"
+   ],
+   [
+    55,
+    "Pandemic"
+   ],
+   [
+    56,
+    "Malevolence"
+   ],
+   [
+    57,
+    "Malevolence"
+   ],
+   [
+    58,
+    "Malevolence"
+   ],
+   [
+    59,
+    "Malevolence"
+   ],
+   [
+    60,
+    "Malevolence"
+   ]
+  ]
+ },
+ "WARLOCK:destruction": {
+  "source": "Icy Veins: Destruction Warlock leveling",
+  "url": "https://www.icy-veins.com/wow-forever/destruction-warlock-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Destruction",
+  "order": [
+   [
+    10,
+    "Bane"
+   ],
+   [
+    11,
+    "Bane"
+   ],
+   [
+    12,
+    "Bane"
+   ],
+   [
+    13,
+    "Bane"
+   ],
+   [
+    14,
+    "Bane"
+   ],
+   [
+    15,
+    "Aftermath"
+   ],
+   [
+    16,
+    "Aftermath"
+   ],
+   [
+    17,
+    "Aftermath"
+   ],
+   [
+    18,
+    "Aftermath"
+   ],
+   [
+    19,
+    "Aftermath"
+   ],
+   [
+    20,
+    "Shadowburn"
+   ],
+   [
+    21,
+    "Destructive Reach"
+   ],
+   [
+    22,
+    "Destructive Reach"
+   ],
+   [
+    23,
+    "Ruin"
+   ],
+   [
+    24,
+    "Ruin"
+   ],
+   [
+    25,
+    "Conflagrate"
+   ],
+   [
+    26,
+    "Intensity"
+   ],
+   [
+    27,
+    "Intensity"
+   ],
+   [
+    28,
+    "Intensity"
+   ],
+   [
+    29,
+    "Agonizing Flames"
+   ],
+   [
+    30,
+    "Fire and Brimstone"
+   ],
+   [
+    31,
+    "Fire and Brimstone"
+   ],
+   [
+    32,
+    "Fire and Brimstone"
+   ],
+   [
+    33,
+    "Bane of Havoc"
+   ],
+   [
+    34,
+    "Agonizing Flames"
+   ],
+   [
+    35,
+    "Shadow and Flame"
+   ],
+   [
+    36,
+    "Shadow and Flame"
+   ],
+   [
+    37,
+    "Shadow and Flame"
+   ],
+   [
+    38,
+    "Shadow and Flame"
+   ],
+   [
+    39,
+    "Shadow and Flame"
+   ],
+   [
+    40,
+    "Incinerate"
+   ],
+   [
+    41,
+    "Agonizing Flames"
+   ],
+   [
+    42,
+    "Suppression"
+   ],
+   [
+    43,
+    "Suppression"
+   ],
+   [
+    44,
+    "Suppression"
+   ],
+   [
+    45,
+    "Suppression"
+   ],
+   [
+    46,
+    "Demonic Embrace"
+   ],
+   [
+    47,
+    "Demonic Embrace"
+   ],
+   [
+    48,
+    "Demonic Embrace"
+   ],
+   [
+    49,
+    "Demonic Embrace"
+   ],
+   [
+    50,
+    "Demonic Embrace"
+   ],
+   [
+    51,
+    "Demonic Aegis"
+   ],
+   [
+    52,
+    "Demonic Aegis"
+   ],
+   [
+    53,
+    "Fel Vitality"
+   ],
+   [
+    54,
+    "Fel Vitality"
+   ],
+   [
+    55,
+    "Fel Vitality"
+   ],
+   [
+    56,
+    "Demonic Sacrifice"
+   ],
+   [
+    57,
+    "Improved Life Tap"
+   ],
+   [
+    58,
+    "Improved Life Tap"
+   ],
+   [
+    59,
+    "Ruin"
+   ],
+   [
+    60,
+    "Ruin"
+   ]
+  ]
+ },
+ "WARRIOR:arms": {
+  "source": "Icy Veins: Arms Warrior leveling",
+  "url": "https://www.icy-veins.com/wow-forever/arms-warrior-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Arms",
+  "order": [
+   [
+    10,
+    "Improved Rend"
+   ],
+   [
+    11,
+    "Improved Rend"
+   ],
+   [
+    12,
+    "Improved Rend"
+   ],
+   [
+    13,
+    "Deflection"
+   ],
+   [
+    14,
+    "Deflection"
+   ],
+   [
+    15,
+    "Improved Overpower"
+   ],
+   [
+    16,
+    "Improved Overpower"
+   ],
+   [
+    17,
+    "Improved Charge"
+   ],
+   [
+    18,
+    "Improved Charge"
+   ],
+   [
+    19,
+    "Improved Tactical Mastery"
+   ],
+   [
+    20,
+    "Improved Tactical Mastery"
+   ],
+   [
+    21,
+    "Improved Tactical Mastery"
+   ],
+   [
+    22,
+    "Anger Management"
+   ],
+   [
+    23,
+    "Deep Wounds"
+   ],
+   [
+    24,
+    "Deep Wounds"
+   ],
+   [
+    25,
+    "Spearing Strike"
+   ],
+   [
+    26,
+    "Two-Handed Weapon Specialization"
+   ],
+   [
+    27,
+    "Two-Handed Weapon Specialization"
+   ],
+   [
+    28,
+    "Two-Handed Weapon Specialization"
+   ],
+   [
+    29,
+    "Deep Wounds"
+   ],
+   [
+    30,
+    "Sweeping Strikes"
+   ],
+   [
+    31,
+    "Bloodthrill"
+   ],
+   [
+    32,
+    "Bloodthrill"
+   ],
+   [
+    33,
+    "Weaponmaster"
+   ],
+   [
+    34,
+    "Weaponmaster"
+   ],
+   [
+    35,
+    "Improved Slam"
+   ],
+   [
+    36,
+    "Improved Slam"
+   ],
+   [
+    37,
+    "Weaponmaster"
+   ],
+   [
+    38,
+    "Weaponmaster"
+   ],
+   [
+    39,
+    "Weaponmaster"
+   ],
+   [
+    40,
+    "Mortal Strike"
+   ],
+   [
+    41,
+    "Cruelty"
+   ],
+   [
+    42,
+    "Cruelty"
+   ],
+   [
+    43,
+    "Cruelty"
+   ],
+   [
+    44,
+    "Cruelty"
+   ],
+   [
+    45,
+    "Cruelty"
+   ],
+   [
+    46,
+    "Lingering Rage"
+   ],
+   [
+    47,
+    "Lingering Rage"
+   ],
+   [
+    48,
+    "Lingering Rage"
+   ],
+   [
+    49,
+    "Lingering Rage"
+   ],
+   [
+    50,
+    "Lingering Rage"
+   ],
+   [
+    51,
+    "Enrage"
+   ],
+   [
+    52,
+    "Enrage"
+   ],
+   [
+    53,
+    "Enrage"
+   ],
+   [
+    54,
+    "Enrage"
+   ],
+   [
+    55,
+    "Enrage"
+   ],
+   [
+    56,
+    "Reckless Swings"
+   ],
+   [
+    57,
+    "Improved Bloodrage"
+   ],
+   [
+    58,
+    "Improved Bloodrage"
+   ],
+   [
+    59,
+    "Impale"
+   ],
+   [
+    60,
+    "Impale"
+   ]
+  ]
+ },
+ "WARRIOR:fury": {
+  "source": "Icy Veins: Fury Warrior leveling",
+  "url": "https://www.icy-veins.com/wow-forever/fury-warrior-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Fury",
+  "order": [
+   [
+    10,
+    "Cruelty"
+   ],
+   [
+    11,
+    "Cruelty"
+   ],
+   [
+    12,
+    "Cruelty"
+   ],
+   [
+    13,
+    "Cruelty"
+   ],
+   [
+    14,
+    "Cruelty"
+   ],
+   [
+    15,
+    "Unbridled Wrath"
+   ],
+   [
+    16,
+    "Unbridled Wrath"
+   ],
+   [
+    17,
+    "Unbridled Wrath"
+   ],
+   [
+    18,
+    "Unbridled Wrath"
+   ],
+   [
+    19,
+    "Unbridled Wrath"
+   ],
+   [
+    20,
+    "Furious Precision"
+   ],
+   [
+    21,
+    "Furious Precision"
+   ],
+   [
+    22,
+    "Furious Precision"
+   ],
+   [
+    23,
+    "Enrage"
+   ],
+   [
+    24,
+    "Enrage"
+   ],
+   [
+    25,
+    "Dual Wield Specialization"
+   ],
+   [
+    26,
+    "Dual Wield Specialization"
+   ],
+   [
+    27,
+    "Dual Wield Specialization"
+   ],
+   [
+    28,
+    "Dual Wield Specialization"
+   ],
+   [
+    29,
+    "Dual Wield Specialization"
+   ],
+   [
+    30,
+    "Death Wish"
+   ],
+   [
+    31,
+    "Reckless Swings"
+   ],
+   [
+    32,
+    "Improved Berserker Rage"
+   ],
+   [
+    33,
+    "Improved Berserker Rage"
+   ],
+   [
+    34,
+    "Enrage"
+   ],
+   [
+    35,
+    "Improved Whirlwind"
+   ],
+   [
+    36,
+    "Improved Whirlwind"
+   ],
+   [
+    37,
+    "Flurry"
+   ],
+   [
+    38,
+    "Flurry"
+   ],
+   [
+    39,
+    "Flurry"
+   ],
+   [
+    40,
+    "Bloodthirst"
+   ],
+   [
+    41,
+    "Improved Rend"
+   ],
+   [
+    42,
+    "Improved Rend"
+   ],
+   [
+    43,
+    "Improved Rend"
+   ],
+   [
+    44,
+    "Deflection"
+   ],
+   [
+    45,
+    "Deflection"
+   ],
+   [
+    46,
+    "Improved Charge"
+   ],
+   [
+    47,
+    "Improved Charge"
+   ],
+   [
+    48,
+    "Improved Overpower"
+   ],
+   [
+    49,
+    "Improved Overpower"
+   ],
+   [
+    50,
+    "Improved Tactical Mastery"
+   ],
+   [
+    51,
+    "Improved Tactical Mastery"
+   ],
+   [
+    52,
+    "Improved Tactical Mastery"
+   ],
+   [
+    53,
+    "Anger Management"
+   ],
+   [
+    54,
+    "Improved Bloodrage"
+   ],
+   [
+    55,
+    "Improved Bloodrage"
+   ],
+   [
+    56,
+    "Enrage"
+   ],
+   [
+    57,
+    "Enrage"
+   ],
+   [
+    58,
+    "Deep Wounds"
+   ],
+   [
+    59,
+    "Deep Wounds"
+   ],
+   [
+    60,
+    "Deep Wounds"
+   ]
+  ]
+ },
+ "WARRIOR:protection": {
+  "source": "Icy Veins: Protection Warrior leveling",
+  "url": "https://www.icy-veins.com/wow-forever/protection-warrior-leveling",
+  "guideVersion": "70755-d1899b7d",
+  "tree": "Protection",
+  "order": [
+   [
+    10,
+    "Shield Specialization"
+   ],
+   [
+    11,
+    "Shield Specialization"
+   ],
+   [
+    12,
+    "Shield Specialization"
+   ],
+   [
+    13,
+    "Shield Specialization"
+   ],
+   [
+    14,
+    "Shield Specialization"
+   ],
+   [
+    15,
+    "Improved Revenge"
+   ],
+   [
+    16,
+    "Improved Revenge"
+   ],
+   [
+    17,
+    "Improved Revenge"
+   ],
+   [
+    18,
+    "Improved Thunder Clap"
+   ],
+   [
+    19,
+    "Improved Thunder Clap"
+   ],
+   [
+    20,
+    "Master of Defense"
+   ],
+   [
+    21,
+    "Master of Defense"
+   ],
+   [
+    22,
+    "Improved Thunder Clap"
+   ],
+   [
+    23,
+    "Last Stand"
+   ],
+   [
+    24,
+    "Defiance"
+   ],
+   [
+    25,
+    "Vanguard"
+   ],
+   [
+    26,
+    "Improved Sunder Armor"
+   ],
+   [
+    27,
+    "Improved Sunder Armor"
+   ],
+   [
+    28,
+    "Improved Sunder Armor"
+   ],
+   [
+    29,
+    "Defiance"
+   ],
+   [
+    30,
+    "Focused Rage"
+   ],
+   [
+    31,
+    "Focused Rage"
+   ],
+   [
+    32,
+    "Focused Rage"
+   ],
+   [
+    33,
+    "Concussion Blow"
+   ],
+   [
+    34,
+    "Defiance"
+   ],
+   [
+    35,
+    "Bastion"
+   ],
+   [
+    36,
+    "Bastion"
+   ],
+   [
+    37,
+    "Bastion"
+   ],
+   [
+    38,
+    "Bastion"
+   ],
+   [
+    39,
+    "Bastion"
+   ],
+   [
+    40,
+    "Shield Slam"
+   ],
+   [
+    41,
+    "Improved Rend"
+   ],
+   [
+    42,
+    "Improved Rend"
+   ],
+   [
+    43,
+    "Improved Rend"
+   ],
+   [
+    44,
+    "Cruelty"
+   ],
+   [
+    45,
+    "Cruelty"
+   ],
+   [
+    46,
+    "Cruelty"
+   ],
+   [
+    47,
+    "Cruelty"
+   ],
+   [
+    48,
+    "Cruelty"
+   ],
+   [
+    49,
+    "Unbridled Wrath"
+   ],
+   [
+    50,
+    "Unbridled Wrath"
+   ],
+   [
+    51,
+    "Unbridled Wrath"
+   ],
+   [
+    52,
+    "Unbridled Wrath"
+   ],
+   [
+    53,
+    "Unbridled Wrath"
+   ],
+   [
+    54,
+    "Enrage"
+   ],
+   [
+    55,
+    "Enrage"
+   ],
+   [
+    56,
+    "Enrage"
+   ],
+   [
+    57,
+    "Enrage"
+   ],
+   [
+    58,
+    "Enrage"
+   ],
+   [
+    59,
+    "Reckless Swings"
+   ],
+   [
+    60,
+    "Deflection"
+   ]
+  ]
+ }
+}

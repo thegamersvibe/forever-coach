@@ -55,6 +55,8 @@ function A:Run(c)
     end
 
     -- Build: class milestones (verified spell IDs; alternatives count; unknown is not "missing")
+    -- quests get their own tip (they need a trip); missed trainer skills are grouped into one tip
+    local missedTrainer, trainerTop = {}, 0
     for _, m in ipairs(FC:Rules().spellMilestones or {}) do
         if m.class == cls and lvl >= m.level and specOk(m, spec) and raceOk(m, snap.race) then
             local known, answered = false, false
@@ -65,10 +67,23 @@ function A:Run(c)
             end
             if answered and not known then
                 local base = m.importance or 60
-                local where = m.kind == "trainer" and "Visit your class trainer" or m.how
-                add(F, base + math.min(lvl - m.level, 4) * 2, "Build", m.name .. " not learned (available since " .. m.level .. ")", where)
+                if m.kind == "trainer" then
+                    missedTrainer[#missedTrainer + 1] = { name = m.name, imp = base }
+                    trainerTop = math.max(trainerTop, base)
+                else
+                    add(F, base + math.min(lvl - m.level, 4) * 2, "Build", m.name .. " not learned (class quest, available since " .. m.level .. ")", m.how)
+                end
             end
         end
+    end
+    if #missedTrainer > 0 then
+        table.sort(missedTrainer, function(a, b) return a.imp > b.imp end)
+        local names = {}
+        for i, m in ipairs(missedTrainer) do if i <= 5 then names[#names + 1] = m.name end end
+        local more = #missedTrainer > 5 and (" +" .. (#missedTrainer - 5) .. " more") or ""
+        add(F, math.min(trainerTop, 85) + math.min(#missedTrainer, 5), "Build",
+            #missedTrainer .. " class skill" .. (#missedTrainer > 1 and "s" or "") .. " not learned: " .. table.concat(names, ", ") .. more,
+            "Visit your class trainer")
     end
 
     -- Build: trainer (class trainers only; cleared by TRAINER_UPDATE/CLOSED after buying)
