@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Forever Coach</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#0e1116;--card:#161b22;--fg:#e6edf3;--mut:#8b949e;--line:#30363d;--Build:#ffd54f;--Gear:#81c784;--Play:#4fc3f7;--Next:#b0bec5}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 "Segoe UI",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:24px}
+h1{font-size:22px;margin:0 0 4px}.mut{color:var(--mut);font-size:13px}
+.note{background:#1f2a37;border:1px solid #2f81f7;border-radius:8px;padding:10px 14px;margin:14px 0}
+.err{background:#3a1d1d;border-color:#f85149}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:18px 0}
+.head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.bar{height:6px;background:#30363d;border-radius:3px;margin:8px 0 2px;overflow:hidden;position:relative}
+.bar i{display:block;height:100%;background:#a371f7}.bar b{position:absolute;top:0;height:100%;background:#2f81f744}
+ol{padding-left:0;list-style:none;margin:14px 0 0}
+li{padding:10px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:60px 1fr;gap:10px}
+.tag{font-size:12px;font-weight:600;padding:2px 0}
+.fix{color:var(--mut);font-size:13px;margin-top:2px}
+.ok{color:var(--Gear)}
+details{margin-top:10px}summary{cursor:pointer;color:var(--mut)}
+</style></head><body><main>
+<h1>Forever Coach</h1>
+<div class="mut">Updates when the game saves (/reload, logout). App {{.AppVersion}} · rules {{if .RulesVersion}}{{.RulesVersion}}{{else}}not installed{{end}}</div>
+{{if .UpdateNote}}<div class="note">{{.UpdateNote}}</div>{{end}}
+{{if .Error}}<div class="note err">{{.Error}}</div>{{end}}
+{{range .Chars}}
+<section class="card">
+ <div class="head">
+  <div><b>{{.Name}}</b> <span class="mut">{{.Realm}}</span><br>
+   <span class="mut">Level {{.Level}} {{.Race}} {{.Class | lower}} · {{.Faction}} · gear spec {{.Spec}}{{if .SpecSource}} ({{.SpecSource}}){{end}}</span></div>
+  <div class="mut" style="text-align:right">saved {{ago .Updated}}{{if .XPPerHour}}<br>{{.XPPerHour}} XP/hour{{end}}</div>
+ </div>
+ <div class="bar"><b style="left:{{.XPPct}}%;width:{{.RestedPct}}%"></b><i style="width:{{.XPPct}}%"></i></div>
+ <div class="mut">{{.XPPct}}% to next level{{if .RestedPct}} · rested {{.RestedPct}}%{{end}}</div>
+ {{if .Findings}}<ol>{{range $i, $f := .Findings}}{{if lt $i 15}}
+  <li><span class="tag" style="color:var(--{{$f.Area}})">{{$f.Area}}</span>
+   <div>{{$f.Text}}{{if $f.Fix}}<div class="fix">{{$f.Fix}}</div>{{end}}</div></li>{{end}}{{end}}</ol>
+ {{else}}<p class="ok">Nothing to fix right now.</p>{{end}}
+ {{if .Deaths}}<details><summary>Recent deaths ({{len .Deaths}})</summary><ul>{{range .Deaths}}<li style="display:block">{{.}}</li>{{end}}</ul></details>{{end}}
+ <div class="mut" style="margin-top:8px">{{.Sessions}} session(s) recorded</div>
+</section>
+{{end}}
+</main>
+<script>
+let s=null;setInterval(async()=>{try{const t=await (await fetch('/stamp')).text();if(s&&t!==s)location.reload();s=t}catch(e){}},2000)
+</script></body></html>

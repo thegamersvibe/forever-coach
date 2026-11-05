@@ -2,17 +2,41 @@
 
 A leveling auditor for **World of Warcraft: Forever**, for every class and spec.
 
-You play, type `/reload`, and get a ranked list of what to fix: gear behind your level, unspent talents, missing trainer ranks, overdue class quests, and play habits (deaths, downtime, wasted procs).
+Play, type `/reload` (or `/coach`), and get a ranked list of what's slowing you down:
 
-**Status:** in development. Nothing to install yet.
+- **Build**: unspent talent points, class-quest spells you never learned (Defensive Stance, Bear Form, demon pets…), trainer visits you skipped.
+- **Gear**: each slot compared with the best piece you can actually get at your level for your spec, race and faction, plus where it comes from.
+- **Play**: deaths per hour and what killed you, time spent eating and recovering, rage sitting near cap, missed procs (Revenge, Overpower, Victory Rush, Riposte…).
 
-## Planned package
-- `ForeverCoach/`: in-game addon. Drop it into `World of Warcraft\_forever_\Interface\AddOns`. `/coach` shows the top fixes.
-- `ForeverCoach.exe`: optional desktop report. Portable, read-only: it reads only the addon's own saved file.
-- `rules.json`: Forever-specific rules, auto-updated from this repo's releases (same major version only).
+## Install
+1. Download `ForeverCoach-<version>.zip` from [Releases](https://github.com/thegamersvibe/forever-coach/releases/latest).
+2. Copy the `ForeverCoach` folder into `World of Warcraft\_forever_\Interface\AddOns\`.
+3. Recommended: install **GearQuest Forever** and enable its module for your class. Gear checks use its data. Everything else works without it.
+4. In game, type `/coach`.
 
-## Data
-Gear, route and dungeon data are read from **your own** installed addons (GearQuest Forever, Journey, ForeverDungeonJournal) at runtime. None of their data is copied into this repo.
+### Optional desktop report
+Run `ForeverCoach.exe` (no install). It opens a report in your browser that refreshes every time the game saves (`/reload`, logout).
+- Reads **only** `WTF\Account\*\SavedVariables\ForeverCoach.lua`.
+- Keeps `ForeverCoach\Rules.lua` up to date from this repo (same rules schema only). After an update, `/reload` in game.
+- When a new addon or app version is out, it shows a link. It never installs code on its own.
+- Windows SmartScreen may warn because the exe isn't code-signed. Choose "More info → Run anyway", or build it yourself (`desktop/`, Go 1.22+).
+- If the game is under Program Files and the rules update fails with "access denied", run it once as administrator, or ignore it (the addon still works with its bundled rules).
+- Options: `-game "D:\...\_forever_"`, `-port 47321`, `-once` (print to console), `-no-update`.
+
+## Commands
+- `/coach`: open or close the window
+- `/coach top`: top 3 fixes in chat
+- `/coach spec <id|auto>`: which spec to score gear for (GearQuest ids: `protection`, `arms`, `fury`, `bear`, `holy`…)
 
 ## Safety
-No memory reading, no input automation. Only files the game itself writes.
+No memory reading, no input automation, no network access from the addon. Only data the game gives every addon, and files the game itself writes.
+
+## Data
+Gear data is read at runtime from **your own** GearQuest Forever install. Nothing from other addons is copied into this repo.
+Forever-specific knowledge (race-locked class quests, items not in Forever, class milestones, thresholds) lives in [`rules/rules.json`](rules/rules.json). PRs welcome.
+
+## Develop
+- `python3 scripts/build_rules_lua.py`: rules.json → addon Rules.lua
+- `uv run --with lupa python test/harness.py [path/to/GearQuestForever_<CLASS>]`: runs the addon against a mocked client (Lua 5.1)
+- `cd desktop && go test ./...`
+- `scripts/release.sh <version>`: build exe and zip, tag, publish a GitHub release

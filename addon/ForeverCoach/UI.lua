@@ -1,0 +1,86 @@
+-- Forever Coach: /coach window and slash commands.
+local _, FC = ...
+local UI = {}
+FC.UI = UI
+
+local COLORS = { Build = "ffd54f", Gear = "81c784", Play = "4fc3f7", Next = "b0bec5" }
+
+local function line(f)
+    local col = COLORS[f.area] or "ffffff"
+    local s = string.format("|cff%s%s|r  %s", col, f.area, f.text)
+    if f.fix and f.fix ~= "" then s = s .. "\n      |cffaaaaaa" .. f.fix .. "|r" end
+    return s
+end
+
+function UI:Build()
+    if self.frame then return end
+    local f = CreateFrame("Frame", "ForeverCoachFrame", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
+    f:SetSize(460, 380); f:SetPoint("CENTER"); f:SetFrameStrata("DIALOG")
+    f:SetMovable(true); f:EnableMouse(true); f:RegisterForDrag("LeftButton")
+    f:SetScript("OnDragStart", f.StartMoving); f:SetScript("OnDragStop", f.StopMovingOrSizing)
+    if f.SetBackdrop then
+        f:SetBackdrop({ bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", edgeSize = 14,
+            insets = { left = 3, right = 3, top = 3, bottom = 3 } })
+        f:SetBackdropColor(0.05, 0.06, 0.08, 0.94)
+    end
+    f.title = f:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge"); f.title:SetPoint("TOPLEFT", 14, -12)
+    f.sub = f:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall"); f.sub:SetPoint("TOPLEFT", 14, -32)
+    local close = CreateFrame("Button", nil, f, "UIPanelCloseButton"); close:SetPoint("TOPRIGHT", -2, -2)
+    local sf = CreateFrame("ScrollFrame", nil, f, "UIPanelScrollFrameTemplate")
+    sf:SetPoint("TOPLEFT", 12, -52); sf:SetPoint("BOTTOMRIGHT", -30, 12)
+    local body = CreateFrame("Frame", nil, sf); body:SetSize(410, 10); sf:SetScrollChild(body)
+    f.text = body:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    f.text:SetPoint("TOPLEFT"); f.text:SetWidth(410); f.text:SetJustifyH("LEFT"); f.text:SetSpacing(3)
+    f.body = body
+    f:Hide()
+    tinsert(UISpecialFrames, "ForeverCoachFrame")
+    self.frame = f
+end
+
+function UI:Update()
+    if not self.frame or not self.frame:IsShown() then return end
+    local c = FC:Char()
+    local s = c.snapshot or {}
+    local g = c.gear or {}
+    self.frame.title:SetText("Forever Coach")
+    self.frame.sub:SetText(string.format("%s  level %s %s %s  |  spec: %s%s  |  rules %s", s.name or "?", s.level or "?", s.race or "", s.class or "",
+        tostring(g.spec or "?"), g.specSource and (" (" .. g.specSource .. ")") or "", (FC:Rules().version or "none")))
+    local out = {}
+    for i, f in ipairs(c.findings or {}) do
+        if i > 12 then break end
+        out[#out + 1] = line(f)
+    end
+    if #out == 0 then out[1] = "Nothing to fix right now. Play a bit, then /reload or /coach." end
+    if c.xpPerHour then out[#out + 1] = "\n|cff888888Recent pace: " .. c.xpPerHour .. " XP/hour|r" end
+    self.frame.text:SetText(table.concat(out, "\n\n"))
+    self.frame.body:SetHeight(self.frame.text:GetStringHeight() + 10)
+end
+
+function UI:Toggle()
+    self:Build()
+    if self.frame:IsShown() then self.frame:Hide() return end
+    FC:Refresh("open")
+    self.frame:Show(); self:Update()
+end
+
+SLASH_FOREVERCOACH1 = "/coach"
+SlashCmdList.FOREVERCOACH = function(msg)
+    msg = (msg or ""):lower():gsub("^%s+", ""):gsub("%s+$", "")
+    local cmd, arg = msg:match("^(%S*)%s*(.*)$")
+    if cmd == "spec" then
+        local c = FC:Char()
+        c.specOverride = (arg ~= "" and arg ~= "auto") and arg or nil
+        FC:Refresh("spec")
+        FC:Print("gear spec: " .. tostring(c.gear and c.gear.spec) .. (c.specOverride and " (manual)" or " (auto)"))
+    elseif cmd == "top" then
+        FC:Refresh("top")
+        for i, f in ipairs(FC:Char().findings or {}) do
+            if i > 3 then break end
+            FC:Print(f.area .. ": " .. f.text .. (f.fix and (" -> " .. f.fix) or ""))
+        end
+    elseif cmd == "help" then
+        FC:Print("/coach (window), /coach top (top 3 in chat), /coach spec <id|auto>")
+    else
+        UI:Toggle()
+    end
+end
