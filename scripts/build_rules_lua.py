@@ -1,9 +1,22 @@
 #!/usr/bin/env python3
 """rules/rules.json -> addon/ForeverCoach/Rules.lua (the addon can't read JSON).
-The desktop helper does the same conversion when it downloads a newer rules.json."""
+desktop/update.go does the same conversion when it downloads a newer rules.json.
+Both use real Lua string escaping: UTF-8 stays as raw bytes (Lua 5.1 has no \\u escapes)."""
 import json, os, sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+
+
+def lua_str(s):
+    out = []
+    for ch in s:
+        if ch == '\\': out.append('\\\\')
+        elif ch == '"': out.append('\\"')
+        elif ch == '\n': out.append('\\n')
+        elif ch == '\r': out.append('\\r')
+        elif ord(ch) < 32 or ord(ch) == 127: out.append('\\%03d' % ord(ch))
+        else: out.append(ch)
+    return '"' + ''.join(out) + '"'
 
 
 def lua(v, ind=0):
@@ -11,10 +24,10 @@ def lua(v, ind=0):
     if isinstance(v, bool): return 'true' if v else 'false'
     if v is None: return 'nil'
     if isinstance(v, (int, float)): return repr(v)
-    if isinstance(v, str): return json.dumps(v)  # JSON string escapes are valid Lua for our ASCII/UTF-8 content
+    if isinstance(v, str): return lua_str(v)
     if isinstance(v, list): return '{\n' + ''.join(f'{p}  {lua(x, ind + 1)},\n' for x in v) + p + '}'
     if isinstance(v, dict):
-        return '{\n' + ''.join(f'{p}  [{json.dumps(k)}] = {lua(x, ind + 1)},\n' for k, x in v.items()) + p + '}'
+        return '{\n' + ''.join(f'{p}  [{lua_str(k)}] = {lua(x, ind + 1)},\n' for k, x in sorted(v.items())) + p + '}'
     raise TypeError(type(v))
 
 

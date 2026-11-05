@@ -31,15 +31,18 @@ const RulesSchema = 1
 var assets embed.FS
 
 type Finding struct {
-	Impact float64
-	Area   string
-	Text   string
-	Fix    string
+	Impact   float64
+	Area     string
+	Text     string
+	Fix      string
+	Where    string
+	Estimate bool
 }
 
 type CharView struct {
 	Key, Name, Realm, Class, Race, Faction, Spec, SpecSource string
 	Level                                                    int
+	MaxLevel                                                 bool
 	XPPct, RestedPct                                         int
 	XPPerHour                                                int
 	Updated                                                  time.Time
@@ -48,17 +51,25 @@ type CharView struct {
 	Deaths                                                   []string
 	Money                                                    string
 	ClassColor                                               string
+	Zone, Guide, GuideStep                                   string
+	AddonError                                               string
+	Stale                                                    []string
 	Slots                                                    []SlotView
+	GearStatus, GearNote                                     string
+	GearAssessed, GearUnknown, GearEmpty, GearUpgrades       int
+	Owned                                                    []OwnedView
 	Talents                                                  []TalentView
+	TalentSteps                                              []TalentStep
+	TalentSource, TalentURL                                  string
+	Dungeons                                                 []DungeonView
 	Procs                                                    []ProcView
 	Stats                                                    StatView
 	Counts                                                   map[string]int
-	GearScorePct                                             int
-	GearNote                                                 string
 }
 
 type SlotView struct {
 	Name, Item, BestName, BestHow, BestSource string
+	BestWhere, Status, Note                   string
 	Equipped, Weapon                          bool
 	GapPct                                    int
 }
@@ -76,15 +87,17 @@ type ProcView struct {
 }
 
 type StatView struct {
-	PlayMin, CombatPct, DowntimePct, DeadPct, Deaths, Kills int
-	DeathsPerHour                                           string
-	XPToLevel, MinToLevel                                   int
-	HasData                                                 bool
+	PlayMin, ActiveMin, Deaths                                 int
+	CombatPct, DowntimePct, DeadPct, AFKPct, TaxiPct, OtherPct int
+	DeathsPerHour                                              string
+	XPToLevel, MinToLevel                                      int
+	HasData                                                    bool
 }
 
 type View struct {
 	Chars                       []CharView
 	SVPath, Error, RulesVersion string
+	Warning                     string
 	UpdateNote, AppVersion      string
 	Loaded                      time.Time
 }
@@ -197,33 +210,54 @@ func (a *App) watch() {
 			a.svPath = findSavedVariables(a.game)
 		}
 		if st, err := os.Stat(a.svPath); err == nil && st.ModTime() != a.modTime {
+			time.Sleep(700 * time.Millisecond) // let the game finish writing
+			a.reload()
+		}
+		// pick up another account's newer save
+		if p := findSavedVariables(a.game); p != "" && p != a.svPath {
+			a.svPath = p
 			a.reload()
 		}
 	}
 }
 
 func (a *App) reload() {
-	v := View{SVPath: a.svPath, AppVersion: Version, Loaded: time.Now()}
 	a.mu.Lock()
-	v.UpdateNote = a.view.UpdateNote
+	prev := a.view
 	a.mu.Unlock()
+	v := View{SVPath: a.svPath, AppVersion: Version, Loaded: time.Now(), UpdateNote: prev.UpdateNote}
 	v.RulesVersion = installedRulesVersion(a.addonDir)
 	if a.svPath == "" {
 		v.Error = "No ForeverCoach data yet. Install the addon, log in, then /reload."
 	} else if st, err := os.Stat(a.svPath); err != nil {
 		v.Error = "Can't read " + a.svPath + ": " + err.Error()
 	} else {
-		a.modTime = st.ModTime()
 		b, err := os.ReadFile(a.svPath)
+		var vars map[string]any
 		if err == nil {
-			var vars map[string]any
 			vars, err = ParseSavedVariables(string(b))
-			if err == nil {
-				v.Chars = buildChars(M(vars["ForeverCoachDB"]))
-			}
+		}
+		db := M(vars["ForeverCoachDB"])
+		if err == nil && db == nil {
+			err = fmt.Errorf("no ForeverCoachDB in %s", a.svPath)
+		}
+		if err == nil && N(db["schema"]) > 1 {
+			err = fmt.Errorf("this save was written by a newer Forever Coach addon; update the app")
 		}
 		if err != nil {
+			// keep showing the last good data; the game may still be writing the file
+			if len(prev.Chars) > 0 {
+				prev.Warning = "Latest save couldn't be read yet, showing the previous one (" + err.Error() + ")"
+				prev.Loaded = time.Now()
+				a.mu.Lock()
+				a.view = prev
+				a.mu.Unlock()
+				return
+			}
 			v.Error = err.Error()
+		} else {
+			a.modTime = st.ModTime() // only accept the file once it parsed
+			v.Chars = buildChars(db)
 		}
 	}
 	a.mu.Lock()
@@ -248,7 +282,7 @@ func buildChars(db map[string]any) []CharView {
 		}
 		for _, f := range List(c["findings"]) {
 			fm := M(f)
-			cv.Findings = append(cv.Findings, Finding{N(fm["impact"]), S(fm["area"]), S(fm["text"]), S(fm["fix"])})
+			cv.Findings = append(cv.Findings, Finding{N(fm["impact"]), S(fm["area"]), S(fm["text"]), S(fm["fix"]), S(fm["where"]), fm["estimate"] == true})
 		}
 		sess := List(c["sessions"])
 		cv.Sessions = len(sess)
@@ -256,11 +290,8 @@ func buildChars(db map[string]any) []CharView {
 			for _, d := range List(M(sess[i])["deaths"]) {
 				dm := M(d)
 				line := fmt.Sprintf("Level %s, %s", S(dm["level"]), S(dm["zone"]))
-				if by := S(dm["by"]); by != "" {
-					line += " — " + by
-					if sp := S(dm["spell"]); sp != "" && sp != "melee" {
-						line += " (" + sp + ")"
-					}
+				if t := int64(N(dm["time"])); t > 0 {
+					line += " · " + ago(time.Unix(t, 0))
 				}
 				cv.Deaths = append(cv.Deaths, line)
 			}

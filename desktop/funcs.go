@@ -19,6 +19,7 @@ var funcs = template.FuncMap{
 	},
 	"inc": func(n int) int { return n + 1 },
 	"sub": func(a, b int) int { return a - b },
+	"add": func(a, b int) int { return a + b },
 	"commas": func(n int) string {
 		s := fmt.Sprint(n)
 		for i := len(s) - 3; i > 0; i -= 3 {
@@ -51,11 +52,9 @@ var funcs = template.FuncMap{
 		}
 		return "var(--bad)"
 	},
-	"gapColor": func(gap int, equipped bool) string {
+	"gapColor": func(gap int, equipped bool, status string) string {
 		switch {
-		case gap < 0 && equipped:
-			return "#4a5468"
-		case gap < 0:
+		case status == "unknown" || gap < 0:
 			return "#4a5468"
 		case !equipped || gap >= 40:
 			return "var(--bad)"
@@ -64,6 +63,7 @@ var funcs = template.FuncMap{
 		}
 		return "var(--ok)"
 	},
+	"join": strings.Join,
 	"icon": func(area string) template.HTML {
 		return template.HTML(icons[area])
 	},
@@ -74,13 +74,6 @@ var funcs = template.FuncMap{
 			b[i] = i < on
 		}
 		return b
-	},
-	"rest": func(s StatView) int {
-		r := 100 - s.CombatPct - s.DowntimePct - s.DeadPct
-		if r < 0 {
-			return 0
-		}
-		return r
 	},
 	"short": func(s string) string {
 		r := strings.NewReplacer("&nbsp;", " ", "&lt;", "<", "&gt;", ">", "&amp;", "&", "&#39;", "'", "&quot;", "\"")

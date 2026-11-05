@@ -2,16 +2,18 @@
 
 A leveling auditor for **World of Warcraft: Forever**, for every class and spec.
 
-Play, type `/reload` (or `/coach`), and get a ranked list of what's slowing you down:
+Play, type `/reload` (or `/coach`), and get a ranked list of what's slowing you down, sorted by what's cheapest and closest:
 
-- **Build**: unspent talent points, class-quest spells you never learned (Defensive Stance, Bear Form, demon pets…), trainer visits you skipped.
-- **Gear**: each slot compared with the best piece you can actually get at your level for your spec, race and faction, plus where it comes from.
-- **Play**: deaths per hour and what killed you, time spent eating and recovering, rage sitting near cap, missed procs (Revenge, Overpower, Victory Rush, Riposte…).
+- **Gear**: upgrades already in your bags first, then the best piece for your level and spec ranked by where it is: your current zone, the next zones on your leveling route (Journey guide), dungeons, then everything else. Items you can't get are left out: the other faction's zones, reputation you don't have, other races' class quests, items not in Forever. Unknown items are shown as "not checked", never as bad gear.
+- **Build**: unspent talent points with the next pick from a leveling guide (Protection Warrior: Icy Veins), class milestones with verified spell IDs (Defensive Stance, Revenge, Shield Block, Bear Form, pets, demons...), skills left at your class trainer.
+- **Dungeons**: which dungeons fit your level and the quests to pick up before you go (from ForeverDungeonJournal).
+- **Play** (estimates): deaths per active hour, short stops out of combat, rage near cap, and how often you cast Revenge/Overpower/Victory Rush when they light up. WoW Forever hides health and the combat log from addons, so these are labelled as estimates.
+- **Next**: bag space, empty bag slots, rested XP.
 
 ## Install
 1. Download `ForeverCoach-<version>.zip` from [Releases](https://github.com/thegamersvibe/forever-coach/releases/latest).
 2. Copy the `ForeverCoach` folder into `World of Warcraft\_forever_\Interface\AddOns\`.
-3. Recommended: install **GearQuest Forever** and enable its module for your class. Gear checks use its data. Everything else works without it.
+3. Recommended: **GearQuest Forever** (with its module for your class) for gear checks, **Journey** for your route, **ForeverDungeonJournal** for dungeon prep. Everything else works without them.
 4. In game, type `/coach`.
 
 ### Optional desktop report
@@ -33,7 +35,7 @@ Run `ForeverCoach.exe` (no install). It opens a report in your browser that refr
 No memory reading, no input automation, no network access from the addon. Only data the game gives every addon, and files the game itself writes.
 
 ## Data
-Gear data is read at runtime from **your own** GearQuest Forever install. Nothing from other addons is copied into this repo.
+Gear and dungeon data are read at runtime from **your own** GearQuest Forever and ForeverDungeonJournal installs. Nothing from other addons is copied into this repo. `rules/rules.json` holds Forever-specific facts: zone names and level bands of the leveling route, faction-locked zones, race-locked class quests, class milestone spell IDs, and guide talent orders (level + talent name only, credited and linked; no guide text).
 Forever-specific knowledge (race-locked class quests, items not in Forever, class milestones, thresholds) lives in [`rules/rules.json`](rules/rules.json). PRs welcome.
 
 ## Develop

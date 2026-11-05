@@ -2,7 +2,7 @@
 local ADDON, FC = ...
 FC = FC or {}
 _G.ForeverCoach = FC
-FC.VERSION = "1.0.4"
+FC.VERSION = "1.1.0"
 FC.SCHEMA = 1
 
 local function safe(f, ...)
@@ -12,16 +12,22 @@ local function safe(f, ...)
 end
 FC.safe = safe
 
--- Forever hides some values from addons ("secret values"); never do math on one.
+-- Forever hides some values from addons ("secret values"); never do math or comparisons on one.
 local function num(v)
     if v == nil or (issecretvalue and issecretvalue(v)) or type(v) ~= "number" then return nil end
     return v
 end
-FC.num = num
+local function plain(v)
+    if v == nil or (issecretvalue and issecretvalue(v)) then return nil end
+    return v
+end
+FC.num, FC.plain = num, plain
 
+local EMPTY_RULES = { thresholds = {}, raceOnlyQuests = {}, spellMilestones = {}, procSpells = {}, routes = {},
+    zoneParents = {}, factionZoneDeny = {}, talentBuilds = {}, practicality = {} }
 function FC:Rules()
     local r = _G.ForeverCoach_Rules
-    if type(r) ~= "table" or r.schema ~= 1 then return { thresholds = {}, raceOnlyQuests = {}, spellMilestones = {}, procSpells = {} } end
+    if type(r) ~= "table" or r.schema ~= 1 then return EMPTY_RULES end
     return r
 end
 
@@ -44,42 +50,67 @@ function FC:Char()
     return db.chars[key]
 end
 
--- Spell known check that tolerates API differences between clients.
+-- true / false / nil (nil = the client gave no usable answer)
 function FC:KnowsSpell(id)
-    if IsPlayerSpell and safe(IsPlayerSpell, id) then return true end
-    if IsSpellKnown and safe(IsSpellKnown, id) then return true end
-    if C_SpellBook and C_SpellBook.IsSpellKnown and safe(C_SpellBook.IsSpellKnown, id) then return true end
-    return false
+    local answered = false
+    for _, f in ipairs({ IsPlayerSpell or false, IsSpellKnown or false, (C_SpellBook and C_SpellBook.IsSpellKnown) or false,
+        (C_SpellBook and C_SpellBook.IsSpellKnownOrInSpellBook) or false }) do
+        if type(f) == "function" then
+            local ok, r = pcall(f, id)
+            if ok then r = plain(r) end
+            if ok and r == true then return true end
+            if ok and r == false then answered = true end
+        end
+    end
+    if answered then return false end
+    return nil
 end
 
 function FC:SpellName(id)
     if C_Spell and C_Spell.GetSpellInfo then
         local info = safe(C_Spell.GetSpellInfo, id)
-        if type(info) == "table" and info.name then return info.name end
+        if type(info) == "table" and type(info.name) == "string" then return info.name end
     end
-    if GetSpellInfo then return (safe(GetSpellInfo, id)) end
+    if GetSpellInfo then
+        local n = safe(GetSpellInfo, id)
+        if type(n) == "string" then return n end
+    end
 end
 
 local function itemIdFromLink(link)
-    return link and tonumber(link:match("item:(%d+)")) or nil
+    return type(link) == "string" and tonumber(link:match("item:(%d+)")) or nil
 end
 FC.itemIdFromLink = itemIdFromLink
 
-function FC:Talents()
-    local t = { tabs = {}, unspent = nil }
+function FC:EquipLoc(id)
+    if not id then return nil end
+    if C_Item and C_Item.GetItemInfoInstant then
+        local _, _, _, loc = safe(C_Item.GetItemInfoInstant, id)
+        if type(loc) == "string" then return loc end
+    end
+    if GetItemInfoInstant then
+        local _, _, _, loc = safe(GetItemInfoInstant, id)
+        if type(loc) == "string" then return loc end
+    end
+end
+
+function FC:ReadTalents()
+    local t = { tabs = {}, unspent = nil, ranks = {}, detailed = false }
     if UnitCharacterPoints then t.unspent = num(safe(UnitCharacterPoints, "player")) end
-    local n = (GetNumTalentTabs and safe(GetNumTalentTabs)) or 0
+    local n = (GetNumTalentTabs and num(safe(GetNumTalentTabs))) or 0
     for tab = 1, n do
         local a, b, c, d = safe(GetTalentTabInfo, tab)
         local spent
-        for _, v in ipairs({ c, d, b }) do if num(v) then spent = v break end end
-        if spent == nil and GetNumTalents and GetTalentInfo then
-            spent = 0
-            for i = 1, (safe(GetNumTalents, tab) or 0) do
-                local _, _, _, _, rank = safe(GetTalentInfo, tab, i)
-                if num(rank) then spent = spent + rank end
+        for _, v in ipairs({ c or false, d or false, b or false }) do if num(v) then spent = v break end end
+        local count = (GetNumTalents and num(safe(GetNumTalents, tab))) or 0
+        local sum = 0
+        for i = 1, count do
+            local name, _, _, _, rank = safe(GetTalentInfo, tab, i)
+            if type(name) == "string" and num(rank) then
+                t.ranks[name] = (t.ranks[name] or 0) + rank; sum = sum + rank; t.detailed = true
             end
         end
+        if spent == nil then spent = sum end
         t.tabs[tab] = { name = type(a) == "string" and a or ("Tree " .. tab), spent = spent or 0 }
     end
     return t
@@ -87,10 +118,29 @@ end
 
 function FC:Skills()
     local out = {}
-    local n = (GetNumSkillLines and safe(GetNumSkillLines)) or 0
+    local n = (GetNumSkillLines and num(safe(GetNumSkillLines))) or 0
     for i = 1, n do
         local name, header, _, rank, _, _, maxRank = safe(GetSkillLineInfo, i)
-        if name and not header and num(rank) then out[name] = { rank = rank, max = maxRank } end
+        if type(name) == "string" and not header and num(rank) then out[name] = { rank = rank, max = num(maxRank) } end
+    end
+    return out
+end
+
+FC.STANDING = { "Hated", "Hostile", "Unfriendly", "Neutral", "Friendly", "Honored", "Revered", "Exalted" }
+function FC:Reputations()
+    local out = {}
+    local n = (GetNumFactions and num(safe(GetNumFactions))) or 0
+    for i = 1, n do
+        local name, standing
+        if C_Reputation and C_Reputation.GetFactionDataByIndex then
+            local d = safe(C_Reputation.GetFactionDataByIndex, i)
+            if type(d) == "table" then name, standing = d.name, num(d.reaction) end
+        end
+        if not name and GetFactionInfo then
+            local nm, _, st = safe(GetFactionInfo, i)
+            name, standing = nm, num(st)
+        end
+        if type(name) == "string" and standing then out[name] = standing end
     end
     return out
 end
@@ -98,58 +148,116 @@ end
 function FC:Equipped()
     local out = {}
     for slot = 1, 19 do
-        local link = safe(GetInventoryItemLink, "player", slot)
-        if link then out[slot] = { id = itemIdFromLink(link), link = link } end
+        local link = plain(safe(GetInventoryItemLink, "player", slot))
+        local id = itemIdFromLink(link)
+        if id then out[slot] = { id = id, link = link, loc = self:EquipLoc(id) } end
     end
     return out
 end
 
-function FC:BagItems()
-    local out = {}
+function FC:Bags()
+    local items, info = {}, { free = 0, slots = 0, bagSlotsEmpty = 0, known = false }
     local C = C_Container
     for bag = 0, 4 do
-        local n = (C and C.GetContainerNumSlots and safe(C.GetContainerNumSlots, bag)) or (GetContainerNumSlots and safe(GetContainerNumSlots, bag)) or 0
+        local n = (C and C.GetContainerNumSlots and num(safe(C.GetContainerNumSlots, bag))) or (GetContainerNumSlots and num(safe(GetContainerNumSlots, bag))) or 0
+        if bag > 0 and n == 0 then info.bagSlotsEmpty = info.bagSlotsEmpty + 1 end
+        info.slots = info.slots + n
+        local free = (C and C.GetContainerNumFreeSlots and num((safe(C.GetContainerNumFreeSlots, bag)))) or (GetContainerNumFreeSlots and num((safe(GetContainerNumFreeSlots, bag))))
+        if free then info.free = info.free + free; info.known = true end
         for s = 1, n do
-            local link = (C and C.GetContainerItemLink and safe(C.GetContainerItemLink, bag, s)) or (GetContainerItemLink and safe(GetContainerItemLink, bag, s))
+            local link = (C and C.GetContainerItemLink and plain(safe(C.GetContainerItemLink, bag, s))) or (GetContainerItemLink and plain(safe(GetContainerItemLink, bag, s)))
             local id = itemIdFromLink(link)
-            if id then out[#out + 1] = { id = id, link = link } end
+            if id then items[#items + 1] = { id = id, link = link, bag = bag, slot = s, loc = self:EquipLoc(id) } end
         end
     end
-    return out
+    return items, info
+end
+
+function FC:Zone()
+    local zone = plain(GetRealZoneText and safe(GetRealZoneText)) or plain(GetZoneText and safe(GetZoneText))
+    local sub = plain(GetSubZoneText and safe(GetSubZoneText))
+    if type(zone) ~= "string" or zone == "" then return {} end
+    local P = self:Rules().zoneParents or {}
+    return { zone = zone, sub = (type(sub) == "string" and sub ~= "") and sub or nil, parent = P[zone] or zone }
 end
 
 function FC:Journey()
     local j = _G.Journey_Character
     if type(j) ~= "table" then return nil end
     local g = j.lastGuide
-    local bm = g and j.bookmarks and j.bookmarks[g]
-    return { guide = g, step = bm and bm.stepID }
+    local bm = g and type(j.bookmarks) == "table" and j.bookmarks[g]
+    local out = { guide = g, step = type(bm) == "table" and bm.stepID or nil }
+    for _, r in ipairs(self:Rules().routes or {}) do
+        if r.id == g then out.zone = table.concat(r.zones, " / "); out.from = r.from; out.to = r.to end
+    end
+    return out
+end
+
+function FC:QuestDone(id)
+    if not id then return nil end
+    if C_QuestLog and C_QuestLog.IsQuestFlaggedCompleted then
+        local r = plain(safe(C_QuestLog.IsQuestFlaggedCompleted, id))
+        if r ~= nil then return r == true end
+    end
+    if IsQuestFlaggedCompleted then
+        local r = plain(safe(IsQuestFlaggedCompleted, id))
+        if r ~= nil then return r == true end
+    end
+end
+
+function FC:OnQuest(id)
+    if id and C_QuestLog and C_QuestLog.IsOnQuest then return plain(safe(C_QuestLog.IsOnQuest, id)) == true end
+    return false
 end
 
 function FC:Snapshot()
     local _, classFile = UnitClass("player")
     local _, raceFile = UnitRace("player")
     local faction = UnitFactionGroup("player")
+    local bags, baginfo = self:Bags()
     local s = {
         time = time(), name = UnitName("player"), realm = GetRealmName and GetRealmName(),
-        class = classFile, race = raceFile, faction = faction, level = UnitLevel("player"),
+        class = classFile, race = raceFile, faction = faction, level = num(UnitLevel("player")) or 1,
         xp = num(UnitXP("player")) or 0, xpMax = num(UnitXPMax("player")) or 0,
         rested = (GetXPExhaustion and num(GetXPExhaustion())) or 0,
+        resting = (IsResting and plain(safe(IsResting)) == true) or false,
         money = (GetMoney and num(GetMoney())) or 0,
-        talents = self:Talents(), skills = self:Skills(), equipped = self:Equipped(), bags = self:BagItems(),
-        journey = self:Journey(), spells = {},
+        talents = self:ReadTalents(), skills = self:Skills(), reps = self:Reputations(), equipped = self:Equipped(),
+        bags = bags, baginfo = baginfo, zone = self:Zone(), journey = self:Journey(), spells = {},
     }
     for _, m in ipairs(self:Rules().spellMilestones or {}) do
-        if m.class == classFile then s.spells[m.spellId] = self:KnowsSpell(m.spellId) end
+        if m.class == classFile then
+            for _, id in ipairs(m.spellIds or { m.spellId }) do
+                local k = self:KnowsSpell(id)
+                if k ~= nil then s.spells[id] = k end
+            end
+        end
     end
     return s
 end
 
+-- Each section is computed on its own; a failing section keeps its last good result and is marked stale.
+local function section(c, key, fn, ...)
+    c.stale = c.stale or {}
+    local ok, res = pcall(fn, ...)
+    if ok then c[key] = res; c.stale[key] = nil; return true end
+    c.stale[key] = true
+    c.lastError = { where = key, err = tostring(res), time = time(), version = FC.VERSION }
+    return false
+end
+
 function FC:RefreshUnsafe(reason)
     local c = self:Char()
-    c.snapshot = self:Snapshot()
-    if FC.Gear then c.gear = FC.Gear:Audit(c.snapshot) end
-    if FC.Audit then c.findings = FC.Audit:Run(c) end
+    local okSnap, snap = pcall(self.Snapshot, self)
+    if not okSnap then
+        c.lastError = { where = "snapshot", err = tostring(snap), time = time(), version = FC.VERSION }
+        return
+    end
+    c.snapshot = snap
+    if FC.Gear then section(c, "gear", FC.Gear.Audit, FC.Gear, snap) end
+    if FC.Talents then section(c, "talentPlan", FC.Talents.Plan, FC.Talents, snap, c.gear and c.gear.spec) end
+    if FC.Dungeons then section(c, "dungeons", FC.Dungeons.Plan, FC.Dungeons, snap) end
+    if FC.Audit then section(c, "findings", FC.Audit.Run, FC.Audit, c) end
     c.updated = time()
     c.reason = reason
     if FC.UI and FC.UI.Update then FC.UI:Update() end
@@ -163,37 +271,61 @@ function FC:Refresh(reason)
     end
 end
 
+local function later(sec, key, fn)
+    if not C_Timer then fn() return end
+    FC._pending = FC._pending or {}
+    if FC._pending[key] then return end
+    FC._pending[key] = true
+    C_Timer.After(sec, function() FC._pending[key] = nil; fn() end)
+end
+FC.later = later
+
+local function scanTrainer()
+    local trade = IsTradeskillTrainer and plain(safe(IsTradeskillTrainer))
+    if trade == true then return end -- profession trainers don't count as class training
+    local avail, names = 0, {}
+    for i = 1, ((GetNumTrainerServices and num(safe(GetNumTrainerServices))) or 0) do
+        local name, _, kind = safe(GetTrainerServiceInfo, i)
+        if plain(kind) == "available" then
+            avail = avail + 1
+            if type(name) == "string" and #names < 6 then names[#names + 1] = name end
+        end
+    end
+    FC:Char().trainer = { level = num(UnitLevel("player")), time = time(), available = avail, names = names }
+end
+
 local f = CreateFrame("Frame")
 FC.frame = f
-f:RegisterEvent("ADDON_LOADED")
-f:RegisterEvent("PLAYER_LOGIN")
-f:RegisterEvent("PLAYER_LEVEL_UP")
-f:RegisterEvent("PLAYER_LOGOUT")
-f:RegisterEvent("TRAINER_SHOW")
-f:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
+for _, e in ipairs({ "ADDON_LOADED", "PLAYER_LOGIN", "PLAYER_LEVEL_UP", "PLAYER_LOGOUT", "TRAINER_SHOW", "TRAINER_UPDATE",
+    "TRAINER_CLOSED", "PLAYER_EQUIPMENT_CHANGED", "ZONE_CHANGED_NEW_AREA", "SPELLS_CHANGED", "BAG_UPDATE_DELAYED",
+    "QUEST_TURNED_IN", "GET_ITEM_INFO_RECEIVED" }) do
+    f:RegisterEvent(e)
+end
 f:SetScript("OnEvent", function(_, event, arg1)
-    if event == "ADDON_LOADED" and arg1 == ADDON then
-        FC:Char()
-    elseif event == "PLAYER_LOGIN" then
-        if C_Timer then C_Timer.After(5, function() FC:Refresh("login") end) else FC:Refresh("login") end
-        if FC.Session then FC.Session:Start() end
-    elseif event == "PLAYER_LEVEL_UP" then
-        if C_Timer then C_Timer.After(2, function() FC:Refresh("levelup") end) end
-    elseif event == "PLAYER_EQUIPMENT_CHANGED" then
-        if C_Timer and not FC._eqPending then
-            FC._eqPending = true
-            C_Timer.After(2, function() FC._eqPending = nil; FC:Refresh("equip") end)
+    local ok, err = pcall(function()
+        if event == "ADDON_LOADED" and arg1 == ADDON then
+            FC:Char()
+        elseif event == "PLAYER_LOGIN" then
+            later(5, "refresh", function() FC:Refresh("login") end)
+            if FC.Session then FC.Session:Start() end
+        elseif event == "PLAYER_LEVEL_UP" then
+            if FC.Session then FC.Session:LevelUp() end
+            later(2, "refresh", function() FC:Refresh("levelup") end)
+        elseif event == "TRAINER_SHOW" or event == "TRAINER_UPDATE" then
+            scanTrainer()
+        elseif event == "TRAINER_CLOSED" then
+            scanTrainer(); later(1, "refresh", function() FC:Refresh("trainer") end)
+        elseif event == "SPELLS_CHANGED" then
+            if FC.Session then FC.Session:SyncSpells() end
+            later(3, "refresh", function() FC:Refresh("spells") end)
+        elseif event == "GET_ITEM_INFO_RECEIVED" then
+            later(5, "refresh", function() FC:Refresh("iteminfo") end)
+        elseif event == "PLAYER_LOGOUT" then
+            if FC.Session then FC.Session:Finish() end
+            FC:Refresh("logout")
+        elseif event ~= "ADDON_LOADED" then
+            later(3, "refresh", function() FC:Refresh(event) end)
         end
-    elseif event == "TRAINER_SHOW" then
-        local c = FC:Char()
-        local avail = 0
-        for i = 1, ((GetNumTrainerServices and safe(GetNumTrainerServices)) or 0) do
-            local _, _, kind = safe(GetTrainerServiceInfo, i)
-            if kind == "available" then avail = avail + 1 end
-        end
-        c.trainer = { level = UnitLevel("player"), time = time(), available = avail }
-    elseif event == "PLAYER_LOGOUT" then
-        if FC.Session then FC.Session:Finish() end
-        FC:Refresh("logout")
-    end
+    end)
+    if not ok then FC:Char().lastError = { where = event, err = tostring(err), time = time(), version = FC.VERSION } end
 end)

@@ -9,11 +9,21 @@ import (
 )
 
 type luaParser struct {
-	s   string
-	pos int
+	s     string
+	pos   int
+	depth int
 }
 
-func ParseSavedVariables(src string) (map[string]any, error) {
+func ParseSavedVariables(src string) (out map[string]any, err error) {
+	defer func() { // belt and braces: a malformed file must never kill the app
+		if r := recover(); r != nil {
+			out, err = nil, fmt.Errorf("SavedVariables: unreadable (%v)", r)
+		}
+	}()
+	return parseSV(src)
+}
+
+func parseSV(src string) (map[string]any, error) {
 	p := &luaParser{s: src}
 	out := map[string]any{}
 	for {
@@ -182,8 +192,16 @@ func (p *luaParser) table() (any, error) {
 	p.pos++ // {
 	out := map[string]any{}
 	n := 0
+	p.depth++
+	defer func() { p.depth-- }()
+	if p.depth > 64 {
+		return nil, p.err("nesting too deep")
+	}
 	for {
 		p.skip()
+		if p.pos >= len(p.s) {
+			return nil, p.err("unexpected end (file still being written?)")
+		}
 		if p.eat('}') {
 			return out, nil
 		}

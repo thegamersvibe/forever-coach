@@ -1,15 +1,18 @@
 ## Interface: 16001
 ## Title: Forever Coach
-## Notes: Leveling auditor for WoW Forever: gear, talents, training, class quests and play habits. /coach
+## Notes: Leveling auditor for WoW Forever: gear by route, talents, training, class quests, dungeons and play habits. /coach
 ## Author: TheGamersVibe
 ## Version: 1.0.4
 ## SavedVariables: ForeverCoachDB
-## OptionalDeps: GearQuestForever, Journey, ForeverDungeonJournal
+## OptionalDeps: GearQuestForever, GearQuestForever_WARRIOR, GearQuestForever_PALADIN, GearQuestForever_HUNTER, GearQuestForever_ROGUE, GearQuestForever_PRIEST, GearQuestForever_SHAMAN, GearQuestForever_MAGE, GearQuestForever_WARLOCK, GearQuestForever_DRUID, Journey, ForeverDungeonJournal
 ## IconTexture: Interface\AddOns\ForeverCoach\ForeverCoach
 
 Rules.lua
 Core.lua
+Route.lua
 Session.lua
 Gear.lua
+Talents.lua
+Dungeons.lua
 Audit.lua
 UI.lua

@@ -8,6 +8,7 @@ local COLORS = { Build = "ffd54f", Gear = "81c784", Play = "4fc3f7", Next = "b0b
 local function line(f)
     local col = COLORS[f.area] or "ffffff"
     local s = string.format("|cff%s%s|r  %s", col, f.area, f.text)
+    if f.where then s = s .. "  |cff8899aa[" .. f.where .. "]|r" end
     if f.fix and f.fix ~= "" then s = s .. "\n      |cffaaaaaa" .. f.fix .. "|r" end
     return s
 end
@@ -15,7 +16,7 @@ end
 function UI:Build()
     if self.frame then return end
     local f = CreateFrame("Frame", "ForeverCoachFrame", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
-    f:SetSize(460, 380); f:SetPoint("CENTER"); f:SetFrameStrata("DIALOG")
+    f:SetSize(500, 420); f:SetPoint("CENTER"); f:SetFrameStrata("DIALOG")
     f:SetMovable(true); f:EnableMouse(true); f:RegisterForDrag("LeftButton")
     f:SetScript("OnDragStart", f.StartMoving); f:SetScript("OnDragStop", f.StopMovingOrSizing)
     if f.SetBackdrop then
@@ -28,9 +29,9 @@ function UI:Build()
     local close = CreateFrame("Button", nil, f, "UIPanelCloseButton"); close:SetPoint("TOPRIGHT", -2, -2)
     local sf = CreateFrame("ScrollFrame", nil, f, "UIPanelScrollFrameTemplate")
     sf:SetPoint("TOPLEFT", 12, -52); sf:SetPoint("BOTTOMRIGHT", -30, 12)
-    local body = CreateFrame("Frame", nil, sf); body:SetSize(410, 10); sf:SetScrollChild(body)
+    local body = CreateFrame("Frame", nil, sf); body:SetSize(450, 10); sf:SetScrollChild(body)
     f.text = body:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    f.text:SetPoint("TOPLEFT"); f.text:SetWidth(410); f.text:SetJustifyH("LEFT"); f.text:SetSpacing(3)
+    f.text:SetPoint("TOPLEFT"); f.text:SetWidth(450); f.text:SetJustifyH("LEFT"); f.text:SetSpacing(3)
     f.body = body
     f:Hide()
     tinsert(UISpecialFrames, "ForeverCoachFrame")
@@ -42,19 +43,31 @@ function UI:Update()
     local c = FC:Char()
     local s = c.snapshot or {}
     local g = c.gear or {}
+    local z = s.zone and s.zone.zone or "?"
     self.frame.title:SetText("Forever Coach")
-    self.frame.sub:SetText(string.format("%s  level %s %s %s  |  spec: %s%s  |  rules %s", s.name or "?", s.level or "?", s.race or "", s.class or "",
-        tostring(g.spec or "?"), g.specSource and (" (" .. g.specSource .. ")") or "", (FC:Rules().version or "none")))
+    self.frame.sub:SetText(string.format("%s  level %s %s %s  |  %s  |  spec: %s (%s)  |  rules %s", s.name or "?", s.level or "?", s.race or "",
+        s.class or "", z, tostring(g.spec or "?"), tostring(g.specSource or "?"), (FC:Rules().version or "none")))
     local out = {}
     for i, f in ipairs(c.findings or {}) do
         if i > 12 then break end
         out[#out + 1] = line(f)
     end
-    if #out == 0 then out[1] = "Nothing to fix right now. Play a bit, then /reload or /coach." end
-    if c.lastError and c.lastError.version == FC.VERSION then
-        out[#out + 1] = "|cffff6b6bInternal error (please report):|r " .. c.lastError.where .. ": " .. c.lastError.err
+    if #out == 0 then out[1] = "Nothing found yet. Play a bit, then /reload or /coach." end
+    local tp = c.talentPlan
+    if tp and tp.upcoming and tp.upcoming[1] then
+        local up = {}
+        for _, u in ipairs(tp.upcoming) do up[#up + 1] = u.level .. ": " .. u.name end
+        out[#out + 1] = "|cffffd54fTalents next|r  " .. table.concat(up, ", ") .. "\n      |cff888888" .. tostring(tp.source) .. "|r"
     end
-    if c.xpPerHour then out[#out + 1] = "\n|cff888888Recent pace: " .. c.xpPerHour .. " XP/hour|r" end
+    if c.stale and next(c.stale) then
+        local keys = {}
+        for k in pairs(c.stale) do keys[#keys + 1] = k end
+        out[#out + 1] = "|cffffb454Out of date (failed to refresh):|r " .. table.concat(keys, ", ")
+    end
+    if c.lastError and c.lastError.version == FC.VERSION then
+        out[#out + 1] = "|cffff6b6bInternal error (please report):|r " .. tostring(c.lastError.where) .. ": " .. tostring(c.lastError.err)
+    end
+    if c.xpPerHour then out[#out + 1] = "\n|cff888888Recent pace: " .. c.xpPerHour .. " XP per active hour|r" end
     self.frame.text:SetText(table.concat(out, "\n\n"))
     self.frame.body:SetHeight(self.frame.text:GetStringHeight() + 10)
 end
@@ -72,14 +85,22 @@ SlashCmdList.FOREVERCOACH = function(msg)
     local cmd, arg = msg:match("^(%S*)%s*(.*)$")
     if cmd == "spec" then
         local c = FC:Char()
-        c.specOverride = (arg ~= "" and arg ~= "auto") and arg or nil
+        local _, cls = UnitClass("player")
+        if arg == "" or arg == "auto" then
+            c.specOverride = nil
+        elseif FC.Gear:ValidSpec(cls, arg) then
+            c.specOverride = arg
+        else
+            FC:Print("unknown spec '" .. arg .. "'. Options: " .. table.concat(FC.Gear:SpecOptions(cls), ", ") .. ", auto")
+            return
+        end
         FC:Refresh("spec")
         FC:Print("gear spec: " .. tostring(c.gear and c.gear.spec) .. (c.specOverride and " (manual)" or " (auto)"))
     elseif cmd == "top" then
         FC:Refresh("top")
         for i, f in ipairs(FC:Char().findings or {}) do
             if i > 3 then break end
-            FC:Print(f.area .. ": " .. f.text .. (f.fix and (" -> " .. f.fix) or ""))
+            FC:Print(f.area .. ": " .. f.text .. (f.where and (" [" .. f.where .. "]") or "") .. (f.fix and (" -> " .. f.fix) or ""))
         end
     elseif cmd == "help" then
         FC:Print("/coach (window), /coach top (top 3 in chat), /coach spec <id|auto>")

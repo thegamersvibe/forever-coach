@@ -130,8 +130,7 @@ func toLua(v any, ind int) string {
 	case float64:
 		return strconv.FormatFloat(t, 'f', -1, 64)
 	case string:
-		b, _ := json.Marshal(t)
-		return string(b)
+		return luaString(t)
 	case []any:
 		var sb strings.Builder
 		sb.WriteString("{\n")
@@ -148,12 +147,36 @@ func toLua(v any, ind int) string {
 		var sb strings.Builder
 		sb.WriteString("{\n")
 		for _, k := range keys {
-			kb, _ := json.Marshal(k)
-			sb.WriteString(p + "  [" + string(kb) + "] = " + toLua(t[k], ind+1) + ",\n")
+			sb.WriteString(p + "  [" + luaString(k) + "] = " + toLua(t[k], ind+1) + ",\n")
 		}
 		return sb.String() + p + "}"
 	}
 	return "nil"
+}
+
+// Lua 5.1 string literal: UTF-8 bytes kept as-is (Lua has no \u escapes); only quotes, backslash and controls escaped.
+func luaString(s string) string {
+	var sb strings.Builder
+	sb.WriteByte('"')
+	for i := 0; i < len(s); i++ {
+		c := s[i]
+		switch {
+		case c == '\\':
+			sb.WriteString(`\\`)
+		case c == '"':
+			sb.WriteString(`\"`)
+		case c == '\n':
+			sb.WriteString(`\n`)
+		case c == '\r':
+			sb.WriteString(`\r`)
+		case c < 32 || c == 127:
+			fmt.Fprintf(&sb, "\\%03d", c)
+		default:
+			sb.WriteByte(c)
+		}
+	}
+	sb.WriteByte('"')
+	return sb.String()
 }
 
 func jsonUnmarshal(b []byte, v any) error { return json.Unmarshal(b, v) }
