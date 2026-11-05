@@ -104,11 +104,12 @@ SlashCmdList.FOREVERCOACH = function(msg)
         end
     elseif cmd == "macros" then
         local _, cls = UnitClass("player")
-        local made, skipped, full, err = FC.Macros:Install(cls)
+        local made, skipped, full, err, updated = FC.Macros:Install(cls)
         if err then FC:Print(err) return end
         if #made > 0 then FC:Print("created: " .. table.concat(made, ", ")) end
-        if #skipped > 0 then FC:Print("already there (left unchanged): " .. table.concat(skipped, ", ")) end
-        if #full > 0 then FC:Print("no free character macro slot for: " .. table.concat(full, ", ")) end
+        if #updated > 0 then FC:Print("updated: " .. table.concat(updated, ", ")) end
+        if #skipped > 0 then FC:Print("already up to date: " .. table.concat(skipped, ", ")) end
+        if #full > 0 then FC:Print("couldn't create (no free character macro slot?): " .. table.concat(full, ", ")) end
         FC:Print("Open /macro, Character Specific tab, and drag them to a bar that doesn't swap with stance.")
         if ShowMacroFrame then pcall(ShowMacroFrame) end
     elseif cmd == "help" then
