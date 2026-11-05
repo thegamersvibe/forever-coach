@@ -2,14 +2,14 @@
   "FixedFileInfo": {
     "FileVersion": {
       "Major": 1,
-      "Minor": 0,
-      "Patch": 4,
+      "Minor": 1,
+      "Patch": 0,
       "Build": 0
     },
     "ProductVersion": {
       "Major": 1,
-      "Minor": 0,
-      "Patch": 4,
+      "Minor": 1,
+      "Patch": 0,
       "Build": 0
     },
     "FileFlagsMask": "3f",
@@ -19,12 +19,12 @@
   "StringFileInfo": {
     "CompanyName": "TheGamersVibe",
     "FileDescription": "Forever Coach - leveling report for WoW Forever",
-    "FileVersion": "1.0.4",
+    "FileVersion": "1.1.0",
     "InternalName": "ForeverCoach",
     "LegalCopyright": "MIT License, TheGamersVibe",
     "OriginalFilename": "ForeverCoach.exe",
     "ProductName": "Forever Coach",
-    "ProductVersion": "1.0.4"
+    "ProductVersion": "1.1.0"
   },
   "VarFileInfo": {
     "Translation": {
