@@ -22,7 +22,7 @@ import (
 	"time"
 )
 
-const Version = "1.0.1"
+const Version = "1.0.2"
 const Repo = "thegamersvibe/forever-coach"
 const RulesSchema = 1
 
