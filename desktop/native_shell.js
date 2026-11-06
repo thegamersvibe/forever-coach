@@ -32,6 +32,12 @@ const rc = Object.freeze({
 let offer = null, busy = false, refreshing = false;
 let reportGeneration = 0, switchingFolder = false, switchingAccount = false;
 let lastReport = null;
+// Snapshot the Go-rendered report before interaction, using its escaped context.
+let renderedReport = {
+  HTML: $('report-body').innerHTML,
+  Game: $('report-body').dataset.game,
+  Account: $('report-body').dataset.account
+};
 function message(text) { $('global-status').textContent = text; }
 function show(view) {
   $('report-view').hidden = view !== 'report';
@@ -74,11 +80,32 @@ function displayAccount(result) {
   $('account-status').textContent = result.ConfigWarning || (selected && !available
     ? 'Selected account output is unavailable. Refresh will not switch accounts.' : '');
 }
+function setReportFilter(filters,button) {
+  filters.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===button));
+  filters.closest('.card').querySelectorAll('.more .fix').forEach(row=>{row.hidden=button.dataset.f!=='all'&&row.dataset.area!==button.dataset.f;});
+}
 function displayReport(result,folderChanged = false) {
   lastReport = result;
   displayAccount(result);
-  // HTML is rendered by html/template in Go. No release notes or JS input use this sink.
-  if ($('report-body').innerHTML !== result.HTML) $('report-body').innerHTML = result.HTML;
+  // Compare server snapshots, not the DOM mutated by filters and expanded slots.
+  const sameContext = renderedReport && renderedReport.Game === result.Game && renderedReport.Account === result.Account;
+  if (!sameContext || renderedReport.HTML !== result.HTML) {
+    const filtersByCharacter = new Map();
+    if (sameContext) for (const filters of $('report-body').querySelectorAll('.filters')) {
+      const character = filters.closest('section[id]');
+      const selected = filters.querySelector('button.on');
+      if (character && selected) filtersByCharacter.set(character.id,selected.dataset.f);
+    }
+    // HTML is rendered by html/template in Go. No release notes or JS input use this sink.
+    $('report-body').innerHTML = result.HTML;
+    for (const filters of $('report-body').querySelectorAll('.filters')) {
+      const character = filters.closest('section[id]');
+      const area = character && filtersByCharacter.get(character.id);
+      const selected = [...filters.querySelectorAll('button')].find(b=>b.dataset.f===area);
+      if (selected) setReportFilter(filters,selected);
+    }
+    renderedReport = {HTML:result.HTML,Game:result.Game,Account:result.Account};
+  }
   $('installed-version').textContent = result.InstalledVersion === '0.0.0' ? 'Not installed' : result.InstalledVersion;
   $('folder-label').textContent = result.Game;
   if (folderChanged || document.activeElement !== $('game-path')) $('game-path').value = result.Game;
@@ -150,6 +177,7 @@ $('account-select').addEventListener('change',async()=>{
   const generation = ++reportGeneration;
   // An account switch is a data boundary, including failed reads or writes.
   $('report-body').replaceChildren();
+  renderedReport = null;
   $('account-source').textContent = 'Changing account…';
   $('account-save-time').textContent = 'Not loaded';
   $('account-save-time').dateTime = '';
@@ -223,11 +251,7 @@ document.addEventListener('dragover',event=>event.preventDefault());
 document.addEventListener('drop',event=>event.preventDefault());
 document.addEventListener('click',event=>{
   const button = event.target.closest('.filters button');
-  if (button) {
-    const filters = button.closest('.filters');
-    filters.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===button));
-    filters.closest('.card').querySelectorAll('.more .fix').forEach(row=>{row.hidden=button.dataset.f!=='all'&&row.dataset.area!==button.dataset.f;});
-  }
+  if (button) setReportFilter(button.closest('.filters'),button);
   const slot = event.target.closest('.slot');
   if (slot) slot.classList.toggle('open');
 });

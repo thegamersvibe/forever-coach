@@ -1,6 +1,7 @@
 package main
 
 import (
+	"html"
 	"os"
 	"path/filepath"
 	"strings"
@@ -47,10 +48,21 @@ func TestAppRefreshRescansAndRetainsLastGood(t *testing.T) {
 
 func TestNativeShellIsSelfContainedAndLockedDown(t *testing.T) {
 	a, _ := nativeTestApp(t)
-	if _, err := renderReportBody(a.snapshot()); err != nil {
+	v := a.snapshot()
+	if v.Account != "TEST" {
+		t.Fatalf("native startup fixture account = %q, want TEST", v.Account)
+	}
+	// Exercise the actual Everything else template in the embedded-JS tests.
+	v.Chars[0].Findings = nil
+	v.Chars[0].Counts = make(map[string]int)
+	for _, area := range []string{"Build", "Gear", "Play", "Build", "Gear", "Play", "Next"} {
+		v.Chars[0].Findings = append(v.Chars[0].Findings, Finding{Area: area, Text: "Synthetic filter fixture: " + area})
+		v.Chars[0].Counts[area]++
+	}
+	if _, err := renderReportBody(v); err != nil {
 		t.Fatal(err)
 	}
-	html, err := renderNativeShell(a.snapshot(), false, "test-token")
+	html, err := renderNativeShell(v, false, "test-token")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -71,6 +83,30 @@ func TestNativeShellIsSelfContainedAndLockedDown(t *testing.T) {
 		if strings.Contains(html, bad) {
 			t.Errorf("native shell contains %q", bad)
 		}
+	}
+}
+
+func TestNativeShellInitialReportContextEscapesValues(t *testing.T) {
+	for _, tc := range []struct {
+		name, game, account string
+	}{
+		{"ordinary", `C:\WoW\_forever_`, "TEST"},
+		{"special characters", `D:\WoW "quoted" & <folder>\_forever_`, `A" data-injected="yes' & <é>`},
+		{"empty selection", "", ""},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			rendered, err := renderNativeShell(View{Game: tc.game, Account: tc.account}, false, "test-token")
+			if err != nil {
+				t.Fatal(err)
+			}
+			want := `<div id="report-body" data-game="` + html.EscapeString(tc.game) + `" data-account="` + html.EscapeString(tc.account) + `">`
+			if !strings.Contains(rendered, want) {
+				t.Errorf("missing escaped initial report context %q", want)
+			}
+			if strings.Contains(rendered, ` data-injected="yes`) {
+				t.Error("initial context escaped its HTML attribute")
+			}
+		})
 	}
 }
 

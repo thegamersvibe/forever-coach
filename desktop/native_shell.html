@@ -21,7 +21,7 @@
 <p id="account-source">{{if .View.Account}}Account {{.View.Account}} · {{.View.SVPath}}{{else}}Choose an account to view its saved characters.{{end}}</p>
 <p>Save time: <time id="account-save-time">Not loaded</time></p>
 <p id="account-status" class="status" role="status" aria-live="polite">{{.View.ConfigWarning}}</p></div></div>
-<div id="report-body">{{template "report-body" .View}}</div></section>
+<div id="report-body" data-game="{{.View.Game}}" data-account="{{.View.Account}}">{{template "report-body" .View}}</div></section>
 <section id="update-view" hidden><header class="pagehead"><div><h2>Update Addon</h2><p class="subtle">Stable releases from thegamersvibe/relax-coach on GitHub.</p></div></header>
 <div class="card updatecard"><h3>Relax Coach addon</h3><dl class="versions"><div><dt>Installed addon</dt><dd id="installed-version">{{.InstalledVersion}}</dd></div><div><dt>Latest release</dt><dd id="offered-version">Not checked</dd></div></dl>
 <div class="actions"><button id="check-update" class="secondary"{{if .UpdatesDisabled}} disabled{{end}}>Check for updates</button><button id="apply-update" class="primary" disabled>Update Addon</button><a id="release-link" hidden>View on GitHub ↗</a></div>
