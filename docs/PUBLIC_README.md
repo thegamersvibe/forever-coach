@@ -2,11 +2,11 @@
 
 A leveling coach for **World of Warcraft: Forever**, with a Windows application for reports and addon updates.
 
-This archive is the **Coach-only updater asset**, not the combined guild download. For both addons and the guides, choose `RelaxCoach-Guild-1.4.0.zip` on the same release page.
+This archive is the **Coach-only updater asset**, not the combined guild download. For the existing combined package, choose `RelaxCoach-Guild-1.4.0.zip` on [release v1.4.0](https://github.com/thegamersvibe/relax-coach/releases/tag/v1.4.0). Newer releases may be app-only.
 
 ## Install
 
-Download `RelaxCoach-<version>.zip` from [the latest release](https://github.com/thegamersvibe/relax-coach/releases/latest).
+Download the latest available Coach ZIP from [the releases list](https://github.com/thegamersvibe/relax-coach/releases); app-only releases do not contain an addon ZIP. For the app, use `RelaxCoach.exe` from [the latest release](https://github.com/thegamersvibe/relax-coach/releases/latest). Older apps need this one-time executable replacement with Relax Coach closed; app v1.4.1+ has separate **Check App Update** and **Update App** controls. App updates can run while WoW stays open.
 
 - Copy `ForeverCoach` into your game's `_forever_\Interface\AddOns` folder. It appears in game as **Relax Coach**. The internal folder/save IDs intentionally remain unchanged to retain existing settings.
 - Run **RelaxCoach.exe** for the Windows app. Choose **Coach Report** or **Update Addon** inside the application window. Microsoft WebView2 Runtime is required; Windows installations commonly already include it.
@@ -46,6 +46,6 @@ The technical source paths remain `addon/ForeverCoach` and `desktop`.
 - `uv run --with lupa python test/harness.py` (also run with provider fixtures)
 - `cd desktop && go vet ./... && go test -race ./...`
 
-The Coach-only updater asset is `RelaxCoach-<version>.zip`; the release also provides the combined `RelaxCoach-Guild-<version>.zip`, `RelaxCoach.exe`, and `SHA256SUMS.txt`. The addon updater consumes published stable releases, not raw pushes to `main`; publishing a tested new release makes it available to players. Keep Journey and guide content out of the smaller Coach-only archive. Never include personal SavedVariables in either archive or this repository.
+The Coach-only updater asset is `RelaxCoach-<version>.zip`. App-only releases provide just `RelaxCoach.exe` and `SHA256SUMS.txt`; addon and combined guild ZIPs are included only when those packages are being released. The addon updater consumes published stable releases, not raw pushes to `main`; publishing a tested new release makes it available to players. Keep Journey and guide content out of the smaller Coach-only archive. Never include personal SavedVariables in either archive or this repository.
 
 MIT-licensed Coach code by **TheGamersVibe**. Original upstream projects retain their own authorship and licenses.

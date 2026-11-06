@@ -27,9 +27,24 @@ const rc = Object.freeze({
   chooseGame: () => call('chooseGame'),
   checkAddon: () => call('checkAddon'),
   applyAddon: version => call('applyAddon',version),
+  checkApp: () => call('checkApp'),
+  applyApp: version => call('applyApp',version),
+  appReady: () => call('appReady'),
   openExternal: url => call('openExternal',url)
 });
-let offer = null, busy = false, refreshing = false;
+let offer = null, appOffer = null, busy = false, refreshing = false, restarting = false;
+let healthPending = false, healthSent = false;
+// Two animation frames follow a successful Go report RPC and DOM rendering.
+// This is startup health, not an idle heartbeat or a page-load acknowledgement.
+function acknowledgeRenderedShell() {
+  if (healthPending || healthSent) return;
+  healthPending = true;
+  requestAnimationFrame(()=>requestAnimationFrame(async()=>{
+    try { await rc.appReady(); healthSent = true; }
+    catch(err) { $('app-update-status').textContent = 'Startup verification failed: '+err.message; }
+    finally { healthPending = false; }
+  }));
+}
 let reportGeneration = 0, switchingFolder = false, switchingAccount = false;
 let lastReport = null;
 // Snapshot the Go-rendered report before interaction, using its escaped context.
@@ -52,6 +67,8 @@ function updateButtons() {
   const disabled = document.body.dataset.updatesDisabled === 'true';
   $('refresh').disabled = refreshing || switchingFolder || switchingAccount;
   $('account-select').disabled = busy || !lastReport || !(lastReport.Accounts || []).length;
+  $('check-app-update').disabled = busy || disabled;
+  $('apply-app-update').disabled = busy || disabled || !appOffer || !appOffer.Available;
   $('check-update').disabled = busy || disabled;
   $('apply-update').disabled = busy || disabled || !offer || !offer.Available;
   for (const id of ['browse-folder','use-folder','game-path']) $(id).disabled = busy;
@@ -86,6 +103,8 @@ function setReportFilter(filters,button) {
 }
 function displayReport(result,folderChanged = false) {
   lastReport = result;
+  if (result.AppVersion) $('installed-app-version').textContent = result.AppVersion;
+  if (typeof result.AppUpdateStatus === 'string') $('app-last-result').textContent = result.AppUpdateStatus;
   displayAccount(result);
   // Compare server snapshots, not the DOM mutated by filters and expanded slots.
   const sameContext = renderedReport && renderedReport.Game === result.Game && renderedReport.Account === result.Account;
@@ -128,6 +147,7 @@ async function refresh(manual = false) {
     const result = await rc.refresh();
     if (generation !== reportGeneration) return;
     displayReport(result);
+    acknowledgeRenderedShell();
     if (manual) message('Report refreshed. The game must save before new data appears.');
   }
   catch (err) { if (generation === reportGeneration) message('Could not refresh the report: '+err.message); }
@@ -231,6 +251,40 @@ $('apply-update').addEventListener('click',async()=>{
     await refresh();
   } catch(err) { $('update-status').textContent = 'Update failed: '+err.message+' Check for updates before trying again.'; }
   finally { offer = null; busy = false; updateButtons(); }
+});
+$('check-app-update').addEventListener('click',async()=>{
+  if (busy || document.body.dataset.updatesDisabled === 'true') return;
+  busy = true; appOffer = null; updateButtons();
+  $('app-release-link').hidden = true;
+  $('offered-app-version').textContent = 'Checking…';
+  $('app-update-status').textContent = 'Checking the latest stable app release…';
+  try {
+    appOffer = await rc.checkApp();
+    $('installed-app-version').textContent = appOffer.InstalledVersion;
+    $('offered-app-version').textContent = appOffer.Version || 'Unavailable';
+    $('app-release-name').textContent = appOffer.Name || 'App release notes';
+    $('app-release-notes').textContent = appOffer.Notes || 'No release notes provided.';
+    $('app-release-link').href = appOffer.HTMLURL;
+    $('app-release-link').hidden = !appOffer.HTMLURL;
+    $('app-update-status').textContent = appOffer.Available
+      ? 'Click Update App to download, verify, back up and restart Relax Coach. WoW can stay open.'
+      : 'No compatible new app update is available. See release notes. No files changed.';
+  } catch(err) {
+    $('offered-app-version').textContent = 'Unavailable';
+    $('app-release-notes').textContent = 'Release notes unavailable. Check again when online.';
+    $('app-update-status').textContent = 'App update check failed: '+err.message;
+  } finally { busy = false; updateButtons(); }
+});
+$('apply-app-update').addEventListener('click',async()=>{
+  if (busy || !appOffer || !appOffer.Available || document.body.dataset.updatesDisabled === 'true') return;
+  busy = true; updateButtons();
+  $('app-update-status').textContent = 'Downloading and verifying the app. Relax Coach will restart when the trusted worker is ready. Close normally to cancel before handoff; do not force-close.';
+  try {
+    const result = await rc.applyApp(appOffer.Version);
+    restarting = result.restartReady === true;
+    $('app-update-status').textContent = result.message || 'The app update was not handed off. Check again.';
+  } catch(err) { $('app-update-status').textContent = 'App update failed: '+err.message+' Check again before retrying.'; }
+  finally { appOffer = null; busy = restarting; updateButtons(); }
 });
 // Keep every link inside the document or route it through native allowlist validation.
 function interceptLink(event) {

@@ -312,6 +312,7 @@ func (w *nativeWindow) message(raw string) {
 	}
 	go func() {
 		value, err := w.bridge.Call(req.Method, req.Params)
+		callErr := err
 		response := nativeResponse{Kind: "native-response", ID: req.ID, Result: value}
 		if err != nil {
 			response.Result = nil
@@ -326,7 +327,11 @@ func (w *nativeWindow) message(raw string) {
 				return
 			}
 			text, _ := windows.UTF16PtrFromString(string(data))
-			_, _ = w.core.call(32, uintptr(unsafe.Pointer(text))) // PostWebMessageAsJson
+			_, postErr := w.core.call(32, uintptr(unsafe.Pointer(text))) // PostWebMessageAsJson
+			if nativeAppRestartReady(req.Method, value, callErr, postErr) {
+				// This closure runs on the locked UI thread, after response dispatch.
+				nativeUser32.NewProc("PostMessageW").Call(w.hwnd, nativeWMClose, 0, 0)
+			}
 		})
 	}()
 }

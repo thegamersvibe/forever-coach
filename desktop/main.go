@@ -16,7 +16,7 @@ import (
 	"time"
 )
 
-const Version = "1.4.0"
+var Version = "1.4.1" // May be overridden with -X main.Version for private verification builds.
 const Repo = "thegamersvibe/relax-coach"
 const RulesSchema = 1
 
@@ -113,13 +113,38 @@ type App struct {
 }
 
 func main() {
+	mode, id, guiArgs, modeErr := parseAppMode(os.Args[1:])
+	if modeErr != nil {
+		log.Print(modeErr)
+		os.Exit(1)
+	}
+	if mode == "worker" {
+		if err := appPlatformWorker(id); err != nil {
+			log.Print(err)
+			os.Exit(1)
+		}
+		return
+	}
 	gameFlag := flag.String("game", "", `game folder (the _forever_ folder); default: auto-detect`)
 	port := flag.Int("port", 47321, "diagnostic HTTP port (only with -headless or -no-open)")
 	noOpen := flag.Bool("no-open", false, "diagnostic HTTP mode; never launch a browser")
 	headless := flag.Bool("headless", false, "diagnostic HTTP mode without an application window")
-	noUpdate := flag.Bool("no-update", false, "disable addon release checks and updates")
+	noUpdate := flag.Bool("no-update", false, "disable app and addon release checks and updates")
 	once := flag.Bool("once", false, "print the report to the console and exit without updating")
-	flag.Parse()
+	_ = flag.CommandLine.Parse(guiArgs)
+	if flag.NArg() != 0 {
+		log.Print("unexpected positional arguments")
+		os.Exit(1)
+	}
+	if !*once && !*headless && !*noOpen {
+		initAppUpdateRuntime(guiArgs)
+		if mode == "start" {
+			if err := initAppStartup(id); err != nil {
+				log.Print(err)
+				os.Exit(1)
+			}
+		}
+	}
 	game := NormalizeGame(*gameFlag)
 	if game == "" {
 		game = findGame()

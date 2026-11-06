@@ -13,25 +13,32 @@ import (
 )
 
 type nativeServices struct {
-	check  func(context.Context, string) (AddonReleaseInfo, error)
-	apply  func(context.Context, string, AddonReleaseInfo) (AddonUpdateResult, error)
-	choose func(context.Context) (string, error)
-	open   func(string) error
+	checkApp func(context.Context, string) (AppReleaseInfo, error)
+	applyApp func(context.Context, AppReleaseInfo) (AppUpdateResult, error)
+	ready    func(context.Context) error
+	check    func(context.Context, string) (AddonReleaseInfo, error)
+	apply    func(context.Context, string, AddonReleaseInfo) (AddonUpdateResult, error)
+	choose   func(context.Context) (string, error)
+	open     func(string) error
 }
 
 type nativeBridge struct {
-	app                         *App
-	services                    nativeServices
-	ctx                         context.Context
-	cancel                      context.CancelFunc
-	mu                          sync.Mutex
-	workers                     sync.WaitGroup
-	closed, busy, disabled      bool
-	release                     *AddonReleaseInfo
-	checkedGame, checkedVersion string
+	appRelease                                                        *AppReleaseInfo
+	checkedAppVersion                                                 string
+	appBusy, appRestarting, reportRendered, healthPending, healthSent bool
+	app                                                               *App
+	services                                                          nativeServices
+	ctx                                                               context.Context
+	cancel                                                            context.CancelFunc
+	mu                                                                sync.Mutex
+	workers                                                           sync.WaitGroup
+	closed, busy, disabled                                            bool
+	release                                                           *AddonReleaseInfo
+	checkedGame, checkedVersion                                       string
 }
 
 type nativeReport struct {
+	AppVersion, AppUpdateStatus              string
 	HTML, Game, InstalledVersion             string
 	Account, SVPath, SaveTime, ConfigWarning string
 	Accounts                                 []AccountChoice
@@ -77,6 +84,15 @@ func decodeNativeRequest(raw, token string) (nativeRequest, error) {
 }
 
 func newNativeBridge(a *App, disabled bool, s nativeServices) *nativeBridge {
+	if s.checkApp == nil {
+		s.checkApp = CheckAppRelease
+	}
+	if s.applyApp == nil {
+		s.applyApp = ApplyAppRelease
+	}
+	if s.ready == nil {
+		s.ready = acknowledgeAppStartup
+	}
 	if s.check == nil {
 		s.check = CheckAddonRelease
 	}
@@ -92,6 +108,7 @@ func newNativeBridge(a *App, disabled bool, s nativeServices) *nativeBridge {
 func (b *nativeBridge) Close() {
 	b.mu.Lock()
 	b.closed = true
+	b.appRelease = nil
 	b.release = nil
 	b.cancel()
 	b.mu.Unlock()
@@ -112,11 +129,11 @@ func (b *nativeBridge) Call(method string, args []json.RawMessage) (any, error) 
 	}
 	var arg string
 	switch method {
-	case "setGame", "selectAccount", "applyAddon", "openExternal":
+	case "setGame", "selectAccount", "applyAddon", "applyApp", "openExternal":
 		if len(args) != 1 || json.Unmarshal(args[0], &arg) != nil || len(arg) > 4096 || strings.IndexByte(arg, 0) >= 0 {
 			return nil, errors.New("expected one text argument")
 		}
-	case "reportRefresh", "chooseGame", "checkAddon":
+	case "reportRefresh", "chooseGame", "checkAddon", "checkApp", "appReady":
 		if len(args) != 0 {
 			return nil, errors.New("this method takes no arguments")
 		}
@@ -142,6 +159,12 @@ func (b *nativeBridge) Call(method string, args []json.RawMessage) (any, error) 
 			return nil, nil
 		}
 		return b.setGame(game)
+	case "checkApp":
+		return b.checkApp()
+	case "applyApp":
+		return b.applyApp(arg)
+	case "appReady":
+		return nil, b.ready()
 	case "checkAddon":
 		return b.check()
 	case "applyAddon":
@@ -171,11 +194,15 @@ func (b *nativeBridge) reportLocked() (nativeReport, error) {
 	b.app.refresh()
 	v := b.app.snapshot()
 	html, err := renderReportBody(v)
+	if err == nil {
+		b.reportRendered = true
+	}
 	saveTime := ""
 	if !v.SaveTime.IsZero() {
 		saveTime = v.SaveTime.Format(time.RFC3339)
 	}
 	return nativeReport{HTML: html, Game: v.Game, InstalledVersion: InstalledCoachVersion(v.Game),
+		AppVersion: Version, AppUpdateStatus: currentAppUpdateStatus(),
 		Account: v.Account, Accounts: v.Accounts, SVPath: v.SVPath, SaveTime: saveTime,
 		Stale: v.Warning != "", ConfigWarning: v.ConfigWarning}, err
 }
@@ -186,7 +213,7 @@ func (b *nativeBridge) selectAccount(id string) (nativeReport, error) {
 	if b.closed {
 		return nativeReport{}, errors.New("application is closing")
 	}
-	if b.busy {
+	if b.busy || b.appBusy || b.appRestarting {
 		return nativeReport{}, errors.New("wait for the addon operation before changing accounts")
 	}
 	if err := b.app.selectAccount(id); err != nil {
@@ -201,7 +228,7 @@ func (b *nativeBridge) setGame(input string) (nativeReport, error) {
 	if b.closed {
 		return nativeReport{}, errors.New("application is closing")
 	}
-	if b.busy {
+	if b.busy || b.appBusy || b.appRestarting {
 		return nativeReport{}, errors.New("wait for the addon operation before changing folders")
 	}
 	game := NormalizeGame(input)
@@ -225,7 +252,7 @@ func (b *nativeBridge) startUpdate() (string, string, error) {
 	if b.disabled {
 		return "", "", errors.New("updates are disabled by -no-update")
 	}
-	if b.busy {
+	if b.busy || b.appBusy || b.appRestarting {
 		return "", "", errors.New("another addon operation is already running")
 	}
 	game := b.app.snapshot().Game

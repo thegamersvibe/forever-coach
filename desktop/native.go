@@ -48,9 +48,10 @@ func renderNativeShell(v View, disabled bool, token string) (string, error) {
 		View                           View
 		UpdatesDisabled                bool
 		Nonce, Token, InstalledVersion string
+		AppVersion, AppUpdateStatus    string
 		Logo                           template.URL
 		Script                         template.JS
-	}{v, disabled, nonce, token, InstalledCoachVersion(v.Game), template.URL("data:image/png;base64," + base64.StdEncoding.EncodeToString(logo)), template.JS(script)}
+	}{View: v, UpdatesDisabled: disabled, Nonce: nonce, Token: token, InstalledVersion: InstalledCoachVersion(v.Game), AppVersion: Version, AppUpdateStatus: currentAppUpdateStatus(), Logo: template.URL("data:image/png;base64," + base64.StdEncoding.EncodeToString(logo)), Script: template.JS(script)}
 	var out strings.Builder
 	err = tpl.ExecuteTemplate(&out, "native_shell.html", data)
 	return out.String(), err

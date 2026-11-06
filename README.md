@@ -8,11 +8,13 @@ Two **separate WoW Forever addons**, plus a native Windows report app:
 
 ## Download
 
-**[Download the latest guild release](https://github.com/thegamersvibe/relax-coach/releases/latest)** and choose **`RelaxCoach-Guild-1.4.0.zip`**. This is the combined download containing both addons and the guide content.
+**[Download the latest app release](https://github.com/thegamersvibe/relax-coach/releases/latest)**. **v1.4.1 is app-only:** `RelaxCoach.exe` and `SHA256SUMS.txt`. It adds explicit app self-updates and preserves report filters; it does not install or replace either addon or any Journey guides.
 
-The smaller `RelaxCoach-1.4.0.zip` is deliberately Coach-only: the app's updater uses it so an ordinary Coach update cannot overwrite Journey. `RelaxCoach.exe` is also available separately. All release assets are listed in `SHA256SUMS.txt`.
+For a full first installation, the existing **[`RelaxCoach-Guild-1.4.0.zip`](https://github.com/thegamersvibe/relax-coach/releases/tag/v1.4.0)** contains both addons and its original guide-content pack. The smaller `RelaxCoach-1.4.0.zip` on that release is Coach-only. After either older package is installed, replace its app with the latest `RelaxCoach.exe` once. Each release's `SHA256SUMS.txt` covers only that release's assets.
 
 ## Install or upgrade the guild bundle
+
+Portable installation is also supported: with WoW closed, **merge** the archive's `Interface` folder into `_forever_` (do not replace your whole existing `Interface` folder), then run `RelaxCoach.exe` from a writable folder. Back up any addon/content folders you replace. The installer below is optional and automates backup and shortcut creation.
 
 1. Close WoW. Extract the guild ZIP somewhere outside the game folder.
 2. Open PowerShell in the extracted folder and run the installer, substituting your actual `_forever_` path:
@@ -39,8 +41,10 @@ Use the included `Restore-RelaxCoach.ps1 -Backup <backup-folder>` with WoW close
 
 ## Updates
 
-- **Update Addon** in the app: checks stable releases in this repository, shows the version, requires your click, verifies SHA-256 and updates **Coach only**, with backup/rollback. Close WoW first.
-- **Both addons / Journey content / desktop app**: download the latest **guild ZIP** and rerun its installer. The app does not silently self-replace or overwrite Journey.
+- **Update App** (app v1.4.1+): check explicitly, then confirm the update. It verifies the executable checksum, restarts only Relax Coach, and supports backup/rollback. WoW can stay running; addons, guides and saves are untouched.
+- **One-time bootstrap from an older app:** close only Relax Coach and replace its `RelaxCoach.exe` with the latest release asset. Subsequent app releases can use **Update App**.
+- **Update Addon**: updates **Coach only**, with explicit consent, SHA-256 verification and backup/rollback. Close WoW first. App-only releases intentionally have no addon package and do not offer an addon update.
+- **Journey and guide content** are separate. The v1.4.1 app release does not redistribute newly issued account guide packages or overwrite an existing Journey installation.
 - The app reads saves on disk. Use `/reload` or log out in WoW, then **Refresh**. Refresh cannot force WoW to write its saves.
 
 ## Coverage and known limits
