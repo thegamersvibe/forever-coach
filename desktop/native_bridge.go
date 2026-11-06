@@ -1,0 +1,297 @@
+package main
+
+import (
+	"context"
+	"crypto/subtle"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"io"
+	"strings"
+	"sync"
+	"time"
+)
+
+type nativeServices struct {
+	check  func(context.Context, string) (AddonReleaseInfo, error)
+	apply  func(context.Context, string, AddonReleaseInfo) (AddonUpdateResult, error)
+	choose func(context.Context) (string, error)
+	open   func(string) error
+}
+
+type nativeBridge struct {
+	app                         *App
+	services                    nativeServices
+	ctx                         context.Context
+	cancel                      context.CancelFunc
+	mu                          sync.Mutex
+	workers                     sync.WaitGroup
+	closed, busy, disabled      bool
+	release                     *AddonReleaseInfo
+	checkedGame, checkedVersion string
+}
+
+type nativeReport struct {
+	HTML, Game, InstalledVersion             string
+	Account, SVPath, SaveTime, ConfigWarning string
+	Accounts                                 []AccountChoice
+	Stale                                    bool
+}
+
+// Deliberately omit the download URL/checksum fields from the UI projection.
+type nativeOffer struct {
+	Version, Name, Notes, HTMLURL, InstalledVersion string
+	Available                                       bool
+}
+
+type nativeRequest struct {
+	ID     int64             `json:"id"`
+	Method string            `json:"method"`
+	Params []json.RawMessage `json:"params"`
+	Token  string            `json:"token"`
+}
+type nativeResponse struct {
+	Kind   string `json:"kind"`
+	ID     int64  `json:"id"`
+	Result any    `json:"result,omitempty"`
+	Error  string `json:"error,omitempty"`
+}
+
+func decodeNativeRequest(raw, token string) (nativeRequest, error) {
+	var req nativeRequest
+	if len(raw) > 16384 {
+		return req, errors.New("native request too large")
+	}
+	dec := json.NewDecoder(strings.NewReader(raw))
+	dec.DisallowUnknownFields()
+	if err := dec.Decode(&req); err != nil {
+		return req, err
+	}
+	if err := dec.Decode(new(any)); err != io.EOF {
+		return req, errors.New("invalid trailing request data")
+	}
+	if req.ID <= 0 || req.ID > 9007199254740991 || req.Method == "" || len(req.Params) > 1 || token == "" || subtle.ConstantTimeCompare([]byte(req.Token), []byte(token)) != 1 {
+		return req, errors.New("invalid native request")
+	}
+	return req, nil
+}
+
+func newNativeBridge(a *App, disabled bool, s nativeServices) *nativeBridge {
+	if s.check == nil {
+		s.check = CheckAddonRelease
+	}
+	if s.apply == nil {
+		s.apply = ApplyAddonRelease
+	}
+	ctx, cancel := context.WithCancel(context.Background())
+	return &nativeBridge{app: a, services: s, ctx: ctx, cancel: cancel, disabled: disabled}
+}
+
+// Admission and Close share one lock, so Wait cannot race a late Add. Close
+// cancels network work and joins it; install rollback completes before process exit.
+func (b *nativeBridge) Close() {
+	b.mu.Lock()
+	b.closed = true
+	b.release = nil
+	b.cancel()
+	b.mu.Unlock()
+	b.workers.Wait()
+}
+
+func (b *nativeBridge) Call(method string, args []json.RawMessage) (any, error) {
+	b.mu.Lock()
+	if b.closed {
+		b.mu.Unlock()
+		return nil, errors.New("application is closing")
+	}
+	b.workers.Add(1)
+	b.mu.Unlock()
+	defer b.workers.Done()
+	if err := b.ctx.Err(); err != nil {
+		return nil, err
+	}
+	var arg string
+	switch method {
+	case "setGame", "selectAccount", "applyAddon", "openExternal":
+		if len(args) != 1 || json.Unmarshal(args[0], &arg) != nil || len(arg) > 4096 || strings.IndexByte(arg, 0) >= 0 {
+			return nil, errors.New("expected one text argument")
+		}
+	case "reportRefresh", "chooseGame", "checkAddon":
+		if len(args) != 0 {
+			return nil, errors.New("this method takes no arguments")
+		}
+	default:
+		return nil, errors.New("unknown native method")
+	}
+	switch method {
+	case "reportRefresh":
+		return b.report()
+	case "setGame":
+		return b.setGame(arg)
+	case "selectAccount":
+		return b.selectAccount(arg)
+	case "chooseGame":
+		if b.services.choose == nil {
+			return nil, errors.New("folder chooser is unavailable; paste the game path instead")
+		}
+		game, err := b.services.choose(b.ctx)
+		if err != nil {
+			return nil, err
+		}
+		if game == "" {
+			return nil, nil
+		}
+		return b.setGame(game)
+	case "checkAddon":
+		return b.check()
+	case "applyAddon":
+		return b.apply(arg)
+	case "openExternal":
+		if err := validateExternalURL(arg); err != nil {
+			return nil, err
+		}
+		if b.services.open == nil {
+			return nil, errors.New("external browser is unavailable")
+		}
+		return nil, b.services.open(arg)
+	}
+	return nil, errors.New("unknown native method")
+}
+
+func (b *nativeBridge) report() (nativeReport, error) {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	return b.reportLocked()
+}
+
+func (b *nativeBridge) reportLocked() (nativeReport, error) {
+	if b.closed {
+		return nativeReport{}, errors.New("application is closing")
+	}
+	b.app.refresh()
+	v := b.app.snapshot()
+	html, err := renderReportBody(v)
+	saveTime := ""
+	if !v.SaveTime.IsZero() {
+		saveTime = v.SaveTime.Format(time.RFC3339)
+	}
+	return nativeReport{HTML: html, Game: v.Game, InstalledVersion: InstalledCoachVersion(v.Game),
+		Account: v.Account, Accounts: v.Accounts, SVPath: v.SVPath, SaveTime: saveTime,
+		Stale: v.Warning != "", ConfigWarning: v.ConfigWarning}, err
+}
+
+func (b *nativeBridge) selectAccount(id string) (nativeReport, error) {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	if b.closed {
+		return nativeReport{}, errors.New("application is closing")
+	}
+	if b.busy {
+		return nativeReport{}, errors.New("wait for the addon operation before changing accounts")
+	}
+	if err := b.app.selectAccount(id); err != nil {
+		return nativeReport{}, err
+	}
+	return b.reportLocked()
+}
+
+func (b *nativeBridge) setGame(input string) (nativeReport, error) {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	if b.closed {
+		return nativeReport{}, errors.New("application is closing")
+	}
+	if b.busy {
+		return nativeReport{}, errors.New("wait for the addon operation before changing folders")
+	}
+	game := NormalizeGame(input)
+	if game == "" {
+		return nativeReport{}, errors.New("that folder does not look like WoW Forever; choose or paste the _forever_ folder")
+	}
+	if err := saveGame(game); err != nil {
+		return nativeReport{}, err
+	}
+	b.release = nil
+	b.app.setGame(game)
+	return b.reportLocked()
+}
+
+func (b *nativeBridge) startUpdate() (string, string, error) {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	if b.closed {
+		return "", "", errors.New("application is closing")
+	}
+	if b.disabled {
+		return "", "", errors.New("updates are disabled by -no-update")
+	}
+	if b.busy {
+		return "", "", errors.New("another addon operation is already running")
+	}
+	game := b.app.snapshot().Game
+	if game == "" {
+		return "", "", errors.New("choose your WoW Forever game folder first")
+	}
+	b.busy = true
+	return game, InstalledCoachVersion(game), nil
+}
+func (b *nativeBridge) finishUpdate() { b.mu.Lock(); b.busy = false; b.mu.Unlock() }
+
+func (b *nativeBridge) check() (nativeOffer, error) {
+	game, current, err := b.startUpdate()
+	if err != nil {
+		return nativeOffer{}, err
+	}
+	defer b.finishUpdate()
+	b.mu.Lock()
+	b.release = nil
+	b.mu.Unlock()
+	ctx, cancel := context.WithTimeout(b.ctx, 45*time.Second)
+	defer cancel()
+	release, err := b.services.check(ctx, current)
+	if err != nil {
+		return nativeOffer{}, err
+	}
+	if err = ctx.Err(); err != nil {
+		return nativeOffer{}, err
+	}
+	b.mu.Lock()
+	if !b.closed {
+		copy := release
+		b.release = &copy
+		b.checkedGame = game
+		b.checkedVersion = current
+	}
+	b.mu.Unlock()
+	// A bad release-page URL cannot become an executable/shell capability.
+	link := release.HTMLURL
+	if validateExternalURL(link) != nil {
+		link = ""
+	}
+	return nativeOffer{release.Version, release.Name, release.Notes, link, current, release.Available}, nil
+}
+
+func (b *nativeBridge) apply(expected string) (AddonUpdateResult, error) {
+	game, current, err := b.startUpdate()
+	if err != nil {
+		return AddonUpdateResult{}, err
+	}
+	defer b.finishUpdate()
+	b.mu.Lock()
+	r := b.release
+	if r == nil || !r.Available || r.Version != expected || b.checkedGame != game || b.checkedVersion != current {
+		b.mu.Unlock()
+		return AddonUpdateResult{}, errors.New("check for updates again and confirm the offered version")
+	}
+	release := *r
+	b.release = nil // A failed install requires a fresh explicit check too.
+	b.mu.Unlock()
+	ctx, cancel := context.WithTimeout(b.ctx, 5*time.Minute)
+	defer cancel()
+	result, err := b.services.apply(ctx, game, release)
+	if err != nil {
+		return result, fmt.Errorf("%w", err)
+	}
+	b.app.refresh()
+	return result, nil
+}

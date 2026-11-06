@@ -1,0 +1,237 @@
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const token = document.body.dataset.token;
+const pending = new Map();
+let sequence = 0;
+// Each method is an explicit asynchronous Go binding, not an HTTP endpoint.
+function call(method, ...params) {
+  return new Promise((resolve,reject) => {
+    const id = ++sequence;
+    pending.set(id,{resolve,reject});
+    window.chrome.webview.postMessage(JSON.stringify({id,method,params,token}));
+  });
+}
+window.chrome.webview.addEventListener('message', event => {
+  const msg = event.data;
+  if (!msg || msg.kind !== 'native-response') return;
+  const p = pending.get(msg.id);
+  if (!p) return;
+  pending.delete(msg.id);
+  msg.error ? p.reject(new Error(msg.error)) : p.resolve(msg.result);
+});
+const rc = Object.freeze({
+  refresh: () => call('reportRefresh'),
+  setGame: path => call('setGame',path),
+  selectAccount: id => call('selectAccount',id),
+  chooseGame: () => call('chooseGame'),
+  checkAddon: () => call('checkAddon'),
+  applyAddon: version => call('applyAddon',version),
+  openExternal: url => call('openExternal',url)
+});
+let offer = null, busy = false, refreshing = false;
+let reportGeneration = 0, switchingFolder = false, switchingAccount = false;
+let lastReport = null;
+function message(text) { $('global-status').textContent = text; }
+function show(view) {
+  $('report-view').hidden = view !== 'report';
+  $('update-view').hidden = view !== 'update';
+  for (const name of ['report','update']) {
+    $('nav-'+name).classList.toggle('active',name === view);
+    if (name === view) $('nav-'+name).setAttribute('aria-current','page');
+    else $('nav-'+name).removeAttribute('aria-current');
+  }
+}
+function updateButtons() {
+  const disabled = document.body.dataset.updatesDisabled === 'true';
+  $('refresh').disabled = refreshing || switchingFolder || switchingAccount;
+  $('account-select').disabled = busy || !lastReport || !(lastReport.Accounts || []).length;
+  $('check-update').disabled = busy || disabled;
+  $('apply-update').disabled = busy || disabled || !offer || !offer.Available;
+  for (const id of ['browse-folder','use-folder','game-path']) $(id).disabled = busy;
+}
+function displayAccount(result) {
+  const select = $('account-select');
+  const accounts = result.Accounts || [];
+  const selected = result.Account || '';
+  const available = accounts.some(account => account.ID === selected);
+  select.replaceChildren();
+  function option(value,text,disabled = false) {
+    const el = document.createElement('option');
+    el.value = value; el.textContent = text; el.disabled = disabled;
+    select.append(el);
+  }
+  option('',accounts.length ? 'Choose an account…' : 'No account outputs yet',true);
+  for (const account of accounts) option(account.ID,account.ID);
+  if (selected && !available) option(selected,selected+' — unavailable',true);
+  select.value = selected;
+  $('account-source').textContent = selected
+    ? 'Account '+selected+' · '+(result.Stale ? 'Stale — last good save: ' : 'Save source: ')+(result.SVPath || 'Unavailable')
+    : (accounts.length ? 'Choose an account to view its saved characters.' : 'Install the addon, log in, then /reload to create account data.');
+  const time = $('account-save-time');
+  time.dateTime = result.SaveTime || '';
+  time.textContent = result.SaveTime ? new Date(result.SaveTime).toLocaleString() : 'Not loaded';
+  $('account-status').textContent = result.ConfigWarning || (selected && !available
+    ? 'Selected account output is unavailable. Refresh will not switch accounts.' : '');
+}
+function displayReport(result,folderChanged = false) {
+  lastReport = result;
+  displayAccount(result);
+  // HTML is rendered by html/template in Go. No release notes or JS input use this sink.
+  if ($('report-body').innerHTML !== result.HTML) $('report-body').innerHTML = result.HTML;
+  $('installed-version').textContent = result.InstalledVersion === '0.0.0' ? 'Not installed' : result.InstalledVersion;
+  $('folder-label').textContent = result.Game;
+  if (folderChanged || document.activeElement !== $('game-path')) $('game-path').value = result.Game;
+  if (folderChanged) {
+    offer = null;
+    $('offered-version').textContent = 'Not checked';
+    $('release-link').hidden = true;
+    $('release-notes').textContent = 'Check for updates for this game folder.';
+    $('update-status').textContent = 'Game folder changed. Check again before updating.';
+    updateButtons();
+  }
+  updateButtons();
+}
+async function refresh(manual = false) {
+  if (refreshing || switchingFolder || switchingAccount) return;
+  refreshing = true;
+  updateButtons();
+  const generation = reportGeneration;
+  try {
+    const result = await rc.refresh();
+    if (generation !== reportGeneration) return;
+    displayReport(result);
+    if (manual) message('Report refreshed. The game must save before new data appears.');
+  }
+  catch (err) { if (generation === reportGeneration) message('Could not refresh the report: '+err.message); }
+  finally { refreshing = false; updateButtons(); }
+}
+$('nav-report').addEventListener('click',()=>show('report'));
+$('nav-update').addEventListener('click',()=>show('update'));
+$('refresh').addEventListener('click',()=>refresh(true));
+async function changeFolder(select) {
+  if (busy) return;
+  let folder = $('folder-label').textContent;
+  busy = switchingFolder = true;
+  // Invalidate earlier replies before Go can change the selected/update target.
+  ++reportGeneration;
+  $('folder-label').textContent = 'Changing game folder…';
+  $('account-source').textContent = 'Changing game folder…';
+  $('report-body').hidden = true;
+  updateButtons();
+  try {
+    const result = await select();
+    if (result) {
+      folder = result.Game;
+      displayReport(result,true);
+      message('Game folder saved.');
+    }
+  }
+  catch(err) { message(err.message); }
+  finally {
+    // Cancellation/errors leave the backend selection and checked offer unchanged.
+    $('folder-label').textContent = folder;
+    $('report-body').hidden = false;
+    if (lastReport) displayAccount(lastReport);
+    busy = switchingFolder = false;
+    updateButtons();
+  }
+}
+$('game-form').addEventListener('submit',event => {
+  event.preventDefault();
+  changeFolder(()=>rc.setGame($('game-path').value));
+});
+$('browse-folder').addEventListener('click',()=>changeFolder(rc.chooseGame));
+$('account-select').addEventListener('change',async()=>{
+  if (busy) return;
+  const id = $('account-select').value;
+  if (!id || (lastReport && id === lastReport.Account)) return;
+  busy = switchingAccount = true;
+  const generation = ++reportGeneration;
+  // An account switch is a data boundary, including failed reads or writes.
+  $('report-body').replaceChildren();
+  $('account-source').textContent = 'Changing account…';
+  $('account-save-time').textContent = 'Not loaded';
+  $('account-save-time').dateTime = '';
+  $('account-status').textContent = '';
+  updateButtons();
+  try {
+    const result = await rc.selectAccount(id);
+    if (generation !== reportGeneration) return;
+    displayReport(result);
+    message(result.ConfigWarning || 'Account selection remembered for this game folder.');
+  } catch(err) {
+    if (generation !== reportGeneration) return;
+    if (lastReport) displayAccount(lastReport);
+    message(err.message);
+  } finally {
+    if (generation === reportGeneration) {
+      busy = switchingAccount = false;
+      updateButtons();
+    }
+  }
+});
+$('check-update').addEventListener('click',async()=>{
+  if (busy) return;
+  busy = true; offer = null; updateButtons();
+  $('release-link').hidden = true;
+  $('offered-version').textContent = 'Checking…';
+  $('update-status').textContent = 'Checking the latest stable GitHub release…';
+  try {
+    offer = await rc.checkAddon();
+    $('installed-version').textContent = offer.InstalledVersion === '0.0.0' ? 'Not installed' : offer.InstalledVersion;
+    $('offered-version').textContent = offer.Version;
+    $('release-name').textContent = offer.Name || 'Release notes';
+    $('release-notes').textContent = offer.Notes || 'No release notes provided.';
+    $('release-link').href = offer.HTMLURL;
+    $('release-link').hidden = !offer.HTMLURL;
+    $('update-status').textContent = offer.Available ? 'Update available. Close WoW, then click Update Addon to verify, back up and install.' : 'No compatible new addon update is available. See release notes. No files changed.';
+  } catch(err) {
+    $('offered-version').textContent = 'Unavailable';
+    $('release-notes').textContent = 'Release notes unavailable. Check again when online.';
+    $('update-status').textContent = 'Update check failed: '+err.message;
+  } finally { busy = false; updateButtons(); }
+});
+$('apply-update').addEventListener('click',async()=>{
+  if (busy || !offer || !offer.Available) return;
+  busy = true; updateButtons();
+  $('update-status').textContent = 'Downloading, verifying and installing… Do not force-close the application.';
+  try {
+    // Only confirm the displayed version. URLs/checksums stay in Go memory.
+    const result = await rc.applyAddon(offer.Version);
+    $('update-status').textContent = result.message + (result.backupPath ? '\nBackup: '+result.backupPath : '');
+    await refresh();
+  } catch(err) { $('update-status').textContent = 'Update failed: '+err.message+' Check for updates before trying again.'; }
+  finally { offer = null; busy = false; updateButtons(); }
+});
+// Keep every link inside the document or route it through native allowlist validation.
+function interceptLink(event) {
+  const link = event.target.closest('a');
+  if (!link) return;
+  event.preventDefault(); event.stopPropagation();
+  const url = link.getAttribute('href') || '';
+  if (url.startsWith('#')) {
+    const section = document.getElementById(url.slice(1));
+    if (section) section.scrollIntoView({block:'start'});
+  } else if (event.type === 'click' && event.button === 0) {
+    rc.openExternal(url).catch(err=>message(err.message));
+  }
+}
+document.addEventListener('click',interceptLink,true);
+document.addEventListener('auxclick',interceptLink,true);
+document.addEventListener('dragover',event=>event.preventDefault());
+document.addEventListener('drop',event=>event.preventDefault());
+document.addEventListener('click',event=>{
+  const button = event.target.closest('.filters button');
+  if (button) {
+    const filters = button.closest('.filters');
+    filters.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===button));
+    filters.closest('.card').querySelectorAll('.more .fix').forEach(row=>{row.hidden=button.dataset.f!=='all'&&row.dataset.area!==button.dataset.f;});
+  }
+  const slot = event.target.closest('.slot');
+  if (slot) slot.classList.toggle('open');
+});
+// A convenience refresh, not a heartbeat. No timer can close the native window.
+setInterval(()=>{if (!document.hidden && !busy) refresh();},5000);
+refresh();
+})();

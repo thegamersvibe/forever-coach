@@ -1,0 +1,3 @@
+# Preserve upstream and signed guide bytes on Windows/Linux checkouts.
+addon/Journey/** -text
+content/** -text

@@ -1,8 +1,8 @@
 package main
 
-// Rules auto-update from the public GitHub repo. Only rules.json is fetched automatically, and only
-// when its schema matches what this helper understands. Addon/helper code changes are announced,
-// never auto-installed.
+// Rules auto-update from the upstream public GitHub repo only when the schema matches.
+// App release checks are deliberately disabled: upstream binaries are not this private Relax bundle.
+// Never advertise or install upstream addon/helper code.
 
 import (
 	"encoding/json"
@@ -20,14 +20,9 @@ import (
 
 var client = &http.Client{Timeout: 10 * time.Second}
 
-type release struct {
-	Tag     string `json:"tag_name"`
-	HTMLURL string `json:"html_url"`
-}
-
 func get(url string) ([]byte, error) {
 	req, _ := http.NewRequest("GET", url, nil)
-	req.Header.Set("User-Agent", "ForeverCoach/"+Version)
+	req.Header.Set("User-Agent", "RelaxCoach/"+Version)
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, err
@@ -71,41 +66,34 @@ func semverLess(a, b string) bool {
 
 // Returns a human note for the report (empty when nothing to say).
 func (a *App) updateRules() string {
-	var notes []string
-	if b, err := get("https://api.github.com/repos/" + Repo + "/releases/latest"); err == nil {
-		var r release
-		if json.Unmarshal(b, &r) == nil && r.Tag != "" && semverLess(Version, r.Tag) {
-			notes = append(notes, fmt.Sprintf("Forever Coach %s is available (you have %s): %s", r.Tag, Version, r.HTMLURL))
-		}
-	}
 	if _, err := os.Stat(a.addonDir); err != nil {
-		return strings.Join(append(notes, "Addon not found at "+a.addonDir), " · ")
+		return "Addon not found at " + a.addonDir
 	}
 	b, err := get("https://raw.githubusercontent.com/" + Repo + "/main/rules/rules.json")
 	if err != nil {
-		return strings.Join(notes, " · ")
+		return ""
 	}
 	var rules map[string]any
 	if err := json.Unmarshal(b, &rules); err != nil {
-		return strings.Join(append(notes, "Rules update skipped: bad JSON"), " · ")
+		return "Rules update skipped: bad JSON"
 	}
-	if int(N(rules["schema"])) != RulesSchema {
-		return strings.Join(append(notes, "New rules need a newer Forever Coach; update the app"), " · ")
+	if N(rules["schema"]) != RulesSchema {
+		return "Rules update skipped: incompatible schema for Relax Coach; update the private bundle"
 	}
 	remote, local := S(rules["version"]), installedRulesVersion(a.addonDir)
 	if local != "" && !semverLess(local, remote) {
-		return strings.Join(notes, " · ")
+		return ""
 	}
 	dst := filepath.Join(a.addonDir, "Rules.lua")
 	tmp := dst + ".new"
 	if err := os.WriteFile(tmp, []byte(RulesToLua(rules)), 0o644); err != nil {
-		return strings.Join(append(notes, "Rules update failed: "+err.Error()+" (game folder may need write access)"), " · ")
+		return "Rules update failed: " + err.Error() + " (game folder may need write access)"
 	}
 	if err := os.Rename(tmp, dst); err != nil {
 		os.Remove(tmp)
-		return strings.Join(append(notes, "Rules update failed: "+err.Error()), " · ")
+		return "Rules update failed: " + err.Error()
 	}
-	return strings.Join(append(notes, fmt.Sprintf("Rules updated %s → %s. /reload in game to apply.", orNone(local), remote)), " · ")
+	return fmt.Sprintf("Rules updated %s → %s. /reload in game to apply.", orNone(local), remote)
 }
 
 func orNone(s string) string {

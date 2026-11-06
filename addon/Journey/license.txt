@@ -1,0 +1,44 @@
+COPYRIGHT NOTICE:
+TomCat's Gaming Leveling Guide Addon Core - License Agreement
+Copyright (c) 2018-2026 TomCat's Gaming, LLC. All Rights Reserved.
+
+
+END USER LICENSE:
+This software and its accompanying guide content are provided
+"All Rights Reserved." You may download and use this addon for personal,
+non-commercial gameplay. You may not modify, distribute, reproduce, or
+reverse-engineer the code, guide text, or waypoints without prior written
+consent from TomCat's Gaming, LLC.
+
+
+ADDITIONAL COPYRIGHT NOTICES & CREDITS:
+Code & Software Architecture:
+
+Core Addon Code: Copyright (c) 2020-2026 TomCat's Gaming, LLC (formerly
+operating as TomCat's Gaming DBA). All Rights Reserved.
+
+TomCat's Tours Components: Copyright (c) 2018-2026 TomCat's Gaming, LLC.
+All Rights Reserved.
+
+Included Starter Guide Content:
+
+This addon is packaged with derivative works of leveling guide content
+originally authored by Paul Lucas (Joana's Guides / Prime Logic Inc.), dating
+from 2006. All intellectual property rights, titles, and copyrights for these
+specific derivative works have been legally transferred to and are owned
+exclusively by TomCat's Gaming, LLC.
+Original Content Copyright (c) 2006-2024 Paul Lucas / Prime Logic Inc.
+Derivative Works & Compilation Copyright (c) 2024-2026 TomCat's Gaming, LLC.
+All Rights Reserved.
+
+
+THIRD-PARTY LEGAL NOTICES:
+World of Warcraft, Warcraft, and Blizzard Entertainment are trademarks or
+registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other
+countries. This addon is not affiliated with, endorsed by, or sponsored by
+Blizzard Entertainment, Inc.
+
+
+CONTACT INFORMATION:
+For more information, contact via email at support@joanasworld.com
+(or visit https://www.joanasworld.com/)

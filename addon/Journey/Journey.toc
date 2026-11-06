@@ -1,0 +1,18 @@
+## X-Copyright: Copyright (C) 2006-2026 TomCat's Gaming, LLC. All rights reserved. See license.txt for full terms.
+## X-Website: https://www.getjourney.gg
+## Interface: 11509, 16001, 20506, 50504, 120100
+## Title: Relax Journey
+## X-ShortTitle: Relax Journey
+## IconTexture: Interface\AddOns\Journey\assets\relax-icon
+## Version: 4.00.03-1-gca353d2
+## X-Relax-Version: 1.4.0
+## X-Guide-Version: 4.00.03
+## X-Min-Guide-Version: 4.00.00
+## Notes: Version: 4.00.03-1-gca353d2
+## DefaultState: enabled
+## SavedVariables: Journey_Account
+## SavedVariablesPerCharacter: Journey_Character
+## Dependencies: Blizzard_BattlefieldMap
+## OptionalDeps: TomTom
+
+Main.xml

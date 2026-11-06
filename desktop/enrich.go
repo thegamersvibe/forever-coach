@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 	"strconv"
+	"strings"
 )
 
 var classColors = map[string]string{
@@ -87,17 +88,40 @@ func enrich(cv *CharView, c, s, g map[string]any, sess []any) {
 	cv.GearStatus = S(g["status"])
 	slots := M(g["slots"])
 	eq := M(s["equipped"])
+	states := M(s["equipmentState"])
+	unreadable := 0
+	unassessed := map[string]bool{}
 	for _, inv := range slotOrder {
 		k := strconv.Itoa(inv)
 		e := M(slots[k])
 		sv := SlotView{Name: slotNames[inv], GapPct: -1, Weapon: inv >= 16, Status: S(e["scoreStatus"]), Note: S(e["note"])}
 		if eq[k] != nil {
 			sv.Equipped = true
-			sv.Item = itemName(S(M(eq[k])["link"]))
+			item := M(eq[k])
+			link := S(item["link"])
+			sv.Item = itemName(link)
+			if link == "" && N(item["id"]) > 0 {
+				sv.Item = fmt.Sprintf("Item #%d (name pending)", int(N(item["id"])))
+			}
+		}
+		if !sv.Equipped {
+			if S(states[k]) == "empty" {
+				sv.Status = "empty"
+			} else {
+				sv.Status = "unreadable"
+				sv.Note = "Equipment was not captured for this slot; it is not confirmed empty. Log in with the updated addon, then /reload and Refresh."
+				unreadable++
+			}
+		} else if sv.Status == "" || sv.Status == "empty" || sv.Status == "unreadable" || sv.Status == "estimated" {
+			// Legacy estimates used stat weights, not comparable pipeline units.
+			sv.Status = "unknown"
+		}
+		if sv.Status == "unknown" || sv.Status == "unreadable" {
+			unassessed[sv.Name] = true
 		}
 		if b := M(e["best"]); b != nil {
 			sv.BestName, sv.BestHow, sv.BestSource, sv.BestWhere = S(b["name"]), S(b["how"]), S(b["source"]), S(b["where"])
-			if _, ok := e["gapPct"]; ok {
+			if _, ok := e["gapPct"]; ok && sv.Status != "unknown" && sv.Status != "unreadable" {
 				sv.GapPct = max(0, min(100, int(N(e["gapPct"]))))
 			}
 			if sv.Equipped && sv.GapPct >= 12 {
@@ -107,7 +131,7 @@ func enrich(cv *CharView, c, s, g map[string]any, sess []any) {
 		switch sv.Status {
 		case "known", "estimated":
 			cv.GearAssessed++
-		case "unknown":
+		case "unknown", "unreadable":
 			cv.GearUnknown++
 		case "empty":
 			if sv.BestName != "" {
@@ -122,8 +146,45 @@ func enrich(cv *CharView, c, s, g map[string]any, sess []any) {
 	case "classdata", "nodata":
 		cv.GearNote = "Gear checks are off: enable your class's GearQuest Forever module, then /reload."
 	}
+	if len(unassessed) > 0 {
+		// Do not carry forward legacy empty-slot or percentage advice that
+		// cannot be supported by the corresponding equipment assessment.
+		var findings []Finding
+		for _, f := range cv.Findings {
+			unconfirmed := false
+			if f.Area == "Gear" {
+				for name := range unassessed {
+					if f.Text == "Empty "+name+" slot" || strings.HasPrefix(f.Text, name+": ") ||
+						(strings.HasPrefix(f.Text, "Upgrade in your bags: ") && strings.HasSuffix(f.Text, " for "+name)) {
+						unconfirmed = true
+						break
+					}
+				}
+			}
+			if !unconfirmed {
+				findings = append(findings, f)
+			}
+		}
+		cv.Findings = findings
+		cv.Counts = map[string]int{}
+		for _, f := range cv.Findings {
+			cv.Counts[f.Area]++
+		}
+	}
+	if unreadable > 0 {
+		if cv.GearNote != "" {
+			cv.GearNote += " "
+		}
+		cv.GearNote += fmt.Sprintf("Equipment was not captured for %d slots. These are not confirmed empty. Log in with the updated addon, then /reload and Refresh.", unreadable)
+		if unreadable == len(slotOrder) && cv.GearStatus == "ok" {
+			cv.GearStatus = "unavailable"
+		}
+	}
 	for _, o := range List(g["owned"]) {
 		om := M(o)
+		if unassessed[S(om["label"])] {
+			continue
+		}
 		cv.Owned = append(cv.Owned, OwnedView{S(om["name"]), S(om["label"]), int(N(om["gain"]))})
 	}
 

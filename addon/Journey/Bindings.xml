@@ -1,0 +1,13 @@
+<!-- Copyright (C) 2018-2026 TomCat's Gaming, LLC. All Rights Reserved.
+     Unauthorized use, reproduction, or distribution is prohibited.
+     See license.txt included with this distribution for full terms. -->
+<Bindings>
+
+    <Binding name="CLICK Journey_ActionButton1:LeftButton" category="Journey" />
+    <Binding name="CLICK Journey_ActionButton2:LeftButton" category="Journey" />
+    <Binding name="CLICK Journey_ActionButton3:LeftButton" category="Journey" />
+    <Binding name="CLICK Journey_ActionButton4:LeftButton" category="Journey" />
+    <Binding name="CLICK Journey_ActionButton5:LeftButton" category="Journey" />
+    <Binding name="CLICK Journey_ActionButton6:LeftButton" category="Journey" />
+
+</Bindings>

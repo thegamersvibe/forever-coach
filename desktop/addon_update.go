@@ -1,0 +1,248 @@
+package main
+
+// The addon updater is intentionally independent of report/rules updates. It
+// never executes downloads, replaces the desktop helper, or writes SavedVariables.
+import (
+	"context"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"io"
+	"net/http"
+	"net/url"
+	"os"
+	"regexp"
+	"strconv"
+	"strings"
+	"time"
+)
+
+const addonLatestURL = "https://api.github.com/repos/thegamersvibe/relax-coach/releases/latest"
+const addonReleasePrefix = "https://github.com/thegamersvibe/relax-coach/releases/"
+const addonMinimumVersion = "1.4.0"
+
+// AddonReleaseInfo is safe to display, but ApplyAddonRelease revalidates every
+// security-relevant field: JSON from a caller is not an authorization token.
+type AddonReleaseInfo struct {
+	Version     string `json:"version"`
+	Name        string `json:"name"`
+	Notes       string `json:"notes"`
+	HTMLURL     string `json:"htmlUrl"`
+	AssetName   string `json:"assetName"`
+	AssetURL    string `json:"assetUrl"`
+	ChecksumURL string `json:"checksumUrl"`
+	Available   bool   `json:"available"`
+}
+
+type addonUpdater struct {
+	client  *http.Client
+	running func(context.Context) (bool, error)
+	rename  func(string, string) error
+	limits  addonLimits
+}
+
+type addonLimits struct {
+	archive, checksum, expanded, file int64
+	entries                           int
+}
+
+func newAddonUpdater() *addonUpdater {
+	return &addonUpdater{
+		rename:  os.Rename,
+		running: addonGameRunning,
+		limits:  addonLimits{archive: 64 << 20, checksum: 64 << 10, expanded: 128 << 20, file: 64 << 20, entries: 256},
+		client: &http.Client{
+			Timeout:       90 * time.Second,
+			CheckRedirect: addonRedirect,
+		}}
+}
+
+// CheckAddonRelease checks only the public stable channel. A missing compatible
+// asset or an older release is a normal, explicitly described no-update result.
+func CheckAddonRelease(ctx context.Context, current string) (AddonReleaseInfo, error) {
+	return newAddonUpdater().check(ctx, current)
+}
+
+var addonSemverRE = regexp.MustCompile(`^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$`)
+
+type addonSemver struct {
+	text string
+	nums [3]uint64
+}
+
+func parseAddonVersion(s string) (addonSemver, error) {
+	var v addonSemver
+	s = strings.TrimPrefix(s, "v")
+	if len(s) > 128 {
+		return v, errors.New("version is too long")
+	}
+	m := addonSemverRE.FindStringSubmatch(s)
+	if m == nil {
+		return v, fmt.Errorf("%q is not a stable semantic version", s)
+	}
+	v.text = s
+	for i := range v.nums {
+		n, err := strconv.ParseUint(m[i+1], 10, 64)
+		if err != nil {
+			return addonSemver{}, errors.New("version number is too large")
+		}
+		v.nums[i] = n
+	}
+	return v, nil
+}
+
+func (v addonSemver) newerThan(other addonSemver) bool {
+	for i, n := range v.nums {
+		if n != other.nums[i] {
+			return n > other.nums[i]
+		}
+	}
+	return false // SemVer build metadata never changes precedence.
+}
+
+func addonNoUpdate(info AddonReleaseInfo, reason string) AddonReleaseInfo {
+	info.Available = false
+	info.AssetName, info.AssetURL, info.ChecksumURL = "", "", ""
+	info.Notes = "No compatible new addon update is available. " + reason
+	return info
+}
+
+func (u *addonUpdater) check(ctx context.Context, current string) (AddonReleaseInfo, error) {
+	var info AddonReleaseInfo
+	local, err := parseAddonVersion(current)
+	if err != nil {
+		return info, fmt.Errorf("cannot check addon updates: invalid current version: %w", err)
+	}
+	b, err := u.fetch(ctx, addonLatestURL, 1<<20, "release information")
+	if err != nil {
+		return info, err
+	}
+	var release struct {
+		Tag        string `json:"tag_name"`
+		Name       string `json:"name"`
+		Body       string `json:"body"`
+		HTMLURL    string `json:"html_url"`
+		Draft      bool   `json:"draft"`
+		Prerelease bool   `json:"prerelease"`
+		Assets     []struct {
+			Name string `json:"name"`
+			URL  string `json:"browser_download_url"`
+		} `json:"assets"`
+	}
+	if err := json.Unmarshal(b, &release); err != nil {
+		return info, fmt.Errorf("GitHub returned invalid release information: %w", err)
+	}
+	info.Name, info.Notes = release.Name, release.Body
+	remote, err := parseAddonVersion(release.Tag)
+	if err != nil || release.Draft || release.Prerelease {
+		return addonNoUpdate(info, "The public release is not a stable Relax Coach package."), nil
+	}
+	info.Version = remote.text
+	info.HTMLURL = addonReleasePrefix + "tag/" + release.Tag
+	minimum, _ := parseAddonVersion(addonMinimumVersion)
+	if !remote.newerThan(local) || minimum.newerThan(remote) {
+		return addonNoUpdate(info, "Your installed version will not be downgraded."), nil
+	}
+	wanted := "RelaxCoach-" + remote.text + ".zip"
+	foundAsset, foundChecksum := false, false
+	for _, asset := range release.Assets {
+		switch asset.Name {
+		case wanted:
+			if foundAsset {
+				return info, errors.New("GitHub release contains duplicate addon assets")
+			}
+			foundAsset = true
+			info.AssetName, info.AssetURL = asset.Name, asset.URL
+		case "SHA256SUMS.txt":
+			if foundChecksum {
+				return info, errors.New("GitHub release contains duplicate checksum assets")
+			}
+			foundChecksum = true
+			info.ChecksumURL = asset.URL
+		}
+	}
+	if !foundAsset || !foundChecksum {
+		return addonNoUpdate(info, "The public release does not include the Relax Coach addon and SHA256SUMS.txt."), nil
+	}
+	if err := validateAddonAssetURL(info.AssetURL, release.Tag, wanted); err != nil {
+		return AddonReleaseInfo{}, err
+	}
+	if err := validateAddonAssetURL(info.ChecksumURL, release.Tag, "SHA256SUMS.txt"); err != nil {
+		return AddonReleaseInfo{}, err
+	}
+	info.Available = true
+	return info, nil
+}
+
+func validateAddonAssetURL(raw, tag, name string) error {
+	// Exact URLs, not suffix matches: reject alternate owners, encodings, query
+	// tricks, credentials, ports, fragments and another release's checksum.
+	if raw != addonReleasePrefix+"download/"+tag+"/"+name {
+		return errors.New("release asset is not from the trusted GitHub repository and release")
+	}
+	return nil
+}
+
+func addonRedirect(req *http.Request, via []*http.Request) error {
+	if len(via) >= 5 {
+		return errors.New("too many GitHub download redirects")
+	}
+	v := req.URL
+	if v.Scheme != "https" || v.User != nil || v.Port() != "" || v.Fragment != "" {
+		return errors.New("refusing an insecure GitHub download redirect")
+	}
+	if len(via) == 0 {
+		return errors.New("unexpected download redirect")
+	}
+	original := via[0].URL
+	if original.Host == "api.github.com" {
+		if v.String() != addonLatestURL {
+			return errors.New("refusing a redirect outside the release API")
+		}
+		return nil
+	}
+	switch v.Host {
+	case "release-assets.githubusercontent.com", "objects.githubusercontent.com", "github-releases.githubusercontent.com":
+		return nil // GitHub's exact HTTPS release-asset CDN hosts (signed queries are allowed).
+	case "github.com":
+		if v.String() == original.String() {
+			return nil
+		}
+	}
+	return errors.New("refusing a redirect outside trusted GitHub release-asset hosts")
+}
+
+func (u *addonUpdater) fetch(ctx context.Context, raw string, limit int64, purpose string) ([]byte, error) {
+	parsed, err := url.Parse(raw)
+	if err != nil || parsed.Scheme != "https" {
+		return nil, errors.New("addon downloads require a trusted HTTPS URL")
+	}
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, raw, nil)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("User-Agent", "RelaxCoach-AddonUpdater")
+	req.Header.Set("Accept", "application/vnd.github+json, application/octet-stream")
+	resp, err := u.client.Do(req)
+	if err != nil {
+		return nil, fmt.Errorf("could not download %s; reports remain usable offline: %w", purpose, err)
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode == http.StatusTooManyRequests || (resp.StatusCode == http.StatusForbidden && resp.Header.Get("X-RateLimit-Remaining") == "0") {
+		return nil, errors.New("GitHub rate limit reached; try again later. Reports remain usable offline")
+	}
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("GitHub %s request failed (HTTP %d); try again later. Reports remain usable offline", purpose, resp.StatusCode)
+	}
+	if resp.ContentLength > limit {
+		return nil, fmt.Errorf("%s exceeds the download size limit", purpose)
+	}
+	b, err := io.ReadAll(io.LimitReader(resp.Body, limit+1))
+	if err != nil {
+		return nil, fmt.Errorf("could not read %s: %w", purpose, err)
+	}
+	if int64(len(b)) > limit {
+		return nil, fmt.Errorf("%s exceeds the download size limit", purpose)
+	}
+	return b, nil
+}

@@ -1,0 +1,6 @@
+--[[ Copyright (C) 2018-2026 TomCat's Gaming, LLC. All Rights Reserved.
+     Unauthorized use, reproduction, or distribution is prohibited.
+     See license.txt included with this distribution for full terms. ]]
+select(2, ...).SetupGlobalFacade()
+
+CATALOG_PUBLIC_KEY = "d393d11e0f43c8025fc5a26e070024f2e937968a1ee7d48c6b68b89ae2e90a0632969f6823776b666c971fb5f1bac6d38a0c79f450c561d06cf681f563840ced0ad11a398766e4b00872d2c61ff3d3191be8c0f0bbedd238ee729f25f59046b1d3a064d2cf8eefc9cb3dd8dac799d958a84a7b9a0f6eb224dfbe0d176f1038a82996d0307a4b364b3e5fbd384927a084203601e7b261cb054fd58528d61dbc1f2d21c0e0a3fafec2b535895b67010bf16432c3de80020f2a4528b14412c8f51779dc3a9807fda59f72db7bb257566870fdedc50a84f60ea48c7ec625634b90cd4940d7bf9d2fe35dd61e8cdcb3c244579666ceb14d24db0bb0492f44eebd97ab"

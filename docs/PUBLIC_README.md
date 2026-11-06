@@ -1,0 +1,51 @@
+# Relax Coach
+
+A leveling coach for **World of Warcraft: Forever**, with a Windows application for reports and addon updates.
+
+This archive is the **Coach-only updater asset**, not the combined guild download. For both addons and the guides, choose `RelaxCoach-Guild-1.4.0.zip` on the same release page.
+
+## Install
+
+Download `RelaxCoach-<version>.zip` from [the latest release](https://github.com/thegamersvibe/relax-coach/releases/latest).
+
+- Copy `ForeverCoach` into your game's `_forever_\Interface\AddOns` folder. It appears in game as **Relax Coach**. The internal folder/save IDs intentionally remain unchanged to retain existing settings.
+- Run **RelaxCoach.exe** for the Windows app. Choose **Coach Report** or **Update Addon** inside the application window. Microsoft WebView2 Runtime is required; Windows installations commonly already include it.
+- Set the game folder when prompted. Your game may be on any drive.
+- **Update Addon** checks the latest stable release on this GitHub repository. It updates only the Coach addon, verifies its download, backs up old files and leaves SavedVariables and other addons untouched. Close WoW before updating.
+
+The Windows executable is unsigned. Follow your usual antivirus review process; do not disable protection globally. The addon works without the Windows app.
+
+## In game
+
+- `/coach` — open/close the advice window.
+- `/coach top` — show the top three findings.
+- `/coach spec <id|auto>` — select your intended specialization.
+- `/coach macros` — create/update matching `FC ` macro templates for your class, out of combat. Ctrl is the primary modifier. Matching template names may be overwritten: rename customized macros first. Drag new macros to your own action bars.
+
+Coach provides gear, build, training, class-quest and leveling advice plus session estimates. Current talent data contains 28 standard plans; specialty/hybrid gaps remain. Usability and movement-derived metrics are estimates, not a combat log.
+
+## Report
+
+Use `/reload` or logout in WoW to write current data, then **Refresh** in the app. Refresh rereads the save; it cannot force WoW to save. Only Coach's `ForeverCoach.lua` SavedVariables are parsed, never executed.
+
+Legacy folder discovery settings remain supported (`FOREVER_COACH_GAME` and `%AppData%\ForeverCoach\config.json`).
+
+## Optional integrations
+
+- **GearQuest Forever** and the module for your class: gear-source checks.
+- **Journey / Relax Journey**: current guide/step context.
+- **ForeverDungeonJournal**: dungeon preparation and quest context.
+
+None is required for Coach to load. The smaller **Coach-only archive** contains only our Coach addon and application. It does not include Journey source, guides, or local Journey modifications, and the Coach updater does not overwrite them. The combined guild archive separately includes Relax Journey and guide content.
+
+## Development and releases
+
+The technical source paths remain `addon/ForeverCoach` and `desktop`.
+
+- `python3 scripts/build_rules_lua.py`
+- `uv run --with lupa python test/harness.py` (also run with provider fixtures)
+- `cd desktop && go vet ./... && go test -race ./...`
+
+The Coach-only updater asset is `RelaxCoach-<version>.zip`; the release also provides the combined `RelaxCoach-Guild-<version>.zip`, `RelaxCoach.exe`, and `SHA256SUMS.txt`. The addon updater consumes published stable releases, not raw pushes to `main`; publishing a tested new release makes it available to players. Keep Journey and guide content out of the smaller Coach-only archive. Never include personal SavedVariables in either archive or this repository.
+
+MIT-licensed Coach code by **TheGamersVibe**. Original upstream projects retain their own authorship and licenses.

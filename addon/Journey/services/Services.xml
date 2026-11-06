@@ -1,0 +1,42 @@
+<!-- Copyright (C) 2018-2026 TomCat's Gaming, LLC. All Rights Reserved.
+     Unauthorized use, reproduction, or distribution is prohibited.
+     See license.txt included with this distribution for full terms. -->
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+    <Script file="services/Aura.lua" />
+    <Script file="services/AutoQuests.lua" />
+    <Script file="services/Bank.lua" />
+    <Script file="services/ButtonGeneration.lua" />
+    <Script file="services/Color.lua" />
+    <Script file="services/CustomVariables.lua" />
+    <Script file="services/Equipment.lua" />
+    <Script file="services/Evaluation.lua" />
+    <Script file="services/Ghost.lua" />
+    <Script file="services/Gossip.lua" />
+    <Script file="services/Catalog.lua" />
+    <Script file="services/Guide.lua" />
+    <Script file="services/GuideNavigation.lua" />
+    <Script file="services/Hardcore.lua" />
+    <Script file="services/Header.lua" />
+    <Script file="services/Icon.lua" />
+    <Script file="services/Illustration.lua" />
+    <Script file="services/Innkeeper.lua" />
+    <Script file="services/Keybind.lua" />
+    <Script file="services/Locations.lua" />
+    <Script file="services/ManualWaypoint.lua" />
+    <Script file="services/LocationsInit.lua" />
+    <Script file="services/Merchant.lua" />
+    <Script file="services/Mounts.lua" />
+    <Script file="services/PetSpells.lua" />
+    <Script file="services/Places.lua" />
+    <Script file="services/Professions.lua" />
+    <Script file="services/QuestTracking.lua" />
+    <Script file="services/QuestText.lua" />
+    <Script file="services/Runes.lua" />
+    <Script file="services/SpellsCast.lua" />
+    <Script file="services/TargetScan.lua" />
+    <Script file="services/Taxi.lua" />
+    <Script file="services/Trigger.lua" />
+    <Script file="services/WorkComplete.lua" />
+</Ui>

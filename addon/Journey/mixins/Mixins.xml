@@ -1,0 +1,14 @@
+<!-- Copyright (C) 2018-2026 TomCat's Gaming, LLC. All Rights Reserved.
+     Unauthorized use, reproduction, or distribution is prohibited.
+     See license.txt included with this distribution for full terms. -->
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+    <Script file="mixins/ActionButton.lua" />
+    <Script file="mixins/GameObjectModels.lua" />
+    <Script file="mixins/Location.lua" />
+    <Script file="mixins/ModelAdjustments.lua" />
+    <Script file="mixins/NPC.lua" />
+    <Script file="mixins/TaxiNodeLocations.lua" />
+
+</Ui>

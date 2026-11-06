@@ -224,11 +224,9 @@ function G:Audit(snap)
         if not eq then return nil end
         local s = scoreOf[eq.id]
         if s then return s, "known" end
-        local GQ = _G.GearQuest
-        if GQ and GQ.Compare and GQ.Compare.ScoreItemStats then
-            local est = num(safe(GQ.Compare.ScoreItemStats, GQ.Compare, { itemId = eq.id }))
-            if est and est > 0 then return est, "estimated" end
-        end
+        -- Compare:ScoreItemStats uses provider preview/spec context and
+        -- different units from generated pipeline scores. It is not a valid
+        -- fallback for an upgrade percentage; preserve unknown instead.
         return nil, "unknown"
     end
 
@@ -246,7 +244,14 @@ function G:Audit(snap)
         local slot = self.SLOTS[inv]
         local eq = snap.equipped[inv]
         local entry = { slot = slot, label = self.LABELS[inv], inv = inv }
-        if eq then entry.id = eq.id; entry.score, entry.scoreStatus = equippedScore(eq) else entry.scoreStatus = "empty" end
+        if eq then
+            entry.id = eq.id; entry.score, entry.scoreStatus = equippedScore(eq)
+        elseif snap.equipmentState and snap.equipmentState[inv] == "empty" then
+            entry.scoreStatus = "empty"
+        else
+            entry.scoreStatus = "unreadable"
+            entry.note = "Equipment could not be read; this slot is not confirmed empty."
+        end
         local exclude = {}
         if inv == 12 or inv == 14 then -- second ring/trinket: never the same item as the first
             local other = snap.equipped[inv - 1]
@@ -269,14 +274,13 @@ function G:Audit(snap)
             entry.gapPct = 0
         elseif best and entry.score then
             entry.gapPct = math.max(0, math.floor((best.score - entry.score) / best.score * 100 + 0.5))
-        elseif best and not eq then
+        elseif best and entry.scoreStatus == "empty" then
             entry.gapPct = 100
         end
         if entry.scoreStatus == "known" or entry.scoreStatus == "estimated" then out.assessed = out.assessed + 1
         elseif entry.scoreStatus == "unknown" then out.unknown = out.unknown + 1 end
-        if eq and entry.scoreStatus == "unknown" and C_Item and C_Item.RequestLoadItemDataByID then
-            safe(C_Item.RequestLoadItemDataByID, eq.id)
-        end
+        -- Core requests genuinely uncached inventory links once. A missing
+        -- provider score is not an item-cache miss; do not create a load-event loop.
         entry.jewelry = JEWELRY[inv] or nil
         out.slots[inv] = entry
     end

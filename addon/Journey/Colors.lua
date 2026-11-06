@@ -1,0 +1,94 @@
+--[[ Copyright (C) 2018-2026 TomCat's Gaming, LLC. All Rights Reserved.
+     Unauthorized use, reproduction, or distribution is prohibited.
+     See license.txt included with this distribution for full terms. ]]
+select(2, ...).SetupGlobalFacade()
+
+local BLUE_COLA = "FF0084EB"
+local CELADON = "FFAEE8B1"
+local CHINESE_SILVER = "FFC8C8C8"
+local CYBER_YELLOW = "FFFFD100"
+local DARK_MIDNIGHT_BLUE = "FF07395C"
+local ORANGE_RED = "FFFF5050"
+local GREEN = "FF00FF00"
+local MAYA_BLUE = "FF69CCF0"
+local MINT_GREEN = "FF9DFF9D"
+local ORANGE = "FFFFA500"
+local ORCHID = "FFE36EE4"
+local PASTEL_RED = "FFFF6363"
+local RED = "FFFF0000"
+local YELLOW = "FFFFFF00"
+local WHITE = "FFFFFFFF"
+
+Color = {
+	AREA = CYBER_YELLOW,
+	AREA_ALT = WHITE,
+	BOLD = CHINESE_SILVER,
+	GAME_OBJECT = ORCHID,
+	GAME_OBJECT_ALT = WHITE,
+	GET_OUT = RED,
+	GUIDE_COMPLETE = CYBER_YELLOW,
+	INN = ORANGE,
+	ITALIC = CHINESE_SILVER,
+	ITEM = ORCHID,
+	ITEM_ALT = WHITE,
+	LEVEL = YELLOW,
+	LOCATION = GREEN,
+	MODE_NORMAL = DARK_MIDNIGHT_BLUE,
+	MODE_HIGHLIGHT_HC = ORANGE_RED,
+	MODE_HIGHLIGHT = BLUE_COLA,
+	NOTE_HEADING = CYBER_YELLOW,
+	NPC = ORCHID,
+	NPC_ALT = WHITE,
+	NPC_FRIENDLY = MINT_GREEN,
+	NPC_FRIENDLY_ALT = WHITE,
+	NPC_HOSTILE = PASTEL_RED,
+	NPC_HOSTILE_ALT = WHITE,
+	NPC_NEUTRAL = CYBER_YELLOW,
+	NPC_NEUTRAL_ALT = WHITE,
+	QUEST = BLUE_COLA,
+	QUEST_ALT = WHITE,
+	QUEST_ACCEPT = YELLOW,
+	QUEST_DO = BLUE_COLA,
+	QUEST_SKIPPED = RED,
+	QUEST_STARTWORK = MAYA_BLUE,
+	QUEST_TURNIN = ORANGE,
+	RED_TEXT = RED,
+	SEARCH_TERM = ORCHID,
+	SKILL = ORCHID,
+	SKIPPED_HEADING = RED,
+	SPELL = ORCHID,
+	TAXI = ORANGE,
+	TAXI_ALT = WHITE,
+	TIP = RED,
+	UNDERSCORE = CHINESE_SILVER,
+	WMOAREA = CYBER_YELLOW,
+	WMOAREA_ALT = WHITE,
+	XP = YELLOW,
+	XPCURRENT = CHINESE_SILVER,
+	ZONE = CYBER_YELLOW,
+	ZONE_ALT = WHITE,
+}
+
+for className, color in pairs(RAID_CLASS_COLORS) do
+	Color[className] = color.colorStr
+end
+
+Color.PRIEST = CELADON
+
+NPCColor = {
+	[1] = Color.NPC,
+	[2] = Color.NPC_HOSTILE,
+	[3] = Color.NPC_FRIENDLY,
+	[4] = Color.NPC_NEUTRAL,
+}
+
+NPCAltColor = {
+	[1] = Color.NPC_ALT,
+	[2] = Color.NPC_HOSTILE_ALT,
+	[3] = Color.NPC_FRIENDLY_ALT,
+	[4] = Color.NPC_NEUTRAL_ALT,
+}
+
+local _, playerClass = UnitClass("Player")
+
+Color.CLASS = Color[playerClass]

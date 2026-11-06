@@ -1,7 +1,6 @@
-// Forever Coach desktop helper.
-// Reads ONLY ForeverCoach's own SavedVariables (written by the game on /reload or logout),
-// serves a report on http://127.0.0.1:<port>, and keeps the addon's rules up to date
-// from the public GitHub repo. No memory reading, no input automation, no login.
+// Relax Coach native Windows application.
+// Reads only ForeverCoach SavedVariables. No memory reading or game automation.
+// Diagnostic HTTP is opt-in; the normal UI uses direct in-process Go bindings.
 package main
 
 import (
@@ -9,25 +8,19 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"html/template"
 	"log"
-	"net"
-	"net/http"
 	"os"
-	"os/exec"
 	"path/filepath"
-	"runtime"
 	"sort"
 	"sync"
-	"sync/atomic"
 	"time"
 )
 
-const Version = "1.3.1"
-const Repo = "thegamersvibe/forever-coach"
+const Version = "1.4.0"
+const Repo = "thegamersvibe/relax-coach"
 const RulesSchema = 1
 
-//go:embed report.html logo.png
+//go:embed report.html logo.png native_shell.html native_shell.js
 var assets embed.FS
 
 type Finding struct {
@@ -98,145 +91,58 @@ type View struct {
 	Chars                       []CharView
 	SVPath, Error, RulesVersion string
 	Warning                     string
+	Account                     string
+	ConfigWarning               string
+	Accounts                    []AccountChoice
+	SaveTime                    time.Time
 	Game                        string
 	NoGame                      bool
 	UpdateNote, AppVersion      string
 	Loaded                      time.Time
 }
 
-var lastPing atomic.Int64
-
 type App struct {
 	game, svPath, addonDir string
 	mu                     sync.Mutex
 	view                   View
 	modTime                time.Time
+	account                string
+	accounts               []AccountChoice
+	configWarning          string
+	canAutoSelect          bool
 }
 
 func main() {
-	gameFlag := flag.String("game", "", `game folder (the _forever_ folder); default: auto-detect on all drives`)
-	port := flag.Int("port", 47321, "local port")
-	noOpen := flag.Bool("no-open", false, "don't open the browser")
-	noUpdate := flag.Bool("no-update", false, "skip the rules update check")
-	once := flag.Bool("once", false, "print the report to the console and exit")
+	gameFlag := flag.String("game", "", `game folder (the _forever_ folder); default: auto-detect`)
+	port := flag.Int("port", 47321, "diagnostic HTTP port (only with -headless or -no-open)")
+	noOpen := flag.Bool("no-open", false, "diagnostic HTTP mode; never launch a browser")
+	headless := flag.Bool("headless", false, "diagnostic HTTP mode without an application window")
+	noUpdate := flag.Bool("no-update", false, "disable addon release checks and updates")
+	once := flag.Bool("once", false, "print the report to the console and exit without updating")
 	flag.Parse()
-
-	game := ""
-	if *gameFlag != "" {
-		game = NormalizeGame(*gameFlag)
-		if game == "" {
-			fmt.Println("Not a WoW Forever folder:", *gameFlag)
-		}
-	}
+	game := NormalizeGame(*gameFlag)
 	if game == "" {
 		game = findGame()
 	}
 	app := &App{}
 	app.setGame(game)
-	app.view.AppVersion = Version
 	app.reload()
-
-	checkUpdates := func() {
-		note := app.updateRules()
-		app.mu.Lock()
-		app.view.UpdateNote = note
-		app.view.Loaded = time.Now() // page auto-refreshes to show the note
-		app.mu.Unlock()
-	}
 	if *once {
-		if !*noUpdate {
-			checkUpdates()
-		}
 		printConsole(app.snapshot())
 		return
 	}
-	go app.watch()
-	if !*noUpdate {
-		go checkUpdates() // never delay the page on a slow network
-	}
-
-	url := fmt.Sprintf("http://127.0.0.1:%d/", *port)
-	ln, err := net.Listen("tcp", fmt.Sprintf("127.0.0.1:%d", *port))
-	if err != nil {
-		// Already running: just show the existing report.
-		if !*noOpen {
-			openBrowser(url)
+	// The window owns the process. HTTP is an explicit diagnostic opt-in, on every OS.
+	if *headless || *noOpen {
+		if err := serveDiagnostic(app, *port); err != nil {
+			log.Fatal(err)
 		}
 		return
 	}
-	// No console window: the app quits on its own once the report tab has been closed for a while.
-	// (Chrome slows timers in background tabs to ~1/min, so the timeout must be well above that.)
-	if !*noOpen {
-		go func() {
-			time.Sleep(3 * time.Minute)
-			for {
-				time.Sleep(15 * time.Second)
-				if time.Since(time.Unix(0, lastPing.Load())) > 3*time.Minute {
-					os.Exit(0)
-				}
-			}
-		}()
+	if err := runNative(app, *noUpdate); err != nil {
+		showNativeError(err)
+		log.Print(err)
+		os.Exit(1)
 	}
-	tpl := template.Must(template.New("report.html").Funcs(funcs).ParseFS(assets, "report.html"))
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		if err := tpl.Execute(w, app.snapshot()); err != nil {
-			http.Error(w, err.Error(), 500)
-		}
-	})
-	http.HandleFunc("/logo.png", func(w http.ResponseWriter, r *http.Request) {
-		b, _ := assets.ReadFile("logo.png")
-		w.Header().Set("Content-Type", "image/png")
-		w.Header().Set("Cache-Control", "max-age=86400")
-		w.Write(b)
-	})
-	lastPing.Store(time.Now().UnixNano())
-	http.HandleFunc("/setgame", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method != http.MethodPost {
-			http.Error(w, "POST only", http.StatusMethodNotAllowed)
-			return
-		}
-		g := NormalizeGame(r.FormValue("game"))
-		if g == "" {
-			http.Redirect(w, r, "/?bad=1", http.StatusSeeOther)
-			return
-		}
-		saveGame(g)
-		app.setGame(g)
-		app.mu.Lock()
-		app.view = View{AppVersion: Version}
-		app.mu.Unlock()
-		app.reload()
-		http.Redirect(w, r, "/", http.StatusSeeOther)
-	})
-	http.HandleFunc("/refresh", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method != http.MethodPost {
-			http.Error(w, "POST only", http.StatusMethodNotAllowed)
-			return
-		}
-		lastPing.Store(time.Now().UnixNano())
-		if app.game == "" {
-			if g := findGame(); g != "" {
-				app.setGame(g)
-			}
-		} else if p := findSavedVariables(app.game); p != "" {
-			app.svPath = p
-		}
-		app.reload()
-		fmt.Fprint(w, app.snapshot().Loaded.UnixNano())
-	})
-	http.HandleFunc("/stamp", func(w http.ResponseWriter, r *http.Request) {
-		lastPing.Store(time.Now().UnixNano())
-		v := app.snapshot()
-		fmt.Fprint(w, v.Loaded.UnixNano())
-	})
-	fmt.Println("Forever Coach", Version, "-", url)
-	fmt.Println("Game:", app.game, "(change it from the report page, or run with -game \"D:\\...\\_forever_\")")
-	fmt.Println("Reading:", app.svPath)
-	if !*noOpen {
-		openBrowser(url)
-	}
-	log.Fatal(http.Serve(ln, nil))
 }
 
 func (a *App) snapshot() View {
@@ -247,53 +153,56 @@ func (a *App) snapshot() View {
 
 func (a *App) setGame(game string) {
 	a.mu.Lock()
+	defer a.mu.Unlock()
 	a.game = game
-	a.addonDir = filepath.Join(game, "Interface", "AddOns", "ForeverCoach")
-	a.svPath = ""
-	if game != "" {
-		a.svPath = findSavedVariables(game)
+	a.addonDir = ""
+	a.account, a.configWarning = "", ""
+	remembered, err := savedAccount(game)
+	a.canAutoSelect = err == nil
+	if err != nil {
+		a.configWarning = "Could not read remembered account: " + err.Error()
+	} else {
+		a.account = remembered
 	}
+	if game != "" {
+		a.addonDir = filepath.Join(game, "Interface", "AddOns", "ForeverCoach")
+	}
+	a.rescanAccountsLocked()
 	a.modTime = time.Time{}
-	a.mu.Unlock()
+	// Do not carry another game's last-good report across a folder change.
+	a.view = View{AppVersion: Version, Game: game, NoGame: game == ""}
 }
 
-func (a *App) watch() {
-	for {
-		time.Sleep(2 * time.Second)
-		if a.game == "" {
-			continue
-		}
-		if a.svPath == "" {
-			a.svPath = findSavedVariables(a.game)
-		}
-		if st, err := os.Stat(a.svPath); err == nil && st.ModTime() != a.modTime {
-			time.Sleep(700 * time.Millisecond) // let the game finish writing
-			a.reload()
-		}
-		// pick up another account's newer save
-		if p := findSavedVariables(a.game); p != "" && p != a.svPath {
-			a.svPath = p
-			a.reload()
-		}
-	}
+// Refresh, folder selection, and snapshots synchronize all report state. There is
+// no lifetime timer: a minimized native window can remain open indefinitely.
+func (a *App) refresh() {
+	a.mu.Lock()
+	defer a.mu.Unlock()
+	a.rescanAccountsLocked()
+	a.reloadLocked()
 }
 
 func (a *App) reload() {
 	a.mu.Lock()
+	defer a.mu.Unlock()
+	a.reloadLocked()
+}
+
+func (a *App) reloadLocked() {
 	prev := a.view
-	a.mu.Unlock()
-	v := View{SVPath: a.svPath, AppVersion: Version, Loaded: time.Now(), UpdateNote: prev.UpdateNote, Game: a.game, NoGame: a.game == ""}
+	v := View{SVPath: a.svPath, AppVersion: Version, Loaded: time.Now(), UpdateNote: prev.UpdateNote, Game: a.game, NoGame: a.game == "", Account: a.account, Accounts: a.accounts, ConfigWarning: a.configWarning}
 	v.RulesVersion = installedRulesVersion(a.addonDir)
 	if a.game == "" {
-		v.Error = "Couldn't find WoW Forever on this PC. Paste your game folder below."
+		v.Error = "Couldn't find WoW Forever on this PC. Choose or paste your game folder above."
+	} else if a.account == "" && len(a.accounts) > 0 {
+		v.Error = "Choose an account above to view its characters. Accounts are never combined."
 	} else if a.svPath == "" {
-		v.Error = "No ForeverCoach data yet in " + a.game + ". Install the addon, log in, then /reload."
-	} else if st, err := os.Stat(a.svPath); err != nil {
-		v.Error = "Can't read " + a.svPath + ": " + err.Error()
+		v.Error = "No Relax Coach data yet in " + a.game + ". Install the addon, log in, then /reload."
 	} else {
-		b, err := os.ReadFile(a.svPath)
+		b, st, err := a.readSelectedSave()
 		var vars map[string]any
 		if err == nil {
+			v.SaveTime = st.ModTime()
 			vars, err = ParseSavedVariables(string(b))
 		}
 		db := M(vars["ForeverCoachDB"])
@@ -301,27 +210,24 @@ func (a *App) reload() {
 			err = fmt.Errorf("no ForeverCoachDB in %s", a.svPath)
 		}
 		if err == nil && N(db["schema"]) > 1 {
-			err = fmt.Errorf("this save was written by a newer Forever Coach addon; update the app")
+			err = fmt.Errorf("this save was written by a newer Relax Coach addon; update the addon")
 		}
 		if err != nil {
-			// keep showing the last good data; the game may still be writing the file
-			if len(prev.Chars) > 0 {
-				prev.Warning = "Latest save couldn't be read yet, showing the previous one (" + err.Error() + ")"
-				prev.Loaded = time.Now()
-				a.mu.Lock()
-				a.view = prev
-				a.mu.Unlock()
-				return
-			}
 			v.Error = err.Error()
 		} else {
-			a.modTime = st.ModTime() // only accept the file once it parsed
+			a.modTime = st.ModTime()
 			v.Chars = buildChars(db)
 		}
 	}
-	a.mu.Lock()
+	if v.Error != "" && prev.SVPath != "" && prev.Error == "" && prev.Game == v.Game && prev.Account == v.Account {
+		prev.Accounts = v.Accounts
+		prev.ConfigWarning = v.ConfigWarning
+		prev.Warning = "Latest save couldn't be read yet, showing the previous one (" + v.Error + ")"
+		prev.Loaded = time.Now()
+		a.view = prev
+		return
+	}
 	a.view = v
-	a.mu.Unlock()
 }
 
 func buildChars(db map[string]any) []CharView {
@@ -362,18 +268,6 @@ func buildChars(db map[string]any) []CharView {
 	return out
 }
 
-// Newest ForeverCoach.lua under WTF\Account\*\SavedVariables (multiple accounts possible).
-func findSavedVariables(game string) string {
-	matches, _ := filepath.Glob(filepath.Join(game, "WTF", "Account", "*", "SavedVariables", "ForeverCoach.lua"))
-	best, bestT := "", time.Time{}
-	for _, m := range matches {
-		if st, err := os.Stat(m); err == nil && st.ModTime().After(bestT) {
-			best, bestT = m, st.ModTime()
-		}
-	}
-	return best
-}
-
 func ago(t time.Time) string {
 	if t.Unix() <= 0 {
 		return "never"
@@ -388,19 +282,6 @@ func ago(t time.Time) string {
 		return fmt.Sprintf("%d h ago", int(d.Hours()))
 	}
 	return t.Format("2006-01-02")
-}
-
-func openBrowser(url string) {
-	var cmd *exec.Cmd
-	switch runtime.GOOS {
-	case "windows":
-		cmd = exec.Command("rundll32", "url.dll,FileProtocolHandler", url)
-	case "darwin":
-		cmd = exec.Command("open", url)
-	default:
-		cmd = exec.Command("xdg-open", url)
-	}
-	_ = cmd.Start()
 }
 
 func printConsole(v View) {

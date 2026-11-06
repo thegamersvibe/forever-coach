@@ -1,8 +1,21 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Forever Coach</title>
+<html lang="en"><head><meta charset="utf-8"><title>Relax Coach</title>
 <link rel="icon" type="image/png" href="/logo.png">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<style>
+<style>{{template "report-style" .}}</style></head><body><main>
+<div class="top">
+  <div class="brand"><img class="crest" src="/logo.png" alt=""><div><h1>Relax Coach</h1><small>WoW Forever leveling report</small></div></div>
+  <div class="live">Diagnostic report · app {{.AppVersion}} · rules {{if .RulesVersion}}{{.RulesVersion}}{{else}}none{{end}} <button id="refresh" class="rbtn">Refresh</button></div>
+</div>
+<form class="note gamebox" method="post" action="/setgame">
+ <label>Game folder <input name="game" value="{{.Game}}" placeholder="D:\World of Warcraft\_forever_"></label><button type="submit">Use this folder</button>
+</form>
+{{template "report-body" .}}
+</main>
+<script>
+document.getElementById('refresh').addEventListener('click',async()=>{await fetch('/refresh',{method:'POST'});location.reload()});
+</script></body></html>
+{{define "report-style"}}
 :root{
   --bg:#07090d;--bg2:#0d1118;--card:#121823cc;--card2:#171f2c;--line:#263042;--line2:#3a4458;
   --fg:#e9edf3;--mut:#a3adbd;--dim:#7d879a;--gold:#e8c46a;--gold2:#a8842f;
@@ -79,6 +92,7 @@ a{color:var(--gold)}
 .slot .sn{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
 .slot .it{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:36px}
 .slot .it.none{color:#c9878b;font-weight:500;font-style:italic}
+.slot .it.unread{color:var(--dim);font-weight:500}
 .slot.w{grid-column:span 1}
 .wrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
 .wrow .slot .it{padding-right:30px}
@@ -133,19 +147,11 @@ a{color:var(--gold)}
 .warnbar{border-color:#ffb45466;background:#3a2a1299}
 .slot .wh{font-size:11px;color:var(--mut);margin-top:3px}
 @media (prefers-reduced-motion:reduce){.dot{animation:none}}
-</style></head><body><main>
-
-<div class="top">
-  <div class="brand"><img class="crest" src="/logo.png" alt=""><div><h1>Forever Coach</h1><small>WoW Forever leveling report</small></div></div>
-  <div class="live" id="live"><span class="dot"></span><span id="livetxt">Connected</span>&nbsp;· updates when the game saves (/reload, logout) <button id="refresh" class="rbtn" title="Re-read the save file now">↻ Refresh</button> <button class="rbtn" type="button" onclick="const f=document.getElementById('gameform');if(f)f.hidden=!f.hidden" title="{{.Game}}">Game folder</button> · app {{.AppVersion}} · rules {{if .RulesVersion}}{{.RulesVersion}}{{else}}none{{end}}</div>
-</div>
+{{end}}
+{{define "report-body"}}
 {{if .UpdateNote}}<div class="note">{{.UpdateNote}}</div>{{end}}
 {{if .Warning}}<div class="note warnbar">{{.Warning}}</div>{{end}}
 {{if .Error}}<div class="note err">{{.Error}}</div>{{end}}
-<form class="note gamebox" method="post" action="/setgame"{{if not .NoGame}} hidden id="gameform"{{end}}>
- <b>Game folder</b> <span class="gscore">Paste the path to your <code>_forever_</code> folder (or the World of Warcraft folder), e.g. <code>D:\World of Warcraft\_forever_</code>. Tip: in Battle.net, gear icon → Show in Explorer, then copy the address bar.</span>
- <div style="display:flex;gap:8px;margin-top:8px"><input name="game" value="{{.Game}}" placeholder="D:\World of Warcraft\_forever_" style="flex:1;font:inherit;padding:6px 10px;border-radius:8px;border:1px solid var(--line2);background:#0006;color:var(--fg)"><button class="rbtn" type="submit">Use this folder</button></div>
-</form>
 {{if gt (len .Chars) 1}}<div class="charsw">{{range .Chars}}<a href="#{{.Key}}">{{.Name}} · {{.Level}}</a>{{end}}</div>{{end}}
 
 {{range .Chars}}
@@ -163,7 +169,7 @@ a{color:var(--gold)}
     <span class="chip">{{.Faction}}</span>
     <span class="chip" title="Where the spec came from: {{.SpecSource}}">Spec <b>{{title .Spec}}</b>{{if eq .SpecSource "default"}} · default{{end}}</span>
     {{if .Zone}}<span class="chip">In <b>{{.Zone}}</b></span>{{end}}
-    {{if .Guide}}<span class="chip" title="Journey step {{.GuideStep}}">Guide <b>{{.Guide}}</b>{{if .GuideStep}} · step {{.GuideStep}}{{end}}</span>{{end}}
+    {{if .Guide}}<span class="chip" title="Relax Journey step {{.GuideStep}}">Relax Journey <b>{{.Guide}}</b>{{if .GuideStep}} · step {{.GuideStep}}{{end}}</span>{{end}}
    </div>
    {{if not .MaxLevel}}<div class="xp">
     <div class="bar"><u style="left:{{.XPPct}}%;width:{{.RestedPct}}%"></u><i style="width:{{.XPPct}}%"></i></div>
@@ -280,25 +286,15 @@ a{color:var(--gold)}
 </section>
 {{end}}
 
-<div class="foot">Forever Coach is open source · <a href="https://github.com/thegamersvibe/forever-coach" target="_blank">TheGamersVibe/forever-coach</a> · reads only ForeverCoach's own save file</div>
-</main>
-<script>
-document.querySelectorAll('.filters').forEach(fl=>{
-  fl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
-    fl.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
-    fl.closest('.card').querySelectorAll('.more .fix').forEach(r=>{r.style.display=(b.dataset.f==='all'||r.dataset.area===b.dataset.f)?'':'none'})})});
-document.querySelectorAll('.slot').forEach(s=>s.addEventListener('click',()=>s.classList.toggle('open')));
-document.getElementById('refresh').addEventListener('click',async e=>{const b=e.currentTarget;b.disabled=true;b.textContent='Refreshing…';try{await fetch('/refresh',{method:'POST'});location.reload()}catch(_){b.textContent='App closed';b.disabled=false}});
-if(location.search.includes('bad=1')){const f=document.querySelector('.gamebox');if(f){f.hidden=false;f.insertAdjacentHTML('afterbegin','<div style="color:var(--bad);margin-bottom:6px">That folder doesn\'t look like WoW Forever. Check the path.</div>')}}
-let s=null,fails=0;setInterval(async()=>{try{const t=await (await fetch('/stamp')).text();fails=0;document.getElementById('live').style.opacity=1;document.getElementById('livetxt').textContent='Connected';if(s&&t!==s)location.reload();s=t}catch(e){if(++fails>1){document.getElementById('live').style.opacity=.6;document.getElementById('livetxt').textContent='App closed: run Forever Coach again'}}},2000)
-</script></body></html>
+<div class="foot">Relax Coach · private bundle · based on TheGamersVibe's MIT-licensed Coach · reads only <code>ForeverCoach.lua</code><br>Public addon updates change ForeverCoach only. Relax Journey and private content are unchanged.</div>
+{{end}}
 {{define "slot"}}<div class="slot" tabindex="0" style="--q:{{css (gapColor .GapPct .Equipped .Status)}}">
  <div class="edge"></div>
  <div style="min-width:0">
   <div class="sn">{{.Name}}</div>
-  <div class="it{{if not .Equipped}} none{{end}}">{{if .Equipped}}{{.Item}}{{else}}Empty{{end}}</div>
+  <div class="it{{if eq .Status "unreadable"}} unread{{else if not .Equipped}} none{{end}}">{{if .Equipped}}{{.Item}}{{else if eq .Status "unreadable"}}Not read{{else}}Empty{{end}}</div>
   {{if and .BestName .Equipped (gt .GapPct 0)}}<div class="gap">+{{.GapPct}}%</div>{{end}}
   {{if eq .Status "unknown"}}<div class="gap" style="color:var(--dim)">?</div>{{end}}
  </div>
- <div class="tip">{{if .Note}}{{.Note}}{{else if eq .Status "unknown"}}This item isn't in GearQuest's data, so it isn't scored.{{else if not .BestName}}No recommendation for this slot.{{else if and .Equipped (eq .GapPct 0)}}✓ Good for your level.{{else}}Upgrade: <b>{{.BestName}}</b>{{if .BestWhere}}<br>{{.BestWhere}}{{end}}<br>{{short .BestHow}}{{end}}</div>
+ <div class="tip">{{if .Note}}{{.Note}}{{else if eq .Status "unknown"}}Equipped. Not scored for this spec: comparable scoring data is unavailable.{{else if not .BestName}}No recommendation for this slot.{{else if and .Equipped (eq .GapPct 0)}}✓ Good for your level.{{else}}Upgrade: <b>{{.BestName}}</b>{{if .BestWhere}}<br>{{.BestWhere}}{{end}}<br>{{short .BestHow}}{{end}}</div>
 </div>{{end}}

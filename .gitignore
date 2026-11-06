@@ -1,3 +1,10 @@
 dist/
 *.zip
 __pycache__/
+*.pyc
+*.exe
+.env*
+private/
+evidence/
+WTF/
+backups/

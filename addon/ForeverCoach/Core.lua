@@ -1,8 +1,8 @@
--- Forever Coach: core state, snapshot of the character, saved data.
+-- Relax Coach: core state, snapshot of the character, saved data.
 local ADDON, FC = ...
 FC = FC or {}
 _G.ForeverCoach = FC
-FC.VERSION = "1.3.1"
+FC.VERSION = "1.4.0"
 FC.SCHEMA = 1
 
 local function safe(f, ...)
@@ -31,7 +31,7 @@ function FC:Rules()
     return r
 end
 
-function FC:Print(msg) DEFAULT_CHAT_FRAME:AddMessage("|cff4fc3f7Forever Coach|r: " .. tostring(msg)) end
+function FC:Print(msg) DEFAULT_CHAT_FRAME:AddMessage("|cff4fc3f7Relax Coach|r: " .. tostring(msg)) end
 
 function FC:CharKey()
     local name = UnitName("player") or "?"
@@ -146,13 +146,37 @@ function FC:Reputations()
 end
 
 function FC:Equipped()
-    local out = {}
+    local out, states = {}, {}
     for slot = 1, 19 do
         local link = plain(safe(GetInventoryItemLink, "player", slot))
-        local id = itemIdFromLink(link)
-        if id then out[slot] = { id = id, link = link, loc = self:EquipLoc(id) } end
+        -- A failed/secret read is not the same as a successful empty slot.
+        local readable, inventoryID = false, nil
+        if type(GetInventoryItemID) == "function" then
+            local ok, value = pcall(GetInventoryItemID, "player", slot)
+            if ok and not (issecretvalue and issecretvalue(value)) then
+                if value == nil or value == 0 then
+                    readable = true
+                elseif num(value) and value > 0 and value % 1 == 0 then
+                    readable, inventoryID = true, value
+                end
+            end
+        end
+        -- Identity is available before the cached hyperlink/name.
+        local id = inventoryID or itemIdFromLink(link)
+        states[slot] = id and "equipped" or (readable and "empty" or "unreadable")
+        if id then
+            if itemIdFromLink(link) ~= id then link = nil end
+            out[slot] = { id = id, link = link, loc = self:EquipLoc(id) }
+            if not link and C_Item and C_Item.RequestLoadItemDataByID then
+                self._itemRequests = self._itemRequests or {}
+                if not self._itemRequests[id] then
+                    self._itemRequests[id] = true
+                    safe(C_Item.RequestLoadItemDataByID, id)
+                end
+            end
+        end
     end
-    return out
+    return out, states
 end
 
 function FC:Bags()
@@ -215,6 +239,7 @@ function FC:Snapshot()
     local _, raceFile = UnitRace("player")
     local faction = UnitFactionGroup("player")
     local bags, baginfo = self:Bags()
+    local equipped, equipmentState = self:Equipped()
     local s = {
         time = time(), name = UnitName("player"), realm = GetRealmName and GetRealmName(),
         class = classFile, race = raceFile, faction = faction, level = num(UnitLevel("player")) or 1,
@@ -222,7 +247,8 @@ function FC:Snapshot()
         rested = (GetXPExhaustion and num(GetXPExhaustion())) or 0,
         resting = (IsResting and plain(safe(IsResting)) == true) or false,
         money = (GetMoney and num(GetMoney())) or 0,
-        talents = self:ReadTalents(), skills = self:Skills(), reps = self:Reputations(), equipped = self:Equipped(),
+        talents = self:ReadTalents(), skills = self:Skills(), reps = self:Reputations(),
+        equipped = equipped, equipmentState = equipmentState,
         bags = bags, baginfo = baginfo, zone = self:Zone(), journey = self:Journey(), spells = {},
     }
     for _, m in ipairs(self:Rules().spellMilestones or {}) do
@@ -247,13 +273,20 @@ local function section(c, key, fn, ...)
 end
 
 function FC:RefreshUnsafe(reason)
+    if self._loggingOut then return end -- late timers must not sample torn-down client APIs
     local c = self:Char()
+    c.stale = c.stale or {}
+    if type(IsPlayerInWorld) == "function" and plain(safe(IsPlayerInWorld)) ~= true then
+        c.stale.snapshot = true
+        return
+    end
     local okSnap, snap = pcall(self.Snapshot, self)
     if not okSnap then
         c.lastError = { where = "snapshot", err = tostring(snap), time = time(), version = FC.VERSION }
         return
     end
     c.snapshot = snap
+    c.stale.snapshot = nil
     if FC.Gear then section(c, "gear", FC.Gear.Audit, FC.Gear, snap) end
     if FC.Talents then section(c, "talentPlan", FC.Talents.Plan, FC.Talents, snap, c.gear and c.gear.spec) end
     if FC.Dungeons then section(c, "dungeons", FC.Dungeons.Plan, FC.Dungeons, snap) end
@@ -298,7 +331,7 @@ local f = CreateFrame("Frame")
 FC.frame = f
 for _, e in ipairs({ "ADDON_LOADED", "PLAYER_LOGIN", "PLAYER_LEVEL_UP", "PLAYER_LOGOUT", "TRAINER_SHOW", "TRAINER_UPDATE",
     "TRAINER_CLOSED", "PLAYER_EQUIPMENT_CHANGED", "ZONE_CHANGED_NEW_AREA", "SPELLS_CHANGED", "BAG_UPDATE_DELAYED",
-    "QUEST_TURNED_IN", "GET_ITEM_INFO_RECEIVED" }) do
+    "QUEST_TURNED_IN", "GET_ITEM_INFO_RECEIVED", "ITEM_DATA_LOAD_RESULT", "PLAYER_ENTERING_WORLD" }) do
     f:RegisterEvent(e)
 end
 f:SetScript("OnEvent", function(_, event, arg1)
@@ -318,11 +351,16 @@ f:SetScript("OnEvent", function(_, event, arg1)
         elseif event == "SPELLS_CHANGED" then
             if FC.Session then FC.Session:SyncSpells() end
             later(3, "refresh", function() FC:Refresh("spells") end)
-        elseif event == "GET_ITEM_INFO_RECEIVED" then
+        elseif event == "GET_ITEM_INFO_RECEIVED" or event == "ITEM_DATA_LOAD_RESULT" then
             later(5, "refresh", function() FC:Refresh("iteminfo") end)
         elseif event == "PLAYER_LOGOUT" then
+            -- On Forever, inventory/XP/bag APIs can already be cleared here.
+            -- Save the last in-world capture; only finalize derived session stats.
+            FC._loggingOut = true
             if FC.Session then FC.Session:Finish() end
-            FC:Refresh("logout")
+            local c = FC:Char()
+            if c.snapshot and FC.Audit then section(c, "findings", FC.Audit.Run, FC.Audit, c) end
+            c.savedAt = time()
         elseif event ~= "ADDON_LOADED" then
             later(3, "refresh", function() FC:Refresh(event) end)
         end

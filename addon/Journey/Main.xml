@@ -1,0 +1,55 @@
+<!-- Copyright (C) 2018-2026 TomCat's Gaming, LLC. All Rights Reserved.
+     Unauthorized use, reproduction, or distribution is prohibited.
+     See license.txt included with this distribution for full terms. -->
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="lib/TomCats/GlobalFacade.lua" />
+	<Script file="lib/TomCats/Maps.lua" />
+	<Script file="lib/TomCats/Arrows.lua" />
+	<Script file="lib/TomCats/Base64.lua" />
+	<Script file="lib/TomCats/Crypto.lua" />
+	<Script file="lib/TomCats/HTMLDataLoader.lua" />
+	<Script file="metadata.lua" />
+	<Script file="lib/TomCats/Language.lua" />
+	<Script file="lib/TomCats/Images.lua" />
+	<Include file="lib/TomCats/MinimapButton.xml" />
+	<Script file="lib/TomCats/MinimapButton.lua" />
+	<Script file="lib/TomCats/FactoryTools.lua" />
+	<Script file="lib/TomCats/Popup.lua" />
+	<Script file="Brand.lua" />
+	<Script file="Brand-Ext.lua" />
+	<Script file="Compatibility.lua" />
+	<Script file="Constants.lua" />
+	<Script file="Colors.lua" />
+	<Script file="lang/default.lua" />
+	<Script file="lang/deDE.lua" />
+	<Script file="lang/esES.lua" />
+	<Script file="lang/esMX.lua" />
+	<Script file="lang/frFR.lua" />
+	<Script file="lang/itIT.lua" />
+	<Script file="lang/koKR.lua" />
+	<Script file="lang/ptBR.lua" />
+	<Script file="lang/ruRU.lua" />
+	<Script file="lang/zhCN.lua" />
+	<Script file="lang/zhTW.lua" />
+	<Script file="State.lua" />
+	<Script file="Debug.lua" />
+	<Script file="Legacy.lua" />
+	<Script file="Tools.lua" />
+	<Script file="Names.lua" />
+	<Script file="NPCInfo.lua" />
+	<Include file="mixins/Mixins.xml" />
+	<Include file="data/GuideTemplates.xml" />
+	<Include file="data/Data.xml" />
+	<Script file="QuestLogItems.lua" />
+	<Include file="services/Services.xml" />
+	<Include file="ui/UI.xml" />
+	<Script file="Condition.lua" />
+	<Script file="IllustrationContainer.lua" />
+	<Script file="SlashCommands.lua" />
+	<Script file="GuideModules.lua" />
+	<Script file="QuestStatus.lua" />
+	<Script file="Flags.lua" />
+	<Script file="Validator.lua" />
+	<Script file="Main.lua" />
+</Ui>

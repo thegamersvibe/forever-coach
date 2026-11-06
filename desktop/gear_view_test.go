@@ -1,0 +1,106 @@
+package main
+
+import (
+	"strings"
+	"testing"
+)
+
+func gearTestChar(t *testing.T, body string) CharView {
+	t.Helper()
+	vars, err := ParseSavedVariables(`ForeverCoachDB = {schema=1, chars={ ["Probe-Test"]={` + body + `} } }`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	chars := buildChars(M(vars["ForeverCoachDB"]))
+	if len(chars) != 1 {
+		t.Fatalf("character count = %d", len(chars))
+	}
+	return chars[0]
+}
+
+func gearTestSlot(t *testing.T, c CharView, name string) SlotView {
+	t.Helper()
+	for _, slot := range c.Slots {
+		if slot.Name == name {
+			return slot
+		}
+	}
+	t.Fatalf("missing slot %q", name)
+	return SlotView{}
+}
+
+func TestGearViewUncachedItemKeepsIdentity(t *testing.T) {
+	c := gearTestChar(t, `snapshot={name="Probe",level=20,class="WARRIOR",xpMax=10000,
+		equipped={[5]={id=987654}}, equipmentState={[5]="equipped"}},
+		gear={status="ok",slots={[5]={scoreStatus="unknown"}}}`)
+	s := gearTestSlot(t, c, "Chest")
+	if !s.Equipped || s.Item != "Item #987654 (name pending)" || s.GapPct != -1 || s.Status != "unknown" {
+		t.Fatalf("uncached equipped item lost identity or was scored: %+v", s)
+	}
+	html, err := renderReportBody(View{Chars: []CharView{c}})
+	if err != nil || !strings.Contains(html, "Item #987654 (name pending)") {
+		t.Fatalf("equipped ID not shown in actual report: %v", err)
+	}
+	if !strings.Contains(html, "Not scored for this spec") {
+		t.Fatal("unknown tooltip falsely asserts the item is absent from the provider")
+	}
+}
+
+func TestGearViewUnreadableNeverClaimsEmpty(t *testing.T) {
+	c := gearTestChar(t, `snapshot={name="Probe",level=20,class="WARRIOR",xpMax=10000,
+		equipped={}, equipmentState={[5]="unreadable",[6]="empty"}},
+		gear={status="ok",slots={[5]={scoreStatus="empty",gapPct=100,best={name="Test chest"}},[6]={scoreStatus="empty"}}}`)
+	s := gearTestSlot(t, c, "Chest")
+	if s.Status != "unreadable" || s.GapPct != -1 || c.GearEmpty != 0 {
+		t.Fatalf("unreadable slot was classified as empty or scored: slot=%+v empty=%d", s, c.GearEmpty)
+	}
+	var html strings.Builder
+	if err := reportTemplate.ExecuteTemplate(&html, "slot", s); err != nil {
+		t.Fatal(err)
+	}
+	if strings.Contains(html.String(), ">Empty<") || !strings.Contains(html.String(), "Not read") {
+		t.Fatalf("unreadable slot render is misleading: %s", html.String())
+	}
+	var emptyHTML strings.Builder
+	if err := reportTemplate.ExecuteTemplate(&emptyHTML, "slot", gearTestSlot(t, c, "Waist")); err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(emptyHTML.String(), ">Empty<") {
+		t.Fatal("confirmed empty slot no longer shows Empty")
+	}
+}
+
+func TestGearViewLegacyUncapturedSlotsSuppressFalseAdvice(t *testing.T) {
+	c := gearTestChar(t, `reason="logout",snapshot={name="Probe",level=17,class="WARRIOR",xpMax=0,money=0,
+		equipped={},bags={},baginfo={slots=0}},
+		gear={status="ok",slots={[5]={scoreStatus="empty",gapPct=100,best={name="Test chest"}}}},
+		findings={{area="Gear",text="Empty Chest slot"},{area="Build",text="Keep valid build finding"}}`)
+	if c.GearStatus != "unavailable" || c.GearEmpty != 0 || c.GearNote == "" {
+		t.Fatalf("old incomplete save was treated as valid empty inventory: %+v", c)
+	}
+	for _, f := range c.Findings {
+		if f.Text == "Empty Chest slot" {
+			t.Fatal("old saved empty-slot advice still presented despite unknown equipment")
+		}
+	}
+	if c.Counts["Gear"] != 0 || c.Counts["Build"] != 1 {
+		t.Fatalf("finding counts weren't recalculated: %v", c.Counts)
+	}
+}
+
+func TestGearViewLegacyStatEstimateIsNotComparable(t *testing.T) {
+	c := gearTestChar(t, `snapshot={name="Probe",level=20,class="WARRIOR",xpMax=10000,
+		equipped={[5]={id=987654},[10]={id=12345}},
+		equipmentState={[1]="empty",[2]="empty",[3]="empty",[15]="empty",[5]="equipped",[9]="empty",[10]="equipped",[6]="empty",[7]="empty",[8]="empty",[11]="empty",[12]="empty",[13]="empty",[14]="empty",[16]="empty",[17]="empty",[18]="empty"}},
+		gear={status="ok",slots={[5]={scoreStatus="estimated",score=2.15,gapPct=92,best={name="Test chest"}},[10]={scoreStatus="known",score=50,gapPct=50,best={name="Test gloves"}}},
+		owned={{inv=5,label="Chest",name="Test bag chest",gain=100},{inv=10,label="Hands",name="Test bag gloves",gain=50}}},
+		findings={{area="Gear",text="Chest: Test chest is 92% better"},{area="Gear",text="Upgrade in your bags: Test bag chest for Chest"},
+		{area="Gear",text="Hands: Test gloves is 50% better"},{area="Build",text="Keep valid build finding"}}`)
+	s := gearTestSlot(t, c, "Chest")
+	if s.Status != "unknown" || s.GapPct != -1 || !s.Equipped || c.GearUpgrades != 1 {
+		t.Fatalf("legacy stat units used for pipeline percentage: %+v upgrades=%d", s, c.GearUpgrades)
+	}
+	if c.Counts["Gear"] != 1 || c.Counts["Build"] != 1 || len(c.Owned) != 1 || c.Owned[0].Slot != "Hands" {
+		t.Fatalf("incomparable saved advice survived or valid advice lost: findings=%+v owned=%+v", c.Findings, c.Owned)
+	}
+}

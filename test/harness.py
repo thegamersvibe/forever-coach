@@ -50,6 +50,7 @@ function GetNumFactions() local n = 0; for _ in pairs(STATE.reps) do n = n + 1 e
 function GetFactionInfo(i) local k = 0; for name, st in pairs(STATE.reps) do k = k + 1; if k == i then return name, "", st end end end
 local function link(id) return "|cffffffff|Hitem:" .. id .. "::::|h[Item " .. id .. "]|h|r" end
 function GetInventoryItemLink(_, slot) local id = STATE.equipped[slot]; return id and link(id) or nil end
+function GetInventoryItemID(_, slot) return STATE.equipped[slot] end
 C_Container = {
   GetContainerNumSlots = function(b) if b == 0 then return 16 end; return b <= STATE.bagSlots and 0 or 0 end,
   GetContainerNumFreeSlots = function(b) if b == 0 then return STATE.freeSlots end; return 0 end,
@@ -85,17 +86,27 @@ CHAT = {}
 UISpecialFrames = {}
 function tinsert(t, v) table.insert(t, v) end
 local function frame()
-  local f = { scripts = {}, events = {} }
+  local f = { scripts = {}, events = {}, shown = true }
   setmetatable(f, { __index = function(t, k) return function(...) return t end end })
   f.SetScript = function(self, k, fn) self.scripts[k] = fn end
   f.RegisterEvent = function(self, e) if not next(self.events) then FRAMES[#FRAMES + 1] = self end; self.events[e] = true end
-  f.IsShown = function() return false end
+  f.IsShown = function(self) return self.shown end
+  f.Show = function(self) self.shown = true end
+  f.Hide = function(self) self.shown = false end
+  f.SetText = function(self, text) self._text = text end
+  f.GetText = function(self) return rawget(self, "_text") end
+  f.GetName = function(self) return rawget(self, "name") end
   f.CreateFontString = function() return frame() end
   f.GetStringHeight = function() return 10 end
   return f
 end
 FRAMES = {}
-function CreateFrame() return frame() end
+function CreateFrame(_, name)
+  local f = frame()
+  f.name = name
+  if name then _G[name] = f end
+  return f
+end
 UIParent = frame()
 SlashCmdList = {}
 function FIRE(event, ...)
@@ -187,6 +198,44 @@ def show(c, n=8):
 def refresh(FC):
     FC.Refresh(FC, 'test')
 
+
+# 0. Visible branding stays separate from stable save, global, frame and command IDs.
+print('== Relax Coach branding, no optional providers')
+L, G, FC, c = client(gq=False, fdj=False)
+check(G.Journey_Character is None and G.GearQuest is None and G.ForeverDungeonJournal_NS is None,
+      'standalone scenario has no Journey, GearQuest or DungeonJournal globals')
+check(c.lastError is None and len(findings(c)) > 0, 'standalone Coach loads and produces findings')
+G.SlashCmdList.FOREVERCOACH('')
+check(FC.UI.frame.IsShown(FC.UI.frame), '/coach opens the window')
+check(FC.UI.frame.title.GetText(FC.UI.frame.title) == 'Relax Coach', 'window title is Relax Coach')
+check(FC.UI.frame.GetName(FC.UI.frame) == 'ForeverCoachFrame' and 'ForeverCoachFrame' in G.UISpecialFrames.values(),
+      'window keeps its global frame and Escape registration')
+G.SlashCmdList.FOREVERCOACH('')
+check(not FC.UI.frame.IsShown(FC.UI.frame), '/coach closes the window')
+G.SlashCmdList.FOREVERCOACH('help')
+check(G.CHAT[len(G.CHAT)].startswith('|cff4fc3f7Relax Coach|r: '), 'chat prefix is Relax Coach')
+check(G.SLASH_FOREVERCOACH1 == '/coach' and '/coach macros' in G.CHAT[len(G.CHAT)], 'slash commands remain /coach')
+check(FC.VERSION == '1.4.0' and G.ForeverCoachDB.addonVersion == '1.4.0', 'addon and saved version are 1.4.0')
+check(FC.SCHEMA == 1 and G.ForeverCoachDB.schema == 1 and G.RelaxCoachDB is None and G.RelaxCoach is None,
+      'SavedVariables, global and schema remain compatible')
+L.execute('''
+  local db = ForeverCoachDB
+  db.privateSetting = "retained"
+  local old = ForeverCoach:Char()
+  old.specOverride = "arms"
+  old.sessions = {{xp = 123, played = 300}}
+  db.addonVersion = "1.3.1"
+  FIRE("ADDON_LOADED", "ForeverCoach")
+  SAVES_RETAINED = ForeverCoachDB == db and ForeverCoach:Char() == old
+    and db.privateSetting == "retained" and old.specOverride == "arms"
+    and #old.sessions == 1 and old.sessions[1].xp == 123
+''')
+check(G.SAVES_RETAINED, 'existing character settings and session history are retained')
+check(c.snapshot.journey is None, 'no Journey context when the optional addon is absent')
+L.execute('Journey_Character = {lastGuide="Test guide", bookmarks={["Test guide"]={stepID="42"}}}')
+refresh(FC)
+check(c.snapshot.journey.guide == 'Test guide' and c.snapshot.journey.step == '42',
+      'optional guide context still reads the legacy Journey global')
 
 # 1. Main: level 20 Dwarf prot warrior in Redridge, naked
 print('== scenario: level 20 Dwarf protection warrior, Redridge, naked')
@@ -437,6 +486,109 @@ check(not bad and total >= 80, f'{total} macros for all 9 classes: names <=16, b
 for cls in ['DRUID', 'MAGE']:
     L.execute(f'INCOMBAT = false; MACROS = {{}}; STATE.class = "{cls}"'); SlashCmd('macros')
     check(len(G.MACROS) == len(sets[cls]), f'{cls}: /coach macros creates its set')
+
+# 11. Logout can occur after the client has torn down inventory/XP APIs.
+print('== logout must not replace a good snapshot with cleared client data')
+L, G, FC, c = client({'equipped': {5: 123456, 16: 654321}, 'bags': {1: 11111}}, gq=False)
+before = L.eval('function(v) return v end')(c.snapshot)
+G.ADVANCE(90)
+FC.Session.Tick(FC.Session, 90)
+L.execute('''
+  function GetInventoryItemLink() return nil end
+  function GetInventoryItemID() return nil end
+  C_Container.GetContainerNumSlots = function() return 0 end
+  C_Container.GetContainerNumFreeSlots = function() return 0 end
+  function GetMoney() return 0 end
+  STATE.xp, STATE.xpMax = 0, 0
+''')
+G.FIRE('PLAYER_LOGOUT')
+check(c.snapshot.equipped[5] is not None and c.snapshot.equipped[5].id == 123456,
+      'logout retains equipped chest after inventory API becomes empty')
+check(c.snapshot.xpMax == 10000 and c.snapshot.money == 12345 and c.snapshot.baginfo.slots == 16,
+      'logout retains valid XP, money and bags instead of teardown zeros')
+check(len(c.sessions) == 1 and c.sessions[1].finish is not None,
+      'logout still finalizes the actual play session')
+check(c.lastError is None, 'logout preservation has no internal error')
+
+# 12. Item names/links are cached separately from the equipped item's identity.
+print('== uncached new item IDs stay equipped for every class')
+uncached_fail = []
+for cls in ['WARRIOR', 'PALADIN', 'HUNTER', 'ROGUE', 'PRIEST', 'SHAMAN', 'MAGE', 'WARLOCK', 'DRUID']:
+    L, G, FC, c = client({'class': cls, 'equipped': {5: 987654, 16: 987655}}, gq=False)
+    L.execute('''
+      function GetInventoryItemID(_, slot) return STATE.equipped[slot] end
+      function GetInventoryItemLink() return nil end
+      REQUESTED = {}
+      C_Item.RequestLoadItemDataByID = function(id) REQUESTED[id] = true end
+    ''')
+    refresh(FC)
+    chest = c.snapshot.equipped[5]
+    if chest is None or chest.id != 987654 or not G.REQUESTED[987654] or c.lastError is not None:
+        uncached_fail.append(cls)
+check(not uncached_fail, f'uncached inventory IDs are retained and requested for all 9 classes ({uncached_fail})')
+
+# 13. API failure is not evidence of an empty equipment slot.
+print('== unreadable equipment differs from a confirmed empty slot')
+L, G, FC, c = client(gq=False)
+L.execute("""
+  GearQuest = {Data={warriorPicks={{99991,"Chest",1,60,1,"protection","Alliance",100}},
+    warriorItemFacts={[99991]={name="Test chest",sourceType="world",instructions="Synthetic test source"}}}}
+  function GetInventoryItemID() error("inventory unavailable") end
+  function GetInventoryItemLink() error("inventory unavailable") end
+""")
+refresh(FC)
+check(c.gear.slots[5].scoreStatus == 'unreadable' and c.gear.slots[5].gapPct is None,
+      'failed inventory APIs never produce an empty slot or a 100% gap')
+check(not any('Empty Chest' in f.text for f in findings(c)), 'no false empty-chest advice after API failure')
+L.execute('function GetInventoryItemID() return nil end; function GetInventoryItemLink() return nil end')
+refresh(FC)
+check(c.gear.slots[5].scoreStatus == 'empty', 'a successful nil inventory-ID read confirms a genuinely empty slot')
+check(c.lastError is None, 'unreadable inventory is handled without an addon error')
+
+# 14. Loading-screen reads must preserve the last known inventory.
+print('== out-of-world capture waits and recovers on entering world')
+L, G, FC, c = client({'equipped': {5: 12345}}, gq=False)
+L.execute('WORLD_READY = false; function IsPlayerInWorld() return WORLD_READY end; STATE.equipped = {}')
+refresh(FC)
+check(c.snapshot.equipped[5] is not None and c.snapshot.equipped[5].id == 12345,
+      'loading-screen capture cannot wipe last known gear')
+L.execute('WORLD_READY = true; STATE.equipped = {[5]=54321}')
+G.FIRE('PLAYER_ENTERING_WORLD', False, False)
+check(c.snapshot.equipped[5] is not None and c.snapshot.equipped[5].id == 54321,
+      'entering-world event captures fresh inventory after loading')
+check(c.lastError is None, 'temporarily unavailable world is not reported as an addon exception')
+
+# 15. The asynchronous item-data event resolves names without losing identity.
+print('== item-load completion refreshes the equipped hyperlink')
+L, G, FC, c = client({'equipped': {5: 987654}}, gq=False)
+L.execute('function GetInventoryItemLink() return nil end')
+refresh(FC)
+L.execute('function GetInventoryItemLink(_, slot) if slot == 5 then return "|Hitem:987654::::|h[New Forever Test Chest]|h" end end')
+G.FIRE('ITEM_DATA_LOAD_RESULT', 987654, True)
+check(c.snapshot.equipped[5].link is not None and 'New Forever Test Chest' in c.snapshot.equipped[5].link,
+      'item-data completion replaces pending name with the game-provided hyperlink')
+
+# 16. Unknown-to-provider is not the same as uncached game data.
+print('== linked items outside provider tables remain equipped and unscored')
+L, G, FC, c = client({'equipped': {5: 987654}}, gq=False)
+L.execute("""
+  GearQuest = {Data={warriorPicks={{99991,"Chest",1,60,1,"protection","Alliance",100}},
+    warriorItemFacts={[99991]={name="Test chest",sourceType="world",instructions="Synthetic test source"}}}}
+  REQUEST_COUNT = 0
+  C_Item.RequestLoadItemDataByID = function() REQUEST_COUNT = REQUEST_COUNT + 1 end
+""")
+refresh(FC)
+check(c.snapshot.equipped[5].id == 987654 and c.gear.slots[5].scoreStatus == 'unknown'
+      and c.gear.slots[5].gapPct is None, 'unknown provider item stays occupied without an invented score')
+check(G.REQUEST_COUNT == 0, 'cached item absent from scoring tables is not re-requested endlessly')
+
+# 17. Stat-weight estimates and pipeline recommendation scores are different units.
+print('== incomparable fallback scores are never turned into upgrade percentages')
+L.execute('SCORE_CALLS=0; GearQuest.Compare={ScoreItemStats=function() SCORE_CALLS=SCORE_CALLS+1; return 2.15 end}')
+refresh(FC)
+check(c.gear.slots[5].scoreStatus == 'unknown' and c.gear.slots[5].score is None
+      and c.gear.slots[5].gapPct is None, 'an occupied unindexed item never mixes stat weights with pipeline scores')
+check(G.SCORE_CALLS == 0, 'provider preview/stat scorer is not used as a comparable pipeline score')
 
 print('ALL OK' if not fails else f'{len(fails)} FAILED')
 sys.exit(1 if fails else 0)

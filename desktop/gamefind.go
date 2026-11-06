@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -35,14 +36,21 @@ func savedGame() string {
 	return c.Game
 }
 
-func saveGame(game string) {
-	p := configPath()
-	if p == "" {
-		return
+func saveGame(game string) error {
+	err := writeCoachConfig(func(c map[string]json.RawMessage) error {
+		// Legacy encoders also wrote "Game". Avoid competing case aliases.
+		for key := range c {
+			if strings.EqualFold(key, "game") {
+				delete(c, key)
+			}
+		}
+		c["game"], _ = json.Marshal(game)
+		return nil
+	})
+	if err != nil {
+		return fmt.Errorf("could not remember the game folder: %w", err)
 	}
-	os.MkdirAll(filepath.Dir(p), 0o755)
-	b, _ := json.Marshal(map[string]string{"game": game})
-	os.WriteFile(p, b, 0o644)
+	return nil
 }
 
 // isForeverDir: a WoW client folder (has Interface or WTF or a Wow*.exe).

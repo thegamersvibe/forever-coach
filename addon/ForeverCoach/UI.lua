@@ -1,4 +1,4 @@
--- Forever Coach: /coach window and slash commands.
+-- Relax Coach: /coach window and slash commands.
 local _, FC = ...
 local UI = {}
 FC.UI = UI
@@ -44,7 +44,7 @@ function UI:Update()
     local s = c.snapshot or {}
     local g = c.gear or {}
     local z = s.zone and s.zone.zone or "?"
-    self.frame.title:SetText("Forever Coach")
+    self.frame.title:SetText("Relax Coach")
     self.frame.sub:SetText(string.format("%s  level %s %s %s  |  %s  |  spec: %s (%s)  |  rules %s", s.name or "?", s.level or "?", s.race or "",
         s.class or "", z, tostring(g.spec or "?"), tostring(g.specSource or "?"), (FC:Rules().version or "none")))
     local out = {}
