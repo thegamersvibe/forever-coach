@@ -4,11 +4,11 @@
 ## Title: Relax Journey
 ## X-ShortTitle: Relax Journey
 ## IconTexture: Interface\AddOns\Journey\assets\relax-icon
-## Version: 4.00.03-1-gca353d2
-## X-Relax-Version: 1.4.0
-## X-Guide-Version: 4.00.03
+## Version: 4.00.04
+## X-Relax-Version: 1.4.2
+## X-Guide-Version: 4.00.06
 ## X-Min-Guide-Version: 4.00.00
-## Notes: Version: 4.00.03-1-gca353d2
+## Notes: Version: 4.00.04
 ## DefaultState: enabled
 ## SavedVariables: Journey_Account
 ## SavedVariablesPerCharacter: Journey_Character

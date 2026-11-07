@@ -20,6 +20,20 @@ import (
 const addonLatestURL = "https://api.github.com/repos/thegamersvibe/relax-coach/releases/latest"
 const addonReleasePrefix = "https://github.com/thegamersvibe/relax-coach/releases/"
 const addonMinimumVersion = "1.4.0"
+const addonGuildMinimumVersion = "1.4.2"
+
+func addonGuildRelease(version string) bool {
+	v, err := parseAddonVersion(version)
+	minimum, _ := parseAddonVersion(addonGuildMinimumVersion)
+	return err == nil && !minimum.newerThan(v)
+}
+
+func addonAssetName(version string) string {
+	if addonGuildRelease(version) {
+		return "RelaxCoach-Guild-" + version + ".zip"
+	}
+	return "RelaxCoach-" + version + ".zip"
+}
 
 // AddonReleaseInfo is safe to display, but ApplyAddonRelease revalidates every
 // security-relevant field: JSON from a caller is not an authorization token.
@@ -50,7 +64,7 @@ func newAddonUpdater() *addonUpdater {
 	return &addonUpdater{
 		rename:  os.Rename,
 		running: addonGameRunning,
-		limits:  addonLimits{archive: 64 << 20, checksum: 64 << 10, expanded: 128 << 20, file: 64 << 20, entries: 256},
+		limits:  addonLimits{archive: 64 << 20, checksum: 64 << 10, expanded: 128 << 20, file: 64 << 20, entries: 2048},
 		client: &http.Client{
 			Timeout:       90 * time.Second,
 			CheckRedirect: addonRedirect,
@@ -102,6 +116,7 @@ func (v addonSemver) newerThan(other addonSemver) bool {
 
 func addonNoUpdate(info AddonReleaseInfo, reason string) AddonReleaseInfo {
 	info.Available = false
+	info.Version = ""
 	info.AssetName, info.AssetURL, info.ChecksumURL = "", "", ""
 	info.Notes = "No compatible new addon update is available. " + reason
 	return info
@@ -140,13 +155,15 @@ func (u *addonUpdater) check(ctx context.Context, current string) (AddonReleaseI
 	info.Version = remote.text
 	info.HTMLURL = addonReleasePrefix + "tag/" + release.Tag
 	minimum, _ := parseAddonVersion(addonMinimumVersion)
-	if !remote.newerThan(local) || minimum.newerThan(remote) {
+	if minimum.newerThan(remote) {
 		return addonNoUpdate(info, "Your installed version will not be downgraded."), nil
 	}
-	wanted := "RelaxCoach-" + remote.text + ".zip"
-	foundAsset, foundChecksum := false, false
+	wanted := addonAssetName(remote.text)
+	foundAsset, foundChecksum, foundApp := false, false, false
 	for _, asset := range release.Assets {
 		switch asset.Name {
+		case "RelaxCoach.exe":
+			foundApp = true
 		case wanted:
 			if foundAsset {
 				return info, errors.New("GitHub release contains duplicate addon assets")
@@ -161,14 +178,24 @@ func (u *addonUpdater) check(ctx context.Context, current string) (AddonReleaseI
 			info.ChecksumURL = asset.URL
 		}
 	}
-	if !foundAsset || !foundChecksum {
-		return addonNoUpdate(info, "The public release does not include the Relax Coach addon and SHA256SUMS.txt."), nil
+	if !foundAsset {
+		reason := "The public release is missing " + wanted + "."
+		if foundApp {
+			reason = "This is an app-only release for this updater; no compatible addon bundle (" + wanted + ") is included. Use Update App separately."
+		}
+		return addonNoUpdate(info, reason), nil
+	}
+	if !foundChecksum {
+		return addonNoUpdate(info, "The addon package cannot be verified: SHA256SUMS.txt is missing."), nil
 	}
 	if err := validateAddonAssetURL(info.AssetURL, release.Tag, wanted); err != nil {
 		return AddonReleaseInfo{}, err
 	}
 	if err := validateAddonAssetURL(info.ChecksumURL, release.Tag, "SHA256SUMS.txt"); err != nil {
 		return AddonReleaseInfo{}, err
+	}
+	if !remote.newerThan(local) {
+		return addonNoUpdate(info, "Your installed version is current or newer and will not be downgraded."), nil
 	}
 	info.Available = true
 	return info, nil

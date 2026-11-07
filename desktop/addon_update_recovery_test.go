@@ -17,7 +17,7 @@ import (
 )
 
 func TestAddonRollbackFailureRetainsOriginalBackup(t *testing.T) {
-	u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.5.0")), "")
+	u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.4.1")), "")
 	game := addonTestGame(t)
 	target := filepath.Join(game, "Interface", "AddOns", "ForeverCoach")
 	before := addonTreeHashes(t, target)
@@ -46,7 +46,7 @@ func TestAddonRollbackFailureRetainsOriginalBackup(t *testing.T) {
 func TestAddonBackupLockAndInvalidInstalledVersionFailClosed(t *testing.T) {
 	for _, mode := range []string{"backup lock", "invalid version", "same version", "newer installed"} {
 		t.Run(mode, func(t *testing.T) {
-			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.5.0")), "")
+			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.4.1")), "")
 			game := addonTestGame(t)
 			switch mode {
 			case "backup lock":
@@ -54,7 +54,7 @@ func TestAddonBackupLockAndInvalidInstalledVersionFailClosed(t *testing.T) {
 			case "invalid version":
 				addonPut(t, game, "Interface/AddOns/ForeverCoach/ForeverCoach.toc", "## Version: broken\n")
 			case "same version":
-				addonPut(t, game, "Interface/AddOns/ForeverCoach/ForeverCoach.toc", "## Version: 1.5.0\n")
+				addonPut(t, game, "Interface/AddOns/ForeverCoach/ForeverCoach.toc", "## Version: 1.4.1\n")
 			case "newer installed":
 				addonPut(t, game, "Interface/AddOns/ForeverCoach/ForeverCoach.toc", "## Version: 1.6.0\n")
 			}
@@ -70,7 +70,7 @@ func TestAddonBackupLockAndInvalidInstalledVersionFailClosed(t *testing.T) {
 }
 
 func TestAddonDetectsCorruptZIPMemberAfterAuthenticChecksum(t *testing.T) {
-	payload := addonZip(t, addonFixtureEntries("1.5.0"))
+	payload := addonZip(t, addonFixtureEntries("1.4.1"))
 	// Corrupt the central-directory CRC (not the complete ZIP hash served by
 	// the fixture). This proves extraction checks member integrity too.
 	at := bytes.Index(payload, []byte{'P', 'K', 1, 2})
@@ -98,7 +98,7 @@ func TestAddonDownloadCancellationDuringArchiveBody(t *testing.T) {
 		cancel()
 		<-r.Context().Done()
 	})
-	_, err := u.fetch(ctx, testAddonDownload+testAddonAsset, 100, "addon archive")
+	_, err := u.fetch(ctx, legacyAddonDownload+testAddonAsset, 100, "addon archive")
 	if !errors.Is(err, context.Canceled) {
 		t.Fatalf("archive body did not honor cancellation: %v", err)
 	}

@@ -11,9 +11,11 @@ import (
 	"testing"
 )
 
-const testAddonTag = "v1.5.0"
-const testAddonAsset = "RelaxCoach-1.5.0.zip"
-const testAddonDownload = "https://github.com/thegamersvibe/relax-coach/releases/download/" + testAddonTag + "/"
+// Legacy Coach-only fixtures deliberately stay below the Guild policy floor.
+const testAddonDownload = "https://github.com/thegamersvibe/relax-coach/releases/download/v1.5.0/" // Shared app-only fixtures.
+const testAddonTag = "v1.4.1"
+const testAddonAsset = "RelaxCoach-1.4.1.zip"
+const legacyAddonDownload = "https://github.com/thegamersvibe/relax-coach/releases/download/" + testAddonTag + "/"
 
 // Route genuinely trusted URLs through a real local HTTP server. Production URL
 // validation and redirect policy stay enabled; no insecure runtime flag exists.
@@ -71,7 +73,7 @@ func TestAddonCheckStableNewRelease(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if !got.Available || got.Version != "1.5.0" || got.AssetName != testAddonAsset || got.AssetURL != testAddonDownload+testAddonAsset || got.ChecksumURL != testAddonDownload+"SHA256SUMS.txt" {
+	if !got.Available || got.Version != "1.4.1" || got.AssetName != testAddonAsset || got.AssetURL != legacyAddonDownload+testAddonAsset || got.ChecksumURL != legacyAddonDownload+"SHA256SUMS.txt" {
 		t.Fatalf("bad release: %+v", got)
 	}
 	b, err := json.Marshal(got)
@@ -97,13 +99,13 @@ func TestAddonCheckNeverAdvertisesOlderOrIncompatibleRelease(t *testing.T) {
 	}{
 		{"v1.3.1", "1.4.0", func(r map[string]any) { r["assets"] = []any{map[string]any{"name": "ForeverCoach-1.3.1.zip"}} }},
 		{"v1.4.0", "1.4.0", nil},
-		{"v1.5.0", "1.5.1", nil},
-		{"v1.5.0-rc.1", "1.4.0", nil},
-		{"v01.5.0", "1.4.0", nil},
+		{"v1.4.1", "1.5.1", nil},
+		{"v1.4.1-rc.1", "1.4.0", nil},
+		{"v01.4.1", "1.4.0", nil},
 		{"v1.5", "1.4.0", nil},
-		{"v1.5.0", "1.4.0", func(r map[string]any) { r["draft"] = true }},
-		{"v1.5.0", "1.4.0", func(r map[string]any) { r["prerelease"] = true }},
-		{"v1.5.0", "1.4.0", func(r map[string]any) { r["assets"] = []any{} }},
+		{"v1.4.1", "1.4.0", func(r map[string]any) { r["draft"] = true }},
+		{"v1.4.1", "1.4.0", func(r map[string]any) { r["prerelease"] = true }},
+		{"v1.4.1", "1.4.0", func(r map[string]any) { r["assets"] = []any{} }},
 		{"v1.4.0+build.2", "1.4.0+build.1", nil},
 	} {
 		t.Run(fmt.Sprintf("%s_from_%s", tc.tag, tc.current), func(t *testing.T) {

@@ -9,7 +9,7 @@ def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--exe',type=Path,required=True)
-    ap.add_argument('--version',default='1.4.0')
+    ap.add_argument('--version',default='1.4.2')
     a=ap.parse_args()
     if not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+',a.version):raise SystemExit('Invalid version')
     if not a.exe.is_file() or a.exe.read_bytes()[:2]!=b'MZ':raise SystemExit('Provide the verified Windows EXE')
@@ -36,7 +36,7 @@ def main():
         if name.startswith('Interface/AddOns/') and p.suffix.lower() not in {'.lua','.toc','.tga','.blp','.xml','.txt','.md','.ttf','.otf','.html','.png'}:raise SystemExit('Unexpected addon file: '+name)
         names.add(name)
     rows=[{'path':name,'sha256':digest(p),'bytes':p.stat().st_size} for p,name in inputs]
-    manifest={'project':'Relax Coach','kind':'guild-combined','version':a.version,'journeyVersion':'4.00.03-1-gca353d2','contentVersion':'4.00.05','files':rows}
+    manifest={'project':'Relax Coach','kind':'guild-combined','version':a.version,'journeyVersion':'4.00.04','contentVersion':'4.00.06','files':rows}
     dist=ROOT/'dist';dist.mkdir(exist_ok=True)
     standalone=dist/'RelaxCoach.exe'
     # Preserve the validated EXE before removing a previous package.
@@ -53,7 +53,9 @@ def main():
             if p.is_file():z.write(p,p.relative_to(pkg).as_posix())
     coach=dist/'public'/f'RelaxCoach-{a.version}.zip'
     assets=[archive,standalone]
-    if coach.is_file():assets.append(coach)
+    # Pre-1.4.2 apps understand only Coach-only archives. New releases must not
+    # advertise a leftover one and let old apps report success without guides.
+    if tuple(map(int,a.version.split('.'))) < (1,4,2) and coach.is_file():assets.append(coach)
     (dist/'SHA256SUMS.txt').write_text(''.join(f'{digest(p)}  {p.name}\n' for p in assets))
     print(json.dumps({'archive':str(archive),'sha256':digest(archive),'files':len(rows)+1,'bytes':archive.stat().st_size},indent=2))
 if __name__=='__main__':main()

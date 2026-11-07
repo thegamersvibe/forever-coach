@@ -27,8 +27,8 @@ class GuildBuilderExeTests(unittest.TestCase):
         self.standalone=self.root/'dist/RelaxCoach.exe'
         self.standalone.parent.mkdir()
 
-    def run_builder(self,exe):
-        return subprocess.run([sys.executable,str(self.root/'scripts/build_guild_bundle.py'),'--exe',str(exe)],cwd=self.root,capture_output=True,text=True)
+    def run_builder(self,exe,version='1.4.0'):
+        return subprocess.run([sys.executable,str(self.root/'scripts/build_guild_bundle.py'),'--exe',str(exe),'--version',version],cwd=self.root,capture_output=True,text=True)
 
     def assert_matching_assets(self,exe):
         result=self.run_builder(exe)
@@ -44,6 +44,24 @@ class GuildBuilderExeTests(unittest.TestCase):
             'RelaxCoach.exe':hashlib.sha256(self.payload).hexdigest(),
             archive.name:hashlib.sha256(archive.read_bytes()).hexdigest(),
         })
+
+    def test_current_release_excludes_leftover_coach_only_asset(self):
+        (self.root/'addon/ForeverCoach/ForeverCoach.toc').write_text('## Title: Relax Coach\n## Version: 1.4.2\n')
+        legacy=self.root/'dist/public/RelaxCoach-1.4.2.zip'
+        legacy.parent.mkdir();legacy.write_bytes(b'leftover legacy asset')
+        result=self.run_builder(self.exe,'1.4.2')
+        self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+        sums={line.split('  ',1)[1] for line in (self.root/'dist/SHA256SUMS.txt').read_text().splitlines()}
+        self.assertEqual(sums,{'RelaxCoach.exe','RelaxCoach-Guild-1.4.2.zip'})
+        self.assertEqual(legacy.read_bytes(),b'leftover legacy asset')
+
+    def test_manifest_declares_current_journey_and_guides(self):
+        result=self.run_builder(self.exe)
+        self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+        with zipfile.ZipFile(self.root/'dist/RelaxCoach-Guild-1.4.0.zip') as z:
+            manifest=json.loads(z.read('manifest.json'))
+            self.assertEqual(manifest['journeyVersion'],'4.00.04')
+            self.assertEqual(manifest['contentVersion'],'4.00.06')
 
     def test_alternate_exe_replaces_missing_or_stale_standalone(self):
         for state in ('missing','stale'):
@@ -80,6 +98,22 @@ class GuildBuilderExeTests(unittest.TestCase):
                 self.assertFalse((self.root/'dist/guild-package').exists())
 
 class GuildBundleTests(unittest.TestCase):
+    def test_release_inputs_keep_independent_coach_identity_at_142(self):
+        toc=(ROOT/'addon/ForeverCoach/ForeverCoach.toc').read_text()
+        core=(ROOT/'addon/ForeverCoach/Core.lua').read_text()
+        self.assertIn('## Version: 1.4.2\n',toc)
+        self.assertIn('FC.VERSION = "1.4.2"',core)
+        self.assertIn('## SavedVariables: ForeverCoachDB\n',toc)
+        self.assertNotRegex(toc,r'(?mi)^## (?:Dependencies|RequiredDeps):.*Journey')
+
+    def test_journey_package_metadata_matches_release_without_relabeling_upstream(self):
+        toc=(ROOT/'addon/Journey/Journey.toc').read_text()
+        self.assertIn('## Version: 4.00.04\n',toc)
+        self.assertIn('## X-Relax-Version: 1.4.2\n',toc)
+        self.assertIn('## X-Guide-Version: 4.00.06\n',toc)
+        self.assertIn('## SavedVariables: Journey_Account\n',toc)
+        self.assertIn('## SavedVariablesPerCharacter: Journey_Character\n',toc)
+
     def test_original_journey_bytes_are_not_git_normalized(self):
         import subprocess
         paths=['addon/Journey/services/Catalog.lua','content/Journey-Content/'+next((ROOT/'content/Journey-Content').glob('*.html')).name]
@@ -88,13 +122,14 @@ class GuildBundleTests(unittest.TestCase):
         for line in result.splitlines():self.assertTrue(line.endswith(': text: unset'),line)
 
     def test_combined_archive_preserves_runtime_and_excludes_saves(self):
-        path=ROOT/'dist/RelaxCoach-Guild-1.4.0.zip'
+        path=ROOT/'dist/RelaxCoach-Guild-1.4.2.zip'
         self.assertTrue(path.is_file(),'combined guild archive is missing')
         with zipfile.ZipFile(path) as z:
             names=z.namelist()
             self.assertEqual(len(names),len(set(names)))
             mandatory={'Interface/AddOns/ForeverCoach/ForeverCoach.toc','Interface/AddOns/Journey/Journey.toc','RelaxCoach.exe','Install-RelaxCoach.ps1','Restore-RelaxCoach.ps1','README.md','LICENSE-Coach','manifest.json'}
             self.assertTrue(mandatory.issubset(names))
+            self.assertIn('Interface/Content/Journey-Content/guides.html',names)
             self.assertTrue(any(n.startswith('Interface/Content/Journey-Content/') for n in names))
             for name in names:
                 parts=name.lower().split('/')
@@ -103,7 +138,9 @@ class GuildBundleTests(unittest.TestCase):
                 self.assertFalse(name.startswith('/') or '\\' in name or ':' in name,name)
             manifest=json.loads(z.read('manifest.json'))
             self.assertEqual(manifest['kind'],'guild-combined')
-            self.assertEqual(manifest['version'],'1.4.0')
+            self.assertEqual(manifest['version'],'1.4.2')
+            self.assertEqual(manifest['journeyVersion'],'4.00.04')
+            self.assertEqual(manifest['contentVersion'],'4.00.06')
             self.assertEqual({r['path'] for r in manifest['files']},set(names)-{'manifest.json'})
             for row in manifest['files']:
                 raw=z.read(row['path'])

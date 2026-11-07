@@ -65,7 +65,19 @@ test('release text is inert and apply sends only the expected version',async t=>
   assert.equal($('apply-update').disabled,true);
 });
 
-test('incompatible or older release never falsely claims up to date',async t=>{
+test('guild updater describes all three trees and never offers a repository-only tag',async t=>{
+  const {$}=await setup(t,{checkAddon:()=>({Version:'1.4.2',InstalledVersion:'1.4.0',Available:false,Notes:'This is an app-only release. Required RelaxCoach-Guild-1.4.2.zip is missing.'})});
+  const card=$('apply-update').closest('.updatecard');
+  for(const name of ['ForeverCoach','Journey','Journey-Content']) assert.ok(card.textContent.includes(name),name);
+  assert.doesNotMatch(card.textContent,/Journey and private content are unchanged|Latest release/);
+  $('check-update').click();await settle();
+  assert.equal($('offered-version').textContent,'None');
+  assert.match($('update-status').textContent,/app-only/);
+  assert.match($('update-status').textContent,/RelaxCoach-Guild-1.4.2.zip/);
+  assert.equal($('apply-update').disabled,true);
+});
+
+test('incompatible or older release never falsely claims up to date' ,async t=>{
   const {$}=await setup(t,{checkAddon:()=>({Version:'1.3.0',InstalledVersion:'1.3.1',Available:false,Notes:'No compatible asset'})});
   $('check-update').click();await settle();
   assert.equal($('apply-update').disabled,true);

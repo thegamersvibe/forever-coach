@@ -240,6 +240,12 @@ function CatalogService.GetDecryptKey(guideID)
     return catalogDecryptKey
 end
 
+function CatalogService.IsExpired(guideID)
+    local info = guideInfoByID and guideInfoByID[guideID]
+    if (not info or not info.expires) then return false end
+    return GetServerTime() > info.expires
+end
+
 function CatalogService.GetContentHash(guideID)
     local info = guideInfoByID and guideInfoByID[guideID]
     if (not info) then return nil end

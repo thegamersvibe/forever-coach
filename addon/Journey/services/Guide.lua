@@ -53,6 +53,10 @@ function GuideService.GetGuide(guideID)
         end
         local guideTemplate = CatalogService.GetGuideTemplate(guideID)
         if (not guideTemplate) then return end
+        if (CatalogService.IsExpired(guideID)) then
+            print("|cFFFF4444[" .. addonTitle .. "]|r This guide has expired. Run the " .. addonTitle .. " Manager to refresh your guides.")
+            return nil
+        end
         local decryptKey = CatalogService.GetDecryptKey(guideID)
         local expectedHash = CatalogService.GetContentHash(guideID)
         local failReason

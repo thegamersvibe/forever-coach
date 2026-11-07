@@ -65,6 +65,9 @@ func addonSafeZipName(name string) error {
 }
 
 func (u *addonUpdater) extract(ctx context.Context, payload []byte, stage, version string) (map[string]addonFileDigest, error) {
+	if addonGuildRelease(version) {
+		return u.extractGuild(ctx, payload, stage, version)
+	}
 	reader, err := zip.NewReader(bytes.NewReader(payload), int64(len(payload)))
 	if err != nil {
 		return nil, fmt.Errorf("invalid addon ZIP: %w", err)
@@ -83,7 +86,7 @@ func (u *addonUpdater) extract(ctx context.Context, payload []byte, stage, versi
 			return nil, fmt.Errorf("duplicate or case-colliding archive path %q", f.Name)
 		}
 		seen[key] = true
-		if f.Mode()&os.ModeType != 0 && !f.Mode().IsDir() {
+		if kind := f.Mode() & os.ModeType; kind != 0 && kind != os.ModeDir {
 			return nil, fmt.Errorf("archive contains a symlink or special file: %s", f.Name)
 		}
 		if f.Mode().IsDir() {
@@ -261,48 +264,63 @@ func validateAddonTOC(b []byte, version string) error {
 }
 
 func verifyAddonTree(ctx context.Context, root string, want map[string]addonFileDigest) error {
-	st, err := os.Lstat(root)
-	if err != nil {
+	if err := addonPlainDirectory(root); err != nil {
 		return err
 	}
-	if !st.IsDir() || st.Mode()&os.ModeSymlink != 0 {
-		return errors.New("addon verification refused a linked or non-directory target")
-	}
-	entries, err := os.ReadDir(root)
-	if err != nil {
-		return err
-	}
-	if len(entries) != len(want) {
-		return errors.New("addon verification failed: installed file count differs")
-	}
-	for _, entry := range entries {
-		expected, ok := want[entry.Name()]
-		if !ok {
-			return fmt.Errorf("addon verification found an unexpected file: %s", entry.Name())
+	directories := map[string]bool{".": true}
+	for name := range want {
+		for parent := filepath.Dir(filepath.FromSlash(name)); parent != "."; parent = filepath.Dir(parent) {
+			directories[filepath.ToSlash(parent)] = true
 		}
+	}
+	count := 0
+	err := filepath.WalkDir(root, func(p string, entry os.DirEntry, walkErr error) error {
+		if walkErr != nil {
+			return walkErr
+		}
+		if err := ctx.Err(); err != nil {
+			return err
+		}
+		relative, err := filepath.Rel(root, p)
+		if err != nil {
+			return err
+		}
+		name := filepath.ToSlash(relative)
 		info, err := entry.Info()
 		if err != nil {
 			return err
 		}
-		if !info.Mode().IsRegular() || info.Size() != expected.size {
-			return fmt.Errorf("addon verification failed for %s", entry.Name())
+		if info.IsDir() {
+			if !directories[name] {
+				return fmt.Errorf("addon verification found unexpected directory: %s", name)
+			}
+			return addonPlainDirectory(p)
 		}
-		f, err := os.Open(filepath.Join(root, entry.Name()))
+		expected, ok := want[name]
+		if !ok || !info.Mode().IsRegular() || info.Size() != expected.size {
+			return fmt.Errorf("addon verification failed for %s", name)
+		}
+		f, err := os.Open(p)
 		if err != nil {
 			return err
 		}
 		h := sha256.New()
 		n, err := io.Copy(h, io.LimitReader(addonContextReader{ctx, f}, expected.size+1))
 		closeErr := f.Close()
-		if err != nil {
-			return err
-		}
-		if closeErr != nil {
-			return closeErr
+		if err != nil || closeErr != nil {
+			return errors.Join(err, closeErr)
 		}
 		if n != expected.size || !bytes.Equal(h.Sum(nil), expected.sum[:]) {
-			return fmt.Errorf("addon verification failed: SHA256 mismatch for %s", entry.Name())
+			return fmt.Errorf("addon verification failed: SHA256 mismatch for %s", name)
 		}
+		count++
+		return nil
+	})
+	if err != nil {
+		return err
+	}
+	if count != len(want) {
+		return errors.New("addon verification failed: installed file count differs")
 	}
 	return ctx.Err()
 }

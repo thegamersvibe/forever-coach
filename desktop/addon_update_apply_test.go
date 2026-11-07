@@ -84,7 +84,7 @@ func addonPayloadUpdater(t *testing.T, payload []byte, checksumOverride string) 
 }
 
 func addonTestInfo() AddonReleaseInfo {
-	return AddonReleaseInfo{Version: "1.5.0", Name: "Relax Coach", AssetName: testAddonAsset, AssetURL: testAddonDownload + testAddonAsset, ChecksumURL: testAddonDownload + "SHA256SUMS.txt", Available: true}
+	return AddonReleaseInfo{Version: "1.4.1", Name: "Relax Coach", AssetName: testAddonAsset, AssetURL: legacyAddonDownload + testAddonAsset, ChecksumURL: legacyAddonDownload + "SHA256SUMS.txt", Available: true}
 }
 
 func addonPut(t *testing.T, root, name, body string) {
@@ -138,7 +138,7 @@ func addonTreeHashes(t *testing.T, root string) map[string]string {
 }
 
 func TestAddonApplyRealDownloadPreservesPrivateData(t *testing.T) {
-	entries := addonFixtureEntries("1.5.0")
+	entries := addonFixtureEntries("1.4.1")
 	entries = append(entries, addonZipEntry{"RelaxCoach.exe", "never install or execute this", 0o755}, addonZipEntry{"README.md", "docs", 0o644}, addonZipEntry{"LICENSE", "license", 0o644}, addonZipEntry{"manifest.json", "{}", 0o644})
 	u := addonPayloadUpdater(t, addonZip(t, entries), "")
 	game := addonTestGame(t)
@@ -151,7 +151,7 @@ func TestAddonApplyRealDownloadPreservesPrivateData(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if result.Version != "1.5.0" || result.UpdatedFiles != len(addonFixtureFiles) || result.BackupPath == "" || !strings.Contains(result.Message, "helper") {
+	if result.Version != "1.4.1" || result.UpdatedFiles != len(addonFixtureFiles) || result.BackupPath == "" || !strings.Contains(result.Message, "helper") {
 		t.Fatalf("bad result: %+v", result)
 	}
 	installed := addonTreeHashes(t, filepath.Join(game, "Interface", "AddOns", "ForeverCoach"))

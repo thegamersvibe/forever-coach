@@ -74,7 +74,7 @@ func TestNativeShellIsSelfContainedAndLockedDown(t *testing.T) {
 			t.Fatal(err)
 		}
 	}
-	for _, want := range []string{"Coach Report", "Update Addon", "Willtank", "data:image/png;base64,", "Content-Security-Policy", "default-src 'none'", "connect-src 'none'", "form-action 'none'", "script-src 'nonce-", "chrome.webview.postMessage", "openExternal", "Journey and private content are unchanged"} {
+	for _, want := range []string{"Coach Report", "Update Addon", "Willtank", "data:image/png;base64,", "Content-Security-Policy", "default-src 'none'", "connect-src 'none'", "form-action 'none'", "script-src 'nonce-", "chrome.webview.postMessage", "openExternal", "Journey-Content"} {
 		if !strings.Contains(html, want) {
 			t.Errorf("missing %q", want)
 		}

@@ -2,7 +2,7 @@
 
 A leveling coach for **World of Warcraft: Forever**, with a Windows application for reports and addon updates.
 
-This archive is the **Coach-only updater asset**, not the combined guild download. For the existing combined package, choose `RelaxCoach-Guild-1.4.0.zip` on [release v1.4.0](https://github.com/thegamersvibe/relax-coach/releases/tag/v1.4.0). Newer releases may be app-only.
+This is a **legacy Coach-only archive**, not the current combined guild download. For Coach, Journey and guide content together, use `RelaxCoach-Guild-1.4.2.zip` on [release v1.4.2](https://github.com/thegamersvibe/relax-coach/releases/tag/v1.4.2). A current release need not contain a Coach-only ZIP.
 
 ## Install
 
@@ -11,7 +11,7 @@ Download the latest available Coach ZIP from [the releases list](https://github.
 - Copy `ForeverCoach` into your game's `_forever_\Interface\AddOns` folder. It appears in game as **Relax Coach**. The internal folder/save IDs intentionally remain unchanged to retain existing settings.
 - Run **RelaxCoach.exe** for the Windows app. Choose **Coach Report** or **Update Addon** inside the application window. Microsoft WebView2 Runtime is required; Windows installations commonly already include it.
 - Set the game folder when prompted. Your game may be on any drive.
-- **Update Addon** checks the latest stable release on this GitHub repository. It updates only the Coach addon, verifies its download, backs up old files and leaves SavedVariables and other addons untouched. Close WoW before updating.
+- **Upgrade the app first.** App 1.4.1 supports **Update App**; older apps need one manual EXE replacement. Starting with app 1.4.2, **Update Addon** uses the combined guild package to update Coach, Journey and guide content, with checksum verification, backup and rollback. Close WoW first. Unrelated addons, SavedVariables and the running app are not replaced by this action.
 
 The Windows executable is unsigned. Follow your usual antivirus review process; do not disable protection globally. The addon works without the Windows app.
 
@@ -36,7 +36,7 @@ Legacy folder discovery settings remain supported (`FOREVER_COACH_GAME` and `%Ap
 - **Journey / Relax Journey**: current guide/step context.
 - **ForeverDungeonJournal**: dungeon preparation and quest context.
 
-None is required for Coach to load. The smaller **Coach-only archive** contains only our Coach addon and application. It does not include Journey source, guides, or local Journey modifications, and the Coach updater does not overwrite them. The combined guild archive separately includes Relax Journey and guide content.
+None is required for Coach to load. The smaller **Coach-only archive** contains only our Coach addon and application. It does not include Journey source, guides, or local Journey modifications, but a current app's explicit combined addon update can install them. The combined guild archive separately includes Relax Journey and guide content.
 
 ## Development and releases
 
@@ -46,6 +46,6 @@ The technical source paths remain `addon/ForeverCoach` and `desktop`.
 - `uv run --with lupa python test/harness.py` (also run with provider fixtures)
 - `cd desktop && go vet ./... && go test -race ./...`
 
-The Coach-only updater asset is `RelaxCoach-<version>.zip`. App-only releases provide just `RelaxCoach.exe` and `SHA256SUMS.txt`; addon and combined guild ZIPs are included only when those packages are being released. The addon updater consumes published stable releases, not raw pushes to `main`; publishing a tested new release makes it available to players. Keep Journey and guide content out of the smaller Coach-only archive. Never include personal SavedVariables in either archive or this repository.
+The legacy Coach-only asset is `RelaxCoach-<version>.zip`; it is deliberately not published for 1.4.2. Current app addon updates require `RelaxCoach-Guild-<version>.zip`. App-only releases provide just `RelaxCoach.exe` and `SHA256SUMS.txt`; addon and combined guild ZIPs are included only when those packages are being released. The addon updater consumes published stable releases, not raw pushes to `main`; publishing a tested new release makes it available to players. Keep Journey and guide content out of the smaller Coach-only archive. Never include personal SavedVariables in either archive or this repository.
 
 MIT-licensed Coach code by **TheGamersVibe**. Original upstream projects retain their own authorship and licenses.

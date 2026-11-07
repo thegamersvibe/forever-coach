@@ -75,7 +75,7 @@ foreach($s in $slots) {
   $i++
 }
 Copy-Item -LiteralPath (Join-Path $SourceRoot 'Restore-RelaxCoach.ps1') -Destination (Join-Path $backup 'Restore-RelaxCoach.ps1')
-$state=[ordered]@{version='1.4.0-guild';game=$Game;source=$SourceRoot;created=(Get-Date -Format o);slots=$slots;status='backed-up'}
+$state=[ordered]@{version=([string]$manifest.version+'-guild');game=$Game;source=$SourceRoot;created=(Get-Date -Format o);slots=$slots;status='backed-up'}
 $statePath=Join-Path $backup 'installation.json'
 [IO.File]::WriteAllText($statePath,($state | ConvertTo-Json -Depth 6),(New-Object Text.UTF8Encoding($false)))
 $changed=$false
@@ -118,7 +118,7 @@ try {
   $state.status='installed'
   $state.verifiedFiles=$verified
   [IO.File]::WriteAllText($statePath,($state | ConvertTo-Json -Depth 6),(New-Object Text.UTF8Encoding($false)))
-  [ordered]@{status='installed';version='1.4.0-guild';verifiedFiles=$verified;backup=$backup;exe=(Join-Path $AppRoot 'RelaxCoach.exe');shortcut=(Join-Path $DesktopRoot 'Relax Coach.lnk');gameRunning=[bool](Get-Process Wow -ErrorAction SilentlyContinue);savedVariables='untouched';restartRequired=$true} | ConvertTo-Json
+  [ordered]@{status='installed';version=([string]$manifest.version+'-guild');verifiedFiles=$verified;backup=$backup;exe=(Join-Path $AppRoot 'RelaxCoach.exe');shortcut=(Join-Path $DesktopRoot 'Relax Coach.lnk');gameRunning=[bool](Get-Process Wow -ErrorAction SilentlyContinue);savedVariables='untouched';restartRequired=$true} | ConvertTo-Json
 } catch {
   $failure=$_
   if($changed) { & (Join-Path $backup 'Restore-RelaxCoach.ps1') -Backup $backup }

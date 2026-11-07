@@ -9,8 +9,8 @@ import (
 )
 
 func TestHelperVersionAndLegacyStorage(t *testing.T) {
-	if Version != "1.4.1" {
-		t.Errorf("helper version = %q, want 1.4.1", Version)
+	if Version != "1.4.2" {
+		t.Errorf("helper version = %q, want 1.4.2", Version)
 	}
 	game := t.TempDir()
 	sv := filepath.Join(game, "WTF", "Account", "TEST", "SavedVariables", "ForeverCoach.lua")
@@ -107,7 +107,7 @@ func TestReportRelaxBranding(t *testing.T) {
 			for _, want := range []string{
 				"<title>Relax Coach</title>", "<h1>Relax Coach</h1>",
 				"Diagnostic report", "Relax Coach · private bundle",
-				"Public addon updates change ForeverCoach only", "Relax Journey and private content are unchanged",
+				"Update Addon delivers ForeverCoach, Journey and guide content together", "Settings and saves are preserved",
 				"TheGamersVibe", "ForeverCoach.lua", "WoW Forever leveling report",
 				`action="/setgame"`, `fetch('/refresh',{method:'POST'})`,
 				`src="/logo.png"`, "app " + Version,

@@ -228,12 +228,12 @@ $('check-update').addEventListener('click',async()=>{
   try {
     offer = await rc.checkAddon();
     $('installed-version').textContent = offer.InstalledVersion === '0.0.0' ? 'Not installed' : offer.InstalledVersion;
-    $('offered-version').textContent = offer.Version;
+    $('offered-version').textContent = offer.Available ? offer.Version : 'None';
     $('release-name').textContent = offer.Name || 'Release notes';
     $('release-notes').textContent = offer.Notes || 'No release notes provided.';
     $('release-link').href = offer.HTMLURL;
     $('release-link').hidden = !offer.HTMLURL;
-    $('update-status').textContent = offer.Available ? 'Update available. Close WoW, then click Update Addon to verify, back up and install.' : 'No compatible new addon update is available. See release notes. No files changed.';
+    $('update-status').textContent = offer.Available ? 'Update available. Close WoW, then click Update Addon to verify, back up and install.' : (offer.Notes || 'No compatible new addon update is available.') + ' No files changed.';
   } catch(err) {
     $('offered-version').textContent = 'Unavailable';
     $('release-notes').textContent = 'Release notes unavailable. Check again when online.';

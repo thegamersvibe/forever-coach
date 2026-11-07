@@ -26,24 +26,24 @@ func TestAddonRejectsUnsafeArchivesWithoutChangingAnyFile(t *testing.T) {
 		"ForeverCoach/\u202eevil.lua", "README.MD", "run.ps1",
 	} {
 		t.Run(name, func(t *testing.T) {
-			entries := addonFixtureEntries("1.5.0")
+			entries := addonFixtureEntries("1.4.1")
 			entries = append(entries, addonZipEntry{name, "hostile bytes", 0o644})
 			assertAddonPayloadRejected(t, entries, "")
 		})
 	}
 	t.Run("symlink", func(t *testing.T) {
-		entries := addonFixtureEntries("1.5.0")
+		entries := addonFixtureEntries("1.4.1")
 		entries[1].mode = os.ModeSymlink | 0o777
 		entries[1].body = "../../WTF/Account/test/SavedVariables/ForeverCoach.lua"
 		assertAddonPayloadRejected(t, entries, "symlink")
 	})
 	t.Run("named pipe", func(t *testing.T) {
-		entries := addonFixtureEntries("1.5.0")
+		entries := addonFixtureEntries("1.4.1")
 		entries[1].mode = os.ModeNamedPipe | 0o600
 		assertAddonPayloadRejected(t, entries, "special")
 	})
 	t.Run("missing module", func(t *testing.T) {
-		assertAddonPayloadRejected(t, addonFixtureEntries("1.5.0")[:len(addonFixtureFiles)-1], "missing")
+		assertAddonPayloadRejected(t, addonFixtureEntries("1.4.1")[:len(addonFixtureFiles)-1], "missing")
 	})
 }
 
@@ -67,19 +67,19 @@ func assertAddonPayloadRejected(t *testing.T, entries []addonZipEntry, contains 
 func TestAddonRejectsIncompatibleTOC(t *testing.T) {
 	for _, tc := range []struct{ name, old, replacement, errorText string }{
 		{"old brand", "## Title: Relax Coach", "## Title: Forever Coach", "Title"},
-		{"mismatched version", "## Version: 1.5.0", "## Version: 1.4.0", "version"},
+		{"mismatched version", "## Version: 1.4.1", "## Version: 1.4.0", "version"},
 		{"renamed saved variables", "## SavedVariables: ForeverCoachDB", "## SavedVariables: RelaxCoachDB", "SavedVariables"},
 		{"additional saved variables", "## SavedVariables: ForeverCoachDB", "## SavedVariables: ForeverCoachDB, JourneyDB", "SavedVariables"},
 		{"per-character variables", "## SavedVariables: ForeverCoachDB", "## SavedVariables: ForeverCoachDB\n## SavedVariablesPerCharacter: ForeverCoachDB", "SavedVariables"},
 		{"required Journey", "## OptionalDeps: Journey", "## Dependencies: Journey", "Journey"},
 		{"required Journey alias", "## OptionalDeps: Journey", "## RequiredDeps: GearQuestForever, JOURNEY", "Journey"},
 		{"TOC load escape", "Core.lua", "../Journey/Core.lua", "path"},
-		{"duplicate version", "## Version: 1.5.0", "## Version: 1.5.0\n## Version: 1.5.0", "duplicate"},
+		{"duplicate version", "## Version: 1.4.1", "## Version: 1.4.1\n## Version: 1.4.1", "duplicate"},
 		{"missing loaded module", "Core.lua\n", "", "module"},
-		{"inexact Version field", "## Version: 1.5.0", "## version: 1.5.0", "Version"},
+		{"inexact Version field", "## Version: 1.4.1", "## version: 1.4.1", "Version"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
-			entries := addonFixtureEntries("1.5.0")
+			entries := addonFixtureEntries("1.4.1")
 			entries[0].body = strings.Replace(entries[0].body, tc.old, tc.replacement, 1)
 			assertAddonPayloadRejected(t, entries, tc.errorText)
 		})
@@ -94,7 +94,7 @@ func TestAddonChecksumFailureLeavesGameUnchanged(t *testing.T) {
 		"not a checksum\n",
 		strings.Repeat("a", 64) + "  ../" + testAddonAsset + "\n",
 	} {
-		u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.5.0")), checksum)
+		u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.4.1")), checksum)
 		game := addonTestGame(t)
 		before := addonTreeHashes(t, game)
 		if _, err := u.apply(context.Background(), game, addonTestInfo()); err == nil {
@@ -109,7 +109,7 @@ func TestAddonChecksumFailureLeavesGameUnchanged(t *testing.T) {
 func TestAddonArchiveLimitsBoundDownloadsAndExpansion(t *testing.T) {
 	for _, which := range []string{"download", "checksum", "entry count", "expanded total", "individual file"} {
 		t.Run(which, func(t *testing.T) {
-			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.5.0")), "")
+			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.4.1")), "")
 			switch which {
 			case "download":
 				u.limits.archive = 30
@@ -136,12 +136,12 @@ func TestAddonArchiveLimitsBoundDownloadsAndExpansion(t *testing.T) {
 
 func TestAddonUntrustedReleaseURLsNeverReachNetwork(t *testing.T) {
 	for _, bad := range []string{
-		"http://github.com/thegamersvibe/relax-coach/releases/download/v1.5.0/RelaxCoach-1.5.0.zip",
-		"https://github.com.evil.example/thegamersvibe/relax-coach/releases/download/v1.5.0/RelaxCoach-1.5.0.zip",
-		"https://github.com/other/forever-coach/releases/download/v1.5.0/RelaxCoach-1.5.0.zip",
-		"https://user:pass@github.com/thegamersvibe/relax-coach/releases/download/v1.5.0/RelaxCoach-1.5.0.zip",
-		testAddonDownload + testAddonAsset + "?evil=1", testAddonDownload + testAddonAsset + "#evil", testAddonDownload + "%52elaxCoach-1.5.0.zip",
-		"https://github.com:443/thegamersvibe/relax-coach/releases/download/v1.5.0/RelaxCoach-1.5.0.zip",
+		"http://github.com/thegamersvibe/relax-coach/releases/download/v1.4.1/RelaxCoach-1.4.1.zip",
+		"https://github.com.evil.example/thegamersvibe/relax-coach/releases/download/v1.4.1/RelaxCoach-1.4.1.zip",
+		"https://github.com/other/forever-coach/releases/download/v1.4.1/RelaxCoach-1.4.1.zip",
+		"https://user:pass@github.com/thegamersvibe/relax-coach/releases/download/v1.4.1/RelaxCoach-1.4.1.zip",
+		legacyAddonDownload + testAddonAsset + "?evil=1", legacyAddonDownload + testAddonAsset + "#evil", legacyAddonDownload + "%52elaxCoach-1.4.1.zip",
+		"https://github.com:443/thegamersvibe/relax-coach/releases/download/v1.4.1/RelaxCoach-1.4.1.zip",
 		"https://release-assets.githubusercontent.com/forged.zip",
 	} {
 		t.Run(bad, func(t *testing.T) {
@@ -156,7 +156,7 @@ func TestAddonUntrustedReleaseURLsNeverReachNetwork(t *testing.T) {
 	t.Run("checksum from another tag", func(t *testing.T) {
 		u := addonTestUpdater(t, func(w http.ResponseWriter, r *http.Request) { t.Error("wrong checksum tag reached network") })
 		info := addonTestInfo()
-		info.ChecksumURL = strings.Replace(info.ChecksumURL, "v1.5.0", "v1.4.0", 1)
+		info.ChecksumURL = strings.Replace(info.ChecksumURL, "v1.4.1", "v1.4.0", 1)
 		if _, err := u.apply(context.Background(), addonTestGame(t), info); err == nil {
 			t.Fatal("accepted checksum from different release")
 		}
@@ -187,7 +187,7 @@ func TestAddonDownloadRedirectPolicy(t *testing.T) {
 				}
 				fmt.Fprint(w, "ok")
 			})
-			b, err := u.fetch(context.Background(), testAddonDownload+testAddonAsset, 100, "test archive")
+			b, err := u.fetch(context.Background(), legacyAddonDownload+testAddonAsset, 100, "test archive")
 			if tc.allowed {
 				if err != nil || string(b) != "ok" || hits != 2 {
 					t.Fatalf("allowed CDN rejected: %q %v %d", b, err, hits)
@@ -246,7 +246,7 @@ func TestAddonRejectsLinkedFilesystemTargets(t *testing.T) {
 			if err := os.Symlink(external, link); err != nil {
 				t.Skipf("symlink unavailable: %v", err)
 			}
-			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.5.0")), "")
+			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.4.1")), "")
 			before := addonTreeHashes(t, external)
 			if _, err := u.apply(context.Background(), game, addonTestInfo()); err == nil {
 				t.Fatal("installed through a symlink")

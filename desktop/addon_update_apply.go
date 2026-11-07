@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"context"
 	"crypto/sha256"
 	"encoding/hex"
@@ -11,7 +10,6 @@ import (
 	"path/filepath"
 	"strings"
 	"sync"
-	"time"
 )
 
 type AddonUpdateResult struct {
@@ -23,7 +21,7 @@ type AddonUpdateResult struct {
 
 var addonInstallMutex sync.Mutex
 
-// ApplyAddonRelease updates ONLY game/Interface/AddOns/ForeverCoach. It does
+// ApplyAddonRelease updates only the fixed addon/runtime trees. It does
 // not update the running helper. The updater must never be invoked implicitly
 // while generating a report: installing is a separate, explicit user action.
 func ApplyAddonRelease(ctx context.Context, game string, release AddonReleaseInfo) (AddonUpdateResult, error) {
@@ -39,7 +37,7 @@ func validateAddonRelease(info AddonReleaseInfo) error {
 	if minimum.newerThan(v) {
 		return errors.New("incompatible old addon release; refusing a downgrade")
 	}
-	if !info.Available || info.AssetName != "RelaxCoach-"+info.Version+".zip" {
+	if !info.Available || info.AssetName != addonAssetName(info.Version) {
 		return errors.New("no compatible new addon update was selected")
 	}
 	prefix := addonReleasePrefix + "download/"
@@ -176,8 +174,8 @@ func addonExactTOCVersion(b []byte) (addonSemver, error) {
 
 func addonInstalled(target string) (addonInstalledState, error) {
 	var state addonInstalledState
-	info, err := os.Lstat(target)
-	if os.IsNotExist(err) {
+	info, err := addonDirectoryIdentity(target)
+	if err == nil && info == nil {
 		state.version, _ = parseAddonVersion("0.0.0")
 		return state, nil
 	}
@@ -232,6 +230,10 @@ func (u *addonUpdater) apply(ctx context.Context, game string, release AddonRele
 		return result, errors.New("no newer addon version to install; refusing to reinstall or downgrade")
 	}
 
+	trees, ancestors, err := addonSnapshot(game, addonGuildRelease(release.Version))
+	if err != nil {
+		return result, err
+	}
 	checksums, err := u.fetch(ctx, release.ChecksumURL, u.limits.checksum, "release checksum")
 	if err != nil {
 		return result, err
@@ -250,105 +252,5 @@ func (u *addonUpdater) apply(ctx context.Context, game string, release AddonRele
 	if err := ctx.Err(); err != nil {
 		return result, err
 	}
-	// Revalidate ancestors after network waits, before creating any directory.
-	if err := addonPlainDirectory(addons); err != nil {
-		return result, err
-	}
-	backups := filepath.Join(game, "RelaxCoachBackups")
-	if err := os.Mkdir(backups, 0o700); err != nil && !os.IsExist(err) {
-		return result, err
-	}
-	if err := addonPlainDirectory(backups); err != nil {
-		return result, err
-	}
-	lockPath := filepath.Join(backups, ".addon-update.lock")
-	lock, err := os.OpenFile(lockPath, os.O_CREATE|os.O_EXCL|os.O_WRONLY, 0o600)
-	if os.IsExist(err) {
-		return result, errors.New("another addon update or an unfinished recovery holds the backup lock; close other helpers and inspect RelaxCoachBackups before retrying")
-	}
-	if err != nil {
-		return result, err
-	}
-	if err := lock.Close(); err != nil {
-		os.Remove(lockPath)
-		return result, err
-	}
-	defer os.Remove(lockPath)
-	transaction, err := os.MkdirTemp(backups, "ForeverCoach-"+time.Now().UTC().Format("20060102T150405.000000000Z")+"-")
-	if err != nil {
-		return result, err
-	}
-	keepTransaction := false
-	defer func() {
-		if !keepTransaction {
-			os.RemoveAll(transaction)
-		}
-	}()
-	stage := filepath.Join(transaction, "staged")
-	backup := filepath.Join(transaction, "ForeverCoach")
-	digests, err := u.extract(ctx, payload, stage, release.Version)
-	if err != nil {
-		return result, err
-	}
-	if err := verifyAddonTree(ctx, stage, digests); err != nil {
-		return result, err
-	}
-	if err := u.requireStopped(ctx); err != nil {
-		return result, err
-	}
-	if err := addonPlainDirectory(addons); err != nil {
-		return result, err
-	}
-	if err := addonPlainDirectory(transaction); err != nil {
-		return result, err
-	}
-	now, err := addonInstalled(target)
-	if err != nil {
-		return result, err
-	}
-	if !remote.newerThan(now.version) {
-		return result, errors.New("installed addon is already this version or newer; refusing to reinstall or downgrade")
-	}
-	if before.exists != now.exists || (before.exists && (!os.SameFile(before.info, now.info) || !bytes.Equal(before.toc, now.toc))) {
-		return result, errors.New("the installed addon changed during download; check for updates again")
-	}
-	if err := ctx.Err(); err != nil {
-		return result, err
-	}
-	if before.exists {
-		if err := u.rename(target, backup); err != nil {
-			return result, fmt.Errorf("cannot back up installed addon: %w", err)
-		}
-		keepTransaction = true
-	}
-	if err := u.rename(stage, target); err != nil {
-		if before.exists {
-			if rollbackErr := u.rename(backup, target); rollbackErr != nil {
-				return result, fmt.Errorf("install failed (%v), and automatic rollback failed (%v); original addon is preserved at %s", err, rollbackErr, backup)
-			}
-			keepTransaction = false
-		}
-		return result, fmt.Errorf("addon install failed; previous addon restored: %w", err)
-	}
-	if verifyErr := verifyAddonTree(ctx, target, digests); verifyErr != nil {
-		// Rollback ignores cancellation: once the swap starts, preserving the old
-		// addon is more important than promptly returning a canceled request.
-		keepTransaction = true
-		if moveErr := u.rename(target, filepath.Join(transaction, "failed")); moveErr != nil {
-			return result, fmt.Errorf("installed addon verification failed (%v); rollback could not move the new addon (%v); original backup: %s", verifyErr, moveErr, backup)
-		}
-		if before.exists {
-			if rollbackErr := u.rename(backup, target); rollbackErr != nil {
-				return result, fmt.Errorf("installed addon verification failed (%v); rollback failed (%v); original backup: %s", verifyErr, rollbackErr, backup)
-			}
-		}
-		keepTransaction = false
-		return result, fmt.Errorf("addon verification failed; previous addon restored: %w", verifyErr)
-	}
-	if before.exists {
-		result.BackupPath = backup
-	}
-	result.Version, result.UpdatedFiles = release.Version, len(digests)
-	result.Message = "Addon updated and every installed file verified. Journey and SavedVariables were not touched. The desktop helper was not updated."
-	return result, nil
+	return u.installTrees(ctx, game, release, payload, before, trees, ancestors)
 }

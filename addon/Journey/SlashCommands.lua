@@ -46,14 +46,17 @@ local handlers = {
 		end
 	end,
 	dev = function()
+		if (not DEV_BUILD) then return end
 		local enabled = not State.IsDevEnabled()
 		State.SetDevEnabled(enabled)
 		DEFAULT_CHAT_FRAME:AddMessage(string.format("%s: Dev reload %s", addonTitle, enabled and "|cFF00FF00ON|r" or "|cFFFF0000OFF|r"))
 	end,
 	blob = function()
+		if (not DEV_BUILD) then return end
 		if (State.IsDevEnabled()) then ToggleBlobOverlay() end
 	end,
 	["blob next"] = function()
+		if (not DEV_BUILD) then return end
 		if (State.IsDevEnabled()) then CycleBlobOverlay() end
 	end,
 	["way clear"] = function()

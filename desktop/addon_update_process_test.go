@@ -51,7 +51,7 @@ func TestAddonApplyGameRunningFailsClosedAndRechecks(t *testing.T) {
 		{"detection failed", 1, errors.New("tasklist access denied")},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
-			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.5.0")), "")
+			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.4.1")), "")
 			calls := 0
 			u.running = func(context.Context) (bool, error) {
 				calls++
@@ -76,7 +76,7 @@ func TestAddonApplyGameRunningFailsClosedAndRechecks(t *testing.T) {
 }
 
 func TestAddonApplyRechecksInstalledVersionAtCommit(t *testing.T) {
-	u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.5.0")), "")
+	u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.4.1")), "")
 	game := addonTestGame(t)
 	calls := 0
 	u.running = func(context.Context) (bool, error) {
@@ -97,7 +97,7 @@ func TestAddonApplyRechecksInstalledVersionAtCommit(t *testing.T) {
 func TestAddonApplyRollsBackMidSwapAndVerificationFailure(t *testing.T) {
 	for _, mode := range []string{"rename-failure", "corrupt-installed", "cancel-after-rename"} {
 		t.Run(mode, func(t *testing.T) {
-			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.5.0")), "")
+			u := addonPayloadUpdater(t, addonZip(t, addonFixtureEntries("1.4.1")), "")
 			game := addonTestGame(t)
 			before := addonTreeHashes(t, game)
 			ctx, cancel := context.WithCancel(context.Background())

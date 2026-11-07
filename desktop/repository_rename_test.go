@@ -17,14 +17,14 @@ func TestRelaxRepositoryEndpoints(t *testing.T) {
 }
 
 func TestRelaxGuildReleaseKeepsCoachUpdaterScoped(t *testing.T) {
-	const prefix = "https://github.com/thegamersvibe/relax-coach/releases/download/v1.5.0/"
+	const prefix = "https://github.com/thegamersvibe/relax-coach/releases/download/v1.4.1/"
 	release := map[string]any{
-		"tag_name": "v1.5.0", "name": "Relax Coach guild bundle", "body": "Guild release",
-		"html_url": "https://github.com/thegamersvibe/relax-coach/releases/tag/v1.5.0",
+		"tag_name": "v1.4.1", "name": "Relax Coach guild bundle", "body": "Guild release",
+		"html_url": "https://github.com/thegamersvibe/relax-coach/releases/tag/v1.4.1",
 		"draft":    false, "prerelease": false,
 		"assets": []map[string]any{
-			{"name": "RelaxCoach-Guild-1.5.0.zip", "browser_download_url": prefix + "RelaxCoach-Guild-1.5.0.zip"},
-			{"name": "RelaxCoach-1.5.0.zip", "browser_download_url": prefix + "RelaxCoach-1.5.0.zip"},
+			{"name": "RelaxCoach-Guild-1.4.1.zip", "browser_download_url": prefix + "RelaxCoach-Guild-1.4.1.zip"},
+			{"name": "RelaxCoach-1.4.1.zip", "browser_download_url": prefix + "RelaxCoach-1.4.1.zip"},
 			{"name": "SHA256SUMS.txt", "browser_download_url": prefix + "SHA256SUMS.txt"},
 		},
 	}
@@ -38,7 +38,7 @@ func TestRelaxGuildReleaseKeepsCoachUpdaterScoped(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if !info.Available || info.AssetName != "RelaxCoach-1.5.0.zip" || info.AssetURL != prefix+"RelaxCoach-1.5.0.zip" {
+	if !info.Available || info.AssetName != "RelaxCoach-1.4.1.zip" || info.AssetURL != prefix+"RelaxCoach-1.4.1.zip" {
 		t.Fatalf("guild release must select the Coach-only update asset: %+v", info)
 	}
 }

@@ -25,6 +25,9 @@ $saveHash=(Get-FileHash $save).Hash
 $raw=& (Join-Path $SourceRoot 'Install-RelaxCoach.ps1') -Game $game -SourceRoot $SourceRoot -AppRoot $app -DesktopRoot $desktop -BackupRoot $backups
 $result=($raw -join "`n") | ConvertFrom-Json
 if($result.status -ne 'installed') { throw 'Installation did not report verified success' }
+$manifest=[IO.File]::ReadAllText((Join-Path $SourceRoot 'manifest.json'))|ConvertFrom-Json
+$receipt=[IO.File]::ReadAllText((Join-Path $result.backup 'installation.json'))|ConvertFrom-Json
+if($receipt.version -ne ([string]$manifest.version+'-guild')) { throw 'Installation receipt version is stale' }
 if((Get-FileHash $save).Hash -ne $saveHash) { throw 'SavedVariables changed' }
 if(Test-Path (Join-Path $desktop 'Forever Coach.lnk')) { throw 'Old shortcut was not retired' }
 $shortcut=(New-Object -ComObject WScript.Shell).CreateShortcut((Join-Path $desktop 'Relax Coach.lnk'))
